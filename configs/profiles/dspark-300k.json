@@ -1,0 +1,19 @@
+{
+  "max_model_len": 300000,
+  "max_num_batched_tokens": 8192,
+  "max_num_seqs": 8,
+  "gpu_memory_utilization": 0.8,
+  "graphs": true,
+  "prefix_cache": true,
+  "vision": true,
+  "spec_method": "dspark",
+  "spec_k": 5,
+  "kv_cache_dtype": "auto",
+  "runtime_env": {
+    "NCCL_CUMEM_ENABLE": "0",
+    "NCCL_NVLS_ENABLE": "0",
+    "PYTORCH_CUDA_ALLOC_CONF": "expandable_segments:True",
+    "VLLM_USE_FLASHINFER_SAMPLER": "0",
+    "CUDA_LOG_FILE": "stderr"
+  }
+}

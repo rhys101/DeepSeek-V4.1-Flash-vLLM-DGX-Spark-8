@@ -1,0 +1,14 @@
+{
+  "model": "deepseek-v41-flash",
+  "messages": [
+    {
+      "role": "user",
+      "content": "What is 17 times 19? Return only the integer."
+    }
+  ],
+  "temperature": 0,
+  "max_tokens": 32,
+  "chat_template_kwargs": {
+    "thinking": false
+  }
+}

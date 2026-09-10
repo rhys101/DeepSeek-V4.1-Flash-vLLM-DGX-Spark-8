@@ -1,0 +1,448 @@
+{
+  "repo": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "existing_revision": "df42c109f1defefcbfcedbe7d905718a12266e40",
+  "compared_revision": "dba1be0a40aa45a94ad051997016db3960a90277",
+  "file_count": 88,
+  "same_paths": true,
+  "changed_files": [
+    "encoding/README.md",
+    "encoding/encoding.py",
+    "encoding/test_encoding.py"
+  ],
+  "identical_weight_objects": {
+    "model-00001-of-00048.safetensors": {
+      "oid": "ed64b2e00da7669b19a7f0b8244bf87d3ab9980a",
+      "size": 970533624,
+      "lfs": {
+        "oid": "886aebdafa08cc27bbae2165ed35bdfe0de9370bf88c1411283c155c6ae4ff89",
+        "size": 970533624,
+        "pointerSize": 134
+      }
+    },
+    "model-00002-of-00048.safetensors": {
+      "oid": "d04d1d34d11caccd930bfa5f7d780c86bfbe42ed",
+      "size": 1323858272,
+      "lfs": {
+        "oid": "4320066fc6958e5bc01d8c3feba79b7454b59f0f4b7299ab7145ed44bbf4ecec",
+        "size": 1323858272,
+        "pointerSize": 135
+      }
+    },
+    "model-00003-of-00048.safetensors": {
+      "oid": "f19f5f2344084fd293de9a42ac0e29f862f32f24",
+      "size": 7389759032,
+      "lfs": {
+        "oid": "e1281f85d0ce4a3dfb63d41926fc4a47fa71f36ba20992e3597e702ead49d4c9",
+        "size": 7389759032,
+        "pointerSize": 135
+      }
+    },
+    "model-00004-of-00048.safetensors": {
+      "oid": "827668797628e19f471172977f276b8255d6dd3f",
+      "size": 7389759032,
+      "lfs": {
+        "oid": "79456c9db0cda3b8115fe1c726fe3db1a34b434584a3991917088a0ab56a39de",
+        "size": 7389759032,
+        "pointerSize": 135
+      }
+    },
+    "model-00005-of-00048.safetensors": {
+      "oid": "4cf131aac21417ca85ac3221803ad8dac77ddca2",
+      "size": 7405953784,
+      "lfs": {
+        "oid": "4a42dc78698bee6b1a821aa01c9650749ef1f716143751f1cdb815c6400280a9",
+        "size": 7405953784,
+        "pointerSize": 135
+      }
+    },
+    "model-00006-of-00048.safetensors": {
+      "oid": "33afcb930c148f3edc878d589c402ad1ba4b6d6e",
+      "size": 7389759032,
+      "lfs": {
+        "oid": "020a6df51a2853452561d91268a65481f7a7d7954ed47f8e6c9ce69a4a134f77",
+        "size": 7389759032,
+        "pointerSize": 135
+      }
+    },
+    "model-00007-of-00048.safetensors": {
+      "oid": "bef0f732f032b365410838f407d99141eeae9633",
+      "size": 7389759032,
+      "lfs": {
+        "oid": "40f8b52f763f6380d41257e1af04eee3aad300af6a418c38e49ff99e3604163a",
+        "size": 7389759032,
+        "pointerSize": 135
+      }
+    },
+    "model-00008-of-00048.safetensors": {
+      "oid": "c85918896e64adb90a8c2bd005c806deb835ff7d",
+      "size": 7389759032,
+      "lfs": {
+        "oid": "d62cca4e698f030d4b96ec624c08bed7ad604cec13077da6d6b06669281c4650",
+        "size": 7389759032,
+        "pointerSize": 135
+      }
+    },
+    "model-00009-of-00048.safetensors": {
+      "oid": "2ef42f88393516ab2b78f6219a51d3c13be1f8a1",
+      "size": 7389759032,
+      "lfs": {
+        "oid": "1ca62e4c294df31aee69a782974cb14269264fdc08465ab4835760258f05d6ef",
+        "size": 7389759032,
+        "pointerSize": 135
+      }
+    },
+    "model-00010-of-00048.safetensors": {
+      "oid": "2cc30c2ca90ece11ae97ec1710b3cd461c2f4268",
+      "size": 7389759032,
+      "lfs": {
+        "oid": "dd33c9750a40cbfcdfb19cd8335d955f533e3a18b790c0ee43d1e5d77911595c",
+        "size": 7389759032,
+        "pointerSize": 135
+      }
+    },
+    "model-00011-of-00048.safetensors": {
+      "oid": "806098f2fdb2017649d9a27b8c622a418fbaee04",
+      "size": 7405953784,
+      "lfs": {
+        "oid": "a9b309f90e0d1e2252a224ed6b057b9c82c27d3a49cff64bfbfef12efd067f7c",
+        "size": 7405953784,
+        "pointerSize": 135
+      }
+    },
+    "model-00012-of-00048.safetensors": {
+      "oid": "57dc0d8beed2d7bf370c7422bcc1b625e2a711b6",
+      "size": 7389759032,
+      "lfs": {
+        "oid": "b359227eceb3f839c80de19dddf946648ca89425d9b719ff44702cf5e8cfbe0e",
+        "size": 7389759032,
+        "pointerSize": 135
+      }
+    },
+    "model-00013-of-00048.safetensors": {
+      "oid": "33e6442ab5f10963f202c8ecbf9187409726943c",
+      "size": 7389761368,
+      "lfs": {
+        "oid": "41d87a4c81fec1550f9cb975db05598a18ee0161c2664e8e1a0c7b60742755a6",
+        "size": 7389761368,
+        "pointerSize": 135
+      }
+    },
+    "model-00014-of-00048.safetensors": {
+      "oid": "358773636735c291c356a471d8a4c7fcf88b9ff0",
+      "size": 7389761368,
+      "lfs": {
+        "oid": "e7ca4a12688a5819829ead3a03282aedb380e438bc41a00e969f70952c6d0eb9",
+        "size": 7389761368,
+        "pointerSize": 135
+      }
+    },
+    "model-00015-of-00048.safetensors": {
+      "oid": "44e7ccd06864c45d14d336a79bba9a98d0d03819",
+      "size": 7389761368,
+      "lfs": {
+        "oid": "fa9d49314bbb25118b3d52c573ed66a4d0acfb01dcb26d8367f43c66a52f46c4",
+        "size": 7389761368,
+        "pointerSize": 135
+      }
+    },
+    "model-00016-of-00048.safetensors": {
+      "oid": "a1d29a48b074f07f84f540edb693fee5febc5bb4",
+      "size": 7389761368,
+      "lfs": {
+        "oid": "07d08bce9d73d416eaca0f42843440a8c45c5f939eff1a3690fb460d8dd7f623",
+        "size": 7389761368,
+        "pointerSize": 135
+      }
+    },
+    "model-00017-of-00048.safetensors": {
+      "oid": "9b54c23553545da4e3cbb3238633431276d03f12",
+      "size": 7405956128,
+      "lfs": {
+        "oid": "3d35e330a6c28cd59a06a1caab8b0048f7e12cc037d728736f74431c4c0a1a4c",
+        "size": 7405956128,
+        "pointerSize": 135
+      }
+    },
+    "model-00018-of-00048.safetensors": {
+      "oid": "1e3f4df33106ffbcbb985b7cf192b128108837f2",
+      "size": 7389761368,
+      "lfs": {
+        "oid": "48bd0c28b7f441f131f562cb664366d7726447a3698da3dd56ebbfeb1b916c75",
+        "size": 7389761368,
+        "pointerSize": 135
+      }
+    },
+    "model-00019-of-00048.safetensors": {
+      "oid": "0194c1136548453cd9a74932c143797335439e54",
+      "size": 7389761368,
+      "lfs": {
+        "oid": "b7a25cb64a959ca5e5a99e239bb1ba2092b9bcf022bec4ba71f7441334107bd1",
+        "size": 7389761368,
+        "pointerSize": 135
+      }
+    },
+    "model-00020-of-00048.safetensors": {
+      "oid": "82039c0d9b690646ece8dfb569f2471aa91d6287",
+      "size": 7389761368,
+      "lfs": {
+        "oid": "8aea8c4026ba4b93e82b4ed1b6b4620d02b6aaac88d211aaf577acea443aff84",
+        "size": 7389761368,
+        "pointerSize": 135
+      }
+    },
+    "model-00021-of-00048.safetensors": {
+      "oid": "b0162a203fd3bf621bc18e5b688fa436059e0431",
+      "size": 7389761368,
+      "lfs": {
+        "oid": "4cb6558dedfdc75a6be472e27bc3e830d8443a3371854e61dc54454a1b5b18f7",
+        "size": 7389761368,
+        "pointerSize": 135
+      }
+    },
+    "model-00022-of-00048.safetensors": {
+      "oid": "a9a16936023ebc4201d0b3966e872dce18451465",
+      "size": 7389761368,
+      "lfs": {
+        "oid": "81031b68c967539a7c51d1b12d37d18de926ca3045ec554ccdd49a83b4dc0084",
+        "size": 7389761368,
+        "pointerSize": 135
+      }
+    },
+    "model-00023-of-00048.safetensors": {
+      "oid": "ccbb0d6ab728eb657e6cdd55ec96b87c21b60223",
+      "size": 7400713088,
+      "lfs": {
+        "oid": "096723fc8afa9886b976fb63aabef159406dc483e6f2a41e3fe386435b0436cc",
+        "size": 7400713088,
+        "pointerSize": 135
+      }
+    },
+    "model-00024-of-00048.safetensors": {
+      "oid": "c81d6d5ad5b5b41f13d3240610724c31976fbf4f",
+      "size": 7389761368,
+      "lfs": {
+        "oid": "c9438ff607bd902fdeb38267d36239ccf60d38595988364562b862791841da75",
+        "size": 7389761368,
+        "pointerSize": 135
+      }
+    },
+    "model-00025-of-00048.safetensors": {
+      "oid": "0bdd7e25ffc0aa2f8ed78445c24b4ba15d9c39e1",
+      "size": 7389761368,
+      "lfs": {
+        "oid": "4227ef9fe34d10de584d67250845fab905cbd8462fd84d9da24d772f223db6b4",
+        "size": 7389761368,
+        "pointerSize": 135
+      }
+    },
+    "model-00026-of-00048.safetensors": {
+      "oid": "da6b3db1a7463825c9dfbffb07bd47aa160d92fb",
+      "size": 7389761368,
+      "lfs": {
+        "oid": "0af8c8f1b96b502eda652a0549cf55cd8a4d472a34d27ef9bf1c1d7c4567ca3f",
+        "size": 7389761368,
+        "pointerSize": 135
+      }
+    },
+    "model-00027-of-00048.safetensors": {
+      "oid": "63e0eb6f1a1eca5698d68e7c70d0911fc2f5230b",
+      "size": 7395337384,
+      "lfs": {
+        "oid": "3066bd03043726d2400302cb9af759ec4e3957a935d56e241b83b52870322e28",
+        "size": 7395337384,
+        "pointerSize": 135
+      }
+    },
+    "model-00028-of-00048.safetensors": {
+      "oid": "9aff3d0596b1e43a1bb8d608f4f83d7a05db4551",
+      "size": 7389761368,
+      "lfs": {
+        "oid": "9bc915075568b75e2aec9c645cc0fece6287f115c32031a52ab4f9ba9d12fde6",
+        "size": 7389761368,
+        "pointerSize": 135
+      }
+    },
+    "model-00029-of-00048.safetensors": {
+      "oid": "a1fcbaf3892f7c67ec7a385acc5864e14211a0dc",
+      "size": 7389761368,
+      "lfs": {
+        "oid": "d153dd9cde7c4aa7ea9896cf7aa25b49447af573f90ad14cfaaa532fbbd19434",
+        "size": 7389761368,
+        "pointerSize": 135
+      }
+    },
+    "model-00030-of-00048.safetensors": {
+      "oid": "1bf8c33843eb0a24a8ed94e1679eae2d0f010394",
+      "size": 7389761368,
+      "lfs": {
+        "oid": "3c9ccd96e908e00f02a70930b0821a6c53e5301376a261284a092e1aea7bb5da",
+        "size": 7389761368,
+        "pointerSize": 135
+      }
+    },
+    "model-00031-of-00048.safetensors": {
+      "oid": "f233648fc05de748d637590366a8f2f40c6368e6",
+      "size": 7395337384,
+      "lfs": {
+        "oid": "0de7b6d7142df18ad45a215e9c0ef004f78cdbfefd59cc16345b2bc004047343",
+        "size": 7395337384,
+        "pointerSize": 135
+      }
+    },
+    "model-00032-of-00048.safetensors": {
+      "oid": "01735f7ba251a25d3563d1cbb532dc07d934a67f",
+      "size": 7389761368,
+      "lfs": {
+        "oid": "6a5aaa73c6f97294bd079914ba44209ecf3d0491c8b95ef9995655511e35aee6",
+        "size": 7389761368,
+        "pointerSize": 135
+      }
+    },
+    "model-00033-of-00048.safetensors": {
+      "oid": "54188954aee3724535d69814cdafcae5d6bcd174",
+      "size": 7389761368,
+      "lfs": {
+        "oid": "386e3e91f7f02f7e2c25f398b3a63379051c2077839b3081f7556e18c29a69c9",
+        "size": 7389761368,
+        "pointerSize": 135
+      }
+    },
+    "model-00034-of-00048.safetensors": {
+      "oid": "7ebf03e74696c2a1c12a20804e6ebbba7e87755c",
+      "size": 7389761368,
+      "lfs": {
+        "oid": "9deab3c4f27c956f91cd989d9a1f6cf4bbb91858ce3f7164caa5ae61125c943f",
+        "size": 7389761368,
+        "pointerSize": 135
+      }
+    },
+    "model-00035-of-00048.safetensors": {
+      "oid": "cc3e9dc7d0770fd9a4f367ab38161be1f9c00825",
+      "size": 7395337384,
+      "lfs": {
+        "oid": "226573bc07f35091b0ec27b0056ab3059f9bc1c0afd0bc104c93c86dd029cad2",
+        "size": 7395337384,
+        "pointerSize": 135
+      }
+    },
+    "model-00036-of-00048.safetensors": {
+      "oid": "a93ac994149530aae4dd495f77261e403514d905",
+      "size": 7389761368,
+      "lfs": {
+        "oid": "90d6a85c1eb0cae68c6c7bffa11b60654ea00353d27a0ae17701b72e239894cd",
+        "size": 7389761368,
+        "pointerSize": 135
+      }
+    },
+    "model-00037-of-00048.safetensors": {
+      "oid": "33f34ba08bb59e4b6854f936740f3b36aa71c29e",
+      "size": 7389761368,
+      "lfs": {
+        "oid": "207aef18f995fdfe7506175aabd700aa62dcf6f488c7cc375e9de06f56891b83",
+        "size": 7389761368,
+        "pointerSize": 135
+      }
+    },
+    "model-00038-of-00048.safetensors": {
+      "oid": "13085e017de65e2750a8d0aba8e67554cdb42d5e",
+      "size": 7389761368,
+      "lfs": {
+        "oid": "cbbaa0b0807311807a696efec09f9b5a5d63bdf68b82378e1fc7402a2533c627",
+        "size": 7389761368,
+        "pointerSize": 135
+      }
+    },
+    "model-00039-of-00048.safetensors": {
+      "oid": "f2b5f00589c6b9b890dd35e8232e48127ee96eef",
+      "size": 7395337384,
+      "lfs": {
+        "oid": "f4cf191547b50efbc35c4ed1f36cfb26043d94f987c49d54b15ef2d632a14a77",
+        "size": 7395337384,
+        "pointerSize": 135
+      }
+    },
+    "model-00040-of-00048.safetensors": {
+      "oid": "2312d1cda8644809c58ad1ac469a6e3b0c818513",
+      "size": 7389761368,
+      "lfs": {
+        "oid": "e991bfc416055c45ddb89f1447eae1e67dba2816e7580044ffff3db7e2af27a3",
+        "size": 7389761368,
+        "pointerSize": 135
+      }
+    },
+    "model-00041-of-00048.safetensors": {
+      "oid": "b45656843585d2f9faf3b9d119f72c5b53a31d82",
+      "size": 7389761368,
+      "lfs": {
+        "oid": "48a1c08afadf4e73223c587f9c6ad6f32aef57c01342ae75e96b07a001711d42",
+        "size": 7389761368,
+        "pointerSize": 135
+      }
+    },
+    "model-00042-of-00048.safetensors": {
+      "oid": "4136a43c609949ed620615dbcc18ca5836428c2c",
+      "size": 7389761368,
+      "lfs": {
+        "oid": "e1a4d5d30ae51bafda75078d49b05a585c924b0af9b3481c075b04341507c2ef",
+        "size": 7389761368,
+        "pointerSize": 135
+      }
+    },
+    "model-00043-of-00048.safetensors": {
+      "oid": "8fd7f2f6d9426613e927acd2c160d08590acea33",
+      "size": 1323837624,
+      "lfs": {
+        "oid": "d762b688f138e00a24eac96f27b842715bb4b534ecc9ca39076bed2b8c33201e",
+        "size": 1323837624,
+        "pointerSize": 135
+      }
+    },
+    "model-00044-of-00048.safetensors": {
+      "oid": "eedbbd9f94af95a4c1d099f769f68b9ce1c268ab",
+      "size": 2652728736,
+      "lfs": {
+        "oid": "9a6b39fb88a2510487a8efaef77aa7864e8061f6b62c95a0f010e9dd538f3b05",
+        "size": 2652728736,
+        "pointerSize": 135
+      }
+    },
+    "model-00045-of-00048.safetensors": {
+      "oid": "a622ff448f20314dc3512a7794eed8016a2509f6",
+      "size": 2573998176,
+      "lfs": {
+        "oid": "0cc9d5f6ca3a2158ccc63ce2c70c76aeda8177d54913340481af566680329eb5",
+        "size": 2573998176,
+        "pointerSize": 135
+      }
+    },
+    "model-00046-of-00048.safetensors": {
+      "oid": "9c7282e33ca0717e0f0ee8c44666ac8877abc138",
+      "size": 2706402896,
+      "lfs": {
+        "oid": "e625902027b9d23d416f8818c665fab4704e0b96dc1bc778321601b700475a9d",
+        "size": 2706402896,
+        "pointerSize": 135
+      }
+    },
+    "model-00047-of-00048.safetensors": {
+      "oid": "3eb96ce647ea90e0874a2da414f30fda9bac0034",
+      "size": 101535150936,
+      "lfs": {
+        "oid": "824db4881320407ac340736d14dcee5ecd748c27d0f5836b8127ecc2e3781b0f",
+        "size": 101535150936,
+        "pointerSize": 137
+      }
+    },
+    "model-00048-of-00048.safetensors": {
+      "oid": "29a0c0b4e03cb4e663e823f28608c79ef7cb0f81",
+      "size": 101537926640,
+      "lfs": {
+        "oid": "976330f4954338e1ad8b508c32aa912032c7ad908959fd53c8307650fe4520ed",
+        "size": 101537926640,
+        "pointerSize": 137
+      }
+    }
+  },
+  "config_tokenizer_index_identical": true,
+  "reference_download_revision_unknown": true
+}

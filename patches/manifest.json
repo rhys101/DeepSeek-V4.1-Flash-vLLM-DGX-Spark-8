@@ -1,0 +1,17 @@
+{
+  "vllm_commit": "e47aa780bccf59f59dfa2cbb18e17a10b4fe69ba",
+  "reference_commit": "ca662ac35193c69ace9cee37f13a94abf2eff0fc",
+  "patch": "reference-attention.patch",
+  "original_files": {
+    "models/deepseek_v4_1/attention.py": "ef13a8503b54172a63cca6932e2ee5a6d5d6ced81445949067f01b3f61ab6e5e",
+    "models/deepseek_v4_1/nvidia/flashinfer_sparse.py": "19c8c2ebcffacd2e8fc370c005c7a2b619585597dfc1152e8010c7fecfd215c1",
+    "v1/attention/backends/mla/sparse_swa.py": "cc4c5f3d5dd914ce05f491b03b3bd7c45ba532bd7e566e2b12af348768acecbe",
+    "model_executor/layers/sparse_attn_indexer.py": "5b094c4280ea615eb79db26734dd8633978bed1cc1189cf278e6a229894900a4"
+  },
+  "result_files": {
+    "models/deepseek_v4_1/attention.py": "638c06f0f2cf1176a7dac5877aed328923df88ca3b97c50b40e45ee09d7fff7b",
+    "models/deepseek_v4_1/nvidia/flashinfer_sparse.py": "ab7712f977aa59db6e357310f20e38e1a506170a61ebaa6a2495d59d8a07ccc3",
+    "v1/attention/backends/mla/sparse_swa.py": "356b4693d174ee5bd714275be96422d542bfd6f18139693ed4e3000b4e240f34",
+    "model_executor/layers/sparse_attn_indexer.py": "8a8a1502357e11204a8ce49f207c70cd2b888518a1cea7c49790adb57aeac517"
+  }
+}

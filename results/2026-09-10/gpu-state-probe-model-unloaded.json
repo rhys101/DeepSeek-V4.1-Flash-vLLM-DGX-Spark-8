@@ -1,0 +1,144 @@
+{
+  "started": "2026-09-10T17:11:19.986944+00:00",
+  "finished": "2026-09-10T17:12:45.447397+00:00",
+  "model_resident": false,
+  "source_commit": "ca662ac35193c69ace9cee37f13a94abf2eff0fc",
+  "nodes": [
+    {
+      "rank": 0,
+      "started": "2026-09-10T17:11:20.026197+00:00",
+      "finished": "2026-09-10T17:12:45.439413+00:00",
+      "exit": 0,
+      "blocks": [
+        "BLOCK r0 gemv_duty GB/s   n= 102 min= 217.2 p10= 219.5 p50= 222.8 max= 223.5",
+        "BLOCK r0 gemv_cont GB/s   n=1652 min= 199.3 p10= 221.8 p50= 222.8 max= 223.7",
+        "BLOCK r0 mm_duty   TFLOPS n= 258 min=  70.6 p10=  76.3 p50=  83.6 max=  84.7",
+        "BLOCK r0 copy_cont GB/s   n=2064 min= 187.4 p10= 221.5 p50= 222.8 max= 223.7",
+        "BLOCK r1 gemv_duty GB/s   n= 102 min= 214.7 p10= 220.4 p50= 222.8 max= 223.2",
+        "BLOCK r1 gemv_cont GB/s   n=1646 min= 192.9 p10= 219.4 p50= 222.3 max= 223.3",
+        "BLOCK r1 mm_duty   TFLOPS n= 257 min=  70.7 p10=  76.4 p50=  83.6 max=  85.3",
+        "BLOCK r1 copy_cont GB/s   n=2064 min= 189.0 p10= 222.2 p50= 222.8 max= 223.5"
+      ],
+      "stderr": ""
+    },
+    {
+      "rank": 1,
+      "started": "2026-09-10T17:11:20.669050+00:00",
+      "finished": "2026-09-10T17:12:43.713624+00:00",
+      "exit": 0,
+      "blocks": [
+        "BLOCK r0 gemv_duty GB/s   n= 103 min= 222.4 p10= 224.1 p50= 227.5 max= 228.4",
+        "BLOCK r0 gemv_cont GB/s   n=1692 min= 203.1 p10= 227.6 p50= 228.0 max= 228.9",
+        "BLOCK r0 mm_duty   TFLOPS n= 255 min=  70.4 p10=  75.9 p50=  79.7 max=  85.4",
+        "BLOCK r0 copy_cont GB/s   n=2110 min= 193.1 p10= 227.2 p50= 227.7 max= 228.6",
+        "BLOCK r1 gemv_duty GB/s   n= 103 min= 219.4 p10= 221.8 p50= 223.8 max= 228.1",
+        "BLOCK r1 gemv_cont GB/s   n=1690 min= 202.5 p10= 227.2 p50= 227.7 max= 228.3",
+        "BLOCK r1 mm_duty   TFLOPS n= 255 min=  70.2 p10=  75.8 p50=  79.7 max=  85.1",
+        "BLOCK r1 copy_cont GB/s   n=2110 min= 191.6 p10= 227.1 p50= 227.5 max= 228.5"
+      ],
+      "stderr": ""
+    },
+    {
+      "rank": 2,
+      "started": "2026-09-10T17:11:20.632337+00:00",
+      "finished": "2026-09-10T17:12:43.873155+00:00",
+      "exit": 0,
+      "blocks": [
+        "BLOCK r0 gemv_duty GB/s   n= 101 min= 214.0 p10= 216.0 p50= 218.2 max= 222.3",
+        "BLOCK r0 gemv_cont GB/s   n=1648 min= 197.6 p10= 221.6 p50= 222.0 max= 222.9",
+        "BLOCK r0 mm_duty   TFLOPS n= 254 min=  69.2 p10=  75.3 p50=  76.6 max=  84.6",
+        "BLOCK r0 copy_cont GB/s   n=2064 min= 188.3 p10= 222.1 p50= 222.6 max= 223.5",
+        "BLOCK r1 gemv_duty GB/s   n= 100 min= 213.4 p10= 215.6 p50= 217.7 max= 222.0",
+        "BLOCK r1 gemv_cont GB/s   n=1647 min= 198.3 p10= 221.5 p50= 221.8 max= 222.5",
+        "BLOCK r1 mm_duty   TFLOPS n= 254 min=  69.4 p10=  75.4 p50=  76.3 max=  85.2",
+        "BLOCK r1 copy_cont GB/s   n=2062 min= 188.6 p10= 222.0 p50= 222.4 max= 223.2"
+      ],
+      "stderr": ""
+    },
+    {
+      "rank": 3,
+      "started": "2026-09-10T17:11:20.699542+00:00",
+      "finished": "2026-09-10T17:12:43.484044+00:00",
+      "exit": 0,
+      "blocks": [
+        "BLOCK r0 gemv_duty GB/s   n= 102 min= 217.9 p10= 220.2 p50= 223.5 max= 224.0",
+        "BLOCK r0 gemv_cont GB/s   n=1660 min= 198.8 p10= 223.2 p50= 223.6 max= 224.3",
+        "BLOCK r0 mm_duty   TFLOPS n= 255 min=  72.6 p10=  75.3 p50=  78.5 max=  84.4",
+        "BLOCK r0 copy_cont GB/s   n=2078 min= 187.5 p10= 223.7 p50= 224.1 max= 225.0",
+        "BLOCK r1 gemv_duty GB/s   n= 101 min= 214.2 p10= 217.6 p50= 219.6 max= 223.6",
+        "BLOCK r1 gemv_cont GB/s   n=1658 min= 199.8 p10= 223.0 p50= 223.3 max= 223.9",
+        "BLOCK r1 mm_duty   TFLOPS n= 255 min=  69.7 p10=  75.4 p50=  77.9 max=  84.4",
+        "BLOCK r1 copy_cont GB/s   n=2076 min= 188.3 p10= 223.6 p50= 223.9 max= 224.6"
+      ],
+      "stderr": ""
+    },
+    {
+      "rank": 4,
+      "started": "2026-09-10T17:11:20.880573+00:00",
+      "finished": "2026-09-10T17:12:45.110359+00:00",
+      "exit": 0,
+      "blocks": [
+        "BLOCK r0 gemv_duty GB/s   n= 101 min= 216.6 p10= 217.6 p50= 219.3 max= 223.2",
+        "BLOCK r0 gemv_cont GB/s   n=1654 min= 199.8 p10= 222.4 p50= 222.8 max= 223.6",
+        "BLOCK r0 mm_duty   TFLOPS n= 255 min=  70.4 p10=  75.6 p50=  77.0 max=  84.6",
+        "BLOCK r0 copy_cont GB/s   n=2071 min= 188.8 p10= 222.9 p50= 223.4 max= 224.2",
+        "BLOCK r1 gemv_duty GB/s   n= 101 min= 214.3 p10= 216.9 p50= 218.5 max= 222.6",
+        "BLOCK r1 gemv_cont GB/s   n=1652 min= 197.6 p10= 222.2 p50= 222.5 max= 223.2",
+        "BLOCK r1 mm_duty   TFLOPS n= 255 min=  70.3 p10=  75.7 p50=  77.4 max=  84.8",
+        "BLOCK r1 copy_cont GB/s   n=2070 min= 188.1 p10= 222.8 p50= 223.3 max= 224.1"
+      ],
+      "stderr": ""
+    },
+    {
+      "rank": 5,
+      "started": "2026-09-10T17:11:20.659307+00:00",
+      "finished": "2026-09-10T17:12:43.459618+00:00",
+      "exit": 0,
+      "blocks": [
+        "BLOCK r0 gemv_duty GB/s   n= 103 min= 219.7 p10= 222.6 p50= 225.0 max= 225.3",
+        "BLOCK r0 gemv_cont GB/s   n=1670 min= 201.1 p10= 224.6 p50= 224.9 max= 225.9",
+        "BLOCK r0 mm_duty   TFLOPS n= 255 min=  71.2 p10=  75.6 p50=  82.5 max=  84.5",
+        "BLOCK r0 copy_cont GB/s   n=2064 min= 188.0 p10= 222.2 p50= 222.6 max= 223.5",
+        "BLOCK r1 gemv_duty GB/s   n= 102 min= 219.4 p10= 222.4 p50= 224.6 max= 224.9",
+        "BLOCK r1 gemv_cont GB/s   n=1669 min= 199.6 p10= 224.4 p50= 224.8 max= 225.5",
+        "BLOCK r1 mm_duty   TFLOPS n= 255 min=  75.2 p10=  75.7 p50=  80.5 max=  84.5",
+        "BLOCK r1 copy_cont GB/s   n=2064 min= 188.3 p10= 222.1 p50= 222.5 max= 223.3"
+      ],
+      "stderr": ""
+    },
+    {
+      "rank": 6,
+      "started": "2026-09-10T17:11:20.635747+00:00",
+      "finished": "2026-09-10T17:12:43.397211+00:00",
+      "exit": 0,
+      "blocks": [
+        "BLOCK r0 gemv_duty GB/s   n= 101 min= 217.3 p10= 218.3 p50= 220.1 max= 224.1",
+        "BLOCK r0 gemv_cont GB/s   n=1660 min= 200.0 p10= 223.3 p50= 223.8 max= 224.4",
+        "BLOCK r0 mm_duty   TFLOPS n= 254 min=  69.7 p10=  75.3 p50=  76.6 max=  84.4",
+        "BLOCK r0 copy_cont GB/s   n=2087 min= 189.5 p10= 224.7 p50= 225.2 max= 226.1",
+        "BLOCK r1 gemv_duty GB/s   n= 101 min= 215.6 p10= 217.8 p50= 219.7 max= 223.7",
+        "BLOCK r1 gemv_cont GB/s   n=1659 min= 199.4 p10= 223.2 p50= 223.5 max= 224.1",
+        "BLOCK r1 mm_duty   TFLOPS n= 254 min=  69.9 p10=  75.3 p50=  76.3 max=  84.1",
+        "BLOCK r1 copy_cont GB/s   n=2087 min= 189.3 p10= 224.7 p50= 225.1 max= 225.8"
+      ],
+      "stderr": ""
+    },
+    {
+      "rank": 7,
+      "started": "2026-09-10T17:11:20.657539+00:00",
+      "finished": "2026-09-10T17:12:43.663077+00:00",
+      "exit": 0,
+      "blocks": [
+        "BLOCK r0 gemv_duty GB/s   n= 103 min= 220.4 p10= 222.4 p50= 223.6 max= 227.5",
+        "BLOCK r0 gemv_cont GB/s   n=1685 min= 202.6 p10= 226.7 p50= 227.0 max= 227.8",
+        "BLOCK r0 mm_duty   TFLOPS n= 255 min=  69.3 p10=  75.0 p50=  79.1 max=  84.0",
+        "BLOCK r0 copy_cont GB/s   n=2110 min= 193.6 p10= 227.1 p50= 227.6 max= 228.6",
+        "BLOCK r1 gemv_duty GB/s   n= 102 min= 219.2 p10= 220.7 p50= 222.6 max= 227.1",
+        "BLOCK r1 gemv_cont GB/s   n=1683 min= 202.7 p10= 226.3 p50= 226.7 max= 227.5",
+        "BLOCK r1 mm_duty   TFLOPS n= 254 min=  69.5 p10=  75.0 p50=  79.3 max=  83.9",
+        "BLOCK r1 copy_cont GB/s   n=2109 min= 193.8 p10= 227.0 p50= 227.4 max= 228.4"
+      ],
+      "stderr": ""
+    }
+  ]
+}

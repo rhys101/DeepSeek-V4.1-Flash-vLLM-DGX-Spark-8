@@ -1,0 +1,21 @@
+{
+  "time": "2026-09-10T18:02:22.402419+00:00",
+  "status": "PASS",
+  "single": {
+    "code": "NORTH 7314",
+    "left_shape": "red square",
+    "right_shape": "blue circle"
+  },
+  "four_images": [
+    "NORTH 7314",
+    "SOUTH 8265",
+    "EAST 1948",
+    "WEST 5620"
+  ],
+  "fixture_sha256": {
+    "1.png": "b465de137f991ca75dfad2d7375fdf77cb09d9fd23769d4de01883167dc42266",
+    "2.png": "06cc5a0a2fac81df2391e2d8f38b957c5595fcb67accacabb815f1bad8923601",
+    "3.png": "fb431aa227004df8f729e49e7aec14a7df73213d61aba97a7549c7ccbd3baf58",
+    "4.png": "339708d9011aefee5c78b9c6d8a7eebd159b3654e9fdc9b46f204daf4d3af90b"
+  }
+}

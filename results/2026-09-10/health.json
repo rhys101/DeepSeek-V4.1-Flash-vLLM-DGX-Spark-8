@@ -1,0 +1,110 @@
+{
+  "checked_at": "2026-09-10T18:09:44.497466+00:00",
+  "health": 200,
+  "nodes": [
+    {
+      "node": "rank-0",
+      "rank": 0,
+      "state": "running",
+      "oom": false,
+      "restarts": 0,
+      "image": "sha256:4514e1e972669763b1ceb94b6f15f70e66e6ee8f381a502246217f165b63a342",
+      "mem_available": "2308324 kB",
+      "swap_free": "12213880 kB",
+      "runtime_env_matches": true,
+      "config_matches": true,
+      "errors": []
+    },
+    {
+      "node": "rank-1",
+      "rank": 1,
+      "state": "running",
+      "oom": false,
+      "restarts": 0,
+      "image": "sha256:4514e1e972669763b1ceb94b6f15f70e66e6ee8f381a502246217f165b63a342",
+      "mem_available": "3545624 kB",
+      "swap_free": "12790092 kB",
+      "runtime_env_matches": true,
+      "config_matches": true,
+      "errors": []
+    },
+    {
+      "node": "rank-2",
+      "rank": 2,
+      "state": "running",
+      "oom": false,
+      "restarts": 0,
+      "image": "sha256:4514e1e972669763b1ceb94b6f15f70e66e6ee8f381a502246217f165b63a342",
+      "mem_available": "3811208 kB",
+      "swap_free": "12737268 kB",
+      "runtime_env_matches": true,
+      "config_matches": true,
+      "errors": []
+    },
+    {
+      "node": "rank-3",
+      "rank": 3,
+      "state": "running",
+      "oom": false,
+      "restarts": 0,
+      "image": "sha256:4514e1e972669763b1ceb94b6f15f70e66e6ee8f381a502246217f165b63a342",
+      "mem_available": "3603472 kB",
+      "swap_free": "12712452 kB",
+      "runtime_env_matches": true,
+      "config_matches": true,
+      "errors": []
+    },
+    {
+      "node": "rank-4",
+      "rank": 4,
+      "state": "running",
+      "oom": false,
+      "restarts": 0,
+      "image": "sha256:4514e1e972669763b1ceb94b6f15f70e66e6ee8f381a502246217f165b63a342",
+      "mem_available": "3374828 kB",
+      "swap_free": "13473088 kB",
+      "runtime_env_matches": true,
+      "config_matches": true,
+      "errors": []
+    },
+    {
+      "node": "rank-5",
+      "rank": 5,
+      "state": "running",
+      "oom": false,
+      "restarts": 0,
+      "image": "sha256:4514e1e972669763b1ceb94b6f15f70e66e6ee8f381a502246217f165b63a342",
+      "mem_available": "3218968 kB",
+      "swap_free": "13595712 kB",
+      "runtime_env_matches": true,
+      "config_matches": true,
+      "errors": []
+    },
+    {
+      "node": "rank-6",
+      "rank": 6,
+      "state": "running",
+      "oom": false,
+      "restarts": 0,
+      "image": "sha256:4514e1e972669763b1ceb94b6f15f70e66e6ee8f381a502246217f165b63a342",
+      "mem_available": "3067500 kB",
+      "swap_free": "13323788 kB",
+      "runtime_env_matches": true,
+      "config_matches": true,
+      "errors": []
+    },
+    {
+      "node": "rank-7",
+      "rank": 7,
+      "state": "running",
+      "oom": false,
+      "restarts": 0,
+      "image": "sha256:4514e1e972669763b1ceb94b6f15f70e66e6ee8f381a502246217f165b63a342",
+      "mem_available": "4250652 kB",
+      "swap_free": "12567856 kB",
+      "runtime_env_matches": true,
+      "config_matches": true,
+      "errors": []
+    }
+  ]
+}

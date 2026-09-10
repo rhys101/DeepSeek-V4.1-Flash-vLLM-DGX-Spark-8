@@ -1,0 +1,29 @@
+Original deployment scripts, documentation and configuration in this repository
+are distributed under the MIT License in LICENSE.
+
+Build-framework attribution: eugr/spark-vllm-docker,
+commit e5174b8c56c96e2ec2b5d63a8022075d1c60bad3.
+Copyright (c) 2026 Eugene Rakhmatulin. MIT License.
+The upstream notice is preserved in licenses/spark-vllm-docker-MIT.txt.
+Source: https://github.com/eugr/spark-vllm-docker
+
+bench/v41bench.py and bench/prompts-v1.json are copied without modification from
+tonyd2wild/DeepSeek-V4.1-Flash-vLLM-DGX-Spark. The source commit is ca662ac35193c69ace9cee37f13a94abf2eff0fc (boot 10).
+bench/bench_report.py is copied without modification from tools/bench_report.py
+at that commit.
+Their MIT notice is preserved in licenses/tonyd2wild-MIT.txt.
+The reference attention patch reproduces four attention-file changes from that repository at
+ca662ac35193c69ace9cee37f13a94abf2eff0fc; the reference notice above applies.
+The stable-extension build procedure also follows that pinned recipe.
+No Engram disk-reader or offload code from that repository is included.
+Source: https://github.com/tonyd2wild/DeepSeek-V4.1-Flash-vLLM-DGX-Spark
+
+patches/*.patch modify vLLM, licensed under Apache-2.0. Patches and the vLLM
+material they contain remain subject to that license; see
+licenses/vllm-Apache-2.0.txt. The patch manifest identifies the source revision
+and resulting file hashes. Source: https://github.com/vllm-project/vllm
+
+NVIDIA, DGX, Spark, DeepSeek and other product names identify upstream products.
+This is a community deployment project. No affiliation or endorsement is implied.
+Model weights and upstream dependencies are not redistributed here; their own
+licenses apply.

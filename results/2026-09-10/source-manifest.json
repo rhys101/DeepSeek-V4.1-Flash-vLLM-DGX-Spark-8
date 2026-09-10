@@ -1,0 +1,23 @@
+{
+  "vllm_source": "e47aa780bccf59f59dfa2cbb18e17a10b4fe69ba",
+  "base_image": "sha256:a551e05307cd2e0092139d84db32af9c97e67d2eeeff072d21e429131d8c23f0",
+  "stable_extension_sha256": "4e3e2c51035bfe84651c5786c2070c4512957e0183fa3e57b03b652c800bdfbe",
+  "stable_extension_build_cuda": "13.0",
+  "patch_recipe": "ca662ac35193c69ace9cee37f13a94abf2eff0fc",
+  "patch_files": {
+    "v1/attention/backends/mla/sparse_swa.py": "356b4693d174ee5bd714275be96422d542bfd6f18139693ed4e3000b4e240f34",
+    "model_executor/layers/sparse_attn_indexer.py": "8a8a1502357e11204a8ce49f207c70cd2b888518a1cea7c49790adb57aeac517",
+    "models/deepseek_v4_1/attention.py": "638c06f0f2cf1176a7dac5877aed328923df88ca3b97c50b40e45ee09d7fff7b",
+    "models/deepseek_v4_1/nvidia/flashinfer_sparse.py": "ab7712f977aa59db6e357310f20e38e1a506170a61ebaa6a2495d59d8a07ccc3"
+  },
+  "native_engram_sha256": "ac787367615f7e8f25511ea81cb4286c9a3211fe8d27af08a502bf54ea1244c3",
+  "stable_extension_nvcc": "13.0.88",
+  "stable_extension_build_arch_request": "12.1a",
+  "stable_extension_cmake_cuda_supported_target": "12.0; family-specialized kernels use 12.0f",
+  "stable_extension_build_base": "sha256:a551e05307cd2e0092139d84db32af9c97e67d2eeeff072d21e429131d8c23f0",
+  "stable_extension_cutlass": "cb4247394dd82148787aed73e5dc7cef33cbf862",
+  "stable_extension_cmake": "3.31.6",
+  "stable_extension_build_jobs": 8,
+  "stable_extension_base_cuda_version": "13.0.2",
+  "note": "OS metadata sidecar entries omitted; executable source hashes are unchanged."
+}

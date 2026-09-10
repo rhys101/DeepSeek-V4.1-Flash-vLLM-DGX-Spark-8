@@ -1,0 +1,14 @@
+.build/
+.local/
+configs/*.local.json
+*.env
+__pycache__/
+*.py[cod]
+.DS_Store
+._*
+*.safetensors
+*.tar
+*.tgz
+*.whl
+*.pem
+*.key

@@ -1,0 +1,317 @@
+{
+  "exit_code": 0,
+  "records": [
+    {
+      "status": "PASS",
+      "case": "upstream_rope_without_qnorm",
+      "tokens": 4
+    },
+    {
+      "status": "PASS",
+      "case": "upstream_fused_q_and_kv",
+      "tokens": 4,
+      "heads": 8,
+      "page": 64
+    },
+    {
+      "status": "PASS",
+      "case": "upstream_rope_without_qnorm",
+      "tokens": 48
+    },
+    {
+      "status": "PASS",
+      "case": "upstream_fused_q_and_kv",
+      "tokens": 48,
+      "heads": 8,
+      "page": 64
+    },
+    {
+      "status": "PASS",
+      "case": "upstream_rope_without_qnorm",
+      "tokens": 2048
+    },
+    {
+      "status": "PASS",
+      "case": "upstream_fused_q_and_kv",
+      "tokens": 2048,
+      "heads": 8,
+      "page": 64
+    },
+    {
+      "status": "PASS",
+      "tokens": 5,
+      "swa_width": 192,
+      "extra_page": 0,
+      "graph_replays": 3,
+      "comparison": "bitwise_eager_with_changed_query"
+    },
+    {
+      "status": "PASS",
+      "tokens": 5,
+      "swa_width": 192,
+      "extra_page": 64,
+      "graph_replays": 3,
+      "comparison": "bitwise_eager_with_changed_query"
+    },
+    {
+      "status": "PASS",
+      "tokens": 5,
+      "swa_width": 192,
+      "extra_page": 128,
+      "graph_replays": 3,
+      "comparison": "bitwise_eager_with_changed_query"
+    },
+    {
+      "status": "PASS",
+      "tokens": 6,
+      "swa_width": 128,
+      "extra_page": 0,
+      "graph_replays": 3,
+      "comparison": "bitwise_eager_with_changed_query"
+    },
+    {
+      "status": "PASS",
+      "tokens": 6,
+      "swa_width": 128,
+      "extra_page": 64,
+      "graph_replays": 3,
+      "comparison": "bitwise_eager_with_changed_query"
+    },
+    {
+      "status": "PASS",
+      "tokens": 6,
+      "swa_width": 128,
+      "extra_page": 128,
+      "graph_replays": 3,
+      "comparison": "bitwise_eager_with_changed_query"
+    },
+    {
+      "status": "PASS",
+      "tokens": 40,
+      "swa_width": 192,
+      "extra_page": 0,
+      "graph_replays": 3,
+      "comparison": "bitwise_eager_with_changed_query"
+    },
+    {
+      "status": "PASS",
+      "tokens": 40,
+      "swa_width": 192,
+      "extra_page": 64,
+      "graph_replays": 3,
+      "comparison": "bitwise_eager_with_changed_query"
+    },
+    {
+      "status": "PASS",
+      "tokens": 40,
+      "swa_width": 192,
+      "extra_page": 128,
+      "graph_replays": 3,
+      "comparison": "bitwise_eager_with_changed_query"
+    },
+    {
+      "status": "PASS",
+      "tokens": 48,
+      "swa_width": 128,
+      "extra_page": 0,
+      "graph_replays": 3,
+      "comparison": "bitwise_eager_with_changed_query"
+    },
+    {
+      "status": "PASS",
+      "tokens": 48,
+      "swa_width": 128,
+      "extra_page": 64,
+      "graph_replays": 3,
+      "comparison": "bitwise_eager_with_changed_query"
+    },
+    {
+      "status": "PASS",
+      "tokens": 48,
+      "swa_width": 128,
+      "extra_page": 128,
+      "graph_replays": 3,
+      "comparison": "bitwise_eager_with_changed_query"
+    },
+    {
+      "status": "PASS",
+      "tokens": 5,
+      "swa_width": 1216,
+      "extra_page": 0,
+      "graph_replays": 3,
+      "comparison": "bitwise_eager_with_changed_query"
+    },
+    {
+      "status": "PASS",
+      "tokens": 5,
+      "swa_width": 1216,
+      "extra_page": 64,
+      "graph_replays": 3,
+      "comparison": "bitwise_eager_with_changed_query"
+    },
+    {
+      "status": "PASS",
+      "tokens": 5,
+      "swa_width": 1216,
+      "extra_page": 128,
+      "graph_replays": 3,
+      "comparison": "bitwise_eager_with_changed_query"
+    },
+    {
+      "status": "PASS",
+      "tokens": 6,
+      "swa_width": 1152,
+      "extra_page": 0,
+      "graph_replays": 3,
+      "comparison": "bitwise_eager_with_changed_query"
+    },
+    {
+      "status": "PASS",
+      "tokens": 6,
+      "swa_width": 1152,
+      "extra_page": 64,
+      "graph_replays": 3,
+      "comparison": "bitwise_eager_with_changed_query"
+    },
+    {
+      "status": "PASS",
+      "tokens": 6,
+      "swa_width": 1152,
+      "extra_page": 128,
+      "graph_replays": 3,
+      "comparison": "bitwise_eager_with_changed_query"
+    },
+    {
+      "status": "PASS",
+      "tokens": 40,
+      "swa_width": 1216,
+      "extra_page": 0,
+      "graph_replays": 3,
+      "comparison": "bitwise_eager_with_changed_query"
+    },
+    {
+      "status": "PASS",
+      "tokens": 40,
+      "swa_width": 1216,
+      "extra_page": 64,
+      "graph_replays": 3,
+      "comparison": "bitwise_eager_with_changed_query"
+    },
+    {
+      "status": "PASS",
+      "tokens": 40,
+      "swa_width": 1216,
+      "extra_page": 128,
+      "graph_replays": 3,
+      "comparison": "bitwise_eager_with_changed_query"
+    },
+    {
+      "status": "PASS",
+      "tokens": 48,
+      "swa_width": 1152,
+      "extra_page": 0,
+      "graph_replays": 3,
+      "comparison": "bitwise_eager_with_changed_query"
+    },
+    {
+      "status": "PASS",
+      "tokens": 48,
+      "swa_width": 1152,
+      "extra_page": 64,
+      "graph_replays": 3,
+      "comparison": "bitwise_eager_with_changed_query"
+    },
+    {
+      "status": "PASS",
+      "tokens": 48,
+      "swa_width": 1152,
+      "extra_page": 128,
+      "graph_replays": 3,
+      "comparison": "bitwise_eager_with_changed_query"
+    },
+    {
+      "status": "PASS",
+      "tokens": 80,
+      "vision_index_width": 1152,
+      "extra_page": 0,
+      "compared_query_rows": 16,
+      "max_abs_prefill_decode_difference": 0.001953125,
+      "max_abs_prefill_reference_difference": 0.010858088731765747,
+      "max_abs_decode_reference_difference": 0.01034172996878624,
+      "prefill_relative_rms": 0.029035476967692375,
+      "atol": 0.05,
+      "rtol": 0.05
+    },
+    {
+      "status": "PASS",
+      "tokens": 1024,
+      "vision_index_width": 1152,
+      "extra_page": 64,
+      "compared_query_rows": 16,
+      "max_abs_prefill_decode_difference": 0.0126953125,
+      "max_abs_prefill_reference_difference": 0.004218027926981449,
+      "max_abs_decode_reference_difference": 0.011510483920574188,
+      "prefill_relative_rms": 0.013551227748394012,
+      "atol": 0.05,
+      "rtol": 0.05
+    },
+    {
+      "status": "PASS",
+      "tokens": 8192,
+      "vision_index_width": 1152,
+      "extra_page": 64,
+      "compared_query_rows": 16,
+      "max_abs_prefill_decode_difference": 0.01171875,
+      "max_abs_prefill_reference_difference": 0.003680252470076084,
+      "max_abs_decode_reference_difference": 0.012365177273750305,
+      "prefill_relative_rms": 0.01376036461442709,
+      "atol": 0.05,
+      "rtol": 0.05
+    },
+    {
+      "deepgemm_selected": true
+    },
+    {
+      "case": "mhc_collapse_1",
+      "status": "passed"
+    },
+    {
+      "case": "v41_mhc_pre_delayed_1",
+      "status": "passed"
+    },
+    {
+      "case": "v41_mhc_pre_delayed_fused_norm_1",
+      "status": "passed"
+    },
+    {
+      "case": "mhc_collapse_33",
+      "status": "passed"
+    },
+    {
+      "case": "v41_mhc_pre_delayed_33",
+      "status": "passed"
+    },
+    {
+      "case": "v41_mhc_pre_delayed_fused_norm_33",
+      "status": "passed"
+    },
+    {
+      "case": "mhc_collapse_128",
+      "status": "passed"
+    },
+    {
+      "case": "v41_mhc_pre_delayed_128",
+      "status": "passed"
+    },
+    {
+      "case": "v41_mhc_pre_delayed_fused_norm_128",
+      "status": "passed"
+    },
+    {
+      "completed": true,
+      "seconds": 13.025840913003776
+    }
+  ],
+  "source": "Structured records from the final validation log; verbose CUDA/build diagnostics omitted.",
+  "note": "Prefill was also compared with an independent FP32 reference at upstream tolerances; no broad quality evaluation."
+}

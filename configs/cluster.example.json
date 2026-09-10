@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "profile": "profiles/dspark-300k.json",
+  "image": "deepseek-v41-spark8:2026-09-10-fi07-vision",
+  "expected_image_id": "sha256:4514e1e972669763b1ceb94b6f15f70e66e6ee8f381a502246217f165b63a342",
+  "model_store": "/srv/models",
+  "model_subpath": "DeepSeek-V4.1-Flash",
+  "deployment_dir": "/srv/deepseek-v41-spark8/run-1",
+  "container_prefix": "deepseek-v41-spark8",
+  "attempt": 1,
+  "api_host": "127.0.0.1",
+  "api_port": 8000,
+  "master_port": 29501,
+  "nccl_test_port": 29511,
+  "nodes": [
+    {
+      "rank": 0,
+      "ssh_user": "operator",
+      "fabric_ip": "192.0.2.11",
+      "fabric_interface": "enp1s0f0np0",
+      "nccl_hcas": "=rocep1s0f0:1,roceP2p1s0f0:1"
+    },
+    {
+      "rank": 1,
+      "ssh_user": "operator",
+      "fabric_ip": "192.0.2.12",
+      "fabric_interface": "enp1s0f0np0",
+      "nccl_hcas": "=rocep1s0f0:1,roceP2p1s0f0:1"
+    },
+    {
+      "rank": 2,
+      "ssh_user": "operator",
+      "fabric_ip": "192.0.2.13",
+      "fabric_interface": "enp1s0f0np0",
+      "nccl_hcas": "=rocep1s0f0:1,roceP2p1s0f0:1"
+    },
+    {
+      "rank": 3,
+      "ssh_user": "operator",
+      "fabric_ip": "192.0.2.14",
+      "fabric_interface": "enp1s0f0np0",
+      "nccl_hcas": "=rocep1s0f0:1,roceP2p1s0f0:1"
+    },
+    {
+      "rank": 4,
+      "ssh_user": "operator",
+      "fabric_ip": "192.0.2.15",
+      "fabric_interface": "enp1s0f0np0",
+      "nccl_hcas": "=rocep1s0f0:1,roceP2p1s0f0:1"
+    },
+    {
+      "rank": 5,
+      "ssh_user": "operator",
+      "fabric_ip": "192.0.2.16",
+      "fabric_interface": "enp1s0f0np0",
+      "nccl_hcas": "=rocep1s0f0:1,roceP2p1s0f0:1"
+    },
+    {
+      "rank": 6,
+      "ssh_user": "operator",
+      "fabric_ip": "192.0.2.17",
+      "fabric_interface": "enp1s0f0np0",
+      "nccl_hcas": "=rocep1s0f0:1,roceP2p1s0f0:1"
+    },
+    {
+      "rank": 7,
+      "ssh_user": "operator",
+      "fabric_ip": "192.0.2.18",
+      "fabric_interface": "enp1s0f0np0",
+      "nccl_hcas": "=rocep1s0f0:1,roceP2p1s0f0:1"
+    }
+  ]
+}

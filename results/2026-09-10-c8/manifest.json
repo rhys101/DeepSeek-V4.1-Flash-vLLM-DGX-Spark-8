@@ -1,0 +1,18 @@
+{
+  "run": "A6 supplemental C8",
+  "started": "2026-09-10T18:20:07Z",
+  "finished": "2026-09-10T18:21:12Z",
+  "category_batches": 9,
+  "measured_requests": 72,
+  "warmup_requests": 3,
+  "image_id": "sha256:4514e1e972669763b1ceb94b6f15f70e66e6ee8f381a502246217f165b63a342",
+  "benchmark_source_sha256": "e0d6b2d25bd585d11fbdf39c2ddcdf7a4de8ab685af6bd42465e69f3ee6e80a8",
+  "benchmark_sha256": "7d463772730b01e47546c31811311b479feb8a8791ba4a017f6826a646e3526f",
+  "same_server_as": "../2026-09-10",
+  "served_configuration_changed": false,
+  "concurrency": 8,
+  "separate_run": true,
+  "prefill_repeated": false,
+  "reference_c8_available": false,
+  "all_nodes_healthy": true
+}

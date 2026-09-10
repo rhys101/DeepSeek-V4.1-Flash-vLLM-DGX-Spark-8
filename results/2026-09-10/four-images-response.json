@@ -1,0 +1,42 @@
+{
+  "id": "chatcmpl-a0558f5cbf7860cb",
+  "object": "chat.completion",
+  "created": 1789063340,
+  "model": "deepseek-v41-flash",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "[\"NORTH 7314\", \"SOUTH 8265\", \"EAST 1948\", \"WEST 5620\"]",
+        "refusal": null,
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "reasoning": null
+      },
+      "logprobs": null,
+      "finish_reason": "stop",
+      "stop_reason": null,
+      "token_ids": null,
+      "routed_experts": null
+    }
+  ],
+  "service_tier": null,
+  "system_fingerprint": "vllm-0.28.1rc1.dev388+g8a728663c-tp8-6ae51162",
+  "usage": {
+    "prompt_tokens": 1585,
+    "total_tokens": 1614,
+    "completion_tokens": 29,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    }
+  },
+  "prompt_logprobs": null,
+  "prompt_token_ids": null,
+  "prompt_text": null,
+  "kv_transfer_params": null,
+  "ec_transfer_params": null,
+  "metrics": null
+}

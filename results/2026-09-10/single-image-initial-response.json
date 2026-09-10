@@ -1,0 +1,42 @@
+{
+  "id": "chatcmpl-95513697e8311c98",
+  "object": "chat.completion",
+  "created": 1789063309,
+  "model": "deepseek-v41-flash",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "```json\n{\n  \"code\": \"NORTH 7314\",\n  \"left_shape\": {\n    \"color\": \"red\",\n    \"shape\": \"square\"\n  },\n  \"right_shape\": {\n    \"color\": \"blue\",\n    \"shape\": \"circle\"\n  }\n}\n```",
+        "refusal": null,
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "reasoning": null
+      },
+      "logprobs": null,
+      "finish_reason": "stop",
+      "stop_reason": null,
+      "token_ids": null,
+      "routed_experts": null
+    }
+  ],
+  "service_tier": null,
+  "system_fingerprint": "vllm-0.28.1rc1.dev388+g8a728663c-tp8-6ae51162",
+  "usage": {
+    "prompt_tokens": 435,
+    "total_tokens": 497,
+    "completion_tokens": 62,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    }
+  },
+  "prompt_logprobs": null,
+  "prompt_token_ids": null,
+  "prompt_text": null,
+  "kv_transfer_params": null,
+  "ec_transfer_params": null,
+  "metrics": null
+}
