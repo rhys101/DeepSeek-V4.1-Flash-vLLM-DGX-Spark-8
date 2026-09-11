@@ -43,6 +43,10 @@ EP4 was slower on the smallest prefill and faster on the three larger cases. The
 
 The separate sparkDash **prose** benchmark reached **67.300 tok/s at C1, 154.395 at C4 and 228.640 at C8**, averaged across two trials. sparkDash uses a different prompt, a 256-token budget and aggregate decode timing. Its results must not be used as a direct comparison with the community coding figures. [Prose and prefill results](sglang/docs/prose-results.md).
 
+### Eight-million-token capacity test
+
+A separate TP8/EP4 profile passed **eight concurrent 997,097-token retrieval requests (7,976,776 input tokens total)**. Aggregate prefill peaked at **5,076 tok/s within the first prompt's initial 128K** and averaged **1,513 tok/s across the cold run**. Lowest sampled OS-available memory was **7.83 GiB on an individual Spark**. [Full results, cached output speed and C1/C8 append latency](sglang/docs/eight-million-token-results.md).
+
 ## Quality
 
 The validated profile passed text arithmetic, two waves of eight concurrent arithmetic requests, one-image and four-image checks, structured JSON, and a tool-call round trip. Exact three-record retrieval passed at **32,867, 131,171 and 299,099 actual prompt tokens**. These are capability smokes; broad model-quality parity with vLLM or an unmodified reference remains unmeasured.
@@ -51,7 +55,7 @@ Checkpoint MXFP4 expert weights, FP8 dense weights, the BF16 activation dtype, a
 
 The unchanged five-file verification/index composition passed **36 tests and four subtests** on GB10/SM121; four all-padded cases were skipped by the upstream suite. Native/padded H8/H16 numerical comparisons and H8 changed-input graph replay also passed. The EP4 partition probe passed 90 cases using real target/draft weights, lossless weight/scale partitioning, changed-input graph replay and repeated-output checks. Splitting experts changes floating-point partial-sum order; broad quality parity and bitwise parity are not established. [Validation evidence and limits](sglang/docs/validation.md).
 
-During the original EP4 validation, all eight ranks stayed above **17.57 GiB OS-available memory**, without OOMs or restarts. This does not certify eight simultaneous 300K requests.
+During the original EP4 validation, all eight ranks stayed above **17.57 GiB OS-available memory**, without OOMs or restarts. That memory figure belongs to the original profile; the [separate capacity experiment](sglang/docs/eight-million-token-results.md) measured eight simultaneous near-million-token contexts.
 
 ## Configuration
 

@@ -1,0 +1,940 @@
+{
+  "result": "PASS",
+  "measurement_date_utc": "2026-09-11",
+  "model": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "model_revision": "df42c109f1defefcbfcedbe7d905718a12266e40",
+  "hardware": "8 NVIDIA DGX Spark / GB10 / SM121 nodes",
+  "tp_size": 8,
+  "configuration": {
+    "context_length": 1000000,
+    "ep_size": 4,
+    "max_running_requests": 8,
+    "chunked_prefill_size": 2048,
+    "max_prefill_tokens": 2048,
+    "max_total_tokens": 8000000,
+    "mem_fraction_static": 0.8,
+    "draft_length": 5,
+    "min_free_slots_delay": 1,
+    "expected_image_id": "sha256:e7681b5276525821f9be286ed3bf0f51acb5239da27f69f60fdeb57e68c05581",
+    "production_overlays": {
+      "python/sglang/kernels/jit/csrc/deepseek_v4/c2.cuh": {
+        "before_sha256": "84be767c3a2909e5cf0bf98ef8f1d5f96d0c86c05f003f749d97ae9eafff44e2",
+        "after_sha256": "55f32ba512fca86826a27d66f36d4667848c17cbbe0d34096ffedead0ce469e4"
+      },
+      "python/sglang/kernels/ops/attention/dsv4/c2.py": {
+        "before_sha256": "0f98a8fe2abf9db25f87d451ceefe0dcb4b411d7fcc0d75c8bdb7a0b3f58600a",
+        "after_sha256": "9da953bedcebad1b6168cce61453bd487689363358a2569b8a0c366b955e5bea"
+      },
+      "python/sglang/kernels/ops/attention/dsv4/candidate_blocks.py": {
+        "before_sha256": "c4f2ace8ecf94f2316a1ec0ef2e8f8a8d7565fb2161a4019cf92601b7ebc5032",
+        "after_sha256": "d7fc6c5984d10331a04d3586a537def4d531a440f2db3113423785b9aa4016ea"
+      },
+      "python/sglang/kernels/ops/attention/dsv4/indexer_postprocess.py": {
+        "before_sha256": null,
+        "after_sha256": "55a52c4e6c71568705958ed35f821260b38b1d371637712c47dc0e964f9c1f54"
+      },
+      "python/sglang/srt/layers/attention/deepseek_v4_backend.py": {
+        "before_sha256": "a99da83280bad451eee68c8ce0c42bd7f1847249b96f540cd5f74aab171dcacb",
+        "after_sha256": "20a711344de7666d83b3dfa3ce7e9621729cbe40ed9a433d28e53872216e65d1"
+      },
+      "python/sglang/srt/speculative/dspark_components/dspark_worker_v2.py": {
+        "before_sha256": "7361310ce8fb3643efa0ed6d98c3e31c291fb2e2a859d850d77bd6496106df4b",
+        "after_sha256": "8387704e671b1a67d116ccca9523092083eb0d299e654a5d6c7949f7245bf6df"
+      }
+    }
+  },
+  "configuration_note": "Separate SG8 capacity experiment using the same production source composition as SG5 EP4; public launcher defaults remain 300K context / 3.2M pool.",
+  "cold": {
+    "status": "PASS",
+    "completed_requests": 8,
+    "valid_length_requests": 8,
+    "retrieval_pass_count": 8,
+    "prompt_tokens": 7976776,
+    "output_tokens": 160,
+    "start": 1789163259.7754354,
+    "finish": 1789168533.0849323,
+    "wall_s": 5273.309496879578,
+    "submission_spread_s": 0.0004088878631591797,
+    "first_token_latency_s": [
+      3916.5105607509613,
+      3247.431427001953,
+      1366.423437833786,
+      2600.607521533966,
+      5270.430348873138,
+      749.370329618454,
+      4595.777824640274,
+      1984.1824662685394
+    ],
+    "time_until_all_requests_have_first_token_s": 5270.430673599243,
+    "effective_input_tok_s": 1513.4960488063036,
+    "end_to_end_output_tok_s": 0.030341477225009877,
+    "reported_cached_prompt_tokens": null,
+    "post_first_rate_valid_as_decode_throughput": false,
+    "post_first_rate_caveat": "Cold streams pause during other prefills; warm streams include buffered bursts. Raw post-first timing is diagnostic only and must not be used as model decode throughput. Use end-to-end output rate and the longer follow-up server-side C8 interval.",
+    "requests": [
+      {
+        "index": 0,
+        "prompt_tokens": 997097,
+        "completion_tokens": 20,
+        "ttft_s": 3916.5105607509613,
+        "retrieval_pass": true
+      },
+      {
+        "index": 1,
+        "prompt_tokens": 997097,
+        "completion_tokens": 20,
+        "ttft_s": 3247.431427001953,
+        "retrieval_pass": true
+      },
+      {
+        "index": 2,
+        "prompt_tokens": 997097,
+        "completion_tokens": 20,
+        "ttft_s": 1366.423437833786,
+        "retrieval_pass": true
+      },
+      {
+        "index": 3,
+        "prompt_tokens": 997097,
+        "completion_tokens": 20,
+        "ttft_s": 2600.607521533966,
+        "retrieval_pass": true
+      },
+      {
+        "index": 4,
+        "prompt_tokens": 997097,
+        "completion_tokens": 20,
+        "ttft_s": 5270.430348873138,
+        "retrieval_pass": true
+      },
+      {
+        "index": 5,
+        "prompt_tokens": 997097,
+        "completion_tokens": 20,
+        "ttft_s": 749.370329618454,
+        "retrieval_pass": true
+      },
+      {
+        "index": 6,
+        "prompt_tokens": 997097,
+        "completion_tokens": 20,
+        "ttft_s": 4595.777824640274,
+        "retrieval_pass": true
+      },
+      {
+        "index": 7,
+        "prompt_tokens": 997097,
+        "completion_tokens": 20,
+        "ttft_s": 1984.1824662685394,
+        "retrieval_pass": true
+      }
+    ]
+  },
+  "initial_cached_256_output": {
+    "status": "PASS",
+    "completed_requests": 8,
+    "valid_length_requests": 8,
+    "retrieval_pass_count": 8,
+    "prompt_tokens": 7976776,
+    "output_tokens": 2048,
+    "start": 1789168533.1536086,
+    "finish": 1789168558.7569537,
+    "wall_s": 25.603345155715942,
+    "submission_spread_s": 0.000675201416015625,
+    "first_token_latency_s": [
+      16.731037855148315,
+      16.729501247406006,
+      16.727062940597534,
+      16.73859190940857,
+      17.497097969055176,
+      16.726094961166382,
+      16.72467875480652,
+      16.717777490615845
+    ],
+    "time_until_all_requests_have_first_token_s": 17.49773669242859,
+    "effective_input_tok_s": 455874.730555959,
+    "end_to_end_output_tok_s": 79.98954775418416,
+    "reported_cached_prompt_tokens": 7974912,
+    "post_first_rate_valid_as_decode_throughput": false,
+    "post_first_rate_caveat": "Cold streams pause during other prefills; warm streams include buffered bursts. Raw post-first timing is diagnostic only and must not be used as model decode throughput. Use end-to-end output rate and the longer follow-up server-side C8 interval.",
+    "requests": [
+      {
+        "index": 0,
+        "prompt_tokens": 997097,
+        "completion_tokens": 256,
+        "ttft_s": 16.731037855148315,
+        "retrieval_pass": true
+      },
+      {
+        "index": 1,
+        "prompt_tokens": 997097,
+        "completion_tokens": 256,
+        "ttft_s": 16.729501247406006,
+        "retrieval_pass": true
+      },
+      {
+        "index": 2,
+        "prompt_tokens": 997097,
+        "completion_tokens": 256,
+        "ttft_s": 16.727062940597534,
+        "retrieval_pass": true
+      },
+      {
+        "index": 3,
+        "prompt_tokens": 997097,
+        "completion_tokens": 256,
+        "ttft_s": 16.73859190940857,
+        "retrieval_pass": true
+      },
+      {
+        "index": 4,
+        "prompt_tokens": 997097,
+        "completion_tokens": 256,
+        "ttft_s": 17.497097969055176,
+        "retrieval_pass": true
+      },
+      {
+        "index": 5,
+        "prompt_tokens": 997097,
+        "completion_tokens": 256,
+        "ttft_s": 16.726094961166382,
+        "retrieval_pass": true
+      },
+      {
+        "index": 6,
+        "prompt_tokens": 997097,
+        "completion_tokens": 256,
+        "ttft_s": 16.72467875480652,
+        "retrieval_pass": true
+      },
+      {
+        "index": 7,
+        "prompt_tokens": 997097,
+        "completion_tokens": 256,
+        "ttft_s": 16.717777490615845,
+        "retrieval_pass": true
+      }
+    ]
+  },
+  "longer_cached_1024_output": {
+    "status": "PASS",
+    "request_count": 8,
+    "start": 1789168860.377643,
+    "finish": 1789168919.6059453,
+    "wall_s": 59.228302240371704,
+    "prompt_tokens_each": 997097,
+    "total_output_tokens": 8192,
+    "output_tokens_each": 1024,
+    "end_to_end_output_tok_s": 138.31225427927424,
+    "ttft_min_s": 16.96440052986145,
+    "ttft_mean_s": 17.09678763151169,
+    "ttft_max_s": 17.961599349975586,
+    "time_until_all_have_first_output_s": 17.962098121643066,
+    "cached_prompt_tokens_each": [
+      996864,
+      996864,
+      996864,
+      996864,
+      996864,
+      996864,
+      996864,
+      996864
+    ],
+    "recomputed_prompt_tokens_each": [
+      233,
+      233,
+      233,
+      233,
+      233,
+      233,
+      233,
+      233
+    ],
+    "retrieval_pass_count": 8,
+    "c8_load_sample_count": 24,
+    "c8_unique_snapshot_count": 5,
+    "c8_server_log_intervals": [
+      {
+        "time_utc": "2026-09-11 23:21:23",
+        "full_tokens": 7980032,
+        "aggregate_tok_s": 158.12,
+        "line": "[2026-09-11 23:21:23 TP0 EP0] Decode batch, #running-req: 8, #full token: 7980032, full token usage: 1.00, #swa token: 6144, swa token usage: 0.24, accept len: 3.63, accept rate: 0.53, cuda graph: True, gen throughput (token/s): 158.12, #queue-req: 0"
+      }
+    ],
+    "c8_rate_caveat": "One server log interval was captured with eight active requests; its throughput window can include admission transitions. This is an observed interval, not a many-run steady-state average. Client post-first-output rates are excluded because buffered bursts inflate them.",
+    "requests": [
+      {
+        "index": 0,
+        "status": "PASS",
+        "started": 1789168860.377861,
+        "ttft_s": 16.97203755378723,
+        "finished": 1789168909.8945475,
+        "usage": {
+          "prompt_tokens": 997097,
+          "total_tokens": 998121,
+          "completion_tokens": 1024,
+          "prompt_tokens_details": {
+            "cached_tokens": 996864
+          },
+          "reasoning_tokens": 0
+        },
+        "transport_complete": true,
+        "tokens_valid": true,
+        "retrieval_pass": true,
+        "actual": {
+          "alpha": "32551055",
+          "beta": "90308983",
+          "gamma": "91878145"
+        },
+        "expected": {
+          "alpha": "32551055",
+          "beta": "90308983",
+          "gamma": "91878145"
+        },
+        "prompt_sha256": "e831d866f7c7a506721a1dfb0f04b1d8f88c5b8d93bfe8ea27076ae491cfabb4"
+      },
+      {
+        "index": 1,
+        "status": "PASS",
+        "started": 1789168860.378026,
+        "ttft_s": 16.972484588623047,
+        "finished": 1789168919.6059453,
+        "usage": {
+          "prompt_tokens": 997097,
+          "total_tokens": 998121,
+          "completion_tokens": 1024,
+          "prompt_tokens_details": {
+            "cached_tokens": 996864
+          },
+          "reasoning_tokens": 0
+        },
+        "transport_complete": true,
+        "tokens_valid": true,
+        "retrieval_pass": true,
+        "actual": {
+          "alpha": "67056197",
+          "beta": "80729749",
+          "gamma": "85385903"
+        },
+        "expected": {
+          "alpha": "67056197",
+          "beta": "80729749",
+          "gamma": "85385903"
+        },
+        "prompt_sha256": "46cb084c825f7efb927bcc05b13dce96cc3f10f0f5bd7c542a66a13c4d0580c9"
+      },
+      {
+        "index": 2,
+        "status": "PASS",
+        "started": 1789168860.377948,
+        "ttft_s": 16.97283673286438,
+        "finished": 1789168912.243535,
+        "usage": {
+          "prompt_tokens": 997097,
+          "total_tokens": 998121,
+          "completion_tokens": 1024,
+          "prompt_tokens_details": {
+            "cached_tokens": 996864
+          },
+          "reasoning_tokens": 0
+        },
+        "transport_complete": true,
+        "tokens_valid": true,
+        "retrieval_pass": true,
+        "actual": {
+          "alpha": "48218440",
+          "beta": "48795515",
+          "gamma": "73226840"
+        },
+        "expected": {
+          "alpha": "48218440",
+          "beta": "48795515",
+          "gamma": "73226840"
+        },
+        "prompt_sha256": "b06048891616220b532fa829c7d3256c33c7b66421172f538ae7cb5ff17cebce"
+      },
+      {
+        "index": 3,
+        "status": "PASS",
+        "started": 1789168860.3781419,
+        "ttft_s": 17.961599349975586,
+        "finished": 1789168918.8011928,
+        "usage": {
+          "prompt_tokens": 997097,
+          "total_tokens": 998121,
+          "completion_tokens": 1024,
+          "prompt_tokens_details": {
+            "cached_tokens": 996864
+          },
+          "reasoning_tokens": 0
+        },
+        "transport_complete": true,
+        "tokens_valid": true,
+        "retrieval_pass": true,
+        "actual": {
+          "alpha": "91963877",
+          "beta": "71462767",
+          "gamma": "59432646"
+        },
+        "expected": {
+          "alpha": "91963877",
+          "beta": "71462767",
+          "gamma": "59432646"
+        },
+        "prompt_sha256": "14c786a8b0033824c8a36a2d4f4e086064efdb4b30e13e2bc3601394435d599b"
+      },
+      {
+        "index": 4,
+        "status": "PASS",
+        "started": 1789168860.3780823,
+        "ttft_s": 16.974673748016357,
+        "finished": 1789168917.972564,
+        "usage": {
+          "prompt_tokens": 997097,
+          "total_tokens": 998121,
+          "completion_tokens": 1024,
+          "prompt_tokens_details": {
+            "cached_tokens": 996864
+          },
+          "reasoning_tokens": 0
+        },
+        "transport_complete": true,
+        "tokens_valid": true,
+        "retrieval_pass": true,
+        "actual": {
+          "alpha": "65641894",
+          "beta": "95685442",
+          "gamma": "64566474"
+        },
+        "expected": {
+          "alpha": "65641894",
+          "beta": "95685442",
+          "gamma": "64566474"
+        },
+        "prompt_sha256": "cd7d72843410de5e1ac1b8e4db6953c72bcf73926d5c76f7f5fb6e2ab720dba7"
+      },
+      {
+        "index": 5,
+        "status": "PASS",
+        "started": 1789168860.378054,
+        "ttft_s": 16.982335567474365,
+        "finished": 1789168910.7451532,
+        "usage": {
+          "prompt_tokens": 997097,
+          "total_tokens": 998121,
+          "completion_tokens": 1024,
+          "prompt_tokens_details": {
+            "cached_tokens": 996864
+          },
+          "reasoning_tokens": 0
+        },
+        "transport_complete": true,
+        "tokens_valid": true,
+        "retrieval_pass": true,
+        "actual": {
+          "alpha": "58481724",
+          "beta": "76120153",
+          "gamma": "31931889"
+        },
+        "expected": {
+          "alpha": "58481724",
+          "beta": "76120153",
+          "gamma": "31931889"
+        },
+        "prompt_sha256": "076d9873dc02909b371df737654c0ae64f418175c504ca662d8f6fae81681a66"
+      },
+      {
+        "index": 6,
+        "status": "PASS",
+        "started": 1789168860.3780015,
+        "ttft_s": 16.97393298149109,
+        "finished": 1789168912.4887006,
+        "usage": {
+          "prompt_tokens": 997097,
+          "total_tokens": 998121,
+          "completion_tokens": 1024,
+          "prompt_tokens_details": {
+            "cached_tokens": 996864
+          },
+          "reasoning_tokens": 0
+        },
+        "transport_complete": true,
+        "tokens_valid": true,
+        "retrieval_pass": true,
+        "actual": {
+          "alpha": "68593847",
+          "beta": "81530634",
+          "gamma": "35462717"
+        },
+        "expected": {
+          "alpha": "68593847",
+          "beta": "81530634",
+          "gamma": "35462717"
+        },
+        "prompt_sha256": "464a71be49c80e94c3f8a045de3006caf36e60149dac74542e153c1f32339c76"
+      },
+      {
+        "index": 7,
+        "status": "PASS",
+        "started": 1789168860.377643,
+        "ttft_s": 16.96440052986145,
+        "finished": 1789168889.6798358,
+        "usage": {
+          "prompt_tokens": 997097,
+          "total_tokens": 998121,
+          "completion_tokens": 1024,
+          "prompt_tokens_details": {
+            "cached_tokens": 996864
+          },
+          "reasoning_tokens": 0
+        },
+        "transport_complete": true,
+        "tokens_valid": true,
+        "retrieval_pass": true,
+        "actual": {
+          "alpha": "45233565",
+          "beta": "70095230",
+          "gamma": "42232068"
+        },
+        "expected": {
+          "alpha": "45233565",
+          "beta": "70095230",
+          "gamma": "42232068"
+        },
+        "prompt_sha256": "403a40ef21a79bd82b34b633bb165be30ec45696a78cdb4967dda2df5f9b4e83"
+      }
+    ]
+  },
+  "append50_c1": {
+    "status": "PASS",
+    "request_count": 1,
+    "start": 1789169034.1104598,
+    "finish": 1789169036.9927437,
+    "wall_s": 2.882283926010132,
+    "prompt_tokens_each": 997147,
+    "total_output_tokens": 20,
+    "output_tokens_each": 20,
+    "end_to_end_output_tok_s": 6.938941656481935,
+    "ttft_min_s": 2.44161057472229,
+    "ttft_mean_s": 2.44161057472229,
+    "ttft_max_s": 2.44161057472229,
+    "time_until_all_have_first_output_s": 2.44161057472229,
+    "cached_prompt_tokens_each": [
+      996864
+    ],
+    "recomputed_prompt_tokens_each": [
+      283
+    ],
+    "retrieval_pass_count": 1,
+    "requests": [
+      {
+        "index": 0,
+        "status": "PASS",
+        "started": 1789169034.1104598,
+        "ttft_s": 2.44161057472229,
+        "finished": 1789169036.9927437,
+        "usage": {
+          "prompt_tokens": 997147,
+          "total_tokens": 997167,
+          "completion_tokens": 20,
+          "prompt_tokens_details": {
+            "cached_tokens": 996864
+          },
+          "reasoning_tokens": 0
+        },
+        "transport_complete": true,
+        "tokens_valid": true,
+        "retrieval_pass": true,
+        "actual": {
+          "alpha": "32551055",
+          "beta": "90308983",
+          "gamma": "91878145"
+        },
+        "expected": {
+          "alpha": "32551055",
+          "beta": "90308983",
+          "gamma": "91878145"
+        },
+        "prompt_sha256": "8c5f98047315a5a02db7738f42397ab9f0df8aa2279542c08e3b9e98a6bfc560"
+      }
+    ]
+  },
+  "append50_c8": {
+    "status": "PASS",
+    "request_count": 8,
+    "start": 1789169037.1817336,
+    "finish": 1789169051.8235548,
+    "wall_s": 14.641821146011353,
+    "prompt_tokens_each": 997147,
+    "total_output_tokens": 160,
+    "output_tokens_each": 20,
+    "end_to_end_output_tok_s": 10.927602407135424,
+    "ttft_min_s": 13.513015270233154,
+    "ttft_mean_s": 13.614178001880646,
+    "ttft_max_s": 14.261257886886597,
+    "time_until_all_have_first_output_s": 14.261719465255737,
+    "cached_prompt_tokens_each": [
+      996864,
+      996864,
+      996864,
+      996864,
+      996864,
+      996864,
+      996864,
+      996864
+    ],
+    "recomputed_prompt_tokens_each": [
+      283,
+      283,
+      283,
+      283,
+      283,
+      283,
+      283,
+      283
+    ],
+    "retrieval_pass_count": 8,
+    "requests": [
+      {
+        "index": 0,
+        "status": "PASS",
+        "started": 1789169037.1819594,
+        "ttft_s": 13.513015270233154,
+        "finished": 1789169050.724351,
+        "usage": {
+          "prompt_tokens": 997147,
+          "total_tokens": 997167,
+          "completion_tokens": 20,
+          "prompt_tokens_details": {
+            "cached_tokens": 996864
+          },
+          "reasoning_tokens": 0
+        },
+        "transport_complete": true,
+        "tokens_valid": true,
+        "retrieval_pass": true,
+        "actual": {
+          "alpha": "32551055",
+          "beta": "90308983",
+          "gamma": "91878145"
+        },
+        "expected": {
+          "alpha": "32551055",
+          "beta": "90308983",
+          "gamma": "91878145"
+        },
+        "prompt_sha256": "19bd58d0d27a5002eaf591d80c928f40edc261a6350a95b920028902769cf4ef"
+      },
+      {
+        "index": 1,
+        "status": "PASS",
+        "started": 1789169037.1820145,
+        "ttft_s": 13.528338193893433,
+        "finished": 1789169050.7211728,
+        "usage": {
+          "prompt_tokens": 997147,
+          "total_tokens": 997167,
+          "completion_tokens": 20,
+          "prompt_tokens_details": {
+            "cached_tokens": 996864
+          },
+          "reasoning_tokens": 0
+        },
+        "transport_complete": true,
+        "tokens_valid": true,
+        "retrieval_pass": true,
+        "actual": {
+          "alpha": "67056197",
+          "beta": "80729749",
+          "gamma": "85385903"
+        },
+        "expected": {
+          "alpha": "67056197",
+          "beta": "80729749",
+          "gamma": "85385903"
+        },
+        "prompt_sha256": "a7fefc57dbdbc24bb77da2f06f90880ac7290c73ae8e46440e0017d1658f41cd"
+      },
+      {
+        "index": 2,
+        "status": "PASS",
+        "started": 1789169037.182038,
+        "ttft_s": 13.520875692367554,
+        "finished": 1789169050.7087858,
+        "usage": {
+          "prompt_tokens": 997147,
+          "total_tokens": 997167,
+          "completion_tokens": 20,
+          "prompt_tokens_details": {
+            "cached_tokens": 996864
+          },
+          "reasoning_tokens": 0
+        },
+        "transport_complete": true,
+        "tokens_valid": true,
+        "retrieval_pass": true,
+        "actual": {
+          "alpha": "48218440",
+          "beta": "48795515",
+          "gamma": "73226840"
+        },
+        "expected": {
+          "alpha": "48218440",
+          "beta": "48795515",
+          "gamma": "73226840"
+        },
+        "prompt_sha256": "792db6b72796a2af02ffa0408884e720465caf4f39b5289db02a87e5b1db0e19"
+      },
+      {
+        "index": 3,
+        "status": "PASS",
+        "started": 1789169037.1820893,
+        "ttft_s": 13.522344589233398,
+        "finished": 1789169050.707384,
+        "usage": {
+          "prompt_tokens": 997147,
+          "total_tokens": 997167,
+          "completion_tokens": 20,
+          "prompt_tokens_details": {
+            "cached_tokens": 996864
+          },
+          "reasoning_tokens": 0
+        },
+        "transport_complete": true,
+        "tokens_valid": true,
+        "retrieval_pass": true,
+        "actual": {
+          "alpha": "91963877",
+          "beta": "71462767",
+          "gamma": "59432646"
+        },
+        "expected": {
+          "alpha": "91963877",
+          "beta": "71462767",
+          "gamma": "59432646"
+        },
+        "prompt_sha256": "dc1946b5dcdc5bd58fc6a857b034f8611da320c87f97e1e1f7db52f0b1b83e3d"
+      },
+      {
+        "index": 4,
+        "status": "PASS",
+        "started": 1789169037.1821952,
+        "ttft_s": 14.261257886886597,
+        "finished": 1789169051.8235548,
+        "usage": {
+          "prompt_tokens": 997147,
+          "total_tokens": 997167,
+          "completion_tokens": 20,
+          "prompt_tokens_details": {
+            "cached_tokens": 996864
+          },
+          "reasoning_tokens": 0
+        },
+        "transport_complete": true,
+        "tokens_valid": true,
+        "retrieval_pass": true,
+        "actual": {
+          "alpha": "65641894",
+          "beta": "95685442",
+          "gamma": "64566474"
+        },
+        "expected": {
+          "alpha": "65641894",
+          "beta": "95685442",
+          "gamma": "64566474"
+        },
+        "prompt_sha256": "35a3c3c73a0d68504b8833d81e9c46cf9224d966dbbd537b63336c86b84e61fe"
+      },
+      {
+        "index": 5,
+        "status": "PASS",
+        "started": 1789169037.1821415,
+        "ttft_s": 13.52602767944336,
+        "finished": 1789169050.7232249,
+        "usage": {
+          "prompt_tokens": 997147,
+          "total_tokens": 997167,
+          "completion_tokens": 20,
+          "prompt_tokens_details": {
+            "cached_tokens": 996864
+          },
+          "reasoning_tokens": 0
+        },
+        "transport_complete": true,
+        "tokens_valid": true,
+        "retrieval_pass": true,
+        "actual": {
+          "alpha": "58481724",
+          "beta": "76120153",
+          "gamma": "31931889"
+        },
+        "expected": {
+          "alpha": "58481724",
+          "beta": "76120153",
+          "gamma": "31931889"
+        },
+        "prompt_sha256": "68162c5da0d5ae255102259b1bc959bea8e5a958862e10b1425e0df5d08ba2fc"
+      },
+      {
+        "index": 6,
+        "status": "PASS",
+        "started": 1789169037.182253,
+        "ttft_s": 13.52127456665039,
+        "finished": 1789169050.7237606,
+        "usage": {
+          "prompt_tokens": 997147,
+          "total_tokens": 997167,
+          "completion_tokens": 20,
+          "prompt_tokens_details": {
+            "cached_tokens": 996864
+          },
+          "reasoning_tokens": 0
+        },
+        "transport_complete": true,
+        "tokens_valid": true,
+        "retrieval_pass": true,
+        "actual": {
+          "alpha": "68593847",
+          "beta": "81530634",
+          "gamma": "35462717"
+        },
+        "expected": {
+          "alpha": "68593847",
+          "beta": "81530634",
+          "gamma": "35462717"
+        },
+        "prompt_sha256": "2cc7bc39117af37af913f54642484216066d822ffaab8d5a77596232a4551f2b"
+      },
+      {
+        "index": 7,
+        "status": "PASS",
+        "started": 1789169037.1817336,
+        "ttft_s": 13.52029013633728,
+        "finished": 1789169050.7126,
+        "usage": {
+          "prompt_tokens": 997147,
+          "total_tokens": 997167,
+          "completion_tokens": 20,
+          "prompt_tokens_details": {
+            "cached_tokens": 996864
+          },
+          "reasoning_tokens": 0
+        },
+        "transport_complete": true,
+        "tokens_valid": true,
+        "retrieval_pass": true,
+        "actual": {
+          "alpha": "45233565",
+          "beta": "70095230",
+          "gamma": "42232068"
+        },
+        "expected": {
+          "alpha": "45233565",
+          "beta": "70095230",
+          "gamma": "42232068"
+        },
+        "prompt_sha256": "a6e9208a14702ed5141b78530cdc07a9bbda71e697a0dfd8e61673be4b19d1ad"
+      }
+    ]
+  },
+  "first_prompt_prefill": {
+    "first_request_index": 5,
+    "client_ttft_s": 749.370329618454,
+    "chunk_count": 487,
+    "logged_new_token_sum": 997376.0,
+    "peak": {
+      "time": "2026-09-11 21:47:44",
+      "tokens": 2048.0,
+      "prefix_tokens": 4096.0,
+      "rate": 5076.03,
+      "elapsed_s": 4.224564552307129,
+      "queue": 0.0,
+      "pending": 993001.0
+    },
+    "bins": [
+      {
+        "start_prefix": 0,
+        "end_prefix": 128000,
+        "samples": 62,
+        "median_logged_chunk_tok_s": 4278.5650000000005,
+        "min": 202.89,
+        "peak": 5076.03,
+        "aggregate_from_reported_chunk_rates": 3033.345484346741
+      },
+      {
+        "start_prefix": 128000,
+        "end_prefix": 256000,
+        "samples": 63,
+        "median_logged_chunk_tok_s": 2246.63,
+        "min": 1505.75,
+        "peak": 3558.18,
+        "aggregate_from_reported_chunk_rates": 2244.2493221996933
+      },
+      {
+        "start_prefix": 256000,
+        "end_prefix": 512000,
+        "samples": 125,
+        "median_logged_chunk_tok_s": 1643.65,
+        "min": 1155.94,
+        "peak": 2576.73,
+        "aggregate_from_reported_chunk_rates": 1632.5850149913424
+      },
+      {
+        "start_prefix": 512000,
+        "end_prefix": 768000,
+        "samples": 125,
+        "median_logged_chunk_tok_s": 1122.36,
+        "min": 809.65,
+        "peak": 1617.68,
+        "aggregate_from_reported_chunk_rates": 1116.255492602768
+      },
+      {
+        "start_prefix": 768000,
+        "end_prefix": 1000000,
+        "samples": 112,
+        "median_logged_chunk_tok_s": 823.405,
+        "min": 645.91,
+        "peak": 2660.03,
+        "aggregate_from_reported_chunk_rates": 850.7546913842212
+      }
+    ]
+  },
+  "prefill_method_notes": [
+    "Rates are the server-reported chunk input throughput across the entire TP8/EP4 cluster, not per stream.",
+    "Context ranges use cumulative logged new-token counts and are approximate; scheduling can pad or mix the final chunk.",
+    "The whole-request input rate uses approximately 997K prompt tokens divided by client time to first nonempty output, including setup and scheduling.",
+    "First-prompt progression only; the complete cold phase is summarized separately."
+  ],
+  "memory": {
+    "measurement": "OS MemAvailable, per Spark, GiB",
+    "minimum_available_gib": 7.830760955810547,
+    "minimum_available_gib_by_rank": {
+      "0": 7.830760955810547,
+      "1": 10.700119018554688,
+      "2": 10.783248901367188,
+      "3": 11.093181610107422,
+      "4": 10.95309066772461,
+      "5": 10.99526596069336,
+      "6": 10.815193176269531,
+      "7": 10.779499053955078
+    },
+    "followup_minimum_available_gib": 22.23809814453125,
+    "emergency_floor_history_gib": [
+      8,
+      4,
+      2
+    ],
+    "final_floor_gib": 2,
+    "all_eight_healthy_after_capacity": true,
+    "all_eight_healthy_after_followups": true,
+    "capacity_guard_status": "COMPLETE",
+    "followup_guard_status": "COMPLETE"
+  },
+  "limitations": [
+    "Synthetic repeated-filler retrieval workload with three records per prompt; not a broad long-context quality evaluation.",
+    "Eight prompts contain about 997K tokens each, leaving room under the 1M per-request limit and 8M shared pool for output and allocator/draft bookkeeping.",
+    "The cold input rate includes client submission, tokenization, scheduling and any interleaved decoding. It is not a GPU-kernel-only rate.",
+    "Warm output throughput is specific to this retrieval/forced-output workload and cannot be compared directly with earlier coding or prose benchmarks.",
+    "Memory figures are sampled OS MemAvailable minima, not guarantees about unsampled instants."
+  ]
+}

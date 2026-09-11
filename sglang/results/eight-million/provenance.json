@@ -1,0 +1,17 @@
+{
+  "description": "Hashes of preserved source artifacts used to extract these public results; source names are relative to the original evidence directory.",
+  "source_sha256": {
+    "summary.json": "1839d5fc2a8b62387debae8b2b1f42e17df6792a375c41bc94fec6df440fcdf4",
+    "followup/summary.json": "25103b977cb1a8164213ab829087032ee4234efed351097352147f7be834ad9c",
+    "profile.json": "e62e26858d7c7473be3cecc1a2e128d47112c437bcf1d079fb273e02f6362b0a",
+    "first-prompt-prefill-progression.json": "f7ffd4424f5d1443700a692cd1575676b4442b6f9585f4660ac6656e3b69b350",
+    "server/state/capacity-collected/r0-server.log": "d1283b186d328647434cebf5fc9fbf02aa4cfabfe3ecebae02c0c7b8e3cd0865",
+    "followup/server/capacity-followup-collected/r0-server.log": "718ec178565dbdad47a66eddab01b6ccee437b374cbec3a672c289ae4c617f2c"
+  },
+  "published_files_sha256": {
+    "summary.json": "e502f0b2ac0eeca29e4899d07e8c06bb77aff9ca34214d29e619f9ad7c08c8fe",
+    "residency.json": "fddd5a46936d1b4f12e3689ee5ff5eee006e9005ea13770fd1ebd37b4e0edcd7",
+    "server-excerpts.log": "b756313cffb46880eb01a46873a8447352d61f2d9d5452a425b986ba490f7775",
+    "first-prompt-prefill.csv": "bf936eca45f3cc0deaa8c33da6c0d82a8821a4f8dc1a50ba35f3ed6301557bfe"
+  }
+}

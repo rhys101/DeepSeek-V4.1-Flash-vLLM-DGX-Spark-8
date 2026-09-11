@@ -1,0 +1,75 @@
+{
+  "cold": {
+    "sample_count": 6,
+    "samples": [
+      {
+        "received_at": 1789168530.299644,
+        "snapshot_age_s": 0.37610387802124023,
+        "timestamp": 1789168529.92354,
+        "num_running_reqs": 8,
+        "num_used_tokens": 7976960,
+        "max_total_num_tokens": 8000000
+      },
+      {
+        "received_at": 1789168530.8035324,
+        "snapshot_age_s": 0.8799922466278076,
+        "timestamp": 1789168529.92354,
+        "num_running_reqs": 8,
+        "num_used_tokens": 7976960,
+        "max_total_num_tokens": 8000000
+      },
+      {
+        "received_at": 1789168531.3058891,
+        "snapshot_age_s": 1.3823490142822266,
+        "timestamp": 1789168529.92354,
+        "num_running_reqs": 8,
+        "num_used_tokens": 7976960,
+        "max_total_num_tokens": 8000000
+      },
+      {
+        "received_at": 1789168531.8088033,
+        "snapshot_age_s": 1.885263204574585,
+        "timestamp": 1789168529.92354,
+        "num_running_reqs": 8,
+        "num_used_tokens": 7976960,
+        "max_total_num_tokens": 8000000
+      },
+      {
+        "received_at": 1789168532.3122506,
+        "snapshot_age_s": 2.3887104988098145,
+        "timestamp": 1789168529.92354,
+        "num_running_reqs": 8,
+        "num_used_tokens": 7976960,
+        "max_total_num_tokens": 8000000
+      },
+      {
+        "received_at": 1789168532.816539,
+        "snapshot_age_s": 2.8929989337921143,
+        "timestamp": 1789168529.92354,
+        "num_running_reqs": 8,
+        "num_used_tokens": 7976960,
+        "max_total_num_tokens": 8000000
+      }
+    ]
+  },
+  "longer_output": {
+    "sample_count": 24,
+    "distinct_snapshots": 5,
+    "first": {
+      "received_at": 1789168878.3695288,
+      "snapshot_age_s": 0.29804062843322754,
+      "timestamp": 1789168878.0714881,
+      "num_running_reqs": 8,
+      "num_used_tokens": 7979264,
+      "max_total_num_tokens": 8000000
+    },
+    "last": {
+      "received_at": 1789168889.954773,
+      "snapshot_age_s": 2.4588053226470947,
+      "timestamp": 1789168887.4959676,
+      "num_running_reqs": 8,
+      "num_used_tokens": 7981056,
+      "max_total_num_tokens": 8000000
+    }
+  }
+}
