@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "recorded": "2026-09-10",
+  "recorded": "2026-09-11",
   "model": {
     "repo": "deepseek-ai/DeepSeek-V4.1-Flash",
     "revision": "df42c109f1defefcbfcedbe7d905718a12266e40"
@@ -33,9 +33,14 @@
     "flashinfer_spdlog": {
       "url": "https://github.com/gabime/spdlog.git",
       "commit": "c3aed4b68373955e1cc94307683d44dca1515d2b"
+    },
+    "mia_reference": {
+      "url": "https://github.com/MiaAI-Lab/DeepSeek-v4.1-Flash-DGX-Sparks.git",
+      "commit": "e59e6eb67479aa68f6fa700c600dc90a0729b5ec",
+      "role": "Performance insight; original vLLM adaptation, no SGLang adapter copied"
     }
   },
-  "tested_image_id": "sha256:4514e1e972669763b1ceb94b6f15f70e66e6ee8f381a502246217f165b63a342",
+  "tested_image_id": "sha256:ed7669d981444ecbead1e20d43c2fad6a37187008f36510fb4ff46f7ce78c50d",
   "runtime": {
     "torch": "2.13.0+cu130",
     "flashinfer": "0.7.0rc1",
@@ -54,7 +59,7 @@
     "v41bench_sha256": "e0d6b2d25bd585d11fbdf39c2ddcdf7a4de8ab685af6bd42465e69f3ee6e80a8",
     "bench_report_sha256": "ab38f852e71916b50733fe5d9436314a93ad75313d436b48423f9fe3fe5f977d"
   },
-  "note": "The distribution version identifies the nightly base; the Python feature source is pinned separately. Observed image was assembled from independently validated build stages. The packaged single-command wrapper has not had a separate cold rebuild.",
+  "note": "The distribution version identifies the nightly base; Python feature source is pinned separately. The tested image adds a hash-checked small-M MXFP8 source layer to the validated base stack. The packaged combined full build has not had a separate cold rebuild. Torch reports NCCL 2.29.7 in collective probes; vLLM startup logs identify its loaded NCCL as 2.30.7+cuda13.3.",
   "base_image": "vllm/vllm-openai@sha256:a551e05307cd2e0092139d84db32af9c97e67d2eeeff072d21e429131d8c23f0",
   "base_tag": "vllm/vllm-openai:nightly-8a728663c1c3eeace834a95f5654fa653cc1998c",
   "build": {
@@ -73,5 +78,9 @@
       "encoding/encoding.py",
       "encoding/test_encoding.py"
     ]
+  },
+  "patches": {
+    "reference_attention": "patches/manifest.json",
+    "small_m_mxfp8": "patches/mxfp8-manifest.json"
   }
 }

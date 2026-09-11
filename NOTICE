@@ -23,6 +23,12 @@ material they contain remain subject to that license; see
 licenses/vllm-Apache-2.0.txt. The patch manifest identifies the source revision
 and resulting file hashes. Source: https://github.com/vllm-project/vllm
 
+The small-batch MXFP8 routing and reduced NCCL buffer settings were informed by
+MiaAI-Lab/DeepSeek-v4.1-Flash-DGX-Sparks at
+e59e6eb67479aa68f6fa700c600dc90a0729b5ec. The implementation here is an original
+vLLM-specific routing change using the pinned upstream FlashInfer b12x kernels.
+Source: https://github.com/MiaAI-Lab/DeepSeek-v4.1-Flash-DGX-Sparks
+
 NVIDIA, DGX, Spark, DeepSeek and other product names identify upstream products.
 This is a community deployment project. No affiliation or endorsement is implied.
 Model weights and upstream dependencies are not redistributed here; their own

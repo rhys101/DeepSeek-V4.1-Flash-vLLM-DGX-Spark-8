@@ -1,0 +1,55 @@
+{
+  "status": "PASS",
+  "device": "NVIDIA GB10",
+  "rows": [
+    {
+      "m": 1,
+      "backend": "b12x",
+      "finite": true,
+      "changed_input_graph": "PASS"
+    },
+    {
+      "m": 5,
+      "backend": "b12x",
+      "finite": true,
+      "changed_input_graph": "PASS"
+    },
+    {
+      "m": 6,
+      "backend": "b12x",
+      "finite": true,
+      "changed_input_graph": "PASS"
+    },
+    {
+      "m": 40,
+      "backend": "b12x",
+      "finite": true,
+      "changed_input_graph": "PASS"
+    },
+    {
+      "m": 48,
+      "backend": "b12x",
+      "finite": true,
+      "changed_input_graph": "PASS"
+    },
+    {
+      "m": 128,
+      "backend": "b12x",
+      "finite": true,
+      "changed_input_graph": "PASS"
+    },
+    {
+      "m": 129,
+      "backend": "cutlass",
+      "finite": true,
+      "changed_input_graph": "PASS"
+    },
+    {
+      "m": 256,
+      "backend": "cutlass",
+      "finite": true,
+      "changed_input_graph": "PASS"
+    }
+  ],
+  "three_dimensional_input": "PASS"
+}

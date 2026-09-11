@@ -1,26 +1,24 @@
 # Memory footprint
 
-Snapshot: 2026-09-10T18:56:23.325086+00:00. The serving profile used for the benchmark: native resident Engram, vision, 300K context and eight request slots. All eight containers were running, without an OOM flag.
+The optimized serving profile had **13.86–15.78 GiB Linux-available RAM per Spark** in the final snapshot at `2026-09-11T12:29:50.944448+00:00`. It uses native resident Engram, vision, a 300K context cap, eight request slots and memory utilization 0.80. Every container was running without OOM kills or restarts.
 
-Each node reports 121.69 GiB usable unified RAM. CPU and GPU allocations draw from that same pool. The NVIDIA GPU-worker counter is approximately 97.75 GiB per node. Loaded model allocation was 73.16 GiB at startup, of which approximately 23.60 GiB is the mean Engram table shard. These model figures include persistent model buffers and should not be equated with a raw checkpoint divided by eight.
+| Rank | Final available GiB | Minimum benchmark sample GiB | Shared memory GiB | Swap occupied GiB |
+|---|---|---|---|---|
+| 0 | 13.86 | 14.05 | 0.416 | 3.32 |
+| 1 | 15.20 | 15.25 | 0.401 | 2.60 |
+| 2 | 15.60 | 15.64 | 0.399 | 2.53 |
+| 3 | 15.78 | 15.84 | 0.399 | 2.54 |
+| 4 | 15.43 | 15.47 | 0.403 | 2.47 |
+| 5 | 15.70 | 15.76 | 0.398 | 2.37 |
+| 6 | 15.32 | 15.37 | 0.398 | 2.64 |
+| 7 | 15.30 | 15.35 | 0.399 | 2.54 |
 
-The reconstructed global KV pool is 118,796 blocks × 138,240 bytes = 15.2945 GiB per node. This reproduces the exact logged capacity of 3,264,224 tokens / 10.88 × 300K contexts. TP ranks hold corresponding cache state; token capacity is not multiplied by eight. The scheduler itself allows eight concurrent requests.
+The benchmark window is `2026-09-11T12:20:23Z` through `2026-09-11T12:25:39Z`. Each rank has 158 observations in that window, sampled every two seconds. The lowest observed available memory across all eight nodes during those measurements was **14.05 GiB**. Sampling can miss short-lived peaks; this is not an enforced or guaranteed 13 GiB reserve.
 
-| Rank | Model allocation | KV pool | GPU-worker total | Linux available RAM | Swap occupied |
-|---|---:|---:|---:|---:|---:|
-| 0 | 73.16 GiB | 15.29 GiB | 97.75 GiB | 5.01 GiB | 5.52 GiB |
-| 1 | 73.16 GiB | 15.29 GiB | 97.75 GiB | 3.41 GiB | 3.85 GiB |
-| 2 | 73.16 GiB | 15.29 GiB | 97.75 GiB | 3.83 GiB | 3.91 GiB |
-| 3 | 73.16 GiB | 15.29 GiB | 97.75 GiB | 4.62 GiB | 4.16 GiB |
-| 4 | 73.16 GiB | 15.29 GiB | 97.75 GiB | 4.28 GiB | 3.58 GiB |
-| 5 | 73.16 GiB | 15.29 GiB | 97.75 GiB | 3.86 GiB | 3.39 GiB |
-| 6 | 73.16 GiB | 15.29 GiB | 97.75 GiB | 3.53 GiB | 3.39 GiB |
-| 7 | 73.16 GiB | 15.29 GiB | 97.75 GiB | 4.77 GiB | 4.27 GiB |
+Each node reports 121.69 GiB usable unified RAM. CPU and GPU allocations draw from this same pool. Model loading reports 73.16 GiB per rank. Rank 0 reports a 17.18 GiB available KV-cache budget, target/draft graph captures of 1.43/0.58 GiB, and planned cache capacity of 3,193,029 tokens (10.64 × 300K). The KV budget is a planning counter, not an independently measured allocated pool; these counters can overlap and should not be added to Linux memory totals. TP ranks hold corresponding cache state, so token capacity is not multiplied by eight. The scheduler permits eight concurrent requests.
 
-The model and KV columns are contained within the GPU-worker allocation; do not add them to it. Subtracting those two components leaves approximately 9.30 GiB of other GPU-worker allocations, but the live split between workspaces, reserves, graphs and communication allocations was not measured.
+The selected NCCL settings reduce buffers and channels. In an unloaded two-communicator/eight-rank probe, mean Linux shared memory fell from 11.61 GiB with the original settings to 0.425 GiB with the selected settings. In full serving, shared memory is 0.398–0.416 GiB in this snapshot. The probe measures system `Shmem`, not a direct allocator count of NCCL-only bytes; the controlled configuration change and serving observations support the attribution.
 
-Linux `MemAvailable` estimates memory available for new allocations and differs from completely free pages. Swap occupancy is not extra RAM and does not establish active swapping during this snapshot. CUDA and Linux counters have different scopes and can overlap. The remaining 18.93–20.53 GiB from total minus GPU-worker usage minus `MemAvailable` is an accounting remainder, not a fully attributed OS-only category. Shared-memory counters are not added again.
+`MemAvailable` estimates memory available for new allocations and differs from completely free pages. Swap occupancy is not extra RAM and does not prove active swapping during the snapshot. Utilization 0.80 is a vLLM sizing input and does not imply 20% of unified RAM remains available to the operating system.
 
-At startup, free device memory after distributed initialization was 99.81–101.66 GiB. The 0.80 utilization target was 97.35 GiB; it applies to vLLM sizing, not to all system memory use. A percentage-based reserve therefore does not imply the same amount of OS-available RAM.
-
-[Measured data](../results/2026-09-10-memory/summary.json)
+[Summary](../results/2026-09-11/memory-summary.json) · [Raw two-second samples](../results/2026-09-11/memory-samples.jsonl) · [Startup and health evidence](../results/2026-09-11/health.json)

@@ -1,0 +1,49 @@
+{
+  "scope": "C8 benchmark controller window, including its three C1 warmup requests",
+  "before": {
+    "num_drafts_total": 8368,
+    "num_draft_tokens_total": 41840,
+    "num_accepted_tokens_total": 21449,
+    "accepted_per_position": [
+      6552,
+      5024,
+      3872,
+      3243,
+      2758
+    ]
+  },
+  "after": {
+    "num_drafts_total": 11565,
+    "num_draft_tokens_total": 57825,
+    "num_accepted_tokens_total": 29671,
+    "accepted_per_position": [
+      9062,
+      6948,
+      5338,
+      4500,
+      3823
+    ]
+  },
+  "delta": {
+    "num_drafts_total": 3197,
+    "num_draft_tokens_total": 15985,
+    "num_accepted_tokens_total": 8222,
+    "accepted_per_position": [
+      2510,
+      1924,
+      1466,
+      1257,
+      1065
+    ]
+  },
+  "accepted_fraction": 0.5143572098842665,
+  "mean_accepted_per_draft": 2.5717860494213327,
+  "position_acceptance_fraction": [
+    0.7851110416015014,
+    0.6018142008132624,
+    0.45855489521426335,
+    0.3931811072880826,
+    0.3331248045042227
+  ],
+  "interpretation": "Supports testing k=3/4/5 with matched graph sizes; does not establish that a shorter draft window is faster."
+}

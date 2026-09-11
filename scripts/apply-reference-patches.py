@@ -1,4 +1,4 @@
-"""Apply the four reference attention fixes to an exact feature-branch tree."""
+"""Apply a checked source patch to an exact feature-branch tree."""
 import hashlib
 import json
 from pathlib import Path
@@ -19,4 +19,4 @@ verify(manifest['original_files'])
 subprocess.run(['patch','--batch','--forward','--fuzz=0','-p1','-d',str(root.parent),
                 '-i',str(manifest_path.parent/manifest['patch'])],check=True)
 verify(manifest['result_files'])
-print('Verified reference attention patch: all four source hashes match')
+print(f"Verified {manifest['patch']}: {len(manifest['result_files'])} source hashes match")

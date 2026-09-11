@@ -14,6 +14,8 @@ COPY --from=stable-builder /src/build/_C_stable_libtorch.abi3.so /usr/local/lib/
 COPY patches/reference-attention.patch patches/manifest.json /opt/spark8-patches/
 COPY scripts/apply-reference-patches.py /opt/apply-reference-patches.py
 RUN python3 /opt/apply-reference-patches.py /opt/spark8-patches/manifest.json
+COPY patches/small-m-mxfp8.patch patches/mxfp8-manifest.json /opt/spark8-patches/
+RUN python3 /opt/apply-reference-patches.py /opt/spark8-patches/mxfp8-manifest.json
 COPY versions.lock.json /opt/spark8-versions.lock.json
 # Keep only the small upstream test subset used to validate the new extension.
 RUN mkdir -p /opt/spark8-tests/tests/kernels && touch /opt/spark8-tests/tests/__init__.py /opt/spark8-tests/tests/kernels/__init__.py

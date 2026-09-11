@@ -3,7 +3,7 @@
 set -Eeuo pipefail
 repo_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.." && pwd)
 build_dir=${BUILD_DIR:-$repo_dir/.build}
-image=${IMAGE_TAG:-deepseek-v41-spark8:2026-09-10-fi07-vision}
+image=${IMAGE_TAG:-deepseek-v41-spark8:2026-09-11-mxfp8}
 [[ $(uname -m) == aarch64 ]] || { echo 'Build on a Linux ARM64 Spark.' >&2; exit 2; }
 mkdir -p "$build_dir"
 exec 9>"$build_dir/build.lock"

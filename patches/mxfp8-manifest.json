@@ -1,0 +1,11 @@
+{
+  "vllm_commit": "e47aa780bccf59f59dfa2cbb18e17a10b4fe69ba",
+  "patch": "small-m-mxfp8.patch",
+  "inspiration": "https://github.com/MiaAI-Lab/DeepSeek-v4.1-Flash-DGX-Sparks/tree/e59e6eb67479aa68f6fa700c600dc90a0729b5ec",
+  "original_files": {
+    "model_executor/kernels/linear/mxfp8/flashinfer.py": "6c07683b8a47f4ce271251ae8a5dc5561dd11559af50d0a7091e9d0da5ce5df3"
+  },
+  "result_files": {
+    "model_executor/kernels/linear/mxfp8/flashinfer.py": "18b298684c220bc9f00d661d76838d18f0ae0b14a768b5822d5841df77864cbf"
+  }
+}

@@ -1,0 +1,39 @@
+--- a/vllm/model_executor/kernels/linear/mxfp8/flashinfer.py
++++ b/vllm/model_executor/kernels/linear/mxfp8/flashinfer.py
+@@ -1,5 +1,7 @@
+ # SPDX-License-Identifier: Apache-2.0
+ # SPDX-FileCopyrightText: Copyright contributors to the vLLM project
++
++import os
+ 
+ import torch
+ from torch.nn.parameter import Parameter
+@@ -48,6 +50,12 @@
+         return kMxfp8Dynamic
+ 
+     def process_weights_after_loading(self, layer: torch.nn.Module) -> None:
++        # Small-M SM12x specialization, inspired by MiaAI-Lab's Spark results.
++        # Other devices and large prefill batches retain the upstream kernel.
++        self._spark_b12x_max_m = int(os.environ.get("SPARK_MXFP8_B12X_MAX_M", "0"))
++        if not 0 <= self._spark_b12x_max_m <= 128:
++            raise ValueError("SPARK_MXFP8_B12X_MAX_M must be between 0 and 128")
++        self._spark_b12x_device = current_platform.is_device_capability_family(120)
+         weight = layer.weight.data  # [N, K]
+         N, K = weight.shape
+ 
+@@ -104,7 +112,14 @@
+             input_scale,
+             weight_scale,
+             out_dtype=out_dtype,
+-            backend="cutlass",
++            backend=(
++                "b12x"
++                if self._spark_b12x_device
++                and 0 < input_mxfp8.shape[0] <= self._spark_b12x_max_m
++                and K % 128 == 0
++                and out_dtype in (torch.bfloat16, torch.float16)
++                else "cutlass"
++            ),
+         )
+ 
+         if bias is not None:

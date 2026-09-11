@@ -74,7 +74,9 @@ def load_config(path):
         raise ValueError('Batches must be between 1 and 8192 tokens')
     runtime_env = p.get('runtime_env', {})
     supported_env = {'NCCL_CUMEM_ENABLE', 'NCCL_NVLS_ENABLE', 'PYTORCH_CUDA_ALLOC_CONF',
-                     'VLLM_USE_FLASHINFER_SAMPLER', 'CUDA_LOG_FILE'}
+                     'VLLM_USE_FLASHINFER_SAMPLER', 'CUDA_LOG_FILE', 'NCCL_BUFFSIZE',
+                     'NCCL_LL128_BUFFSIZE', 'NCCL_PROTO', 'NCCL_MAX_NCHANNELS',
+                     'SPARK_MXFP8_B12X_MAX_M'}
     if not isinstance(runtime_env, dict) or set(runtime_env) - supported_env:
         raise ValueError('Unsupported runtime environment setting')
     if any(not isinstance(v, str) or any(x in v for x in '\n\r\x00')

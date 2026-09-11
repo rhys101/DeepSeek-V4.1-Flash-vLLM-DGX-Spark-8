@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "profile": "profiles/dspark-300k.json",
-  "image": "deepseek-v41-spark8:2026-09-10-fi07-vision",
-  "expected_image_id": "sha256:4514e1e972669763b1ceb94b6f15f70e66e6ee8f381a502246217f165b63a342",
+  "image": "deepseek-v41-spark8:2026-09-11-mxfp8",
+  "expected_image_id": "sha256:ed7669d981444ecbead1e20d43c2fad6a37187008f36510fb4ff46f7ce78c50d",
   "model_store": "/srv/models",
   "model_subpath": "DeepSeek-V4.1-Flash",
   "deployment_dir": "/srv/deepseek-v41-spark8/run-1",

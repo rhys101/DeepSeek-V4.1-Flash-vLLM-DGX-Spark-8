@@ -14,6 +14,11 @@
     "NCCL_NVLS_ENABLE": "0",
     "PYTORCH_CUDA_ALLOC_CONF": "expandable_segments:True",
     "VLLM_USE_FLASHINFER_SAMPLER": "0",
-    "CUDA_LOG_FILE": "stderr"
+    "CUDA_LOG_FILE": "stderr",
+    "NCCL_BUFFSIZE": "1048576",
+    "NCCL_LL128_BUFFSIZE": "262144",
+    "NCCL_PROTO": "^LL128",
+    "NCCL_MAX_NCHANNELS": "8",
+    "SPARK_MXFP8_B12X_MAX_M": "128"
   }
 }

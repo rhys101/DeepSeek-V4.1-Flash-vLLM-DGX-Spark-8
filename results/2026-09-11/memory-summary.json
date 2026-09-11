@@ -1,0 +1,121 @@
+{
+  "snapshot": "2026-09-11T12:29:50.944448+00:00",
+  "sample_interval_seconds": 2,
+  "benchmark_start": "2026-09-11T12:20:23Z",
+  "benchmark_end": "2026-09-11T12:25:39Z",
+  "units": "bytes",
+  "nodes": [
+    {
+      "rank": 0,
+      "snapshot": {
+        "MemTotal": 130663235584,
+        "MemAvailable": 14882189312,
+        "SwapTotal": 17179865088,
+        "SwapFree": 13618044928,
+        "Shmem": 446705664
+      },
+      "samples": 501,
+      "benchmark_samples": 158,
+      "minimum_available_during_benchmark": 15088803840,
+      "minimum_available_during_sampling": 15088803840
+    },
+    {
+      "rank": 1,
+      "snapshot": {
+        "MemTotal": 130663231488,
+        "MemAvailable": 16317562880,
+        "SwapTotal": 17179865088,
+        "SwapFree": 14383132672,
+        "Shmem": 430579712
+      },
+      "samples": 501,
+      "benchmark_samples": 158,
+      "minimum_available_during_benchmark": 16371048448,
+      "minimum_available_during_sampling": 15646416896
+    },
+    {
+      "rank": 2,
+      "snapshot": {
+        "MemTotal": 130663231488,
+        "MemAvailable": 16751788032,
+        "SwapTotal": 17179865088,
+        "SwapFree": 14463524864,
+        "Shmem": 428290048
+      },
+      "samples": 501,
+      "benchmark_samples": 158,
+      "minimum_available_during_benchmark": 16798654464,
+      "minimum_available_during_sampling": 15609659392
+    },
+    {
+      "rank": 3,
+      "snapshot": {
+        "MemTotal": 130663231488,
+        "MemAvailable": 16946229248,
+        "SwapTotal": 17179865088,
+        "SwapFree": 14453268480,
+        "Shmem": 428208128
+      },
+      "samples": 501,
+      "benchmark_samples": 158,
+      "minimum_available_during_benchmark": 17003937792,
+      "minimum_available_during_sampling": 15930097664
+    },
+    {
+      "rank": 4,
+      "snapshot": {
+        "MemTotal": 130663231488,
+        "MemAvailable": 16571453440,
+        "SwapTotal": 17179865088,
+        "SwapFree": 14532784128,
+        "Shmem": 432558080
+      },
+      "samples": 501,
+      "benchmark_samples": 158,
+      "minimum_available_during_benchmark": 16613494784,
+      "minimum_available_during_sampling": 15653814272
+    },
+    {
+      "rank": 5,
+      "snapshot": {
+        "MemTotal": 130663231488,
+        "MemAvailable": 16857903104,
+        "SwapTotal": 17179865088,
+        "SwapFree": 14634704896,
+        "Shmem": 427282432
+      },
+      "samples": 501,
+      "benchmark_samples": 158,
+      "minimum_available_during_benchmark": 16923316224,
+      "minimum_available_during_sampling": 15846903808
+    },
+    {
+      "rank": 6,
+      "snapshot": {
+        "MemTotal": 130663231488,
+        "MemAvailable": 16453218304,
+        "SwapTotal": 17179865088,
+        "SwapFree": 14350426112,
+        "Shmem": 427327488
+      },
+      "samples": 501,
+      "benchmark_samples": 158,
+      "minimum_available_during_benchmark": 16498655232,
+      "minimum_available_during_sampling": 15508561920
+    },
+    {
+      "rank": 7,
+      "snapshot": {
+        "MemTotal": 130663235584,
+        "MemAvailable": 16429572096,
+        "SwapTotal": 17179865088,
+        "SwapFree": 14450466816,
+        "Shmem": 428744704
+      },
+      "samples": 501,
+      "benchmark_samples": 158,
+      "minimum_available_during_benchmark": 16481677312,
+      "minimum_available_during_sampling": 15401664512
+    }
+  ]
+}
