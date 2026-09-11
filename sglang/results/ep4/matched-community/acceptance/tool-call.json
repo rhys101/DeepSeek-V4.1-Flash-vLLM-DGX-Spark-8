@@ -1,0 +1,84 @@
+{
+  "request": {
+    "model": "deepseek-v41-flash",
+    "temperature": 0,
+    "max_tokens": 256,
+    "chat_template_kwargs": {
+      "thinking": false
+    },
+    "messages": [
+      {
+        "role": "user",
+        "content": "Use lookup_fixture to retrieve the value for key alpha. Do not guess."
+      }
+    ],
+    "tools": [
+      {
+        "type": "function",
+        "function": {
+          "name": "lookup_fixture",
+          "description": "Retrieve a stored test value.",
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "key": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "key"
+            ],
+            "additionalProperties": false
+          }
+        }
+      }
+    ]
+  },
+  "response": {
+    "id": "680c986e26e748bcb0b0a7d3b29eeb89",
+    "object": "chat.completion",
+    "created": 1789159181,
+    "model": "deepseek-v41-flash",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "I'll retrieve the value for key alpha.",
+          "reasoning_content": null,
+          "tool_calls": [
+            {
+              "id": "call_77b3d06e36ba4a85b1d32015",
+              "index": 0,
+              "type": "function",
+              "function": {
+                "name": "lookup_fixture",
+                "arguments": "{\"key\": \"alpha\"}"
+              }
+            }
+          ]
+        },
+        "logprobs": null,
+        "finish_reason": "tool_calls",
+        "matched_stop": null
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 289,
+      "total_tokens": 338,
+      "completion_tokens": 49,
+      "prompt_tokens_details": null,
+      "reasoning_tokens": 0
+    },
+    "metadata": {
+      "weight_version": "default",
+      "weight_versions": [
+        {
+          "version": "default",
+          "start": 0,
+          "end": 49
+        }
+      ]
+    }
+  }
+}

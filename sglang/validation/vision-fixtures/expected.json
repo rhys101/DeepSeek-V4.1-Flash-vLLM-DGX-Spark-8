@@ -1,0 +1,13 @@
+{
+  "single": {
+    "code": "NORTH 7314",
+    "left_shape": "red square",
+    "right_shape": "blue circle"
+  },
+  "four": [
+    "NORTH 7314",
+    "SOUTH 8265",
+    "EAST 1948",
+    "WEST 5620"
+  ]
+}

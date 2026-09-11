@@ -1,0 +1,110 @@
+{
+  "status": "VALIDATED_EP4_SPARKDASH_PROSE",
+  "decode": [
+    {
+      "concurrency": 1,
+      "trials_tps": [
+        67.55,
+        67.05
+      ],
+      "mean_tps": 67.3,
+      "sg3_mean_tps": 64.02,
+      "ratio_to_sg3": 1.0512339893783194,
+      "max_ttft_ms": [
+        151,
+        153.02
+      ]
+    },
+    {
+      "concurrency": 2,
+      "trials_tps": [
+        109.66,
+        110.49
+      ],
+      "mean_tps": 110.07499999999999,
+      "sg3_mean_tps": 100.785,
+      "ratio_to_sg3": 1.092176415141142,
+      "max_ttft_ms": [
+        206.75,
+        172.76
+      ]
+    },
+    {
+      "concurrency": 3,
+      "trials_tps": [
+        142.68,
+        142.83
+      ],
+      "mean_tps": 142.755,
+      "sg3_mean_tps": 130.865,
+      "ratio_to_sg3": 1.0908569900278913,
+      "max_ttft_ms": [
+        171.6,
+        179.32
+      ]
+    },
+    {
+      "concurrency": 4,
+      "trials_tps": [
+        154.66,
+        154.13
+      ],
+      "mean_tps": 154.39499999999998,
+      "sg3_mean_tps": 148.785,
+      "ratio_to_sg3": 1.0377054138522028,
+      "max_ttft_ms": [
+        188.88,
+        184.99
+      ]
+    },
+    {
+      "concurrency": 6,
+      "trials_tps": [
+        211.4,
+        210.88
+      ],
+      "mean_tps": 211.14,
+      "sg3_mean_tps": 177.38,
+      "ratio_to_sg3": 1.1903258540985455,
+      "max_ttft_ms": [
+        192.97,
+        216.92
+      ]
+    },
+    {
+      "concurrency": 8,
+      "trials_tps": [
+        227.98,
+        229.3
+      ],
+      "mean_tps": 228.64,
+      "sg3_mean_tps": 233.925,
+      "ratio_to_sg3": 0.9774072886608954,
+      "max_ttft_ms": [
+        412.94,
+        381.82
+      ]
+    }
+  ],
+  "mia_reported": {
+    "c1_ratio": 1.4473118279569892,
+    "c4_ratio": 1.4817178502879076
+  },
+  "minimum_os_available_gib": {
+    "r4": 18.956111907958984,
+    "r6": 18.844463348388672,
+    "r2": 18.881141662597656,
+    "r0": 17.574413299560547,
+    "r7": 19.635692596435547,
+    "r5": 18.986331939697266,
+    "r1": 18.93213653564453,
+    "r3": 19.19953155517578
+  },
+  "minimum_all_nodes_gib": 17.574413299560547,
+  "capability_acceptance": "PASS",
+  "long_context": "PASS: 32867/131171/299099 actual prompt tokens",
+  "all_eight_running_no_oom_or_restarts": true,
+  "precision_formats_changed": false,
+  "greedy_c1_preview_identical": true,
+  "limit": "Two prose trials; broad quality parity unmeasured. Changing expert partition changes partial-sum arithmetic. C8 is 2.26% below SG3; C1/C4 gains are 5.12%/3.77%. Matched coding is reported separately in matched-community/comparison.json."
+}

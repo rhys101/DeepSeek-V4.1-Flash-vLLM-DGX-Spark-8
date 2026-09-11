@@ -1,0 +1,48 @@
+EP4 (SG5): DeepSeek V4.1 Flash on eight DGX Sparks using SGLang
+Recorded 11 September 2026.
+
+This directory adapts MiaAI-Lab/DeepSeek-v4.1-Flash-DGX-Sparks at
+e59e6eb67479aa68f6fa700c600dc90a0729b5ec.
+Copyright (C) 2026 zurih. GNU AGPL-3.0-or-later; see LICENSE.
+Source: https://github.com/MiaAI-Lab/DeepSeek-v4.1-Flash-DGX-Sparks
+The combined SGLang preparation is offered under AGPL-3.0-or-later.
+Third-party files retain their licenses below.
+
+The recipe skeleton originated from
+0xSero/deepseek-v4.1-flash-4x-rtx-pro-6000, MIT License,
+Copyright (c) 2026 0xSero. The notice is retained in LICENSE.upstream-MIT.
+
+patches/source/python/sglang contains SGLang source under Apache-2.0;
+see LICENSE.sglang. Source revision e087e662ba1ac4ef7747537e2a9141085efd4561.
+Native query-head changes adapt PR #36655, preserving V4.1 fallback and
+Mia's SM120 page-splitting changes. Five verification/index files come from
+PR #39068; the TP4 WO-A and Q-RoPE changes are excluded.
+Source: https://github.com/sgl-project/sglang
+
+bench/sparkdash/upstream is preserved from MiaAI-Lab/sparkDash at
+d0c7f71296a1071d0d75f95b14c21413d4d06321 under its MIT license,
+included in that directory. run.mjs adds a CLI; upstream files are unchanged.
+Source: https://github.com/MiaAI-Lab/sparkDash
+
+The matched community benchmark uses the existing ../bench/v41bench.py,
+unchanged from tonyd2wild/DeepSeek-V4.1-Flash-vLLM-DGX-Spark at
+ca662ac35193c69ace9cee37f13a94abf2eff0fc. The MIT notice is retained in
+LICENSE.benchmark-MIT and ../licenses/tonyd2wild-MIT.txt.
+
+The eight-Spark configuration uses native CUDA-resident Engram shards,
+without the NVMe row-store hook or TP3 padding. It adds source-identity
+checks, launch/distribution tooling, and capability/numerical validation.
+The retained experimental admission hook is disabled in EP4; the active
+scheduler setting is --min-free-slots-delay 1.
+
+SGLang, FlashInfer, PyTorch, NVIDIA components and DeepSeek model weights
+retain their own licenses. No model weights, credentials, or prebuilt
+container image are redistributed here. Product names identify upstream
+products; no affiliation or endorsement is implied.
+
+EP4/SG5 changes the routed-expert partition to EP4/MoE-TP2 while retaining
+global TP8. The local DSpark worker change wraps draft lifecycle operations
+in the existing speculative backend context and records actual methods and
+shapes. Its SGLang-derived source remains Apache-2.0. The numerical
+validation/reference source files are unmodified pinned SGLang fixtures
+under Apache-2.0; they are not applied as production overlays.

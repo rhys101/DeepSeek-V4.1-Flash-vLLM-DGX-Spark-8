@@ -1,0 +1,34 @@
+{
+  "python/sglang/srt/models/deepseek_v4.py": {
+    "before_sha256": "11ac4bec0aac9e2d094cc38211e1744ee7cdc5d8a9920b6af12d9c92f24a5163",
+    "after_sha256": "75003c5d644f9a0278d443481ccbf97423697165b5b8d620274b1faa38c144ac"
+  },
+  "python/sglang/kernels/ops/attention/flash_mla_sm120.py": {
+    "before_sha256": "5d90df815f3161f3c43ec0126f9cb2eec85336e561917b111cab00e24d411132",
+    "after_sha256": "2fe25ba5e2ff91f6028b6a32c315ba8875d8780b9341bae9411af1cc927885bf"
+  },
+  "python/sglang/kernels/jit/csrc/deepseek_v4/c2.cuh": {
+    "before_sha256": "84be767c3a2909e5cf0bf98ef8f1d5f96d0c86c05f003f749d97ae9eafff44e2",
+    "after_sha256": "55f32ba512fca86826a27d66f36d4667848c17cbbe0d34096ffedead0ce469e4"
+  },
+  "python/sglang/kernels/ops/attention/dsv4/c2.py": {
+    "before_sha256": "0f98a8fe2abf9db25f87d451ceefe0dcb4b411d7fcc0d75c8bdb7a0b3f58600a",
+    "after_sha256": "9da953bedcebad1b6168cce61453bd487689363358a2569b8a0c366b955e5bea"
+  },
+  "python/sglang/kernels/ops/attention/dsv4/candidate_blocks.py": {
+    "before_sha256": "c4f2ace8ecf94f2316a1ec0ef2e8f8a8d7565fb2161a4019cf92601b7ebc5032",
+    "after_sha256": "d7fc6c5984d10331a04d3586a537def4d531a440f2db3113423785b9aa4016ea"
+  },
+  "python/sglang/kernels/ops/attention/dsv4/indexer_postprocess.py": {
+    "before_sha256": null,
+    "after_sha256": "55a52c4e6c71568705958ed35f821260b38b1d371637712c47dc0e964f9c1f54"
+  },
+  "python/sglang/srt/layers/attention/deepseek_v4_backend.py": {
+    "before_sha256": "a99da83280bad451eee68c8ce0c42bd7f1847249b96f540cd5f74aab171dcacb",
+    "after_sha256": "20a711344de7666d83b3dfa3ce7e9621729cbe40ed9a433d28e53872216e65d1"
+  },
+  "python/sglang/srt/speculative/dspark_components/dspark_worker_v2.py": {
+    "before_sha256": "7361310ce8fb3643efa0ed6d98c3e31c291fb2e2a859d850d77bd6496106df4b",
+    "after_sha256": "8387704e671b1a67d116ccca9523092083eb0d299e654a5d6c7949f7245bf6df"
+  }
+}

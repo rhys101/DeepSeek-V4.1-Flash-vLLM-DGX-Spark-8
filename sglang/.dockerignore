@@ -1,0 +1,11 @@
+.git
+.build
+.local
+results
+tests
+docs
+bench
+validation
+**/__pycache__
+**/node_modules
+configs/cluster.local.json

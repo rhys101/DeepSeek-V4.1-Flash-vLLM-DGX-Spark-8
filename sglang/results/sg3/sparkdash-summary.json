@@ -1,0 +1,108 @@
+{
+  "status": "VALIDATED_CURRENT_CANDIDATE_PENDING_FURTHER_OPTIMIZATION",
+  "decode": [
+    {
+      "concurrency": 1,
+      "sg2b_mean_tps": 63.585,
+      "trials_tps": [
+        63.91,
+        64.13
+      ],
+      "mean_tps": 64.02,
+      "ratio_to_sg2b": 1.0068412361405992,
+      "max_ttft_ms": [
+        160.2,
+        153.48
+      ]
+    },
+    {
+      "concurrency": 2,
+      "sg2b_mean_tps": 98.04499999999999,
+      "trials_tps": [
+        100.46,
+        101.11
+      ],
+      "mean_tps": 100.785,
+      "ratio_to_sg2b": 1.0279463511652813,
+      "max_ttft_ms": [
+        212.26,
+        213.69
+      ]
+    },
+    {
+      "concurrency": 3,
+      "sg2b_mean_tps": 130.495,
+      "trials_tps": [
+        130.43,
+        131.3
+      ],
+      "mean_tps": 130.865,
+      "ratio_to_sg2b": 1.0028353576765394,
+      "max_ttft_ms": [
+        207.71,
+        205.94
+      ]
+    },
+    {
+      "concurrency": 4,
+      "sg2b_mean_tps": 148.39,
+      "trials_tps": [
+        148.5,
+        149.07
+      ],
+      "mean_tps": 148.785,
+      "ratio_to_sg2b": 1.0026619044410001,
+      "max_ttft_ms": [
+        199.85,
+        198.8
+      ]
+    },
+    {
+      "concurrency": 6,
+      "sg2b_mean_tps": 176.19,
+      "trials_tps": [
+        176.41,
+        178.35
+      ],
+      "mean_tps": 177.38,
+      "ratio_to_sg2b": 1.0067540723083035,
+      "max_ttft_ms": [
+        212.29,
+        223.7
+      ]
+    },
+    {
+      "concurrency": 8,
+      "sg2b_mean_tps": 233.29,
+      "trials_tps": [
+        233.12,
+        234.73
+      ],
+      "mean_tps": 233.925,
+      "ratio_to_sg2b": 1.0027219340734708,
+      "max_ttft_ms": [
+        464.44,
+        406.5
+      ]
+    }
+  ],
+  "mia_reported": {
+    "c1_ratio": 1.376774193548387,
+    "c4_ratio": 1.4278790786948177
+  },
+  "precision_changed": false,
+  "comparison_limit": "Two observed trials, no confidence interval; improvements over SG2b below 1% at C1/C4/C8. Mia exact software version unknown; broad capability parity unmeasured.",
+  "minimum_os_available_gib": {
+    "r0": 19.862598419189453,
+    "r1": 21.138378143310547,
+    "r2": 21.47561264038086,
+    "r3": 21.644012451171875,
+    "r4": 21.259944915771484,
+    "r5": 21.85064697265625,
+    "r6": 21.611923217773438,
+    "r7": 22.022567749023438
+  },
+  "minimum_all_nodes_gib": 19.862598419189453,
+  "long_context": "PASS 32867/131171/299099 actual prompt tokens",
+  "all_eight_running_no_oom_or_restarts": true
+}

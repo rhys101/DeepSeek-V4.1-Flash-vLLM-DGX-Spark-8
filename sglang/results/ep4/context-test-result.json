@@ -1,0 +1,62 @@
+{
+  "status": "PASS",
+  "cases": [
+    {
+      "dp": false,
+      "explicit": false,
+      "exception": false,
+      "status": "PASS"
+    },
+    {
+      "dp": false,
+      "explicit": false,
+      "exception": true,
+      "status": "PASS"
+    },
+    {
+      "dp": false,
+      "explicit": true,
+      "exception": false,
+      "status": "PASS"
+    },
+    {
+      "dp": false,
+      "explicit": true,
+      "exception": true,
+      "status": "PASS"
+    },
+    {
+      "dp": true,
+      "explicit": false,
+      "exception": false,
+      "status": "PASS"
+    },
+    {
+      "dp": true,
+      "explicit": false,
+      "exception": true,
+      "status": "PASS"
+    },
+    {
+      "dp": true,
+      "explicit": true,
+      "exception": false,
+      "status": "PASS"
+    },
+    {
+      "dp": true,
+      "explicit": true,
+      "exception": true,
+      "status": "PASS"
+    }
+  ],
+  "original_mismatch_reproduced": true,
+  "protected_calls": [
+    "build_draft_tp_worker",
+    "self._draft_worker.init_cuda_graphs",
+    "self._proposer.propose",
+    "self._proposer.run_idle_participation"
+  ],
+  "source_sha256": "8387704e671b1a67d116ccca9523092083eb0d299e654a5d6c7949f7245bf6df",
+  "limit": "Source-extracted control-flow checks with metadata fixtures; actual selected model methods and GPU execution require serving validation."
+}

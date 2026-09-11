@@ -1,0 +1,7 @@
+{
+  "phase": "complete",
+  "time": 1789158526.9406886,
+  "status": "PASS",
+  "image_id": "sha256:fd439c24c2a11e7c43a750c55c104092fce691f652142181b0b16605a2a65c89",
+  "limit": "EP4 packaged image built; all eight final source hashes and the draft context checked. Numerical operator results reuse the exact seven unchanged source files tested on SM121 immediately before this build. The separate EP4 partition probe and full serving run qualify the changed expert topology."
+}

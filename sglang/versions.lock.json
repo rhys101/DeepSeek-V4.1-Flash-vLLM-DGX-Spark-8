@@ -1,0 +1,78 @@
+{
+  "status": "EP4_DEPLOYED_AND_PACKAGED_SOURCE_VALIDATED_FRESH_WRAPPER_REPRODUCTION_PENDING",
+  "recorded": "2026-09-11",
+  "base_image": "lmsysorg/sglang@sha256:3475d88ec3124867d9d6f7b3bd49afdcf8ef4d6a9f8454fab331d5adb5204de7",
+  "base_index_digest": "sha256:e56358a68b06427362283c8c8a9d7d706448082ae53098ea1131b5d51aa1fd62",
+  "base_platform": "linux/arm64",
+  "sglang_commit": "e087e662ba1ac4ef7747537e2a9141085efd4561",
+  "mia_url": "https://github.com/MiaAI-Lab/DeepSeek-v4.1-Flash-DGX-Sparks",
+  "mia_commit": "e59e6eb67479aa68f6fa700c600dc90a0729b5ec",
+  "model_repo": "deepseek-ai/DeepSeek-V4.1-Flash",
+  "model_revision": "df42c109f1defefcbfcedbe7d905718a12266e40",
+  "model_config_sha256": "8be45ce0476004a3f529fd896115a4a2e800a129ad2d3ec05b16050f52e21879",
+  "engram_total_bytes": 202758032400,
+  "engram_average_bytes_per_rank": 25344754050,
+  "base_declared_dependencies": {
+    "flashinfer": "0.6.18",
+    "cuda": "13.0.3",
+    "nccl": "2.30.7"
+  },
+  "benchmark_source_sha256": "e0d6b2d25bd585d11fbdf39c2ddcdf7a4de8ab685af6bd42465e69f3ee6e80a8",
+  "inspected_source_sha256": {
+    "dspark_draft.py": "75ec519d908901cd589511bf98f280c67f7e6c378b3d17b41577e66601700f38",
+    "server_args.py": "ebf54cd7a325b7e2bea506cc42185314e07ee08ead1ae9f9a556a403d29dde60",
+    "dspark_worker_v2.py": "7361310ce8fb3643efa0ed6d98c3e31c291fb2e2a859d850d77bd6496106df4b",
+    "metadata.py": "d5c4e3e75b0164bdc3d6a2b8e510814edd1d28ff615b56cefdabf5ea3bfaf56b",
+    "engram.py": "e8aba7161f19f0320944dda1aa3608d014620ea808045e810de89bc32d615626",
+    "fp8_utils.py": "c1b392059434e7b362b4f6afff16f2941d110840cb32632d68ff8459f2eafb09",
+    "engram_gather.py": "86ab03bff1767085b5c1c3a22e5ac91bcb646d55a05a80bdcbebc4a761268306",
+    "dspark_config.py": "73c3dc2986fa57eebcf61fdf47a817920a918f35e1414a724a0a0a3e44a7e577",
+    "dspark_verify.py": "2ee03975f313ee6f5aacd92632d27daddf084e591758e588830563490f445db9",
+    "fi0618__sparse_mla_sm120.py": "bddb1bd067554c3adef5179b46cd5214373218669d9d237344e10d38c3947698",
+    "dspark_accept.py": "e233e4793b2e2a55f4aee846c24af93b21ffd5ff9ae3754c211490600b489c68",
+    "environ.py": "27bfe2a3b90c76d8d233fc17d7c46906741c6102208fa3265f5a13b6faaac962"
+  },
+  "mia_base_note": "Mia uses a mutable dev-dsv41 tag and cites an older amd64 digest. This pins the ARM64 image resolved on 2026-09-11; it is not proof of the exact image used for Mia reported results.",
+  "pinned_attention_source_sha256": "5d90df815f3161f3c43ec0126f9cb2eec85336e561917b111cab00e24d411132",
+  "mia_attention_overlay_sha256": "fe7f78bead1f74efad00b5c1a5dfb36f71f55cffbb26518088e6f7ca99d971ae",
+  "validated": "2026-09-11",
+  "validated_image_id": "sha256:e7681b5276525821f9be286ed3bf0f51acb5239da27f69f60fdeb57e68c05581",
+  "validated_image_note": "EP4/SG5 used the native-head image with six read-only source overlays. Public Dockerfile packages the same eight final SGLang sources and hooks; image ID alone does not identify the measured mounted composition.",
+  "backports": [
+    {
+      "pr": 36655,
+      "role": "Native H8/H16 decode with V4.1 fallback and page splitting retained"
+    },
+    {
+      "pr": 39068,
+      "role": "Five compression/index-processing files only; no TP4 WO-A or Q-RoPE changes"
+    }
+  ],
+  "runtime_configuration_sha256": "dea6d462ee5227288d0b83c547bdec94f3f11fc0cbfe7e39f9d033329b7e367e",
+  "adapter_sha256": {
+    "mxfp8_b12x.py": "2ec377aefa12682f34e2b4b000c0a131777294aeb5784bfd816b569d8f1f0276",
+    "prefill_empty_cache.py": "24dadef526ec7dfc18527fd068d9b685a34cab1bf137a4591f0113e118d71b75",
+    "resident_engram.py": "bc563b5404f25dfbe618885154c99167caab0f2701c7c493c66dbc1c71772527",
+    "sitecustomize.py": "00cc6bc16a7e2a6f85d3941edd73a4e5f40e78c507f43622c2efe7f224395aa5",
+    "admission.py": "4f330f510983c79338a7eb3acdb9e700007a7186445c9473f51812de713f3a3b"
+  },
+  "source_manifest": "patches/manifest.json",
+  "expert_parallelism": {
+    "global_tp": 8,
+    "ep": 4,
+    "moe_tp": 2,
+    "target_local_experts": 96,
+    "draft_local_experts": 32,
+    "local_intermediate": 1152
+  },
+  "local_draft_context_fix": {
+    "source": "python/sglang/srt/speculative/dspark_components/dspark_worker_v2.py",
+    "after_sha256": "8387704e671b1a67d116ccca9523092083eb0d299e654a5d6c7949f7245bf6df",
+    "purpose": "Apply the existing speculative backend context through draft construction/capture/execution; record actual all-rank layout."
+  },
+  "package_validation": {
+    "evidence": "results/ep4/package-validation/identity.json",
+    "image_id": "sha256:fd439c24c2a11e7c43a750c55c104092fce691f652142181b0b16605a2a65c89",
+    "scope": "All eight final sources, runtime hooks and configuration checked. Build-status metadata in this lock was updated after that validation image was built."
+  }
+}

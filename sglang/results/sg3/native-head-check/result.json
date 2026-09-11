@@ -1,0 +1,91 @@
+{
+  "device": "NVIDIA GB10",
+  "capability": [
+    12,
+    1
+  ],
+  "upstream_numerical_subcases": 12,
+  "model_selection_and_sink_views": "PASS",
+  "rows": [
+    {
+      "tokens": 1,
+      "heads": 8,
+      "dual_cache": false,
+      "graph_replays_with_changed_input": 3,
+      "max_abs_error": 0.0,
+      "native_median_us": 14.721999876201153,
+      "padded_median_us": 18.276000395417213,
+      "kernel_speedup": 1.2414074547685114
+    },
+    {
+      "tokens": 1,
+      "heads": 8,
+      "dual_cache": true,
+      "graph_replays_with_changed_input": 3,
+      "max_abs_error": 4.0,
+      "native_median_us": 16.276000067591667,
+      "padded_median_us": 22.617999464273453,
+      "kernel_speedup": 1.389653438826767
+    },
+    {
+      "tokens": 6,
+      "heads": 8,
+      "dual_cache": false,
+      "graph_replays_with_changed_input": 3,
+      "max_abs_error": 4.0,
+      "native_median_us": 15.399999916553497,
+      "padded_median_us": 47.17399924993515,
+      "kernel_speedup": 3.0632467211397647
+    },
+    {
+      "tokens": 6,
+      "heads": 8,
+      "dual_cache": true,
+      "graph_replays_with_changed_input": 3,
+      "max_abs_error": 4.0,
+      "native_median_us": 20.560000091791153,
+      "padded_median_us": 83.23799818754196,
+      "kernel_speedup": 4.048540749801641
+    },
+    {
+      "tokens": 24,
+      "heads": 8,
+      "dual_cache": false,
+      "graph_replays_with_changed_input": 3,
+      "max_abs_error": 2.0,
+      "native_median_us": 41.89800098538399,
+      "padded_median_us": 103.7599965929985,
+      "kernel_speedup": 2.476490385047127
+    },
+    {
+      "tokens": 24,
+      "heads": 8,
+      "dual_cache": true,
+      "graph_replays_with_changed_input": 3,
+      "max_abs_error": 4.0,
+      "native_median_us": 75.92599838972092,
+      "padded_median_us": 182.16000497341156,
+      "kernel_speedup": 2.3991782635297283
+    },
+    {
+      "tokens": 48,
+      "heads": 8,
+      "dual_cache": false,
+      "graph_replays_with_changed_input": 3,
+      "max_abs_error": 4.0,
+      "native_median_us": 49.2280013859272,
+      "padded_median_us": 447.5559890270233,
+      "kernel_speedup": 9.091492167605367
+    },
+    {
+      "tokens": 48,
+      "heads": 8,
+      "dual_cache": true,
+      "graph_replays_with_changed_input": 3,
+      "max_abs_error": 4.0,
+      "native_median_us": 86.03999763727188,
+      "padded_median_us": 970.553994178772,
+      "kernel_speedup": 11.280265235134493
+    }
+  ]
+}

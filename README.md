@@ -2,9 +2,36 @@
 
 Serve `deepseek-ai/DeepSeek-V4.1-Flash` across **eight NVIDIA DGX Sparks** with **TP8, RAM-resident Engram, DSpark k=5, CUDA graphs and vision**.
 
-This repository contains the build recipe, serving configuration, validation tools and measured results for the deployment recorded on **11 September 2026**. It combines [Tony's pinned vLLM/FlashInfer recipe](https://github.com/tonyd2wild/DeepSeek-V4.1-Flash-vLLM-DGX-Spark/tree/ca662ac35193c69ace9cee37f13a94abf2eff0fc) with [Mia-inspired NCCL settings and small-M MXFP8 routing](docs/mia-improvements.md).
+This repository contains two measured serving deployments recorded on **11 September 2026**:
 
-## Performance
+| Engine | Parallelism | Build, configuration and evidence |
+|---|---|---|
+| **SGLang EP4 (SG5)** | TP8 / EP4 / MoE-TP2 | [SGLang release](sglang/README.md) |
+| **vLLM** | TP8 | The vLLM recipe and results below |
+
+Both use the pinned DeepSeek V4.1 Flash checkpoint, resident Engram, five-token DSpark drafting, eight request slots, four-image support and a 300,000-token context cap. Their software versions, expert partitioning and memory accounting differ.
+
+## SGLang EP4 versus vLLM
+
+**111.29 tok/s single-stream coding decode**, versus **95.91** on the existing vLLM deployment (16.0% higher).
+
+| Measurement (tok/s) | vLLM, eight Sparks | SGLang EP4, eight Sparks | EP4 change |
+|---|---|---|---|
+| Coding C1, decode per stream | 95.91 | 111.29 | +16.0% |
+| Coding C4, aggregate | 239.60 | 274.07 | +14.4% |
+| Coding C6, aggregate | 305.24 | 390.93 | +28.1% |
+| Coding C8, aggregate | 341.44 | 431.82 | +26.5% |
+| Category mean C4, aggregate | 157.35 | 192.27 | +22.2% |
+| Category mean C6, aggregate | 205.35 | 255.66 | +24.5% |
+| Category mean C8, aggregate | 237.27 | 291.33 | +22.8% |
+
+[Complete comparison, token counts and limits](sglang/docs/community-comparison.md).
+
+The comparison uses the same unchanged community benchmark and coding prompt. Single-stream decode excludes time before the first token; aggregate throughput includes prefill and batch wall time. The full [SGLang release](sglang/README.md) includes source pins, build/launch scripts, numerical checks, capability checks, long-context retrieval and raw measurements. Its separate sparkDash prose benchmark is documented independently.
+
+## vLLM results
+
+The vLLM deployment combines [Tony's pinned vLLM/FlashInfer recipe](https://github.com/tonyd2wild/DeepSeek-V4.1-Flash-vLLM-DGX-Spark/tree/ca662ac35193c69ace9cee37f13a94abf2eff0fc) with [Mia-inspired NCCL settings and small-M MXFP8 routing](docs/mia-improvements.md). Unless a section links explicitly to `sglang/`, the remaining instructions and results describe vLLM.
 
 **95.9 tok/s single-stream coding decode.** At six concurrent requests, coding aggregate throughput is **305.24 tok/s** and the eight-category mean is **205.35 tok/s**. Eight concurrent requests reaches **237.27 tok/s** category mean.
 
@@ -162,4 +189,4 @@ This executes the unchanged C1–C6 prompt benchmark and all four original cold-
 
 ## Attribution and license
 
-Project glue is MIT licensed; vLLM patch material retains Apache-2.0 terms. Upstream benchmark and build credits are in [NOTICE](NOTICE), with license texts in [licenses](licenses/). Model weights and dependencies retain their own licenses.
+The existing vLLM project glue is MIT licensed; vLLM patch material retains Apache-2.0 terms. The added [SGLang subtree](sglang/NOTICE) contains AGPL-3.0-or-later Mia-derived adaptation, Apache-2.0 SGLang source and MIT benchmark material. Upstream benchmark and build credits are in [NOTICE](NOTICE), with license texts in [licenses](licenses/). Model weights and dependencies retain their own licenses.

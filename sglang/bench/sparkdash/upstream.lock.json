@@ -1,0 +1,16 @@
+{
+  "repo": "https://github.com/MiaAI-Lab/sparkDash",
+  "commit": "d0c7f71296a1071d0d75f95b14c21413d4d06321",
+  "files_sha256": {
+    "server/collectors/DecodeBench.js": "1aa50982822c48139b009a5740bf187e6bf30f2fc1dc52f1f583971f82e961f9",
+    "server/collectors/PrefillBench.js": "bdd8123c430bcd6b6ca719b33878d41a54b8f31a136265c891e53e3ec315f17b",
+    "server/collectors/LlmStreaming.js": "77e117688dc67c4405188795aedab25d4a7ecea124c1974c8f5f1393e554b0cb",
+    "server/util/atomicWrite.js": "e4caf1065209d085561fa28a91e6af6c29857f40f8809b3554869e3815d28654",
+    "src/shared/llmPrompts.js": "a4a5b300411779de2c2f12a5b652d4702a3b2d6fdeca88421f26d8c7f0c23749",
+    "src/shared/llmTarget.js": "74913ffd206454f31743d8bba76892f12d1204eae21055173bdde3796c793443",
+    "src/shared/prefillBench.js": "bc29a63b22cedb4b58dbf2a44b5a4a51fdc7481d82b27ed88e73df9c99482bc2",
+    "LICENSE": "1126322e2cc8d165adc4c792eeb195717de2bcc7b39be1ce77959d78e87ef685"
+  },
+  "unchanged_upstream_files": true,
+  "source_version_is_known_tweet_version": false
+}

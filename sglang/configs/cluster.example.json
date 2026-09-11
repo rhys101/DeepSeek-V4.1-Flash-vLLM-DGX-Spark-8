@@ -1,0 +1,70 @@
+{
+  "name": "ep4",
+  "image": "deepseek-v41-sglang8:ep4",
+  "expected_image_id": null,
+  "model_store": "/srv/models",
+  "model_subpath": "DeepSeek-V4.1-Flash",
+  "run_dir": "/srv/sglang/ep4-run1",
+  "head_ip": "192.0.2.11",
+  "fabric_interface": "enp1s0f0np0",
+  "nccl_hcas": "=rocep1s0f0:1,roceP2p1s0f0:1",
+  "dist_port": 29601,
+  "api_host": "127.0.0.1",
+  "api_port": 8000,
+  "context_length": 300000,
+  "max_running_requests": 8,
+  "chunked_prefill_size": 8192,
+  "max_prefill_tokens": 8192,
+  "max_total_tokens": 3200000,
+  "mem_fraction_static": 0.8,
+  "draft_length": 5,
+  "minimum_available_gib": 13,
+  "workers": [
+    {
+      "rank": 0,
+      "host": "deploy@spark1",
+      "ip": "192.0.2.11"
+    },
+    {
+      "rank": 1,
+      "host": "deploy@spark2",
+      "ip": "192.0.2.12"
+    },
+    {
+      "rank": 2,
+      "host": "deploy@spark3",
+      "ip": "192.0.2.13"
+    },
+    {
+      "rank": 3,
+      "host": "deploy@spark4",
+      "ip": "192.0.2.14"
+    },
+    {
+      "rank": 4,
+      "host": "deploy@spark5",
+      "ip": "192.0.2.15"
+    },
+    {
+      "rank": 5,
+      "host": "deploy@spark6",
+      "ip": "192.0.2.16"
+    },
+    {
+      "rank": 6,
+      "host": "deploy@spark7",
+      "ip": "192.0.2.17"
+    },
+    {
+      "rank": 7,
+      "host": "deploy@spark8",
+      "ip": "192.0.2.18"
+    }
+  ],
+  "nccl_test_port": 29611,
+  "retry_free_admission": false,
+  "ep_size": 4,
+  "nccl_channels": 8,
+  "nccl_algo": "",
+  "min_free_slots_delay": 1
+}

@@ -1,0 +1,124 @@
+# SGLang EP4 (SG5): DeepSeek V4.1 Flash on eight DGX Sparks
+
+EP4 is a validated snapshot of the SGLang deployment: **TP8/EP4, native RAM-resident Engram, DSpark five-token drafting, CUDA graphs, eight request slots, four images and a 300,000-token context cap**. It runs the same checkpoint as the [vLLM deployment](../README.md).
+
+It combines [Mia's pinned Spark adaptation](https://github.com/MiaAI-Lab/DeepSeek-v4.1-Flash-DGX-Sparks/tree/e59e6eb67479aa68f6fa700c600dc90a0729b5ec) with native-width query heads from [SGLang #36655](https://github.com/sgl-project/sglang/pull/36655), the scheduler's `--min-free-slots-delay 1` setting, and five verification/index-processing files from [#39068](https://github.com/sgl-project/sglang/pull/39068). Each of four expert groups spans two tensor ranks; model-wide TP remains eight. A local draft-context fix applies the requested backend consistently and records the actual loaded expert layout on all ranks. [SG3](docs/sg3-reference.md) is retained as the earlier reference.
+
+## Speed
+
+**111.29 tok/s single-stream coding decode**, versus **95.91** on the existing vLLM deployment (16.0% higher).
+
+| Measurement (tok/s) | vLLM, eight Sparks | SGLang EP4, eight Sparks | EP4 change |
+|---|---|---|---|
+| Coding C1, decode per stream | 95.91 | 111.29 | +16.0% |
+| Coding C4, aggregate | 239.60 | 274.07 | +14.4% |
+| Coding C6, aggregate | 305.24 | 390.93 | +28.1% |
+| Coding C8, aggregate | 341.44 | 431.82 | +26.5% |
+| Category mean C4, aggregate | 157.35 | 192.27 | +22.2% |
+| Category mean C6, aggregate | 205.35 | 255.66 | +24.5% |
+| Category mean C8, aggregate | 237.27 | 291.33 | +22.8% |
+
+[Complete comparison, token counts and limits](docs/community-comparison.md).
+
+The engine comparison uses the repository's existing, unmodified [community benchmark](../bench/v41bench.py): the same coding prompt, deterministic request prefixes, 200-token coding budget, temperature zero and thinking off. Single-stream decode excludes time before the first token. Aggregate throughput includes prefill and batch wall time. These two metrics are reported separately.
+
+The separate sparkDash **prose** benchmark reached **67.300 tok/s at C1, 154.395 at C4 and 228.640 at C8**, averaged across two trials. sparkDash uses a different prompt, a 256-token budget and aggregate decode timing. Its results must not be used as a direct comparison with the community coding figures. [Prose and prefill results](docs/prose-results.md).
+
+## Quality
+
+The validated profile passed text arithmetic, two waves of eight concurrent arithmetic requests, one-image and four-image checks, structured JSON, and a tool-call round trip. Exact three-record retrieval passed at **32,867, 131,171 and 299,099 actual prompt tokens**. These are capability smokes; broad model-quality parity with vLLM or an unmodified reference remains unmeasured.
+
+Checkpoint MXFP4 expert weights, FP8 dense weights, the BF16 activation dtype, automatic KV selection (resolved to FP8 E4M3), BF16 WO-A computation and speculation acceptance thresholds are retained. SM121 expert computation uses the existing FlashInfer MXFP4/MXFP8 path; the name of the global activation dtype does not mean every GEMM computes in BF16. No additional quantization or TP4 WO-A/Q-RoPE changes are included.
+
+The unchanged five-file verification/index composition passed **36 tests and four subtests** on GB10/SM121; four all-padded cases were skipped by the upstream suite. Native/padded H8/H16 numerical comparisons and H8 changed-input graph replay also passed. The EP4 partition probe passed 90 cases using real target/draft weights, lossless weight/scale partitioning, changed-input graph replay and repeated-output checks. Splitting experts changes floating-point partial-sum order; broad quality parity and bitwise parity are not established. [Validation evidence and limits](docs/validation.md).
+
+During the original EP4 validation, all eight ranks stayed above **17.57 GiB OS-available memory**, without OOMs or restarts. This does not certify eight simultaneous 300K requests.
+
+## Configuration
+
+| Setting | EP4 |
+|---|---|
+| Hardware | Eight GB10/SM121 DGX Sparks; one process/GPU per node |
+| Parallelism | TP8, EP4, MoE-TP2, PP1; existing RoCE fabric |
+| Model | `deepseek-ai/DeepSeek-V4.1-Flash`, revision `df42c109f1defefcbfcedbe7d905718a12266e40` |
+| Engram | Native CUDA-resident owned rows, about 23.604 GiB raw weights/scales per Spark |
+| KV cache | `auto`, resolved to FP8 E4M3 by the pinned runtime |
+| Context / requests / images | 300,000 tokens / eight requests / four images |
+| Prefill | 8,192-token chunks and max-prefill setting |
+| Memory | Static fraction 0.80, fixed 3.2M-token pool, 13 GiB minimum OS reserve |
+| Speculation | DSpark block size five; static verification; thresholds 1.0 |
+| Expert / dense backends | FlashInfer MXFP4 experts; Mia's small-M b12x dense routing with CUTLASS fallback |
+| Scheduler | `--min-free-slots-delay 1`; earlier admission-retry hook disabled |
+| Decode graphs | Explicit request batch sizes 1–8 |
+| NCCL | 1 MiB buffer, 256 KiB LL128 buffer, `^LL128`, eight channels |
+| API alias | `deepseek-v41-flash` |
+
+SGLang's pool and prefill accounting differ from vLLM's. Equal numeric flags do not prove identical memory use or scheduler behavior. Engram lookup arithmetic remains upstream; the hooks assert ownership/residency and retain the validated SM120 metadata/page-splitting and long-prefill allocation workarounds.
+
+## Reproduce
+
+Run cluster operations on rank zero. Requirements: Linux ARM64 Sparks, Docker with NVIDIA GPU support and Buildx, Python 3.11+, SSH/rsync, a working RDMA fabric, and the pinned checkpoint already present on every node. Weights and credentials are not included. Build and kernel tests require idle GPUs; stop the active deployment with its own configuration first.
+
+From this `sglang/` directory:
+
+1. Configure the eight nodes:
+
+   ```bash
+   cp configs/cluster.example.json configs/cluster.local.json
+   ```
+
+   Replace the documentation-only IP addresses, login users, fabric interface/HCA names, model directory and deployment directory. The example binds the API to loopback; select a reachable bind address for a separate benchmark client. Keep the EP4 model/performance settings unchanged for reproduction. The local configuration is gitignored.
+
+2. Build and distribute one verified image:
+
+   ```bash
+   bash scripts/build.sh configs/cluster.local.json
+   python3 scripts/cluster.py distribute --config configs/cluster.local.json
+   ```
+
+   The build starts from a pinned ARM64 image and verifies all eight original/final SGLang file hashes before installing them. It writes **your own build's image ID** into the local configuration. Distribution verifies archive checksums and imported image IDs. [Source/build identity](docs/build-and-pins.md).
+
+3. Stage a fresh deployment and check it:
+
+   ```bash
+   python3 scripts/cluster.py stage --config configs/cluster.local.json
+   python3 scripts/cluster.py preflight --config configs/cluster.local.json
+   python3 scripts/cluster.py dense --config configs/cluster.local.json
+   python3 scripts/cluster.py nccl --config configs/cluster.local.json
+   python3 scripts/check-kernels.py --config configs/cluster.local.json
+   python3 scripts/cluster.py dry-run --config configs/cluster.local.json
+   ```
+
+   Staging refuses to overwrite an existing `kit` directory. Choose a new deployment directory for a new configuration. The dense check, collective check, and numerical kernel tests have separate purposes; a passing source check alone is not inference validation.
+
+4. Launch workers before the head, wait for readiness, then test the API:
+
+   ```bash
+   python3 scripts/cluster.py serve --config configs/cluster.local.json
+   python3 validation/acceptance.py --base http://127.0.0.1:8000/v1 --out .local/acceptance-1
+   python3 validation/long-context.py --base http://127.0.0.1:8000/v1 --tag ep4-local-1 --out .local/long-context-1
+   ```
+
+   The launcher checks every rank and the OS reserve while loading. It stops the containers it started if startup fails or the reserve is breached, retaining the containers and logs. Continue monitoring available memory under your own workload.
+
+## Benchmark and operate
+
+Run the matched community suite from a quiet client. Start with a fresh server process/cache because the reference script's deterministic request tags repeat across runs. Choose a new output directory:
+
+```bash
+bash bench/run-community.sh http://HEAD:8000/v1 .local/community-1 ep4-matched
+```
+
+Record input/output token counts and the resolved server configuration with the result. Preserve the slower runs. The separate [sparkDash runner](bench/sparkdash/) requires Node 22.19+ and `npm ci`; its pinned upstream files are hash-checked by the CLI.
+
+```bash
+python3 scripts/cluster.py status --config configs/cluster.local.json
+python3 scripts/cluster.py stop --config configs/cluster.local.json
+python3 scripts/cluster.py start --config configs/cluster.local.json
+```
+
+`start` restarts the retained containers. Use a new deployment directory and remove old stopped containers explicitly when creating a new configuration with the same fixed EP4 container names. Do not operate the vLLM and SGLang launchers concurrently on these GPUs.
+
+## Attribution and license
+
+This SGLang subtree contains a Mia-derived **AGPL-3.0-or-later** adaptation, Apache-2.0 SGLang source and MIT benchmark material. See [NOTICE](NOTICE) and the included license texts. The existing vLLM subtree retains its own terms. Model weights and dependencies keep their upstream licenses.

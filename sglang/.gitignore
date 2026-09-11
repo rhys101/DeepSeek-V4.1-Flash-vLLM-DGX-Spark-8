@@ -1,0 +1,6 @@
+configs/cluster.local.json
+.build/
+.local/
+**/__pycache__/
+**/node_modules/
+*.pyc

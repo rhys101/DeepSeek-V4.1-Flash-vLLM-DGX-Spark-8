@@ -1,0 +1,51 @@
+#0 building with "default" instance using docker driver
+
+#1 [internal] load build definition from Dockerfile
+#1 transferring dockerfile: 919B 0.0s done
+#1 DONE 0.0s
+
+#2 [internal] load metadata for docker.io/lmsysorg/sglang@sha256:3475d88ec3124867d9d6f7b3bd49afdcf8ef4d6a9f8454fab331d5adb5204de7
+#2 DONE 0.0s
+
+#3 [internal] load .dockerignore
+#3 transferring context: 153B done
+#3 DONE 0.0s
+
+#4 [1/9] FROM docker.io/lmsysorg/sglang@sha256:3475d88ec3124867d9d6f7b3bd49afdcf8ef4d6a9f8454fab331d5adb5204de7
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 transferring context: 57.79kB 0.0s done
+#5 DONE 0.0s
+
+#6 [2/9] WORKDIR /opt/sglang8
+#6 CACHED
+
+#7 [3/9] COPY adapter /opt/sglang8/adapter
+#7 CACHED
+
+#8 [4/9] COPY runtime /opt/sglang8/runtime
+#8 DONE 0.1s
+
+#9 [5/9] COPY versions.lock.json LICENSE LICENSE.sglang LICENSE.upstream-MIT NOTICE /opt/sglang8/
+#9 DONE 0.1s
+
+#10 [6/9] COPY patches /tmp/ep4-patches
+#10 DONE 0.1s
+
+#11 [7/9] COPY scripts/apply-overlays.py /tmp/ep4-apply-overlays.py
+#11 DONE 0.1s
+
+#12 [8/9] RUN python3 /tmp/ep4-apply-overlays.py --source /tmp/ep4-patches --target /sgl-workspace/sglang
+#12 0.254 EP4_SOURCE_HASHES_PASS: 8 files
+#12 DONE 0.3s
+
+#13 [9/9] RUN python3 -m compileall -q /opt/sglang8/adapter /opt/sglang8/runtime
+#13 DONE 0.2s
+
+#14 exporting to image
+#14 exporting layers
+#14 exporting layers 0.2s done
+#14 writing image sha256:fd439c24c2a11e7c43a750c55c104092fce691f652142181b0b16605a2a65c89 0.0s done
+#14 naming to docker.io/library/deepseek-v41-sglang8:ep4-publication 0.0s done
+#14 DONE 0.5s

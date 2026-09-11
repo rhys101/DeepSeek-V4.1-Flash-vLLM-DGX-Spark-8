@@ -1,0 +1,15 @@
+.s.s.s.s................................                             [100%]
+=============================== warnings summary ===============================
+../sglang/lib/python3.12/site-packages/torch/jit/_script.py:365: 14 warnings
+  /opt/sglang/lib/python3.12/site-packages/torch/jit/_script.py:365: DeprecationWarning: `torch.jit.script_method` is deprecated. Please switch to `torch.compile` or `torch.export`.
+    warnings.warn(
+
+../sglang/lib/python3.12/site-packages/_pytest/cacheprovider.py:469
+  /opt/sglang/lib/python3.12/site-packages/_pytest/cacheprovider.py:469: PytestCacheWarning: could not create cache path /candidate/test/registered/.pytest_cache/v/cache/nodeids: [Errno 30] Read-only file system: '/candidate/test/registered/pytest-cache-files-5ahj2meq'
+    config.cache.set("cache/nodeids", sorted(self.cached_nodeids))
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+SKIPPED [4] ../../candidate/test/registered/kernels/ops/attention/dsv4/test_c2_verify.py:161: an all-padded batch has no live block to compare
+36 passed, 4 skipped, 15 warnings, 4 subtests passed in 50.24s
+

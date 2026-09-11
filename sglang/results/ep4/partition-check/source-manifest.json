@@ -1,0 +1,67 @@
+{
+  "status": "PREPARED_UNTESTED",
+  "probe_sha256": "49e2a7ad816ae76ee1facc2317747a1ffb7af6ea54107c5619cb455ca297d54d",
+  "runtime_image": "sha256:e7681b5276525821f9be286ed3bf0f51acb5239da27f69f60fdeb57e68c05581",
+  "source": {
+    "srt/layers/moe/fused_moe_triton/layer.py": "870f3d430ce1196771223c10c9f2e771fbf9e83987865547381dc1069f4862d3",
+    "srt/distributed/parallel_state.py": "1930ee1f79d10a33c7016612aba9277561a3f8baf91fb941438fa5e39aa382dc",
+    "srt/models/deepseek_v2.py": "70effc8732fb544dbafc75a873436fe8816525813c463642dbc991d1a8781c4b"
+  },
+  "parallel_mapping": [
+    {
+      "global_rank": 0,
+      "expert_rank": 0,
+      "expert_tp_rank": 0
+    },
+    {
+      "global_rank": 1,
+      "expert_rank": 0,
+      "expert_tp_rank": 1
+    },
+    {
+      "global_rank": 2,
+      "expert_rank": 1,
+      "expert_tp_rank": 0
+    },
+    {
+      "global_rank": 3,
+      "expert_rank": 1,
+      "expert_tp_rank": 1
+    },
+    {
+      "global_rank": 4,
+      "expert_rank": 2,
+      "expert_tp_rank": 0
+    },
+    {
+      "global_rank": 5,
+      "expert_rank": 2,
+      "expert_tp_rank": 1
+    },
+    {
+      "global_rank": 6,
+      "expert_rank": 3,
+      "expert_tp_rank": 0
+    },
+    {
+      "global_rank": 7,
+      "expert_rank": 3,
+      "expert_tp_rank": 1
+    }
+  ],
+  "target_geometry": {
+    "global_experts": 384,
+    "local_experts": 96,
+    "hidden": 5120,
+    "local_intermediate": 1152,
+    "topk": 6
+  },
+  "draft_geometry": {
+    "global_experts": 128,
+    "local_experts": 32,
+    "hidden": 5120,
+    "local_intermediate": 1152,
+    "topk": 3
+  },
+  "reduction_audit": "FusedMoE reduce_results defaults false; DeepseekV2MoE.forward_normal and forward_normal_dual_stream reduce once across global TP8. Shared expert remains global TP8. No production code change for EP4."
+}
