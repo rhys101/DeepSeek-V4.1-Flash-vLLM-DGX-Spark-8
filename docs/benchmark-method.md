@@ -41,3 +41,13 @@ python3 -u bench/v41bench.py --base http://HEAD:8000/v1 --model deepseek-v41-fla
 Request tags differ with concurrency. C8 is a separate measurement, not a repeated-run confidence interval. Tony’s pinned results stop at C6, so no four-Spark C8 comparison is available.
 
 [Results and comparisons](comparison.md) · [Raw C1–C6/prefill](../results/2026-09-11/) · [Raw C8](../results/2026-09-11/bench-spark8-c8.json)
+
+## Mia's reported results
+
+Mia's three-Spark SGLang prose figures are transcribed from the pinned README into `results/reference/mia-reported-prose.json`. They are presented only beside the prose category, with their own hardware/engine label. Their prompts, token budgets and timing method have not been established to match the community suite. No eight-category mean, C6/C8 or unreported C1 aggregate rate is inferred. These are published author summaries, not a local rerun.
+
+Tony's repository check through `458fade` found the benchmark JSON, scripts and prompts unchanged from the tested pin. The additional restore probes remain separate from the main comparison. [Review](upstream-status.md).
+
+## Speed versus model capability
+
+This benchmark measures throughput and latency with thinking off; it does not score broad answer quality or full reasoning-mode performance. Keep prompts, reasoning mode, context/output limits and verification settings comparable when judging speedups. Do not count reduced capability or premature truncation as a performance improvement without reporting the tradeoff. [Quality criteria and experimental options](speed-and-quality.md).

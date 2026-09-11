@@ -39,3 +39,7 @@ python3 runtime/smoke-vision.py --base http://127.0.0.1:8000/v1 --out .local/vis
 Use a fresh output directory. Fixtures are included in `runtime/vision-fixtures`. Run `python3 -m unittest discover -s tests -v` for local configuration checks; CI does not claim GPU validation.
 
 These tests do not establish broad model quality, tool-use accuracy, long-context answer quality or successful full 300K requests. The before/after throughput baseline is the archived 10 September result; see [comparison limits](mia-improvements.md).
+
+## Quality before further speed tuning
+
+The checks above do not establish broad model-quality parity. Evaluate task accuracy, reasoning, tool reliability and relevant vision/long-context capability before accepting precision reductions or other capability tradeoffs. The current numerical and smoke results alone are insufficient to justify the proposed BF16-to-FP8 activation change in `wo_a`. [Speed versus model capability](speed-and-quality.md).

@@ -148,3 +148,36 @@ Prompt set `v1`, temperature 0, thinking off, streaming; one batch per cell (C s
 | prose | 19.3 |
 | narrative | 17.6 |
 | counting (ceiling) | 62.0 |
+
+## Mia's reported prose figures alongside the community prose category
+
+Mia's [reported prose results](https://github.com/MiaAI-Lab/DeepSeek-v4.1-Flash-DGX-Sparks/blob/e59e6eb67479aa68f6fa700c600dc90a0729b5ec/README.md) come from **three Sparks running SGLang with NVMe Engram**. Tony and this deployment use the same community suite; Mia's prompt, output budget and measurement details have not been established to match it. This is a contextual prose comparison, with no hardware-scaling ratios inferred. Mia's four-Spark profile was configuration-checked but not boot-tested at the reviewed revision.
+
+### Per-stream prose decode (tok/s)
+
+| Concurrent requests | Mia: 3 Sparks | Tony: 4 Sparks | This deployment: 8 Sparks |
+|---|---|---|---|
+| C1 | 37.90 | 24.37 | 41.28 |
+| C2 | 30.50 | 23.63 | 34.36 |
+| C3 | 24.50 | 19.44 | 29.81 |
+| C4 | 20.90 | 18.37 | 26.52 |
+
+### Aggregate prose throughput (tok/s)
+
+| Concurrent requests | Mia: 3 Sparks | Tony: 4 Sparks | This deployment: 8 Sparks |
+|---|---|---|---|
+| C1 | Not reported | 22.93 | 38.69 |
+| C2 | 58.90 | 41.51 | 63.18 |
+| C3 | 71.20 | 55.16 | 77.90 |
+| C4 | 78.60 | 69.94 | 93.45 |
+
+### Prose time to first token (seconds)
+
+| Concurrent requests | Mia: 3 Sparks | Tony: 4 Sparks | This deployment: 8 Sparks |
+|---|---|---|---|
+| C1 | 0.248 | 0.381 | 0.243 |
+| C2 | 0.424 | 0.394 | 0.191 |
+| C3 | 0.311 | 0.305 | 0.221 |
+| C4 | 0.383 | 0.323 | 0.251 |
+
+Mia reports prose through C4; a matching eight-category mean, C6/C8 figures and the four community prefill cases were not available in the reviewed snapshot. Missing values remain unreported. In particular, C1 aggregate throughput is not inferred from decode throughput. Engine, topology, Engram placement, workload and node count all differ. Tony and our measurements remain the matched-input comparison; the Mia figures are author-reported summaries. [Transcribed figures and source identity](../results/reference/mia-reported-prose.json).

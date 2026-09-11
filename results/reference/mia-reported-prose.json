@@ -1,0 +1,42 @@
+{
+  "checked_at": "2026-09-11T13:02:41.510667+00:00",
+  "repository": "https://github.com/MiaAI-Lab/DeepSeek-v4.1-Flash-DGX-Sparks",
+  "commit": "e59e6eb67479aa68f6fa700c600dc90a0729b5ec",
+  "source": "README.md",
+  "source_sha256": "5c97a4bac4e8cd98ba5335cc58a72a4b315d0bfedda0b60d6279e285d6f41a14",
+  "source_kind": "Author-reported summary, manually transcribed; no raw per-request benchmark file available in the reviewed snapshot",
+  "hardware_nodes": 3,
+  "tensor_parallel_size": 3,
+  "engine": "SGLang",
+  "engram": "Node-local NVMe",
+  "workload": "Prose; not established to match the community prompts and token budgets",
+  "four_node_profile_boot_tested": false,
+  "eight_category_mean_available": false,
+  "rows": [
+    {
+      "c": 1,
+      "per_stream_decode_tok_s": 37.9,
+      "aggregate_tok_s": null,
+      "ttft_s": 0.248
+    },
+    {
+      "c": 2,
+      "per_stream_decode_tok_s": 30.5,
+      "aggregate_tok_s": 58.9,
+      "ttft_s": 0.424
+    },
+    {
+      "c": 3,
+      "per_stream_decode_tok_s": 24.5,
+      "aggregate_tok_s": 71.2,
+      "ttft_s": 0.311
+    },
+    {
+      "c": 4,
+      "per_stream_decode_tok_s": 20.9,
+      "aggregate_tok_s": 78.6,
+      "ttft_s": 0.383
+    }
+  ],
+  "note": "Null means not reported; C1 aggregate is not inferred from its decode rate. This supports a contextual prose comparison, not matched-workload scaling ratios."
+}

@@ -74,6 +74,10 @@ All 189 category input counts and four prefill sizes match the pinned community 
 
 [Current raw results](../results/2026-09-11/) · [Comparison inputs](../results/reference/) · [Validation commands](validation.md) · [Build/source pins](build-and-pins.md)
 
+## Speed versus model capability
+
+Higher throughput is useful only while task quality and required capabilities remain acceptable. The proposed FP8 `wo_a` path would reduce activation precision from the current BF16 fallback, making it a quality-sensitive experiment. The current communication and dense-kernel changes preserve the existing quantization formats, but their numerical/smoke tests are not a broad quality evaluation. Thinking is off in the performance benchmark; those timings do not establish reasoning-mode performance. [Separate treatment of speed/quality tradeoffs and evaluation criteria](speed-and-quality.md).
+
 ## Remaining experiments
 
 The next code candidate is `wo_a`, the grouped attention output projection. Read-only inspection of the running image confirmed that GB10 falls back to BF16: the MXFP8 BMM selector admits DeepGEMM only on SM100-family devices, and the output-projection helper uses `torch.bmm` for BF16 weights. Our TP8 configuration has eight global output groups and one local group per rank, reducing each local projection to a regular M×4096 by 4096×1024 matrix multiplication. That may allow reuse of FlashInfer's existing b12x GEMM. It is a proposed experiment, not a measured gain: it also introduces FP8 activation quantization where the current fallback keeps BF16 activations, so kernel, graph, logits and model-output checks are necessary. The fallback already dequantizes weights once at loading; there is no per-step weight-dequantization saving to claim.

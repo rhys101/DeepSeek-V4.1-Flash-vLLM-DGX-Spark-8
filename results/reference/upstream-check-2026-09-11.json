@@ -1,0 +1,73 @@
+{
+  "checked_at": "2026-09-11T13:02:41.510667+00:00",
+  "tony": {
+    "repository": "https://github.com/tonyd2wild/DeepSeek-V4.1-Flash-vLLM-DGX-Spark",
+    "tested_recipe_commit": "ca662ac35193c69ace9cee37f13a94abf2eff0fc",
+    "reviewed_head": "458fadec6106e6fd84f7eda36dd6e0a8fa219ef6",
+    "new_commits": [
+      {
+        "commit": "592540c69853a8ce9285236ebfd6e54dfc83a013",
+        "committed_at": "2026-09-10T15:28:37-04:00",
+        "subject": "Vision and tool calling: README section, end-to-end checks, recipe note"
+      },
+      {
+        "commit": "458fadec6106e6fd84f7eda36dd6e0a8fa219ef6",
+        "committed_at": "2026-09-10T22:29:04-04:00",
+        "subject": "One-command restore of boot 10 (used after a worker power-off)"
+      }
+    ],
+    "changed_files": [
+      "README.md",
+      "docs/RECIPE.md",
+      "results/boot10/restore-20260911/idletest.txt",
+      "results/boot10/restore-20260911/restore.log",
+      "results/boot10/vision-tools.txt",
+      "tools/launch.sh",
+      "tools/prelaunch-quick.sh",
+      "tools/restore_boot10.sh",
+      "tools/vision_tools_demo.py"
+    ],
+    "unchanged_reference_files": {
+      "results/boot10/bench-boot10.json": {
+        "unchanged": true,
+        "sha256": "e352b099e7f61844cf7144a3df62db978a2e8f74a2cf553aaddbce50b09a5715"
+      },
+      "bench/v41bench.py": {
+        "unchanged": true,
+        "sha256": "e0d6b2d25bd585d11fbdf39c2ddcdf7a4de8ab685af6bd42465e69f3ee6e80a8"
+      },
+      "bench/prompts-v1.json": {
+        "unchanged": true,
+        "sha256": "f8106746dc729d287d3509376d683719862b13f3657847e86153856be6c80bb3"
+      },
+      "tools/bench_report.py": {
+        "unchanged": true,
+        "sha256": "ab38f852e71916b50733fe5d9436314a93ad75313d436b48423f9fe3fe5f977d"
+      }
+    },
+    "build_patch_launch_bench_directories_unchanged": true,
+    "summary": "Added end-to-end vision/tool checks and restore/prelaunch operations. No new main community benchmark or kernel/build change; retain the tested source and benchmark pins.",
+    "restored_boot": {
+      "date": "2026-09-11",
+      "source": "results/boot10/restore-20260911/idletest.txt",
+      "source_sha256": "7e3e0a4da29a1d5ab50987a83106ea9d900d43685095b5d489fe766085f06653",
+      "count_decode_tok_s": [
+        91.1,
+        91.9,
+        90.3
+      ],
+      "code_decode_tok_s": [
+        71.6,
+        73.2
+      ],
+      "comparison_scope": "Separate short idle/back-to-back probes; not a replacement for the unchanged C1-C6 community suite."
+    }
+  },
+  "mia": {
+    "repository": "https://github.com/MiaAI-Lab/DeepSeek-v4.1-Flash-DGX-Sparks",
+    "reviewed_head": "e59e6eb67479aa68f6fa700c600dc90a0729b5ec",
+    "unchanged_since_previous_review": true,
+    "reported_prose_file": "mia-reported-prose.json"
+  },
+  "live_deployment_changed": false
+}

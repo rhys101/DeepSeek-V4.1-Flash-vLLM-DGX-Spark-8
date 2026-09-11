@@ -22,6 +22,18 @@ C8 adds 15.5% mean aggregate throughput over C6 while reducing mean per-stream d
 
 Compared with the previous eight-Spark measurements, aggregate throughput rose **20.2% at C6** and **26.3% at C8**. Single-stream mean decode is essentially unchanged. The same-day NCCL-only comparison accounts for most of the improvement; the additional MXFP8 routing gain is modest and not established with repeated-run confidence intervals. See [the measured adaptation results](docs/mia-improvements.md).
 
+### Prose on three, four and eight Sparks
+
+| Prose measurement (tok/s) | Mia: 3 Sparks, SGLang | Tony: 4 Sparks, vLLM | This deployment: 8 Sparks, vLLM |
+|---|---|---|---|
+| C1 decode per stream | 37.9 | 24.37 | 41.28 |
+| C4 decode per stream | 20.9 | 18.37 | 26.52 |
+| C4 aggregate | 78.6 | 69.94 | 93.45 |
+
+Mia's [reported prose results](https://github.com/MiaAI-Lab/DeepSeek-v4.1-Flash-DGX-Sparks/blob/e59e6eb67479aa68f6fa700c600dc90a0729b5ec/README.md) come from **three Sparks running SGLang with NVMe Engram**. Tony and this deployment use the same community suite; Mia's prompt, output budget and measurement details have not been established to match it. This is a contextual prose comparison, with no hardware-scaling ratios inferred. Mia's four-Spark profile was configuration-checked but not boot-tested at the reviewed revision. Full C1–C4 decode, aggregate and TTFT figures are in [the comparison](docs/comparison.md#prose-comparison-with-mias-three-sparks).
+
+Tony's repository was checked through `458fade` on 11 September 2026. His community benchmark remains byte-for-byte unchanged; the new commits add vision/tool checks and restore tooling. [Upstream review](docs/upstream-status.md).
+
 ### Cold prefill
 
 Cold, unique prompts with a one-token reply. Actual input sizes match Tony's four-Spark reference; rates are prompt tokens divided by time to first token (TTFT).
@@ -36,6 +48,14 @@ Cold, unique prompts with a one-token reply. Actual input sizes match Tony's fou
 The main run completed 54 category batches / 189 requests and these four prefill cases. C8 was measured separately with nine batches / 72 requests on the same configuration. All 189 category input counts match the reference; 86 output lengths differ. These are single measurements without repeated-run confidence intervals. A 300K context cap is configured; the longest measured prompt was 93,335 tokens, with no full 300K or long-context quality evaluation.
 
 [Comparison and concurrency](docs/comparison.md) · [Complete tables](docs/benchmark-tables.md) · [Method](docs/benchmark-method.md) · [Raw results](results/)
+
+## Speed versus model capability
+
+**A throughput gain is not worthwhile if it causes a disproportionate loss of model capability.** Compare answer quality, reasoning, tool reliability and useful context alongside speed.
+
+The deployed NCCL tuning and dense-kernel routing retain the existing model and quantization formats. They passed numerical and functional checks, but a broad quality evaluation has not been completed. Proposed lower-precision `wo_a` activations or further weight/KV quantization need separate quality evidence before being treated as improvements.
+
+The headline benchmarks run with **thinking off** and fixed short output budgets. That mode can trade reasoning capability for less work; these numbers do not describe full reasoning-mode performance. Reducing context, truncating answers or disabling vision also changes the service's capabilities. [Quality-sensitive options and evaluation criteria](docs/speed-and-quality.md).
 
 ## Serving configuration
 
