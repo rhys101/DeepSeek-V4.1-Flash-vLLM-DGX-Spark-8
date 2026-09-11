@@ -1,5 +1,9 @@
 # DeepSeek V4.1 Flash on eight DGX Sparks
 
+**111.29 coding tok/s on one request · 431.82 coding tok/s across eight concurrent requests.**
+
+Best measured results on eight DGX Sparks, using SGLang EP4. The single-request figure measures decode speed; the concurrent figure is aggregate throughput including prefill. [Full comparison and measurement details](sglang/docs/community-comparison.md).
+
 Serve `deepseek-ai/DeepSeek-V4.1-Flash` across **eight NVIDIA DGX Sparks** with **TP8, RAM-resident Engram, DSpark k=5, CUDA graphs and vision**.
 
 This repository contains two measured serving deployments recorded on **11 September 2026**:

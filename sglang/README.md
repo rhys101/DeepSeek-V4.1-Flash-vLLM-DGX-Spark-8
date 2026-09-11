@@ -1,5 +1,9 @@
 # SGLang EP4 (SG5): DeepSeek V4.1 Flash on eight DGX Sparks
 
+**111.29 coding tok/s on one request · 431.82 coding tok/s across eight concurrent requests.**
+
+Best measured results on eight DGX Sparks, using SGLang EP4. The single-request figure measures decode speed; the concurrent figure is aggregate throughput including prefill. [Full comparison and measurement details](docs/community-comparison.md).
+
 EP4 is a validated snapshot of the SGLang deployment: **TP8/EP4, native RAM-resident Engram, DSpark five-token drafting, CUDA graphs, eight request slots, four images and a 300,000-token context cap**. It runs the same checkpoint as the [vLLM deployment](../README.md).
 
 It combines [Mia's pinned Spark adaptation](https://github.com/MiaAI-Lab/DeepSeek-v4.1-Flash-DGX-Sparks/tree/e59e6eb67479aa68f6fa700c600dc90a0729b5ec) with native-width query heads from [SGLang #36655](https://github.com/sgl-project/sglang/pull/36655), the scheduler's `--min-free-slots-delay 1` setting, and five verification/index-processing files from [#39068](https://github.com/sgl-project/sglang/pull/39068). Each of four expert groups spans two tensor ranks; model-wide TP remains eight. A local draft-context fix applies the requested backend consistently and records the actual loaded expert layout on all ranks. [SG3](docs/sg3-reference.md) is retained as the earlier reference.
