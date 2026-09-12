@@ -12,7 +12,7 @@ It combines [Mia's pinned Spark adaptation](https://github.com/MiaAI-Lab/DeepSee
 
 ### Short-prompt concurrency with the same 8M KV pool
 
-All rows below were measured on the same 128-slot experimental profile. The configured KV pool remained **8,000,000 tokens** throughout.
+Measured **12 September 2026**. All rows below were measured on the same **SG11 TP8/EP4 experimental profile: 128 request slots, a 1,000,000-token context limit and 2,048-token prefill chunks**. The configured KV pool remained **8,000,000 tokens** throughout, with a **2 GiB OS-available reserve floor on every Spark**. These settings are separate from the packaged SG5 launcher defaults below.
 
 | Concurrency | Coding aggregate tok/s | Coding per-stream decode tok/s | Prose aggregate decode tok/s | Prose per-stream decode tok/s |
 |---|---|---|---|---|
@@ -24,7 +24,9 @@ All rows below were measured on the same 128-slot experimental profile. The conf
 
 Moving from C64 to C128 changed coding aggregate throughput by **+2.7%** and prose by **+11.0%**, with lower per-stream speeds.
 
-At C128, average first-token latency was **1.906 s for coding** and **1.543 s for prose**. Concurrent inputs were 30–303 tokens; separate prefill probes stayed below 128K. All eight Sparks passed the checks, with no OOMs or restarts and a minimum of **6.89 GiB OS-available memory per Spark**.
+At C128, average first-token latency was **1.906 s for coding** and **1.543 s for prose**. Concurrent inputs were 30–303 tokens; separate prefill probes stayed below 128K. All eight containers remained running with **no OOMs or restarts**. Lowest observed OS-available memory on an individual Spark was **6.89 GiB during startup** and **8.71 GiB during benchmarking**, with **no additional OS swap use during benchmarking**.
+
+The SG11 profile passed text, one-image and four-image, structured JSON and tool-call capability checks, plus **128/128 exact arithmetic requests at C128**. A subsequent audit confirmed that the C64/C128 summaries match the raw benchmark evidence, recorded configuration, source hashes, memory samples and observed concurrency. These are capability smokes, not a broad model-quality evaluation; the short-prompt run does not validate full 8M-pool capacity or 128 simultaneous million-token contexts.
 
 Coding aggregate includes prefill and full batch time; prose aggregate uses the first-to-last-output window. Prose is the mean of two trials, using the documented one-line C64/C128 allowlist extension. The short requests did not fill the 8M pool. [Full results, C64 run, latency, configuration and evidence](sglang/docs/concurrency-results.md).
 
