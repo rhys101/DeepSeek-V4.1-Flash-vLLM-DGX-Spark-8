@@ -32,6 +32,8 @@ Coding aggregate includes prefill and full batch time; prose aggregate uses the 
 
 ### Standard-profile engine comparison
 
+**Why the C8 figures differ:** C8 means eight active requests, not the server’s maximum slot count. The table above measures SG11 (128 slots, 8M KV pool, 1M context limit, 2,048-token prefill chunks); this earlier engine comparison measures SG5 (eight slots, 3.2M KV pool, 300K context limit, 8,192-token prefill chunks). Coding C8 is **445.46 tok/s on SG11 versus 431.82 tok/s on SG5**. Both use the community coding workload and full-batch aggregate timing, but they are separate measurements under different configurations. The 3.2% difference does not establish a tuning gain: coding has no repeated-run confidence intervals. The corresponding eight-category C8 means are **290.63 and 291.33 tok/s**, respectively. Retain the SG5 result for the recorded vLLM comparison and use SG11 for C8–C128 scaling.
+
 **111.29 tok/s single-stream coding decode**, versus **95.91** on the existing vLLM deployment (16.0% higher).
 
 | Measurement (tok/s) | vLLM, eight Sparks | SGLang EP4, eight Sparks | EP4 change |
