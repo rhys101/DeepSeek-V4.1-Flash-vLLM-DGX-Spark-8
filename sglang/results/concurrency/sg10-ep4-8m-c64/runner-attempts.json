@@ -1,0 +1,14 @@
+{
+  "initial_attempt": {
+    "status": "FAIL",
+    "reason": "Original pinned prose runner filtered out C64 because its allowlist stopped at C32. The incomplete attempt is preserved and excluded from reported prose results.",
+    "requested_levels": "32,64",
+    "completed_levels": [
+      32
+    ]
+  },
+  "reported_attempt": {
+    "status": "PASS",
+    "method": "Explicit allowlist extension; two complete trials at every requested level."
+  }
+}

@@ -1,0 +1,594 @@
+{
+  "status": "PASS",
+  "run": "sg10-ep4-8m-c64",
+  "generated_at": "2026-09-12T00:52:19.297375+00:00",
+  "configuration": {
+    "logical_kv_pool_tokens": 8000000,
+    "max_running_requests": 64,
+    "configured_context_length": 1000000,
+    "tp_size": 8,
+    "ep_size": 4,
+    "precision_changed": false,
+    "resident_engram": true,
+    "reserve_floor_gib": 2,
+    "cuda_graph_batch_sizes": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      12,
+      16,
+      24,
+      32,
+      48,
+      64
+    ]
+  },
+  "community": {
+    "request_count": 864,
+    "prompt_tokens_range": [
+      30,
+      303
+    ],
+    "headline": [
+      {
+        "level": "C32",
+        "agg_tok_s": 591.87,
+        "per_stream_tok_s": 22.82,
+        "ttft_mean_s": 0.874
+      },
+      {
+        "level": "C64",
+        "agg_tok_s": 708.84,
+        "per_stream_tok_s": 13.52,
+        "ttft_mean_s": 1.478
+      }
+    ],
+    "rows": [
+      {
+        "concurrency": 32,
+        "category": "coding",
+        "aggregate_output_tok_s": 969.19,
+        "mean_per_stream_decode_tok_s": 34.61,
+        "mean_ttft_s": 0.645,
+        "max_ttft_s": 0.8515923023223877,
+        "output_tokens": 6400,
+        "wall_s": 6.603,
+        "prompt_tokens_range": [
+          47,
+          47
+        ]
+      },
+      {
+        "concurrency": 32,
+        "category": "json",
+        "aggregate_output_tok_s": 510.02,
+        "mean_per_stream_decode_tok_s": 22.48,
+        "mean_ttft_s": 0.796,
+        "max_ttft_s": 1.050142765045166,
+        "output_tokens": 2743,
+        "wall_s": 5.378,
+        "prompt_tokens_range": [
+          65,
+          65
+        ]
+      },
+      {
+        "concurrency": 32,
+        "category": "narrative",
+        "aggregate_output_tok_s": 316.99,
+        "mean_per_stream_decode_tok_s": 11.5,
+        "mean_ttft_s": 0.555,
+        "max_ttft_s": 0.6722762584686279,
+        "output_tokens": 4654,
+        "wall_s": 14.682,
+        "prompt_tokens_range": [
+          39,
+          39
+        ]
+      },
+      {
+        "concurrency": 32,
+        "category": "prose",
+        "aggregate_output_tok_s": 383.23,
+        "mean_per_stream_decode_tok_s": 14.0,
+        "mean_ttft_s": 0.534,
+        "max_ttft_s": 0.6501667499542236,
+        "output_tokens": 3908,
+        "wall_s": 10.197,
+        "prompt_tokens_range": [
+          36,
+          36
+        ]
+      },
+      {
+        "concurrency": 32,
+        "category": "math",
+        "aggregate_output_tok_s": 810.75,
+        "mean_per_stream_decode_tok_s": 30.4,
+        "mean_ttft_s": 0.815,
+        "max_ttft_s": 1.0500514507293701,
+        "output_tokens": 6400,
+        "wall_s": 7.894,
+        "prompt_tokens_range": [
+          70,
+          70
+        ]
+      },
+      {
+        "concurrency": 32,
+        "category": "reasoning",
+        "aggregate_output_tok_s": 632.59,
+        "mean_per_stream_decode_tok_s": 22.35,
+        "mean_ttft_s": 0.73,
+        "max_ttft_s": 0.8930361270904541,
+        "output_tokens": 6400,
+        "wall_s": 10.117,
+        "prompt_tokens_range": [
+          64,
+          64
+        ]
+      },
+      {
+        "concurrency": 32,
+        "category": "summary",
+        "aggregate_output_tok_s": 311.65,
+        "mean_per_stream_decode_tok_s": 13.06,
+        "mean_ttft_s": 1.979,
+        "max_ttft_s": 2.8847696781158447,
+        "output_tokens": 3687,
+        "wall_s": 11.831,
+        "prompt_tokens_range": [
+          303,
+          303
+        ]
+      },
+      {
+        "concurrency": 32,
+        "category": "format",
+        "aggregate_output_tok_s": 800.51,
+        "mean_per_stream_decode_tok_s": 34.14,
+        "mean_ttft_s": 0.936,
+        "max_ttft_s": 1.1474604606628418,
+        "output_tokens": 3312,
+        "wall_s": 4.137,
+        "prompt_tokens_range": [
+          85,
+          85
+        ]
+      },
+      {
+        "concurrency": 32,
+        "category": "ceiling_count",
+        "aggregate_output_tok_s": 1248.89,
+        "mean_per_stream_decode_tok_s": 42.53,
+        "mean_ttft_s": 0.496,
+        "max_ttft_s": 0.6081621646881104,
+        "output_tokens": 7648,
+        "wall_s": 6.124,
+        "prompt_tokens_range": [
+          30,
+          30
+        ]
+      },
+      {
+        "concurrency": 64,
+        "category": "coding",
+        "aggregate_output_tok_s": 1152.54,
+        "mean_per_stream_decode_tok_s": 20.87,
+        "mean_ttft_s": 1.117,
+        "max_ttft_s": 1.7521898746490479,
+        "output_tokens": 12800,
+        "wall_s": 11.106,
+        "prompt_tokens_range": [
+          47,
+          47
+        ]
+      },
+      {
+        "concurrency": 64,
+        "category": "json",
+        "aggregate_output_tok_s": 602.8,
+        "mean_per_stream_decode_tok_s": 12.73,
+        "mean_ttft_s": 1.317,
+        "max_ttft_s": 2.2199060916900635,
+        "output_tokens": 5491,
+        "wall_s": 9.109,
+        "prompt_tokens_range": [
+          65,
+          65
+        ]
+      },
+      {
+        "concurrency": 64,
+        "category": "narrative",
+        "aggregate_output_tok_s": 394.02,
+        "mean_per_stream_decode_tok_s": 7.03,
+        "mean_ttft_s": 0.936,
+        "max_ttft_s": 1.6731047630310059,
+        "output_tokens": 9255,
+        "wall_s": 23.489,
+        "prompt_tokens_range": [
+          39,
+          39
+        ]
+      },
+      {
+        "concurrency": 64,
+        "category": "prose",
+        "aggregate_output_tok_s": 445.83,
+        "mean_per_stream_decode_tok_s": 8.01,
+        "mean_ttft_s": 1.25,
+        "max_ttft_s": 1.984717845916748,
+        "output_tokens": 7905,
+        "wall_s": 17.731,
+        "prompt_tokens_range": [
+          36,
+          36
+        ]
+      },
+      {
+        "concurrency": 64,
+        "category": "math",
+        "aggregate_output_tok_s": 974.75,
+        "mean_per_stream_decode_tok_s": 18.0,
+        "mean_ttft_s": 1.337,
+        "max_ttft_s": 2.3187334537506104,
+        "output_tokens": 12796,
+        "wall_s": 13.128,
+        "prompt_tokens_range": [
+          70,
+          70
+        ]
+      },
+      {
+        "concurrency": 64,
+        "category": "reasoning",
+        "aggregate_output_tok_s": 837.5,
+        "mean_per_stream_decode_tok_s": 15.15,
+        "mean_ttft_s": 1.168,
+        "max_ttft_s": 2.0312209129333496,
+        "output_tokens": 12800,
+        "wall_s": 15.284,
+        "prompt_tokens_range": [
+          64,
+          64
+        ]
+      },
+      {
+        "concurrency": 64,
+        "category": "summary",
+        "aggregate_output_tok_s": 354.37,
+        "mean_per_stream_decode_tok_s": 7.48,
+        "mean_ttft_s": 3.229,
+        "max_ttft_s": 5.855287551879883,
+        "output_tokens": 6964,
+        "wall_s": 19.652,
+        "prompt_tokens_range": [
+          303,
+          303
+        ]
+      },
+      {
+        "concurrency": 64,
+        "category": "format",
+        "aggregate_output_tok_s": 908.92,
+        "mean_per_stream_decode_tok_s": 18.85,
+        "mean_ttft_s": 1.472,
+        "max_ttft_s": 2.526862859725952,
+        "output_tokens": 6573,
+        "wall_s": 7.232,
+        "prompt_tokens_range": [
+          85,
+          85
+        ]
+      },
+      {
+        "concurrency": 64,
+        "category": "ceiling_count",
+        "aggregate_output_tok_s": 1358.62,
+        "mean_per_stream_decode_tok_s": 23.63,
+        "mean_ttft_s": 0.907,
+        "max_ttft_s": 1.6408782005310059,
+        "output_tokens": 15296,
+        "wall_s": 11.258,
+        "prompt_tokens_range": [
+          30,
+          30
+        ]
+      }
+    ],
+    "metric": "Completion tokens / full batch wall time, including prefill. Single wave per category/concurrency. Headline is the unweighted mean of eight category rates, excluding counting; categories run separately."
+  },
+  "sparkdash": {
+    "source": {
+      "repo": "https://github.com/MiaAI-Lab/sparkDash",
+      "commit": "d0c7f71296a1071d0d75f95b14c21413d4d06321",
+      "files_sha256": {
+        "server/collectors/DecodeBench.js": "1aa50982822c48139b009a5740bf187e6bf30f2fc1dc52f1f583971f82e961f9",
+        "server/collectors/PrefillBench.js": "bdd8123c430bcd6b6ca719b33878d41a54b8f31a136265c891e53e3ec315f17b",
+        "server/collectors/LlmStreaming.js": "77e117688dc67c4405188795aedab25d4a7ecea124c1974c8f5f1393e554b0cb",
+        "server/util/atomicWrite.js": "e4caf1065209d085561fa28a91e6af6c29857f40f8809b3554869e3815d28654",
+        "src/shared/llmPrompts.js": "a4a5b300411779de2c2f12a5b652d4702a3b2d6fdeca88421f26d8c7f0c23749",
+        "src/shared/llmTarget.js": "74913ffd206454f31743d8bba76892f12d1204eae21055173bdde3796c793443",
+        "src/shared/prefillBench.js": "bc29a63b22cedb4b58dbf2a44b5a4a51fdc7481d82b27ed88e73df9c99482bc2",
+        "LICENSE": "1126322e2cc8d165adc4c792eeb195717de2bcc7b39be1ce77959d78e87ef685"
+      },
+      "unchanged_upstream_files": false,
+      "source_version_is_known_tweet_version": false,
+      "pinned_upstream_files_verified": true,
+      "local_changes": [
+        {
+          "file": "server/collectors/DecodeBench.js",
+          "before_sha256": "1aa50982822c48139b009a5740bf187e6bf30f2fc1dc52f1f583971f82e961f9",
+          "after_sha256": "1858a1a06869e40503addae51d7da47092e79e955d3eeee4fc1ab5b4395f55d2",
+          "before": "const ALLOWED_CONCURRENCIES = new Set([1, 2, 3, 4, 5, 6, 8, 10, 12, 16, 24, 32]);",
+          "after": "const ALLOWED_CONCURRENCIES = new Set([1, 2, 3, 4, 5, 6, 8, 10, 12, 16, 24, 32, 64, 128]);",
+          "added_concurrencies": [
+            64,
+            128
+          ],
+          "description": "Only the allowed concurrency set is extended. Prompts, token budgets, sampling, warmup, request execution and metric calculations are unchanged."
+        }
+      ]
+    },
+    "rows": [
+      {
+        "concurrency": 32,
+        "aggregate_decode_tok_s_trials": [
+          556.58,
+          554.56
+        ],
+        "mean_aggregate_decode_tok_s": 555.5699999999999,
+        "mean_per_stream_decode_tok_s": 18.634999999999998,
+        "mean_ttft_s": 0.6005499999999999,
+        "max_ttft_s": 0.7585299999999999,
+        "output_tokens_per_stream": 256,
+        "ratio_to_lowest_concurrency": 1.0
+      },
+      {
+        "concurrency": 64,
+        "aggregate_decode_tok_s_trials": [
+          706.93,
+          706.31
+        ],
+        "mean_aggregate_decode_tok_s": 706.6199999999999,
+        "mean_per_stream_decode_tok_s": 11.93,
+        "mean_ttft_s": 0.8918250000000001,
+        "max_ttft_s": 1.62903,
+        "output_tokens_per_stream": 256,
+        "ratio_to_lowest_concurrency": 1.271882931043793
+      }
+    ],
+    "metric": "Two waves per concurrency, 256 tokens per stream. Aggregate is sum(completion_tokens - 1) divided by earliest-first-content to latest-last-content window. Per-stream is upstream meanDecodeTps averaged across trials."
+  },
+  "input_lengths": {
+    "decode_prompt_range": [
+      30,
+      303
+    ],
+    "maximum_across_all_performance_requests": 93335,
+    "all_below_128000": true
+  },
+  "prefill": [
+    {
+      "suite": "community",
+      "actual_prompt_tokens": 2950,
+      "target": 2000,
+      "elapsed_s": 2.06,
+      "input_tok_s": 1431.9
+    },
+    {
+      "suite": "community",
+      "actual_prompt_tokens": 11592,
+      "target": 8000,
+      "elapsed_s": 2.977,
+      "input_tok_s": 3893.7
+    },
+    {
+      "suite": "community",
+      "actual_prompt_tokens": 46810,
+      "target": 32000,
+      "elapsed_s": 12.984,
+      "input_tok_s": 3605.3
+    },
+    {
+      "suite": "community",
+      "actual_prompt_tokens": 93335,
+      "target": 64000,
+      "elapsed_s": 31.188,
+      "input_tok_s": 2992.7
+    },
+    {
+      "suite": "sparkDash",
+      "trial": 1,
+      "target": 4096,
+      "actual_prompt_tokens": 4116,
+      "elapsed_s": 0.94201,
+      "input_tok_s": 4369.37
+    },
+    {
+      "suite": "sparkDash",
+      "trial": 1,
+      "target": 16384,
+      "actual_prompt_tokens": 16401,
+      "elapsed_s": 3.53646,
+      "input_tok_s": 4637.69
+    },
+    {
+      "suite": "sparkDash",
+      "trial": 1,
+      "target": 65536,
+      "actual_prompt_tokens": 65557,
+      "elapsed_s": 16.11216,
+      "input_tok_s": 4068.79
+    },
+    {
+      "suite": "sparkDash",
+      "trial": 2,
+      "target": 4096,
+      "actual_prompt_tokens": 4114,
+      "elapsed_s": 0.96874,
+      "input_tok_s": 4246.74
+    },
+    {
+      "suite": "sparkDash",
+      "trial": 2,
+      "target": 16384,
+      "actual_prompt_tokens": 16403,
+      "elapsed_s": 3.6048899999999997,
+      "input_tok_s": 4550.21
+    },
+    {
+      "suite": "sparkDash",
+      "trial": 2,
+      "target": 65536,
+      "actual_prompt_tokens": 65556,
+      "elapsed_s": 15.47847,
+      "input_tok_s": 4235.3
+    }
+  ],
+  "memory_by_rank": {
+    "r0": {
+      "sample_count": 1380,
+      "minimum_available_gib": 18.089759826660156,
+      "initial_swap_used_gib": 0.3870697021484375,
+      "maximum_swap_used_gib": 4.959648132324219,
+      "first": "2026-09-12T00:29:01.348453+00:00",
+      "last": "2026-09-12T00:52:01.028694+00:00"
+    },
+    "r1": {
+      "sample_count": 1380,
+      "minimum_available_gib": 19.08197021484375,
+      "initial_swap_used_gib": 0.3667945861816406,
+      "maximum_swap_used_gib": 5.836517333984375,
+      "first": "2026-09-12T00:29:01.642381+00:00",
+      "last": "2026-09-12T00:52:01.413742+00:00"
+    },
+    "r2": {
+      "sample_count": 1380,
+      "minimum_available_gib": 18.789104461669922,
+      "initial_swap_used_gib": 0.2693939208984375,
+      "maximum_swap_used_gib": 6.595176696777344,
+      "first": "2026-09-12T00:29:01.683069+00:00",
+      "last": "2026-09-12T00:52:01.399458+00:00"
+    },
+    "r3": {
+      "sample_count": 1380,
+      "minimum_available_gib": 19.143207550048828,
+      "initial_swap_used_gib": 0.2680091857910156,
+      "maximum_swap_used_gib": 5.236331939697266,
+      "first": "2026-09-12T00:29:01.662428+00:00",
+      "last": "2026-09-12T00:52:01.523905+00:00"
+    },
+    "r4": {
+      "sample_count": 1380,
+      "minimum_available_gib": 19.311302185058594,
+      "initial_swap_used_gib": 0.10179519653320312,
+      "maximum_swap_used_gib": 5.652744293212891,
+      "first": "2026-09-12T00:29:01.680363+00:00",
+      "last": "2026-09-12T00:52:01.563432+00:00"
+    },
+    "r5": {
+      "sample_count": 1380,
+      "minimum_available_gib": 18.892292022705078,
+      "initial_swap_used_gib": 0.0886383056640625,
+      "maximum_swap_used_gib": 2.428852081298828,
+      "first": "2026-09-12T00:29:01.661399+00:00",
+      "last": "2026-09-12T00:52:01.480981+00:00"
+    },
+    "r6": {
+      "sample_count": 1380,
+      "minimum_available_gib": 19.108509063720703,
+      "initial_swap_used_gib": 0.2574577331542969,
+      "maximum_swap_used_gib": 4.905643463134766,
+      "first": "2026-09-12T00:29:01.663131+00:00",
+      "last": "2026-09-12T00:52:01.463809+00:00"
+    },
+    "r7": {
+      "sample_count": 1380,
+      "minimum_available_gib": 19.070083618164062,
+      "initial_swap_used_gib": 0.2760772705078125,
+      "maximum_swap_used_gib": 5.770423889160156,
+      "first": "2026-09-12T00:29:01.632932+00:00",
+      "last": "2026-09-12T00:52:01.506583+00:00"
+    }
+  },
+  "minimum_available_gib_any_rank": 18.089759826660156,
+  "guard_minimum_available_gib_by_rank": {
+    "0": 18.13583755493164,
+    "1": 18.777610778808594,
+    "2": 18.911815643310547,
+    "3": 18.811172485351562,
+    "4": 18.959117889404297,
+    "5": 19.10631561279297,
+    "6": 18.81560516357422,
+    "7": 18.766407012939453
+  },
+  "swap_growth_during_benchmark_gib_by_rank": {
+    "0": 0.069000244140625,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "4": 0.0,
+    "5": 0.0,
+    "6": 0.0,
+    "7": 0.0
+  },
+  "all_eight_running_no_oom_no_restarts": true,
+  "observed_concurrency_api_sample_counts": {
+    "32": 215,
+    "64": 296
+  },
+  "observed_concurrency_server_decode_log_counts": {
+    "32": 18,
+    "64": 10
+  },
+  "acceptance": {
+    "status": "PASS",
+    "checks": [
+      "arithmetic",
+      "C8 arithmetic twice",
+      "single image",
+      "four images",
+      "structured JSON",
+      "tool round trip"
+    ],
+    "limitation": "Capability smoke only; not a broad quality evaluation or long-context validation"
+  },
+  "arithmetic": {
+    "concurrency": 64,
+    "passed": 64,
+    "total": 64
+  },
+  "limitations": [
+    "Short synthetic benchmark waves, single community wave and two sparkDash prose waves per concurrency.",
+    "The KV pool stays configured at 8M; these short prompts do not fill it.",
+    "Prefill probes run at C1 and are client input rates, not raw kernel speed or concurrent prefill rates."
+  ],
+  "benchmark_runner_sha256": {
+    "run-concurrency.mjs": "5ce7104079640cf906a253462c575b8089aff4a65914280f43ebdeded53d2a2f",
+    "concurrency-extension.mjs": "1dcbf9936dd28da0017f727f448ec5421fde529c4684ed77d8838d7f819c76ad"
+  },
+  "prose_allowlist_extension": {
+    "file": "server/collectors/DecodeBench.js",
+    "before_sha256": "1aa50982822c48139b009a5740bf187e6bf30f2fc1dc52f1f583971f82e961f9",
+    "after_sha256": "1858a1a06869e40503addae51d7da47092e79e955d3eeee4fc1ab5b4395f55d2",
+    "before": "const ALLOWED_CONCURRENCIES = new Set([1, 2, 3, 4, 5, 6, 8, 10, 12, 16, 24, 32]);",
+    "after": "const ALLOWED_CONCURRENCIES = new Set([1, 2, 3, 4, 5, 6, 8, 10, 12, 16, 24, 32, 64, 128]);",
+    "added_concurrencies": [
+      64,
+      128
+    ],
+    "description": "Only the allowed concurrency set is extended. Prompts, token budgets, sampling, warmup, request execution and metric calculations are unchanged."
+  },
+  "preserved_runner_attempt": {
+    "status": "FAIL",
+    "reason": "Original pinned prose runner filtered out C64 because its allowlist stopped at C32. The incomplete attempt is preserved and excluded from reported prose results.",
+    "evidence": "client/sparkdash-original-c32-limit/result.json"
+  }
+}

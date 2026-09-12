@@ -1,0 +1,35 @@
+{
+  "description": "Hashes of preserved source evidence and public metric extracts. Source names are relative to the original run artifact directory; connection settings are excluded from the public extracts.",
+  "source_sha256": {
+    "summary.json": "456ed769e768ed6109e25fa5e16d1583bf79eed42a174a966e9bc170a2a65b4a",
+    "profile.json": "435846eb0c23be4cffd08b991fc3c7987a4ffb4b5956eb1d7f9c2c7b98c3147f",
+    "client/community/bench-sg9-8m-short.json": "2f0123de97bd69d5ceac4721b792bd5f58d2283f613b55d6755512e5a3f10213",
+    "client/sparkdash/result.json": "20d407cc874256b4a0f4a487786586c12d932c1ef7a00252fc616729ada8482d",
+    "client/runner-manifest.json": "1a01ad29519b8b1b0e4c7ab6e479535b2b486ec75148a144d987d642b0fd3ee0",
+    "client/acceptance/result.json": "9d353a70927d4f5674c5c9d329668fd6ab4dcc259ea665621fc0f64b3491951d",
+    "concurrency-evidence.json": "d4b432b451cfef6a6310423333aa76f6e59b05e5be9c7c84ee6a1cd6a28cd8c3",
+    "server/state/concurrency-guard.json": "a2517b017bb54af6faa15d303fc5cd92e6dc2dcd0439586469c8241a5fcea1d9",
+    "server/state/benchmark-collected/final-ranks.json": "74e9de321f39450de72d5861334368b09c327f8553c9166c59cb7aa154784a9f",
+    "server/state/benchmark-collected/r0-server.log": "36c12a0cbc2273a9065ddb833767dd76ab004c84c3761915954bb2d0c4412f86",
+    "memory/sg9-ep4-8m-c32/r0.jsonl": "a603410b40eec4d8c90589d48e99f5e58c0d29addfcfca9ca1f10f0839245224",
+    "memory/sg9-ep4-8m-c32/r1.jsonl": "afb30bdafee1e65bd6f95280e5801a585ef38d6fb7de7a38261c48a36edb3d02",
+    "memory/sg9-ep4-8m-c32/r2.jsonl": "2fdf76296e495646fbceb14caf916d22e1e371af8ff572de14e2d859ac663df2",
+    "memory/sg9-ep4-8m-c32/r3.jsonl": "cbf5912c84b36b6743a08130931d5e1271eecabd21014106bc4fc2c5cce59fd9",
+    "memory/sg9-ep4-8m-c32/r4.jsonl": "e09b146c2212333abbbb565495e7c7ea8c1d5b990ccd6db40a0e914e43a23663",
+    "memory/sg9-ep4-8m-c32/r5.jsonl": "a2930a1d1838e0ae2d46c2964137fc0fdc9a01e856c5787dea64213ef8d509a1",
+    "memory/sg9-ep4-8m-c32/r6.jsonl": "b72270ee34b8f84eccac0d8fcbfffafad4991b0933f0cc1cba6027e002d7ab60",
+    "memory/sg9-ep4-8m-c32/r7.jsonl": "8cf542fc77cd6bdfa50df7a156c13be2d261e8b2d25a0b3f84886a895b9aaa66"
+  },
+  "community_runner_sha256": "e0d6b2d25bd585d11fbdf39c2ddcdf7a4de8ab685af6bd42465e69f3ee6e80a8",
+  "prose_runner_sha256": null,
+  "published_files_sha256": {
+    "summary.json": "372ead0d6995d11d6080b30ce841c519b38edd56982ec23b8aab76f1cc6e359b",
+    "concurrency-evidence.json": "d4b432b451cfef6a6310423333aa76f6e59b05e5be9c7c84ee6a1cd6a28cd8c3",
+    "correctness.json": "69c65321ab1b056d26d9fd675d01ba5228c7acae0ad7425c0234f2721dd29155",
+    "configuration.json": "d910e7012249df08c6693e370c3ab37526ef0b016cb526113921d22404ea5713",
+    "sparkdash-metrics.json": "c4c7463a13f072b1e4a76b87e2e08c5c2962b60a6af41a7fd69fe056b465c259",
+    "server-decode.log": "dcf639c3ae3040363dd7dca074b712df621482da0a51df0089d0979b93efb033",
+    "community.json": "2f0123de97bd69d5ceac4721b792bd5f58d2283f613b55d6755512e5a3f10213",
+    "memory-minima.json": "c812082d067810f2fd09caee73b795d6bee88cd1343d8f913c061641b02a4306"
+  }
+}

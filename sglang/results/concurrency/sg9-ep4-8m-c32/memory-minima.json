@@ -1,0 +1,145 @@
+{
+  "metric": "OS MemAvailable in bytes and GiB on each individual Spark",
+  "minimum_samples": [
+    {
+      "rank": 0,
+      "sample_count": 909,
+      "minimum_available_gib": 22.619075775146484,
+      "minimum_sample": {
+        "time": "2026-09-12T00:17:52.788306+00:00",
+        "rank": 0,
+        "MemTotal": 130663235584,
+        "MemFree": 2588655616,
+        "MemAvailable": 24287047680,
+        "SwapTotal": 17179865088,
+        "SwapFree": 13056348160,
+        "Shmem": 469721088
+      }
+    },
+    {
+      "rank": 1,
+      "sample_count": 909,
+      "minimum_available_gib": 23.781681060791016,
+      "minimum_sample": {
+        "time": "2026-09-12T00:17:52.129143+00:00",
+        "rank": 1,
+        "MemTotal": 130663231488,
+        "MemFree": 2043695104,
+        "MemAvailable": 25535385600,
+        "SwapTotal": 17179865088,
+        "SwapFree": 14461190144,
+        "Shmem": 470056960
+      }
+    },
+    {
+      "rank": 2,
+      "sample_count": 909,
+      "minimum_available_gib": 23.74115753173828,
+      "minimum_sample": {
+        "time": "2026-09-12T00:17:54.138107+00:00",
+        "rank": 2,
+        "MemTotal": 130663231488,
+        "MemFree": 1423654912,
+        "MemAvailable": 25491873792,
+        "SwapTotal": 17179865088,
+        "SwapFree": 14281404416,
+        "Shmem": 470028288
+      }
+    },
+    {
+      "rank": 3,
+      "sample_count": 909,
+      "minimum_available_gib": 23.880321502685547,
+      "minimum_sample": {
+        "time": "2026-09-12T00:17:54.199521+00:00",
+        "rank": 3,
+        "MemTotal": 130663231488,
+        "MemFree": 3579768832,
+        "MemAvailable": 25641299968,
+        "SwapTotal": 17179865088,
+        "SwapFree": 14435979264,
+        "Shmem": 470102016
+      }
+    },
+    {
+      "rank": 4,
+      "sample_count": 909,
+      "minimum_available_gib": 23.915870666503906,
+      "minimum_sample": {
+        "time": "2026-09-12T00:17:54.153225+00:00",
+        "rank": 4,
+        "MemTotal": 130663231488,
+        "MemFree": 1651499008,
+        "MemAvailable": 25679470592,
+        "SwapTotal": 17179865088,
+        "SwapFree": 14545670144,
+        "Shmem": 475394048
+      }
+    },
+    {
+      "rank": 5,
+      "sample_count": 909,
+      "minimum_available_gib": 23.87281036376953,
+      "minimum_sample": {
+        "time": "2026-09-12T00:17:54.221042+00:00",
+        "rank": 5,
+        "MemTotal": 130663231488,
+        "MemFree": 2469253120,
+        "MemAvailable": 25633234944,
+        "SwapTotal": 17179865088,
+        "SwapFree": 15036235776,
+        "Shmem": 470040576
+      }
+    },
+    {
+      "rank": 6,
+      "sample_count": 909,
+      "minimum_available_gib": 23.81749725341797,
+      "minimum_sample": {
+        "time": "2026-09-12T00:17:54.184911+00:00",
+        "rank": 6,
+        "MemTotal": 130663231488,
+        "MemFree": 2964254720,
+        "MemAvailable": 25573842944,
+        "SwapTotal": 17179865088,
+        "SwapFree": 14402408448,
+        "Shmem": 469995520
+      }
+    },
+    {
+      "rank": 7,
+      "sample_count": 909,
+      "minimum_available_gib": 23.70987319946289,
+      "minimum_sample": {
+        "time": "2026-09-12T00:17:54.232308+00:00",
+        "rank": 7,
+        "MemTotal": 130663235584,
+        "MemFree": 1454870528,
+        "MemAvailable": 25458282496,
+        "SwapTotal": 17179865088,
+        "SwapFree": 14570409984,
+        "Shmem": 485736448
+      }
+    }
+  ],
+  "benchmark_guard_minimum_available_gib_by_rank": {
+    "0": 22.626712799072266,
+    "1": 24.373043060302734,
+    "2": 24.29364013671875,
+    "3": 24.28973388671875,
+    "4": 24.44477081298828,
+    "5": 24.21530532836914,
+    "6": 24.401504516601562,
+    "7": 23.895221710205078
+  },
+  "source_sha256": {
+    "memory/sg9-ep4-8m-c32/r0.jsonl": "a603410b40eec4d8c90589d48e99f5e58c0d29addfcfca9ca1f10f0839245224",
+    "memory/sg9-ep4-8m-c32/r1.jsonl": "afb30bdafee1e65bd6f95280e5801a585ef38d6fb7de7a38261c48a36edb3d02",
+    "memory/sg9-ep4-8m-c32/r2.jsonl": "2fdf76296e495646fbceb14caf916d22e1e371af8ff572de14e2d859ac663df2",
+    "memory/sg9-ep4-8m-c32/r3.jsonl": "cbf5912c84b36b6743a08130931d5e1271eecabd21014106bc4fc2c5cce59fd9",
+    "memory/sg9-ep4-8m-c32/r4.jsonl": "e09b146c2212333abbbb565495e7c7ea8c1d5b990ccd6db40a0e914e43a23663",
+    "memory/sg9-ep4-8m-c32/r5.jsonl": "a2930a1d1838e0ae2d46c2964137fc0fdc9a01e856c5787dea64213ef8d509a1",
+    "memory/sg9-ep4-8m-c32/r6.jsonl": "b72270ee34b8f84eccac0d8fcbfffafad4991b0933f0cc1cba6027e002d7ab60",
+    "memory/sg9-ep4-8m-c32/r7.jsonl": "8cf542fc77cd6bdfa50df7a156c13be2d261e8b2d25a0b3f84886a895b9aaa66"
+  }
+}

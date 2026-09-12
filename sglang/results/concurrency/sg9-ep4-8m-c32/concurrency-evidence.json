@@ -1,0 +1,181 @@
+{
+  "8": {
+    "qualifying_api_samples": 106,
+    "unique_server_timestamps": 42,
+    "server_decode_log_rows": 13,
+    "first_example": {
+      "received_at": 1789172051.025067,
+      "load": {
+        "timestamp": 1789172051.0107834,
+        "dp_rank": 0,
+        "num_running_reqs": 8,
+        "num_waiting_reqs": 0,
+        "num_waiting_uncached_tokens": 0,
+        "num_used_tokens": 2048,
+        "num_total_tokens": 2048,
+        "num_active_tokens": 2048,
+        "max_total_num_tokens": 8000000,
+        "max_running_requests": 32,
+        "token_usage": 0.0225,
+        "gen_throughput": 0.0,
+        "cache_hit_rate": 0.0,
+        "utilization": 0.0,
+        "total_prefill_uncached_tokens": 85,
+        "total_prefill_busy_us": 128619,
+        "decode_moments": [
+          5.0,
+          12.0,
+          140981.0,
+          68.0,
+          240724.0,
+          20.0
+        ],
+        "memory": {
+          "weight_gb": 59.296,
+          "kv_cache_gb": 0.0,
+          "graph_gb": 4.12,
+          "token_capacity": 8000000
+        },
+        "disaggregation": {
+          "mode": "null",
+          "prefill_bootstrap_queue_reqs": 0,
+          "prefill_inflight_queue_reqs": 0,
+          "decode_prealloc_queue_reqs": 0,
+          "decode_transfer_queue_reqs": 0,
+          "decode_retracted_queue_reqs": 0,
+          "kv_transfer_speed_gb_s": 0.0,
+          "kv_transfer_latency_ms": 0.0
+        },
+        "queues": {
+          "waiting": 0,
+          "grammar": 0,
+          "paused": 0,
+          "retracted": 0,
+          "prealloc_ready": 0
+        }
+      }
+    }
+  },
+  "16": {
+    "qualifying_api_samples": 141,
+    "unique_server_timestamps": 44,
+    "server_decode_log_rows": 13,
+    "first_example": {
+      "received_at": 1789172060.7217731,
+      "load": {
+        "timestamp": 1789172060.514287,
+        "dp_rank": 0,
+        "num_running_reqs": 16,
+        "num_waiting_reqs": 0,
+        "num_waiting_uncached_tokens": 0,
+        "num_used_tokens": 4096,
+        "num_total_tokens": 4096,
+        "num_active_tokens": 4096,
+        "max_total_num_tokens": 8000000,
+        "max_running_requests": 32,
+        "token_usage": 0.0451,
+        "gen_throughput": 0.0,
+        "cache_hit_rate": 0.0,
+        "utilization": 0.0,
+        "total_prefill_uncached_tokens": 360,
+        "total_prefill_busy_us": 364262,
+        "decode_moments": [
+          31.0,
+          45.0,
+          1175196.0,
+          157.0,
+          1310191.0,
+          141.0
+        ],
+        "memory": {
+          "weight_gb": 59.296,
+          "kv_cache_gb": 0.0,
+          "graph_gb": 4.12,
+          "token_capacity": 8000000
+        },
+        "speculative": {
+          "accept_length": 3.0294117647058822,
+          "accept_rate": 0.0
+        },
+        "disaggregation": {
+          "mode": "null",
+          "prefill_bootstrap_queue_reqs": 0,
+          "prefill_inflight_queue_reqs": 0,
+          "decode_prealloc_queue_reqs": 0,
+          "decode_transfer_queue_reqs": 0,
+          "decode_retracted_queue_reqs": 0,
+          "kv_transfer_speed_gb_s": 0.0,
+          "kv_transfer_latency_ms": 0.0
+        },
+        "queues": {
+          "waiting": 0,
+          "grammar": 0,
+          "paused": 0,
+          "retracted": 0,
+          "prealloc_ready": 0
+        }
+      }
+    }
+  },
+  "32": {
+    "qualifying_api_samples": 175,
+    "unique_server_timestamps": 39,
+    "server_decode_log_rows": 14,
+    "first_example": {
+      "received_at": 1789172157.6266623,
+      "load": {
+        "timestamp": 1789172157.2808099,
+        "dp_rank": 0,
+        "num_running_reqs": 32,
+        "num_waiting_reqs": 0,
+        "num_waiting_uncached_tokens": 0,
+        "num_used_tokens": 8192,
+        "num_total_tokens": 8192,
+        "num_active_tokens": 8192,
+        "max_total_num_tokens": 8000000,
+        "max_running_requests": 32,
+        "token_usage": 0.0901,
+        "gen_throughput": 0.0,
+        "cache_hit_rate": 0.0,
+        "utilization": 0.0,
+        "total_prefill_uncached_tokens": 11415,
+        "total_prefill_busy_us": 4641036,
+        "decode_moments": [
+          959.0,
+          9591.0,
+          86885113.0,
+          122983.0,
+          966576639.0,
+          33898.0
+        ],
+        "memory": {
+          "weight_gb": 59.296,
+          "kv_cache_gb": 0.0,
+          "graph_gb": 4.12,
+          "token_capacity": 8000000
+        },
+        "speculative": {
+          "accept_length": 3.4071977787270398,
+          "accept_rate": 0.0
+        },
+        "disaggregation": {
+          "mode": "null",
+          "prefill_bootstrap_queue_reqs": 0,
+          "prefill_inflight_queue_reqs": 0,
+          "decode_prealloc_queue_reqs": 0,
+          "decode_transfer_queue_reqs": 0,
+          "decode_retracted_queue_reqs": 0,
+          "kv_transfer_speed_gb_s": 0.0,
+          "kv_transfer_latency_ms": 0.0
+        },
+        "queues": {
+          "waiting": 0,
+          "grammar": 0,
+          "paused": 0,
+          "retracted": 0,
+          "prealloc_ready": 0
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "status": "PASS",
+  "python_and_shell_checks": [
+    {
+      "name": "root-tests",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-v"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "sglang-tests",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "sglang/tests",
+        "-v"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "python-compile",
+      "command": [
+        "python3",
+        "-m",
+        "compileall",
+        "-q",
+        "scripts",
+        "runtime",
+        "bench",
+        "sglang/scripts",
+        "sglang/runtime",
+        "sglang/validation"
+      ],
+      "exit_code": 0
+    },
+    {
+      "name": "shell-syntax",
+      "command": [
+        "bash",
+        "-n",
+        "scripts/build.sh",
+        "runtime/run-node.sh",
+        "bench/run-community.sh",
+        "sglang/scripts/build.sh",
+        "sglang/bench/run-community.sh"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "python_test_counts": {
+    "root": 11,
+    "sglang": 7
+  },
+  "node_extension_tests": {
+    "passed": 2,
+    "failed": 0,
+    "command": "node --test test-concurrency-extension.mjs"
+  },
+  "source_sha256": {
+    "run.mjs": "5ce7104079640cf906a253462c575b8089aff4a65914280f43ebdeded53d2a2f",
+    "concurrency-extension.mjs": "1dcbf9936dd28da0017f727f448ec5421fde529c4684ed77d8838d7f819c76ad",
+    "test-concurrency-extension.mjs": "acd62ecec773fb19e80a907658fde0f23d0b74659854917304b6baf42e7fe96e"
+  },
+  "node_test_log_sha256": "2659ae7c1c148464c7c8f8fdee684650d47c775ed2bded64537f38fd92042f9f"
+}

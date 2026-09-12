@@ -1,0 +1,40 @@
+{
+  "description": "Hashes of preserved source evidence and public metric extracts. Source names are relative to the original run artifact directory; connection settings are excluded from the public extracts.",
+  "source_sha256": {
+    "summary.json": "0a110eedbb58fc306d2cc707740ab473c7e8b7f37f5afeeaaf17297c48d2692b",
+    "profile.json": "c934c9d05b0b51a02b600a8657423953a83676b64e4550b8fb852d1dea426ee9",
+    "client/community/bench-sg10-8m-short.json": "1b19e952c0099a99d15c6d578095342e4dab4e5fff51830bbe08d59d49101d1b",
+    "client/sparkdash/result.json": "9f0ab407a65f81b51886c0c54e15c0794c7d3d51dbf589247b36a6d0d7f10fa1",
+    "client/runner-manifest.json": "1a01ad29519b8b1b0e4c7ab6e479535b2b486ec75148a144d987d642b0fd3ee0",
+    "client/acceptance/result.json": "9d353a70927d4f5674c5c9d329668fd6ab4dcc259ea665621fc0f64b3491951d",
+    "concurrency-evidence.json": "1a49cb28101f57c4f9611b476407370280f5e0a39e02701adc22986bcae61d87",
+    "server/state/concurrency-guard.json": "e2ed74d3401ef5a6ad8335e26a33ccdd8c17321ff99ecaebfd674c20af3b6708",
+    "server/state/benchmark-collected/final-ranks.json": "121c36f80cf1ad9ece580f3559602e1fd9e875fcaa468eac58fb3b5ec6f3afcd",
+    "server/state/benchmark-collected/r0-server.log": "0f8eb5dcd9b68c7aab3853937fb82764ac7c1a82d0e847b03be2671ccd3d930c",
+    "client/sparkdash-original-c32-limit/result.json": "4fb41856ea78a5d6018481bb7e4934b86e5b12591f9686bdea852baa78f5e3dd",
+    "memory/sg10-ep4-8m-c64/r0.jsonl": "751f06511bdb39edcb40aae5c71971adca30c67c3e5f15ea046388da5a6d9fe5",
+    "memory/sg10-ep4-8m-c64/r1.jsonl": "bf62243c1335da060e616c59f909a421ecee7498fdef73959f22cc171d074f31",
+    "memory/sg10-ep4-8m-c64/r2.jsonl": "2118b27988375a19ad60bd6873e0455adf7ff81d4ddc400cccab88d79fc4e652",
+    "memory/sg10-ep4-8m-c64/r3.jsonl": "0d966a3a72dca66780b3edeeed077872dd096d51309c69001ca5d1e9c661ad39",
+    "memory/sg10-ep4-8m-c64/r4.jsonl": "1d6be94333f0c337b047d29fc39e30c5c5c7f9b5d29321552b1343114b4897ae",
+    "memory/sg10-ep4-8m-c64/r5.jsonl": "ac38ba2d032f9ff53ac2f5b2db19ccd2edee46a7233c5627a7233dacc905ace3",
+    "memory/sg10-ep4-8m-c64/r6.jsonl": "9b6c0e5bb9a47f95032254734d533ad20cfa5dca30fe5e875349705f39c1884e",
+    "memory/sg10-ep4-8m-c64/r7.jsonl": "d42d4f9d7bac4e418965f94087b24b6c14cb216f542b85355bc5375daa2e6df8"
+  },
+  "community_runner_sha256": "e0d6b2d25bd585d11fbdf39c2ddcdf7a4de8ab685af6bd42465e69f3ee6e80a8",
+  "prose_runner_sha256": {
+    "run-concurrency.mjs": "5ce7104079640cf906a253462c575b8089aff4a65914280f43ebdeded53d2a2f",
+    "concurrency-extension.mjs": "1dcbf9936dd28da0017f727f448ec5421fde529c4684ed77d8838d7f819c76ad"
+  },
+  "published_files_sha256": {
+    "summary.json": "0a110eedbb58fc306d2cc707740ab473c7e8b7f37f5afeeaaf17297c48d2692b",
+    "concurrency-evidence.json": "1a49cb28101f57c4f9611b476407370280f5e0a39e02701adc22986bcae61d87",
+    "correctness.json": "9653c6cafc13ffd391154e4265c92270f5fdb60562908e1650caf53f596b2291",
+    "configuration.json": "5fa3066b0312630ceafd54796880bf5edde3d33ab9b28fca8cade387f65c10ba",
+    "runner-attempts.json": "49a99a2cd48eadd6f54114a8f7302f106c6f23ff19b7338ccd7ab13df348a789",
+    "sparkdash-metrics.json": "9876a6f0ea3a8b74b7bb8776e45f17aa298f41a286c5dbb85850bd3a47728b2f",
+    "server-decode.log": "79b6a477feb1e3f07414471be37b354a31e07633fbd8a0bd7ca2494d15b53d9e",
+    "community.json": "1b19e952c0099a99d15c6d578095342e4dab4e5fff51830bbe08d59d49101d1b",
+    "memory-minima.json": "d55f6a963d3539813b79697464c249ba746fd7986e52ecd65bb3c8d391de1bec"
+  }
+}

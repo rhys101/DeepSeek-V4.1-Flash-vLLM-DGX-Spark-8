@@ -1,0 +1,57 @@
+{
+  "context_length": 1000000,
+  "ep_size": 4,
+  "max_running_requests": 128,
+  "chunked_prefill_size": 2048,
+  "max_prefill_tokens": 2048,
+  "max_total_tokens": 8000000,
+  "mem_fraction_static": 0.8,
+  "draft_length": 5,
+  "min_free_slots_delay": 1,
+  "minimum_available_gib": 2,
+  "cuda_graph_batch_sizes": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    12,
+    16,
+    24,
+    32,
+    48,
+    64,
+    96,
+    128
+  ],
+  "expected_image_id": "sha256:e7681b5276525821f9be286ed3bf0f51acb5239da27f69f60fdeb57e68c05581",
+  "production_overlays": {
+    "python/sglang/kernels/jit/csrc/deepseek_v4/c2.cuh": {
+      "before_sha256": "84be767c3a2909e5cf0bf98ef8f1d5f96d0c86c05f003f749d97ae9eafff44e2",
+      "after_sha256": "55f32ba512fca86826a27d66f36d4667848c17cbbe0d34096ffedead0ce469e4"
+    },
+    "python/sglang/kernels/ops/attention/dsv4/c2.py": {
+      "before_sha256": "0f98a8fe2abf9db25f87d451ceefe0dcb4b411d7fcc0d75c8bdb7a0b3f58600a",
+      "after_sha256": "9da953bedcebad1b6168cce61453bd487689363358a2569b8a0c366b955e5bea"
+    },
+    "python/sglang/kernels/ops/attention/dsv4/candidate_blocks.py": {
+      "before_sha256": "c4f2ace8ecf94f2316a1ec0ef2e8f8a8d7565fb2161a4019cf92601b7ebc5032",
+      "after_sha256": "d7fc6c5984d10331a04d3586a537def4d531a440f2db3113423785b9aa4016ea"
+    },
+    "python/sglang/kernels/ops/attention/dsv4/indexer_postprocess.py": {
+      "before_sha256": null,
+      "after_sha256": "55a52c4e6c71568705958ed35f821260b38b1d371637712c47dc0e964f9c1f54"
+    },
+    "python/sglang/srt/layers/attention/deepseek_v4_backend.py": {
+      "before_sha256": "a99da83280bad451eee68c8ce0c42bd7f1847249b96f540cd5f74aab171dcacb",
+      "after_sha256": "20a711344de7666d83b3dfa3ce7e9621729cbe40ed9a433d28e53872216e65d1"
+    },
+    "python/sglang/srt/speculative/dspark_components/dspark_worker_v2.py": {
+      "before_sha256": "7361310ce8fb3643efa0ed6d98c3e31c291fb2e2a859d850d77bd6496106df4b",
+      "after_sha256": "8387704e671b1a67d116ccca9523092083eb0d299e654a5d6c7949f7245bf6df"
+    }
+  }
+}

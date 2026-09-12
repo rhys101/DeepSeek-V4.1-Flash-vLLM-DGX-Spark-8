@@ -1,0 +1,1032 @@
+{
+  "status": "PASS",
+  "run": "sg11-ep4-8m-c128",
+  "generated_at": "2026-09-12T01:18:46.895918+00:00",
+  "configuration": {
+    "logical_kv_pool_tokens": 8000000,
+    "max_running_requests": 128,
+    "configured_context_length": 1000000,
+    "tp_size": 8,
+    "ep_size": 4,
+    "precision_changed": false,
+    "resident_engram": true,
+    "reserve_floor_gib": 2,
+    "cuda_graph_batch_sizes": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      12,
+      16,
+      24,
+      32,
+      48,
+      64,
+      96,
+      128
+    ]
+  },
+  "community": {
+    "request_count": 2232,
+    "prompt_tokens_range": [
+      30,
+      303
+    ],
+    "headline": [
+      {
+        "level": "C8",
+        "agg_tok_s": 290.63,
+        "per_stream_tok_s": 42.68,
+        "ttft_mean_s": 0.323
+      },
+      {
+        "level": "C16",
+        "agg_tok_s": 444.36,
+        "per_stream_tok_s": 33.55,
+        "ttft_mean_s": 0.525
+      },
+      {
+        "level": "C32",
+        "agg_tok_s": 612.0,
+        "per_stream_tok_s": 23.5,
+        "ttft_mean_s": 0.823
+      },
+      {
+        "level": "C64",
+        "agg_tok_s": 746.32,
+        "per_stream_tok_s": 14.48,
+        "ttft_mean_s": 1.361
+      },
+      {
+        "level": "C128",
+        "agg_tok_s": 814.86,
+        "per_stream_tok_s": 7.64,
+        "ttft_mean_s": 2.397
+      }
+    ],
+    "rows": [
+      {
+        "concurrency": 8,
+        "category": "coding",
+        "aggregate_output_tok_s": 445.46,
+        "mean_per_stream_decode_tok_s": 60.98,
+        "mean_ttft_s": 0.215,
+        "max_ttft_s": 0.21608591079711914,
+        "output_tokens": 1600,
+        "wall_s": 3.592,
+        "prompt_tokens_range": [
+          47,
+          47
+        ]
+      },
+      {
+        "concurrency": 8,
+        "category": "json",
+        "aggregate_output_tok_s": 249.51,
+        "mean_per_stream_decode_tok_s": 39.86,
+        "mean_ttft_s": 0.278,
+        "max_ttft_s": 0.27924394607543945,
+        "output_tokens": 688,
+        "wall_s": 2.757,
+        "prompt_tokens_range": [
+          65,
+          65
+        ]
+      },
+      {
+        "concurrency": 8,
+        "category": "narrative",
+        "aggregate_output_tok_s": 160.41,
+        "mean_per_stream_decode_tok_s": 22.84,
+        "mean_ttft_s": 0.217,
+        "max_ttft_s": 0.21824431419372559,
+        "output_tokens": 1178,
+        "wall_s": 7.344,
+        "prompt_tokens_range": [
+          39,
+          39
+        ]
+      },
+      {
+        "concurrency": 8,
+        "category": "prose",
+        "aggregate_output_tok_s": 182.78,
+        "mean_per_stream_decode_tok_s": 25.11,
+        "mean_ttft_s": 0.203,
+        "max_ttft_s": 0.20338940620422363,
+        "output_tokens": 964,
+        "wall_s": 5.274,
+        "prompt_tokens_range": [
+          36,
+          36
+        ]
+      },
+      {
+        "concurrency": 8,
+        "category": "math",
+        "aggregate_output_tok_s": 394.16,
+        "mean_per_stream_decode_tok_s": 58.15,
+        "mean_ttft_s": 0.284,
+        "max_ttft_s": 0.2853422164916992,
+        "output_tokens": 1600,
+        "wall_s": 4.059,
+        "prompt_tokens_range": [
+          70,
+          70
+        ]
+      },
+      {
+        "concurrency": 8,
+        "category": "reasoning",
+        "aggregate_output_tok_s": 304.84,
+        "mean_per_stream_decode_tok_s": 41.27,
+        "mean_ttft_s": 0.244,
+        "max_ttft_s": 0.24507951736450195,
+        "output_tokens": 1600,
+        "wall_s": 5.249,
+        "prompt_tokens_range": [
+          64,
+          64
+        ]
+      },
+      {
+        "concurrency": 8,
+        "category": "summary",
+        "aggregate_output_tok_s": 175.53,
+        "mean_per_stream_decode_tok_s": 27.91,
+        "mean_ttft_s": 0.821,
+        "max_ttft_s": 0.8653140068054199,
+        "output_tokens": 932,
+        "wall_s": 5.31,
+        "prompt_tokens_range": [
+          303,
+          303
+        ]
+      },
+      {
+        "concurrency": 8,
+        "category": "format",
+        "aggregate_output_tok_s": 412.32,
+        "mean_per_stream_decode_tok_s": 65.29,
+        "mean_ttft_s": 0.325,
+        "max_ttft_s": 0.32565927505493164,
+        "output_tokens": 828,
+        "wall_s": 2.008,
+        "prompt_tokens_range": [
+          85,
+          85
+        ]
+      },
+      {
+        "concurrency": 8,
+        "category": "ceiling_count",
+        "aggregate_output_tok_s": 574.85,
+        "mean_per_stream_decode_tok_s": 76.99,
+        "mean_ttft_s": 0.189,
+        "max_ttft_s": 0.19018840789794922,
+        "output_tokens": 1912,
+        "wall_s": 3.326,
+        "prompt_tokens_range": [
+          30,
+          30
+        ]
+      },
+      {
+        "concurrency": 16,
+        "category": "coding",
+        "aggregate_output_tok_s": 689.38,
+        "mean_per_stream_decode_tok_s": 48.81,
+        "mean_ttft_s": 0.406,
+        "max_ttft_s": 0.4215400218963623,
+        "output_tokens": 3200,
+        "wall_s": 4.642,
+        "prompt_tokens_range": [
+          47,
+          47
+        ]
+      },
+      {
+        "concurrency": 16,
+        "category": "json",
+        "aggregate_output_tok_s": 384.94,
+        "mean_per_stream_decode_tok_s": 32.98,
+        "mean_ttft_s": 0.472,
+        "max_ttft_s": 0.47487521171569824,
+        "output_tokens": 1367,
+        "wall_s": 3.551,
+        "prompt_tokens_range": [
+          65,
+          65
+        ]
+      },
+      {
+        "concurrency": 16,
+        "category": "narrative",
+        "aggregate_output_tok_s": 257.09,
+        "mean_per_stream_decode_tok_s": 17.8,
+        "mean_ttft_s": 0.357,
+        "max_ttft_s": 0.3626291751861572,
+        "output_tokens": 2257,
+        "wall_s": 8.779,
+        "prompt_tokens_range": [
+          39,
+          39
+        ]
+      },
+      {
+        "concurrency": 16,
+        "category": "prose",
+        "aggregate_output_tok_s": 276.47,
+        "mean_per_stream_decode_tok_s": 19.32,
+        "mean_ttft_s": 0.345,
+        "max_ttft_s": 0.3516120910644531,
+        "output_tokens": 1969,
+        "wall_s": 7.122,
+        "prompt_tokens_range": [
+          36,
+          36
+        ]
+      },
+      {
+        "concurrency": 16,
+        "category": "math",
+        "aggregate_output_tok_s": 625.13,
+        "mean_per_stream_decode_tok_s": 46.18,
+        "mean_ttft_s": 0.491,
+        "max_ttft_s": 0.5052821636199951,
+        "output_tokens": 3200,
+        "wall_s": 5.119,
+        "prompt_tokens_range": [
+          70,
+          70
+        ]
+      },
+      {
+        "concurrency": 16,
+        "category": "reasoning",
+        "aggregate_output_tok_s": 454.85,
+        "mean_per_stream_decode_tok_s": 32.39,
+        "mean_ttft_s": 0.459,
+        "max_ttft_s": 0.47142720222473145,
+        "output_tokens": 3200,
+        "wall_s": 7.035,
+        "prompt_tokens_range": [
+          64,
+          64
+        ]
+      },
+      {
+        "concurrency": 16,
+        "category": "summary",
+        "aggregate_output_tok_s": 245.02,
+        "mean_per_stream_decode_tok_s": 19.29,
+        "mean_ttft_s": 1.114,
+        "max_ttft_s": 1.3788199424743652,
+        "output_tokens": 1813,
+        "wall_s": 7.399,
+        "prompt_tokens_range": [
+          303,
+          303
+        ]
+      },
+      {
+        "concurrency": 16,
+        "category": "format",
+        "aggregate_output_tok_s": 621.97,
+        "mean_per_stream_decode_tok_s": 51.59,
+        "mean_ttft_s": 0.558,
+        "max_ttft_s": 0.5626931190490723,
+        "output_tokens": 1659,
+        "wall_s": 2.667,
+        "prompt_tokens_range": [
+          85,
+          85
+        ]
+      },
+      {
+        "concurrency": 16,
+        "category": "ceiling_count",
+        "aggregate_output_tok_s": 879.65,
+        "mean_per_stream_decode_tok_s": 60.21,
+        "mean_ttft_s": 0.334,
+        "max_ttft_s": 0.34355759620666504,
+        "output_tokens": 3824,
+        "wall_s": 4.347,
+        "prompt_tokens_range": [
+          30,
+          30
+        ]
+      },
+      {
+        "concurrency": 32,
+        "category": "coding",
+        "aggregate_output_tok_s": 975.92,
+        "mean_per_stream_decode_tok_s": 35.07,
+        "mean_ttft_s": 0.636,
+        "max_ttft_s": 0.7791845798492432,
+        "output_tokens": 6400,
+        "wall_s": 6.558,
+        "prompt_tokens_range": [
+          47,
+          47
+        ]
+      },
+      {
+        "concurrency": 32,
+        "category": "json",
+        "aggregate_output_tok_s": 545.19,
+        "mean_per_stream_decode_tok_s": 23.33,
+        "mean_ttft_s": 0.725,
+        "max_ttft_s": 0.8900721073150635,
+        "output_tokens": 2731,
+        "wall_s": 5.009,
+        "prompt_tokens_range": [
+          65,
+          65
+        ]
+      },
+      {
+        "concurrency": 32,
+        "category": "narrative",
+        "aggregate_output_tok_s": 324.59,
+        "mean_per_stream_decode_tok_s": 11.76,
+        "mean_ttft_s": 0.548,
+        "max_ttft_s": 0.6658704280853271,
+        "output_tokens": 4617,
+        "wall_s": 14.224,
+        "prompt_tokens_range": [
+          39,
+          39
+        ]
+      },
+      {
+        "concurrency": 32,
+        "category": "prose",
+        "aggregate_output_tok_s": 396.55,
+        "mean_per_stream_decode_tok_s": 13.99,
+        "mean_ttft_s": 0.535,
+        "max_ttft_s": 0.6623494625091553,
+        "output_tokens": 3957,
+        "wall_s": 9.979,
+        "prompt_tokens_range": [
+          36,
+          36
+        ]
+      },
+      {
+        "concurrency": 32,
+        "category": "math",
+        "aggregate_output_tok_s": 838.29,
+        "mean_per_stream_decode_tok_s": 31.51,
+        "mean_ttft_s": 0.748,
+        "max_ttft_s": 0.9221317768096924,
+        "output_tokens": 6400,
+        "wall_s": 7.635,
+        "prompt_tokens_range": [
+          70,
+          70
+        ]
+      },
+      {
+        "concurrency": 32,
+        "category": "reasoning",
+        "aggregate_output_tok_s": 664.73,
+        "mean_per_stream_decode_tok_s": 23.67,
+        "mean_ttft_s": 0.707,
+        "max_ttft_s": 0.8714194297790527,
+        "output_tokens": 6400,
+        "wall_s": 9.628,
+        "prompt_tokens_range": [
+          64,
+          64
+        ]
+      },
+      {
+        "concurrency": 32,
+        "category": "summary",
+        "aggregate_output_tok_s": 312.79,
+        "mean_per_stream_decode_tok_s": 13.21,
+        "mean_ttft_s": 1.821,
+        "max_ttft_s": 2.696479558944702,
+        "output_tokens": 3636,
+        "wall_s": 11.624,
+        "prompt_tokens_range": [
+          303,
+          303
+        ]
+      },
+      {
+        "concurrency": 32,
+        "category": "format",
+        "aggregate_output_tok_s": 837.96,
+        "mean_per_stream_decode_tok_s": 35.47,
+        "mean_ttft_s": 0.865,
+        "max_ttft_s": 1.0713770389556885,
+        "output_tokens": 3312,
+        "wall_s": 3.952,
+        "prompt_tokens_range": [
+          85,
+          85
+        ]
+      },
+      {
+        "concurrency": 32,
+        "category": "ceiling_count",
+        "aggregate_output_tok_s": 1245.65,
+        "mean_per_stream_decode_tok_s": 42.46,
+        "mean_ttft_s": 0.498,
+        "max_ttft_s": 0.6104400157928467,
+        "output_tokens": 7648,
+        "wall_s": 6.14,
+        "prompt_tokens_range": [
+          30,
+          30
+        ]
+      },
+      {
+        "concurrency": 64,
+        "category": "coding",
+        "aggregate_output_tok_s": 1216.86,
+        "mean_per_stream_decode_tok_s": 21.89,
+        "mean_ttft_s": 1.057,
+        "max_ttft_s": 1.5333566665649414,
+        "output_tokens": 12800,
+        "wall_s": 10.519,
+        "prompt_tokens_range": [
+          47,
+          47
+        ]
+      },
+      {
+        "concurrency": 64,
+        "category": "json",
+        "aggregate_output_tok_s": 656.15,
+        "mean_per_stream_decode_tok_s": 13.86,
+        "mean_ttft_s": 1.172,
+        "max_ttft_s": 1.738889455795288,
+        "output_tokens": 5549,
+        "wall_s": 8.457,
+        "prompt_tokens_range": [
+          65,
+          65
+        ]
+      },
+      {
+        "concurrency": 64,
+        "category": "narrative",
+        "aggregate_output_tok_s": 420.65,
+        "mean_per_stream_decode_tok_s": 7.41,
+        "mean_ttft_s": 0.891,
+        "max_ttft_s": 1.304633617401123,
+        "output_tokens": 9208,
+        "wall_s": 21.89,
+        "prompt_tokens_range": [
+          39,
+          39
+        ]
+      },
+      {
+        "concurrency": 64,
+        "category": "prose",
+        "aggregate_output_tok_s": 501.72,
+        "mean_per_stream_decode_tok_s": 8.81,
+        "mean_ttft_s": 0.856,
+        "max_ttft_s": 1.261733055114746,
+        "output_tokens": 7871,
+        "wall_s": 15.688,
+        "prompt_tokens_range": [
+          36,
+          36
+        ]
+      },
+      {
+        "concurrency": 64,
+        "category": "math",
+        "aggregate_output_tok_s": 1059.77,
+        "mean_per_stream_decode_tok_s": 19.63,
+        "mean_ttft_s": 1.213,
+        "max_ttft_s": 1.7979419231414795,
+        "output_tokens": 12800,
+        "wall_s": 12.078,
+        "prompt_tokens_range": [
+          70,
+          70
+        ]
+      },
+      {
+        "concurrency": 64,
+        "category": "reasoning",
+        "aggregate_output_tok_s": 858.96,
+        "mean_per_stream_decode_tok_s": 15.41,
+        "mean_ttft_s": 1.152,
+        "max_ttft_s": 1.7028789520263672,
+        "output_tokens": 12800,
+        "wall_s": 14.902,
+        "prompt_tokens_range": [
+          64,
+          64
+        ]
+      },
+      {
+        "concurrency": 64,
+        "category": "summary",
+        "aggregate_output_tok_s": 378.34,
+        "mean_per_stream_decode_tok_s": 7.97,
+        "mean_ttft_s": 3.147,
+        "max_ttft_s": 5.325207471847534,
+        "output_tokens": 7052,
+        "wall_s": 18.639,
+        "prompt_tokens_range": [
+          303,
+          303
+        ]
+      },
+      {
+        "concurrency": 64,
+        "category": "format",
+        "aggregate_output_tok_s": 878.08,
+        "mean_per_stream_decode_tok_s": 20.84,
+        "mean_ttft_s": 1.396,
+        "max_ttft_s": 2.081921100616455,
+        "output_tokens": 6656,
+        "wall_s": 7.58,
+        "prompt_tokens_range": [
+          85,
+          85
+        ]
+      },
+      {
+        "concurrency": 64,
+        "category": "ceiling_count",
+        "aggregate_output_tok_s": 1499.84,
+        "mean_per_stream_decode_tok_s": 25.54,
+        "mean_ttft_s": 0.779,
+        "max_ttft_s": 1.1451048851013184,
+        "output_tokens": 15296,
+        "wall_s": 10.198,
+        "prompt_tokens_range": [
+          30,
+          30
+        ]
+      },
+      {
+        "concurrency": 128,
+        "category": "coding",
+        "aggregate_output_tok_s": 1250.3,
+        "mean_per_stream_decode_tok_s": 11.15,
+        "mean_ttft_s": 1.906,
+        "max_ttft_s": 3.3035240173339844,
+        "output_tokens": 25600,
+        "wall_s": 20.475,
+        "prompt_tokens_range": [
+          47,
+          47
+        ]
+      },
+      {
+        "concurrency": 128,
+        "category": "json",
+        "aggregate_output_tok_s": 716.96,
+        "mean_per_stream_decode_tok_s": 7.4,
+        "mean_ttft_s": 2.028,
+        "max_ttft_s": 3.955038070678711,
+        "output_tokens": 11032,
+        "wall_s": 15.387,
+        "prompt_tokens_range": [
+          65,
+          65
+        ]
+      },
+      {
+        "concurrency": 128,
+        "category": "narrative",
+        "aggregate_output_tok_s": 475.37,
+        "mean_per_stream_decode_tok_s": 4.2,
+        "mean_ttft_s": 1.498,
+        "max_ttft_s": 3.0242996215820312,
+        "output_tokens": 18181,
+        "wall_s": 38.246,
+        "prompt_tokens_range": [
+          39,
+          39
+        ]
+      },
+      {
+        "concurrency": 128,
+        "category": "prose",
+        "aggregate_output_tok_s": 543.61,
+        "mean_per_stream_decode_tok_s": 4.78,
+        "mean_ttft_s": 1.453,
+        "max_ttft_s": 2.9609107971191406,
+        "output_tokens": 15746,
+        "wall_s": 28.966,
+        "prompt_tokens_range": [
+          36,
+          36
+        ]
+      },
+      {
+        "concurrency": 128,
+        "category": "math",
+        "aggregate_output_tok_s": 1150.19,
+        "mean_per_stream_decode_tok_s": 10.46,
+        "mean_ttft_s": 2.095,
+        "max_ttft_s": 4.043224573135376,
+        "output_tokens": 25581,
+        "wall_s": 22.241,
+        "prompt_tokens_range": [
+          70,
+          70
+        ]
+      },
+      {
+        "concurrency": 128,
+        "category": "reasoning",
+        "aggregate_output_tok_s": 926.13,
+        "mean_per_stream_decode_tok_s": 8.32,
+        "mean_ttft_s": 1.977,
+        "max_ttft_s": 3.840308666229248,
+        "output_tokens": 25600,
+        "wall_s": 27.642,
+        "prompt_tokens_range": [
+          64,
+          64
+        ]
+      },
+      {
+        "concurrency": 128,
+        "category": "summary",
+        "aggregate_output_tok_s": 426.98,
+        "mean_per_stream_decode_tok_s": 4.33,
+        "mean_ttft_s": 5.811,
+        "max_ttft_s": 11.183262586593628,
+        "output_tokens": 15044,
+        "wall_s": 35.233,
+        "prompt_tokens_range": [
+          303,
+          303
+        ]
+      },
+      {
+        "concurrency": 128,
+        "category": "format",
+        "aggregate_output_tok_s": 1029.34,
+        "mean_per_stream_decode_tok_s": 10.46,
+        "mean_ttft_s": 2.409,
+        "max_ttft_s": 4.612578630447388,
+        "output_tokens": 13212,
+        "wall_s": 12.835,
+        "prompt_tokens_range": [
+          85,
+          85
+        ]
+      },
+      {
+        "concurrency": 128,
+        "category": "ceiling_count",
+        "aggregate_output_tok_s": 1528.82,
+        "mean_per_stream_decode_tok_s": 12.91,
+        "mean_ttft_s": 1.455,
+        "max_ttft_s": 2.7818026542663574,
+        "output_tokens": 30592,
+        "wall_s": 20.01,
+        "prompt_tokens_range": [
+          30,
+          30
+        ]
+      }
+    ],
+    "metric": "Completion tokens / full batch wall time, including prefill. Single wave per category/concurrency. Headline is the unweighted mean of eight category rates, excluding counting; categories run separately."
+  },
+  "sparkdash": {
+    "source": {
+      "repo": "https://github.com/MiaAI-Lab/sparkDash",
+      "commit": "d0c7f71296a1071d0d75f95b14c21413d4d06321",
+      "files_sha256": {
+        "server/collectors/DecodeBench.js": "1aa50982822c48139b009a5740bf187e6bf30f2fc1dc52f1f583971f82e961f9",
+        "server/collectors/PrefillBench.js": "bdd8123c430bcd6b6ca719b33878d41a54b8f31a136265c891e53e3ec315f17b",
+        "server/collectors/LlmStreaming.js": "77e117688dc67c4405188795aedab25d4a7ecea124c1974c8f5f1393e554b0cb",
+        "server/util/atomicWrite.js": "e4caf1065209d085561fa28a91e6af6c29857f40f8809b3554869e3815d28654",
+        "src/shared/llmPrompts.js": "a4a5b300411779de2c2f12a5b652d4702a3b2d6fdeca88421f26d8c7f0c23749",
+        "src/shared/llmTarget.js": "74913ffd206454f31743d8bba76892f12d1204eae21055173bdde3796c793443",
+        "src/shared/prefillBench.js": "bc29a63b22cedb4b58dbf2a44b5a4a51fdc7481d82b27ed88e73df9c99482bc2",
+        "LICENSE": "1126322e2cc8d165adc4c792eeb195717de2bcc7b39be1ce77959d78e87ef685"
+      },
+      "unchanged_upstream_files": false,
+      "source_version_is_known_tweet_version": false,
+      "pinned_upstream_files_verified": true,
+      "local_changes": [
+        {
+          "file": "server/collectors/DecodeBench.js",
+          "before_sha256": "1aa50982822c48139b009a5740bf187e6bf30f2fc1dc52f1f583971f82e961f9",
+          "after_sha256": "1858a1a06869e40503addae51d7da47092e79e955d3eeee4fc1ab5b4395f55d2",
+          "before": "const ALLOWED_CONCURRENCIES = new Set([1, 2, 3, 4, 5, 6, 8, 10, 12, 16, 24, 32]);",
+          "after": "const ALLOWED_CONCURRENCIES = new Set([1, 2, 3, 4, 5, 6, 8, 10, 12, 16, 24, 32, 64, 128]);",
+          "added_concurrencies": [
+            64,
+            128
+          ],
+          "description": "Only the allowed concurrency set is extended. Prompts, token budgets, sampling, warmup, request execution and metric calculations are unchanged."
+        }
+      ]
+    },
+    "rows": [
+      {
+        "concurrency": 8,
+        "aggregate_decode_tok_s_trials": [
+          231.57,
+          231.62
+        ],
+        "mean_aggregate_decode_tok_s": 231.595,
+        "mean_per_stream_decode_tok_s": 31.13,
+        "mean_ttft_s": 0.22807999999999998,
+        "max_ttft_s": 0.23739,
+        "output_tokens_per_stream": 256,
+        "ratio_to_lowest_concurrency": 1.0
+      },
+      {
+        "concurrency": 16,
+        "aggregate_decode_tok_s_trials": [
+          376.12,
+          376.04
+        ],
+        "mean_aggregate_decode_tok_s": 376.08000000000004,
+        "mean_per_stream_decode_tok_s": 25.16,
+        "mean_ttft_s": 0.346815,
+        "max_ttft_s": 0.35126,
+        "output_tokens_per_stream": 256,
+        "ratio_to_lowest_concurrency": 1.6238692545175848
+      },
+      {
+        "concurrency": 32,
+        "aggregate_decode_tok_s_trials": [
+          553.77,
+          552.51
+        ],
+        "mean_aggregate_decode_tok_s": 553.14,
+        "mean_per_stream_decode_tok_s": 18.575000000000003,
+        "mean_ttft_s": 0.554365,
+        "max_ttft_s": 0.68247,
+        "output_tokens_per_stream": 256,
+        "ratio_to_lowest_concurrency": 2.3883935318119995
+      },
+      {
+        "concurrency": 64,
+        "aggregate_decode_tok_s_trials": [
+          696.69,
+          699.71
+        ],
+        "mean_aggregate_decode_tok_s": 698.2,
+        "mean_per_stream_decode_tok_s": 11.844999999999999,
+        "mean_ttft_s": 0.871005,
+        "max_ttft_s": 1.30643,
+        "output_tokens_per_stream": 256,
+        "ratio_to_lowest_concurrency": 3.014745568773074
+      },
+      {
+        "concurrency": 128,
+        "aggregate_decode_tok_s_trials": [
+          771.78,
+          777.58
+        ],
+        "mean_aggregate_decode_tok_s": 774.6800000000001,
+        "mean_per_stream_decode_tok_s": 6.574999999999999,
+        "mean_ttft_s": 1.54299,
+        "max_ttft_s": 3.2682399999999996,
+        "output_tokens_per_stream": 256,
+        "ratio_to_lowest_concurrency": 3.344977223169758
+      }
+    ],
+    "metric": "Two waves per concurrency, 256 tokens per stream. Aggregate is sum(completion_tokens - 1) divided by earliest-first-content to latest-last-content window. Per-stream is upstream meanDecodeTps averaged across trials."
+  },
+  "input_lengths": {
+    "decode_prompt_range": [
+      30,
+      303
+    ],
+    "maximum_across_all_performance_requests": 93335,
+    "all_below_128000": true
+  },
+  "prefill": [
+    {
+      "suite": "community",
+      "actual_prompt_tokens": 2950,
+      "target": 2000,
+      "elapsed_s": 1.154,
+      "input_tok_s": 2557.1
+    },
+    {
+      "suite": "community",
+      "actual_prompt_tokens": 11592,
+      "target": 8000,
+      "elapsed_s": 2.654,
+      "input_tok_s": 4367.6
+    },
+    {
+      "suite": "community",
+      "actual_prompt_tokens": 46810,
+      "target": 32000,
+      "elapsed_s": 11.334,
+      "input_tok_s": 4129.9
+    },
+    {
+      "suite": "community",
+      "actual_prompt_tokens": 93335,
+      "target": 64000,
+      "elapsed_s": 25.162,
+      "input_tok_s": 3709.4
+    },
+    {
+      "suite": "sparkDash",
+      "trial": 1,
+      "target": 4096,
+      "actual_prompt_tokens": 4113,
+      "elapsed_s": 0.9381900000000001,
+      "input_tok_s": 4383.99
+    },
+    {
+      "suite": "sparkDash",
+      "trial": 1,
+      "target": 16384,
+      "actual_prompt_tokens": 16402,
+      "elapsed_s": 3.47552,
+      "input_tok_s": 4719.29
+    },
+    {
+      "suite": "sparkDash",
+      "trial": 1,
+      "target": 65536,
+      "actual_prompt_tokens": 65555,
+      "elapsed_s": 15.21833,
+      "input_tok_s": 4307.63
+    },
+    {
+      "suite": "sparkDash",
+      "trial": 2,
+      "target": 4096,
+      "actual_prompt_tokens": 4117,
+      "elapsed_s": 1.00942,
+      "input_tok_s": 4078.59
+    },
+    {
+      "suite": "sparkDash",
+      "trial": 2,
+      "target": 16384,
+      "actual_prompt_tokens": 16404,
+      "elapsed_s": 3.46817,
+      "input_tok_s": 4729.87
+    },
+    {
+      "suite": "sparkDash",
+      "trial": 2,
+      "target": 65536,
+      "actual_prompt_tokens": 65558,
+      "elapsed_s": 15.252379999999999,
+      "input_tok_s": 4298.21
+    }
+  ],
+  "memory_by_rank": {
+    "r0": {
+      "sample_count": 1493,
+      "minimum_available_gib": 6.885593414306641,
+      "initial_swap_used_gib": 0.38390350341796875,
+      "maximum_swap_used_gib": 3.9516983032226562,
+      "first": "2026-09-12T00:53:27.303279+00:00",
+      "last": "2026-09-12T01:18:20.097016+00:00"
+    },
+    "r1": {
+      "sample_count": 1492,
+      "minimum_available_gib": 7.185432434082031,
+      "initial_swap_used_gib": 0.3673210144042969,
+      "maximum_swap_used_gib": 6.226387023925781,
+      "first": "2026-09-12T00:53:27.643582+00:00",
+      "last": "2026-09-12T01:18:19.691087+00:00"
+    },
+    "r2": {
+      "sample_count": 1492,
+      "minimum_available_gib": 7.296398162841797,
+      "initial_swap_used_gib": 0.2747955322265625,
+      "maximum_swap_used_gib": 6.958126068115234,
+      "first": "2026-09-12T00:53:27.633503+00:00",
+      "last": "2026-09-12T01:18:19.656272+00:00"
+    },
+    "r3": {
+      "sample_count": 1492,
+      "minimum_available_gib": 7.22747802734375,
+      "initial_swap_used_gib": 0.2723045349121094,
+      "maximum_swap_used_gib": 4.219757080078125,
+      "first": "2026-09-12T00:53:27.623123+00:00",
+      "last": "2026-09-12T01:18:19.651298+00:00"
+    },
+    "r4": {
+      "sample_count": 1493,
+      "minimum_available_gib": 6.965412139892578,
+      "initial_swap_used_gib": 0.10279083251953125,
+      "maximum_swap_used_gib": 6.0925140380859375,
+      "first": "2026-09-12T00:53:27.596679+00:00",
+      "last": "2026-09-12T01:18:20.505233+00:00"
+    },
+    "r5": {
+      "sample_count": 1492,
+      "minimum_available_gib": 7.243320465087891,
+      "initial_swap_used_gib": 0.08783721923828125,
+      "maximum_swap_used_gib": 1.9464912414550781,
+      "first": "2026-09-12T00:53:27.597503+00:00",
+      "last": "2026-09-12T01:18:19.650813+00:00"
+    },
+    "r6": {
+      "sample_count": 1493,
+      "minimum_available_gib": 7.228767395019531,
+      "initial_swap_used_gib": 0.25855255126953125,
+      "maximum_swap_used_gib": 4.204109191894531,
+      "first": "2026-09-12T00:53:27.637411+00:00",
+      "last": "2026-09-12T01:18:20.578647+00:00"
+    },
+    "r7": {
+      "sample_count": 1493,
+      "minimum_available_gib": 7.042472839355469,
+      "initial_swap_used_gib": 0.2788238525390625,
+      "maximum_swap_used_gib": 2.597888946533203,
+      "first": "2026-09-12T00:53:27.587091+00:00",
+      "last": "2026-09-12T01:18:20.544362+00:00"
+    }
+  },
+  "minimum_available_gib_any_rank": 6.885593414306641,
+  "guard_minimum_available_gib_by_rank": {
+    "0": 8.713924407958984,
+    "1": 9.316146850585938,
+    "2": 9.885116577148438,
+    "3": 9.794071197509766,
+    "4": 10.059772491455078,
+    "5": 9.97983169555664,
+    "6": 9.807891845703125,
+    "7": 10.004993438720703
+  },
+  "swap_growth_during_benchmark_gib_by_rank": {
+    "0": 0.0,
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.0,
+    "4": 0.0,
+    "5": 0.0,
+    "6": 0.0,
+    "7": 0.0
+  },
+  "all_eight_running_no_oom_no_restarts": true,
+  "observed_concurrency_api_sample_counts": {
+    "8": 107,
+    "16": 137,
+    "32": 187,
+    "64": 286,
+    "128": 374
+  },
+  "observed_concurrency_server_decode_log_counts": {
+    "8": 13,
+    "16": 15,
+    "32": 11,
+    "64": 12,
+    "128": 14
+  },
+  "acceptance": {
+    "status": "PASS",
+    "checks": [
+      "arithmetic",
+      "C8 arithmetic twice",
+      "single image",
+      "four images",
+      "structured JSON",
+      "tool round trip"
+    ],
+    "limitation": "Capability smoke only; not a broad quality evaluation or long-context validation"
+  },
+  "arithmetic": {
+    "concurrency": 128,
+    "passed": 128,
+    "total": 128
+  },
+  "limitations": [
+    "Short synthetic benchmark waves, single community wave and two sparkDash prose waves per concurrency.",
+    "The KV pool stays configured at 8M; these short prompts do not fill it.",
+    "Prefill probes run at C1 and are client input rates, not raw kernel speed or concurrent prefill rates."
+  ],
+  "benchmark_runner_sha256": {
+    "run-concurrency.mjs": "5ce7104079640cf906a253462c575b8089aff4a65914280f43ebdeded53d2a2f",
+    "concurrency-extension.mjs": "1dcbf9936dd28da0017f727f448ec5421fde529c4684ed77d8838d7f819c76ad"
+  },
+  "prose_allowlist_extension": {
+    "file": "server/collectors/DecodeBench.js",
+    "before_sha256": "1aa50982822c48139b009a5740bf187e6bf30f2fc1dc52f1f583971f82e961f9",
+    "after_sha256": "1858a1a06869e40503addae51d7da47092e79e955d3eeee4fc1ab5b4395f55d2",
+    "before": "const ALLOWED_CONCURRENCIES = new Set([1, 2, 3, 4, 5, 6, 8, 10, 12, 16, 24, 32]);",
+    "after": "const ALLOWED_CONCURRENCIES = new Set([1, 2, 3, 4, 5, 6, 8, 10, 12, 16, 24, 32, 64, 128]);",
+    "added_concurrencies": [
+      64,
+      128
+    ],
+    "description": "Only the allowed concurrency set is extended. Prompts, token budgets, sampling, warmup, request execution and metric calculations are unchanged."
+  }
+}

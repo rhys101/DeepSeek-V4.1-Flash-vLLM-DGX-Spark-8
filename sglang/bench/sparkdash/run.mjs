@@ -1,9 +1,11 @@
-// CLI around pinned, unmodified sparkDash benchmark functions. See upstream/LICENSE.
+// CLI around pinned sparkDash functions, with an explicit optional C64/C128 allowlist extension.
 import fs from 'node:fs';
 import path from 'node:path';
 import { createHash, randomUUID } from 'node:crypto';
 import { parseArgs } from 'node:util';
 import { setTimeout as delay } from 'node:timers/promises';
+import { fileURLToPath, pathToFileURL } from 'node:url';
+import { createConcurrencyRuntime } from './concurrency-extension.mjs';
 
 const { values: a } = parseArgs({ options: {
   base: { type: 'string' }, model: { type: 'string', default: 'deepseek-v41-flash' },
@@ -12,6 +14,7 @@ const { values: a } = parseArgs({ options: {
   sizes: { type: 'string', default: '4096,16384,32768,65536,131072' },
   levels: { type: 'string', default: '1,2,3,4,6,8' },
   'prefill-only': { type: 'boolean', default: false },
+  'extended-concurrency': { type: 'boolean', default: false },
 } });
 if (!a.base || !a.out || !a.label) throw Error('--base URL --out NEW_DIRECTORY --label LABEL required');
 const url = new URL(a.base);
@@ -28,20 +31,33 @@ for (const [env, file] of Object.entries({
 
 const pre = await import('./upstream/server/collectors/PrefillBench.js');
 const stream = await import('./upstream/server/collectors/LlmStreaming.js');
-const { decodeBenchManager: decode } = await import('./upstream/server/collectors/DecodeBench.js');
 if (pre.normalizeContextSizes(sizes).length !== sizes.length) throw Error('Invalid or duplicate context size');
 const lock = JSON.parse(fs.readFileSync(new URL('./upstream.lock.json', import.meta.url)));
 for (const [name, hash] of Object.entries(lock.files_sha256)) {
   const data = fs.readFileSync(new URL(`./upstream/${name}`, import.meta.url));
   if (createHash('sha256').update(data).digest('hex') !== hash) throw Error(`Changed upstream file: ${name}`);
 }
+const extension = a['extended-concurrency'] ? createConcurrencyRuntime(
+  fileURLToPath(new URL('./upstream/', import.meta.url)),
+  fileURLToPath(new URL('./.local/', import.meta.url)), lock) : null;
+const decodeModule = await import(extension
+  ? pathToFileURL(path.join(extension.root, 'server/collectors/DecodeBench.js')).href
+  : './upstream/server/collectors/DecodeBench.js');
+const { decodeBenchManager: decode, DECODE_BENCH_DEFAULTS: defaults } = decodeModule;
+if (levels.length !== new Set(levels).size || levels.some(c => !defaults.allowedConcurrencies.includes(c))) {
+  extension?.cleanup();
+  throw Error(`Invalid concurrency level; allowed levels: ${defaults.allowedConcurrencies.join(',')}. Use --extended-concurrency for C64/C128.`);
+}
+const source = extension ? { ...lock, unchanged_upstream_files: false,
+  pinned_upstream_files_verified: true, local_changes: [extension.patch] } : lock;
 const result = { status: 'running', label: a.label, started: new Date().toISOString(),
-  source: lock, node: process.version, config: { ...a }, prefill: [], decode: [],
+  source, node: process.version, config: { ...a }, prefill: [], decode: [],
   method: 'Pinned sparkDash prompts and streaming metrics. Prefill C1, fresh UUID prefix per request, 8-token budget, temperature 0, thinking off. Decode prose, 256 tokens, ascending concurrency per trial; original prompt reuse and warmup. Client timing, no hardware polling. Usage tokens required. Tweet source version unconfirmed.' };
 function save() { fs.writeFileSync(path.join(root, 'result.json'), JSON.stringify(result, null, 2) + '\n'); }
 let activeJob = null;
 const stop = new AbortController();
 process.on('SIGINT', () => { stop.abort(); if (activeJob) decode.cancel('comparison', activeJob); process.exitCode = 130; });
+process.on('exit', () => extension?.cleanup());
 
 async function prefill(target, trial, warmup = false) {
   const salt = randomUUID(), prompt = pre.buildPrefillPrompt(target, salt);
@@ -87,4 +103,6 @@ try {
   console.log(JSON.stringify({ status: result.status, output: root }));
 } catch (error) {
   result.status = 'FAIL'; result.error = String(error); save(); throw error;
+} finally {
+  extension?.cleanup();
 }

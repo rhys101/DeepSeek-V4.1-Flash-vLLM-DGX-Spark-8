@@ -1,0 +1,38 @@
+{
+  "description": "Hashes of preserved source evidence and public metric extracts. Source names are relative to the original run artifact directory; connection settings are excluded from the public extracts.",
+  "source_sha256": {
+    "summary.json": "c9b7bfb285944318c6f1f889fcd2b4d0abc5028331457cc22881b93543809a10",
+    "profile.json": "090898347dc861731d43f6fb87c9f8436c6d1102620523938d3684efacbc1b59",
+    "client/community/bench-sg11-8m-short.json": "7e7a29f37bff620bea0221310f2679f8068273c7ee6a82d5d953666da619a553",
+    "client/sparkdash/result.json": "e63a67f6bb3b9f5b93801d0807bb8f05cde1e0cdd20515f9a3ff4bf4a24e3ba9",
+    "client/runner-manifest.json": "8fc17002ed14a41f361df250a9db304c03bbbc078ccbc39e5d9aa766029c36c1",
+    "client/acceptance/result.json": "9d353a70927d4f5674c5c9d329668fd6ab4dcc259ea665621fc0f64b3491951d",
+    "concurrency-evidence.json": "4fca711b75ed5b8346cb3f03eadf14669d20a1f568ca90d76334d80a1cd73772",
+    "server/state/concurrency-guard.json": "1951c9cc3e44d53f371fef93c87c8432ebe49527804d2e28077039f065b02e84",
+    "server/state/benchmark-collected/final-ranks.json": "488fed13d62d2d11d97b24ec36bda75e05adc1a49c579595113b562175836994",
+    "server/state/benchmark-collected/r0-server.log": "d1498fdc77077e0e00fa7095c6e06b938e31793752723beba5e3bcc3769be7ab",
+    "memory/sg11-ep4-8m-c128/r0.jsonl": "a8b4146b3d219e7d18ec467f65fbbbd77f5705db7a81edb8a8fb75ac2c285c95",
+    "memory/sg11-ep4-8m-c128/r1.jsonl": "7774b3948b39b457f5d72e729545d7e1110af846b28607e2acf1a60afd94003b",
+    "memory/sg11-ep4-8m-c128/r2.jsonl": "081dc58d1749226f54c0258cab8612f9f20512ae90744c718424a4589b13f9e5",
+    "memory/sg11-ep4-8m-c128/r3.jsonl": "6439107e2ba768b54191b64c52cf184c84874827e21659b0111a4dd6c04088da",
+    "memory/sg11-ep4-8m-c128/r4.jsonl": "69326662ecf4640997a3c49fa516be200e87fb0a574d037a6b05d469db40be64",
+    "memory/sg11-ep4-8m-c128/r5.jsonl": "533b7406361140e043ea7432fc5a69a8f2f007134eba06d17e093040dc9ab465",
+    "memory/sg11-ep4-8m-c128/r6.jsonl": "115d4fdb4e10e18df2909023b1d0c9791bc255f9b36b44a63bc0404baaea6632",
+    "memory/sg11-ep4-8m-c128/r7.jsonl": "8e6c46bdbd2f6d41181de39caa4bf29883a51be22b0f1b8dfe6c5ae18a3e8c62"
+  },
+  "community_runner_sha256": "e0d6b2d25bd585d11fbdf39c2ddcdf7a4de8ab685af6bd42465e69f3ee6e80a8",
+  "prose_runner_sha256": {
+    "run-concurrency.mjs": "5ce7104079640cf906a253462c575b8089aff4a65914280f43ebdeded53d2a2f",
+    "concurrency-extension.mjs": "1dcbf9936dd28da0017f727f448ec5421fde529c4684ed77d8838d7f819c76ad"
+  },
+  "published_files_sha256": {
+    "summary.json": "c9b7bfb285944318c6f1f889fcd2b4d0abc5028331457cc22881b93543809a10",
+    "concurrency-evidence.json": "4fca711b75ed5b8346cb3f03eadf14669d20a1f568ca90d76334d80a1cd73772",
+    "correctness.json": "a07e2a0da6fc0f7393c2ec5ae6996c3df4721362b2882f6558838ce55806d702",
+    "configuration.json": "47b815e9764f19de5a029da50cf10aebfaf8b549eef8254e5855f5a1ab9e9003",
+    "sparkdash-metrics.json": "5aab0596590bb5e07e7457ad25ac759d81b4694f1257a214816bd1d9d65e8fd1",
+    "server-decode.log": "5f5bffb8d1db6dbe651178027c96220febb3fd14086597f6fa96a94d8ee37c13",
+    "community.json": "7e7a29f37bff620bea0221310f2679f8068273c7ee6a82d5d953666da619a553",
+    "memory-minima.json": "ff99f5208fba0fc072ed3d657f04ae46666110830f6c5d22ec3c2f28e7d496df"
+  }
+}

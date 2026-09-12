@@ -1,14 +1,34 @@
-# SGLang EP4 (SG5): DeepSeek V4.1 Flash on eight DGX Sparks
+# SGLang EP4: DeepSeek V4.1 Flash on eight DGX Sparks
 
-**111.29 coding tok/s on one request · 431.82 coding tok/s across eight concurrent requests.**
+**C128 with an 8M KV pool · 1250.30 coding tok/s · 774.68 prose tok/s.**
 
-Best measured results on eight DGX Sparks, using SGLang EP4. The single-request figure measures decode speed; the concurrent figure is aggregate throughput including prefill. [Full comparison and measurement details](docs/community-comparison.md).
+Latest short-prompt concurrency results on eight DGX Sparks, using SGLang TP8/EP4 with resident Engram and unchanged model precision. Coding is aggregate throughput including prefill; prose is aggregate decode throughput averaged over two trials. [C8–C128 results and measurement details](docs/concurrency-results.md).
 
-EP4 is a validated snapshot of the SGLang deployment: **TP8/EP4, native RAM-resident Engram, DSpark five-token drafting, CUDA graphs, eight request slots, four images and a 300,000-token context cap**. It runs the same checkpoint as the [vLLM deployment](../docs/vllm-deployment.md).
+The packaged SG5 profile is a validated snapshot of the SGLang deployment: **TP8/EP4, native RAM-resident Engram, DSpark five-token drafting, CUDA graphs, eight request slots, four images and a 300,000-token context cap**. It runs the same checkpoint as the [vLLM deployment](../docs/vllm-deployment.md).
 
 It combines [Mia's pinned Spark adaptation](https://github.com/MiaAI-Lab/DeepSeek-v4.1-Flash-DGX-Sparks/tree/e59e6eb67479aa68f6fa700c600dc90a0729b5ec) with native-width query heads from [SGLang #36655](https://github.com/sgl-project/sglang/pull/36655), the scheduler's `--min-free-slots-delay 1` setting, and five verification/index-processing files from [#39068](https://github.com/sgl-project/sglang/pull/39068). Each of four expert groups spans two tensor ranks; model-wide TP remains eight. A local draft-context fix applies the requested backend consistently and records the actual loaded expert layout on all ranks. [SG3](docs/sg3-reference.md) is retained as the earlier reference.
 
 ## Speed
+
+### Short-prompt concurrency with the same 8M KV pool
+
+All rows below were measured on the same 128-slot experimental profile. The configured KV pool remained **8,000,000 tokens** throughout.
+
+| Concurrency | Coding aggregate tok/s | Coding per-stream decode tok/s | Prose aggregate decode tok/s | Prose per-stream decode tok/s |
+|---|---|---|---|---|
+| C8 | 445.46 | 60.98 | 231.59 | 31.13 |
+| C16 | 689.38 | 48.81 | 376.08 | 25.16 |
+| C32 | 975.92 | 35.07 | 553.14 | 18.58 |
+| C64 | 1216.86 | 21.89 | 698.20 | 11.84 |
+| C128 | 1250.30 | 11.15 | 774.68 | 6.57 |
+
+Moving from C64 to C128 changed coding aggregate throughput by **+2.7%** and prose by **+11.0%**, with lower per-stream speeds.
+
+At C128, average first-token latency was **1.906 s for coding** and **1.543 s for prose**. Concurrent inputs were 30–303 tokens; separate prefill probes stayed below 128K. All eight Sparks passed the checks, with no OOMs or restarts and a minimum of **6.89 GiB OS-available memory per Spark**.
+
+Coding aggregate includes prefill and full batch time; prose aggregate uses the first-to-last-output window. Prose is the mean of two trials, using the documented one-line C64/C128 allowlist extension. The short requests did not fill the 8M pool. [Full results, C64 run, latency, configuration and evidence](docs/concurrency-results.md).
+
+### Standard-profile engine comparison
 
 **111.29 tok/s single-stream coding decode**, versus **95.91** on the existing vLLM deployment (16.0% higher).
 
@@ -49,7 +69,7 @@ A separate TP8/EP4 profile passed **eight concurrent 997,097-token retrieval req
 
 ## Quality
 
-The validated profile passed text arithmetic, two waves of eight concurrent arithmetic requests, one-image and four-image checks, structured JSON, and a tool-call round trip. Exact three-record retrieval passed at **32,867, 131,171 and 299,099 actual prompt tokens**. These are capability smokes; broad model-quality parity with vLLM or an unmodified reference remains unmeasured.
+The packaged SG5 profile passed text arithmetic, two waves of eight concurrent arithmetic requests, one-image and four-image checks, structured JSON, and a tool-call round trip. Exact three-record retrieval passed at **32,867, 131,171 and 299,099 actual prompt tokens**. These are capability smokes; broad model-quality parity with vLLM or an unmodified reference remains unmeasured.
 
 Checkpoint MXFP4 expert weights, FP8 dense weights, the BF16 activation dtype, automatic KV selection (resolved to FP8 E4M3), BF16 WO-A computation and speculation acceptance thresholds are retained. SM121 expert computation uses the existing FlashInfer MXFP4/MXFP8 path; the name of the global activation dtype does not mean every GEMM computes in BF16. No additional quantization or TP4 WO-A/Q-RoPE changes are included.
 
