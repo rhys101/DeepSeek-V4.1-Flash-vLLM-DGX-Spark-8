@@ -1,0 +1,167 @@
+{
+  "status": "ALL_REDUCE_REQUIRED_TESTS_PASS",
+  "ranks": [
+    {
+      "rank": 0,
+      "passed": 74,
+      "skipped": [
+        {
+          "name": "test_all_gather_matches_torch[shape5-1-dtype2]",
+          "reason": "shard exceeds the runtime's all-gather capacity"
+        }
+      ],
+      "sha256": "764dc5cd57ce971d5991832027ec777caec6ff157c1b648cf47f0f331ea012f4",
+      "suite": {
+        "name": "pytest",
+        "errors": "0",
+        "failures": "0",
+        "skipped": "1",
+        "tests": "75",
+        "time": "11.796",
+        "timestamp": "2026-09-12T12:38:17.903467+00:00"
+      }
+    },
+    {
+      "rank": 1,
+      "passed": 74,
+      "skipped": [
+        {
+          "name": "test_all_gather_matches_torch[shape5-1-dtype2]",
+          "reason": "shard exceeds the runtime's all-gather capacity"
+        }
+      ],
+      "sha256": "bb10b1de968e9f883380cbaadfa33b5ad88050fc1f876027799fe90ef1355cec",
+      "suite": {
+        "name": "pytest",
+        "errors": "0",
+        "failures": "0",
+        "skipped": "1",
+        "tests": "75",
+        "time": "11.780",
+        "timestamp": "2026-09-12T12:38:17.906817+00:00"
+      }
+    },
+    {
+      "rank": 2,
+      "passed": 74,
+      "skipped": [
+        {
+          "name": "test_all_gather_matches_torch[shape5-1-dtype2]",
+          "reason": "shard exceeds the runtime's all-gather capacity"
+        }
+      ],
+      "sha256": "f85654650d98f879ba9f14db1ffe207bf040e9db4f9bacad982085e2238c85a4",
+      "suite": {
+        "name": "pytest",
+        "errors": "0",
+        "failures": "0",
+        "skipped": "1",
+        "tests": "75",
+        "time": "11.829",
+        "timestamp": "2026-09-12T12:38:17.870037+00:00"
+      }
+    },
+    {
+      "rank": 3,
+      "passed": 74,
+      "skipped": [
+        {
+          "name": "test_all_gather_matches_torch[shape5-1-dtype2]",
+          "reason": "shard exceeds the runtime's all-gather capacity"
+        }
+      ],
+      "sha256": "cbdacc71a5f202fd14fb9d1af05d46b91d23e4815317edeee71ebf0de8122aed",
+      "suite": {
+        "name": "pytest",
+        "errors": "0",
+        "failures": "0",
+        "skipped": "1",
+        "tests": "75",
+        "time": "11.849",
+        "timestamp": "2026-09-12T12:38:17.851779+00:00"
+      }
+    },
+    {
+      "rank": 4,
+      "passed": 74,
+      "skipped": [
+        {
+          "name": "test_all_gather_matches_torch[shape5-1-dtype2]",
+          "reason": "shard exceeds the runtime's all-gather capacity"
+        }
+      ],
+      "sha256": "5ddaeaf726f9e135753221dc7f28871b9a7ed5bbd74e12599cefb29ec8a8626e",
+      "suite": {
+        "name": "pytest",
+        "errors": "0",
+        "failures": "0",
+        "skipped": "1",
+        "tests": "75",
+        "time": "11.560",
+        "timestamp": "2026-09-12T12:38:18.139159+00:00"
+      }
+    },
+    {
+      "rank": 5,
+      "passed": 74,
+      "skipped": [
+        {
+          "name": "test_all_gather_matches_torch[shape5-1-dtype2]",
+          "reason": "shard exceeds the runtime's all-gather capacity"
+        }
+      ],
+      "sha256": "cb4f4606c829388a7c38dc47a3ea7094bdc06b732d2c92c283d734d03397d2d2",
+      "suite": {
+        "name": "pytest",
+        "errors": "0",
+        "failures": "0",
+        "skipped": "1",
+        "tests": "75",
+        "time": "11.882",
+        "timestamp": "2026-09-12T12:38:17.817628+00:00"
+      }
+    },
+    {
+      "rank": 6,
+      "passed": 74,
+      "skipped": [
+        {
+          "name": "test_all_gather_matches_torch[shape5-1-dtype2]",
+          "reason": "shard exceeds the runtime's all-gather capacity"
+        }
+      ],
+      "sha256": "c0075556dbbf30d3c68a857990a911d0e7e6d35ae4a9d055ee2ad80756e2bea1",
+      "suite": {
+        "name": "pytest",
+        "errors": "0",
+        "failures": "0",
+        "skipped": "1",
+        "tests": "75",
+        "time": "11.864",
+        "timestamp": "2026-09-12T12:38:17.838164+00:00"
+      }
+    },
+    {
+      "rank": 7,
+      "passed": 74,
+      "skipped": [
+        {
+          "name": "test_all_gather_matches_torch[shape5-1-dtype2]",
+          "reason": "shard exceeds the runtime's all-gather capacity"
+        }
+      ],
+      "sha256": "845b38650ec7f6347cc85fd670940d354f9934d8abe6eaca600989bfb9eeaec3",
+      "suite": {
+        "name": "pytest",
+        "errors": "0",
+        "failures": "0",
+        "skipped": "1",
+        "tests": "75",
+        "time": "11.822",
+        "timestamp": "2026-09-12T12:38:17.871173+00:00"
+      }
+    }
+  ],
+  "collector_failure": "Attempt 1 tried to rewrite the root-owned rank-0 JUnit XML, causing PermissionError after successful GPU tests. Raw XMLs recovered without modification.",
+  "scope": "74 passed and 1 skipped per rank; the skipped 6 MiB int64 all-gather exceeds 4 MiB fixture capacity. All-gather is not proposed for serving integration."
+}

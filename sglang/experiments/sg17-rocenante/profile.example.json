@@ -1,0 +1,146 @@
+{
+  "name": "sg17-rocenante",
+  "image": "deepseek-v41-sglang8:native-heads-v1",
+  "expected_image_id": "sha256:e7681b5276525821f9be286ed3bf0f51acb5239da27f69f60fdeb57e68c05581",
+  "model_store": "/srv/models",
+  "model_subpath": "DeepSeek-V4.1-Flash",
+  "run_dir": "/srv/sglang8/sg17-rocenante",
+  "head_ip": "192.0.2.11",
+  "fabric_interface": "enp1s0f0np0",
+  "nccl_hcas": "=rocep1s0f0:1,roceP2p1s0f0:1",
+  "dist_port": 29601,
+  "api_host": "127.0.0.1",
+  "api_port": 8000,
+  "context_length": 1000000,
+  "max_running_requests": 128,
+  "chunked_prefill_size": 2048,
+  "max_prefill_tokens": 2048,
+  "max_total_tokens": 8000000,
+  "mem_fraction_static": 0.8,
+  "draft_length": 5,
+  "minimum_available_gib": 2,
+  "workers": [
+    {
+      "rank": 0,
+      "host": "operator@192.0.2.11",
+      "ip": "192.0.2.11"
+    },
+    {
+      "rank": 1,
+      "host": "operator@192.0.2.12",
+      "ip": "192.0.2.12"
+    },
+    {
+      "rank": 2,
+      "host": "operator@192.0.2.13",
+      "ip": "192.0.2.13"
+    },
+    {
+      "rank": 3,
+      "host": "operator@192.0.2.14",
+      "ip": "192.0.2.14"
+    },
+    {
+      "rank": 4,
+      "host": "operator@192.0.2.15",
+      "ip": "192.0.2.15"
+    },
+    {
+      "rank": 5,
+      "host": "operator@192.0.2.16",
+      "ip": "192.0.2.16"
+    },
+    {
+      "rank": 6,
+      "host": "operator@192.0.2.17",
+      "ip": "192.0.2.17"
+    },
+    {
+      "rank": 7,
+      "host": "operator@192.0.2.18",
+      "ip": "192.0.2.18"
+    }
+  ],
+  "nccl_test_port": 29611,
+  "retry_free_admission": false,
+  "ep_size": 4,
+  "nccl_channels": 8,
+  "nccl_algo": "",
+  "min_free_slots_delay": 1,
+  "runtime_configuration_sha256": "cea985c5e1c184e2a045fadef5d259aa9ff08d2623377df7fc426953dbaa596c",
+  "production_overlays": {
+    "python/sglang/kernels/jit/csrc/deepseek_v4/c2.cuh": {
+      "before_sha256": "84be767c3a2909e5cf0bf98ef8f1d5f96d0c86c05f003f749d97ae9eafff44e2",
+      "after_sha256": "55f32ba512fca86826a27d66f36d4667848c17cbbe0d34096ffedead0ce469e4"
+    },
+    "python/sglang/kernels/ops/attention/dsv4/c2.py": {
+      "before_sha256": "0f98a8fe2abf9db25f87d451ceefe0dcb4b411d7fcc0d75c8bdb7a0b3f58600a",
+      "after_sha256": "9da953bedcebad1b6168cce61453bd487689363358a2569b8a0c366b955e5bea"
+    },
+    "python/sglang/kernels/ops/attention/dsv4/candidate_blocks.py": {
+      "before_sha256": "c4f2ace8ecf94f2316a1ec0ef2e8f8a8d7565fb2161a4019cf92601b7ebc5032",
+      "after_sha256": "d7fc6c5984d10331a04d3586a537def4d531a440f2db3113423785b9aa4016ea"
+    },
+    "python/sglang/kernels/ops/attention/dsv4/indexer_postprocess.py": {
+      "before_sha256": null,
+      "after_sha256": "55a52c4e6c71568705958ed35f821260b38b1d371637712c47dc0e964f9c1f54"
+    },
+    "python/sglang/srt/layers/attention/deepseek_v4_backend.py": {
+      "before_sha256": "a99da83280bad451eee68c8ce0c42bd7f1847249b96f540cd5f74aab171dcacb",
+      "after_sha256": "20a711344de7666d83b3dfa3ce7e9621729cbe40ed9a433d28e53872216e65d1"
+    },
+    "python/sglang/srt/speculative/dspark_components/dspark_worker_v2.py": {
+      "before_sha256": "7361310ce8fb3643efa0ed6d98c3e31c291fb2e2a859d850d77bd6496106df4b",
+      "after_sha256": "8387704e671b1a67d116ccca9523092083eb0d299e654a5d6c7949f7245bf6df"
+    },
+    "python/sglang/srt/distributed/device_communicators/pynccl.py": {
+      "before_sha256": "9e0be65f31ea0f2a2192c897b0025af10c8f0b36b018cd533ba8ccfb2c87014f",
+      "after_sha256": "0d594c3e286c34c62579bac7cb48e14a44130233e00b2aca029709c2cdffca72"
+    },
+    "python/sglang/srt/distributed/parallel_state.py": {
+      "before_sha256": "1930ee1f79d10a33c7016612aba9277561a3f8baf91fb941438fa5e39aa382dc",
+      "after_sha256": "2a2afab0f8c0f93afc104152537b69b030a0b098618fa8271167afd4bf66de4f"
+    },
+    "python/sglang/srt/managers/scheduler_components/batch_result_processor.py": {
+      "before_sha256": "734bb2f479b14d9f36f1645807b81033a2d5b74a539bac853f5e48e3f089b688",
+      "after_sha256": "220dbd3c502c82f2aa4b35b853797b8effea09cc0495477123cc7f114ab8ec03"
+    }
+  },
+  "cuda_graph_batch_sizes": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    12,
+    16,
+    24,
+    32,
+    48,
+    64,
+    96,
+    128
+  ],
+  "b12x_source_archive_sha256": "4922d0db9395fb8b537d7e216d509a5747867a45f20c18290e385786609dd05f",
+  "b12x_source_manifest_sha256": "b19f91860b03169a4775efcd2ef2b8df6048f7a742c94bb77c5de9f573d04088",
+  "b12x_patch_manifest": {
+    "base": "SG4b qualified B12x 85d3681 with local clamp fixes",
+    "roce_revision": "081b235931dbbcedcf0eb5899bae990c5dec5238",
+    "changed_files": [
+      "b12x/__init__.py",
+      "b12x/comm/__init__.py",
+      "b12x/comm/roce/__init__.py",
+      "b12x/comm/roce/_allgather_cute.py",
+      "b12x/comm/roce/_cute_intrinsics.py",
+      "b12x/comm/roce/_oneshot_cute.py",
+      "b12x/comm/roce/_proxy.py",
+      "b12x/comm/roce/_roce_proxy.c",
+      "b12x/comm/roce/api.py",
+      "b12x/comm/roce/roce_oneshot.py"
+    ],
+    "note": "Only RoCEnante files and two registry entries are added. Existing MoE kernels, compiler and utility implementations remain byte-identical to the pinned serving B12x."
+  }
+}

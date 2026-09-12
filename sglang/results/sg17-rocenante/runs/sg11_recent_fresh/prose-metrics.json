@@ -1,0 +1,1274 @@
+{
+  "status": "PASS",
+  "label": "sg11-after-20260912t114735z",
+  "started": "2026-09-12T11:57:03.324Z",
+  "finished": "2026-09-12T11:58:07.576Z",
+  "source": {
+    "repo": "https://github.com/MiaAI-Lab/sparkDash",
+    "commit": "d0c7f71296a1071d0d75f95b14c21413d4d06321",
+    "files_sha256": {
+      "server/collectors/DecodeBench.js": "1aa50982822c48139b009a5740bf187e6bf30f2fc1dc52f1f583971f82e961f9",
+      "server/collectors/PrefillBench.js": "bdd8123c430bcd6b6ca719b33878d41a54b8f31a136265c891e53e3ec315f17b",
+      "server/collectors/LlmStreaming.js": "77e117688dc67c4405188795aedab25d4a7ecea124c1974c8f5f1393e554b0cb",
+      "server/util/atomicWrite.js": "e4caf1065209d085561fa28a91e6af6c29857f40f8809b3554869e3815d28654",
+      "src/shared/llmPrompts.js": "a4a5b300411779de2c2f12a5b652d4702a3b2d6fdeca88421f26d8c7f0c23749",
+      "src/shared/llmTarget.js": "74913ffd206454f31743d8bba76892f12d1204eae21055173bdde3796c793443",
+      "src/shared/prefillBench.js": "bc29a63b22cedb4b58dbf2a44b5a4a51fdc7481d82b27ed88e73df9c99482bc2",
+      "LICENSE": "1126322e2cc8d165adc4c792eeb195717de2bcc7b39be1ce77959d78e87ef685"
+    },
+    "unchanged_upstream_files": true,
+    "source_version_is_known_tweet_version": false
+  },
+  "node": "v22.22.2",
+  "method": "Pinned sparkDash prompts and streaming metrics. Prefill C1, fresh UUID prefix per request, 8-token budget, temperature 0, thinking off. Decode prose, 256 tokens, ascending concurrency per trial; original prompt reuse and warmup. Client timing, no hardware polling. Usage tokens required. Tweet source version unconfirmed.",
+  "config": {
+    "model": "deepseek-v41-flash",
+    "label": "sg11-after-20260912t114735z",
+    "trials": "3",
+    "sizes": "4096",
+    "levels": "1,4,8",
+    "prefill-only": false,
+    "extended-concurrency": false
+  },
+  "decode": [
+    {
+      "trial": 1,
+      "status": "completed",
+      "results": [
+        {
+          "concurrency": 1,
+          "streamsOk": 1,
+          "streamsFailed": 0,
+          "meanDecodeTps": 67.07,
+          "medianDecodeTps": 67.07,
+          "minDecodeTps": 67.07,
+          "maxDecodeTps": 67.07,
+          "meanTtftMs": 158.08,
+          "medianTtftMs": 158.08,
+          "aggregateDecodeTps": 67.07,
+          "meanPrefillTps": 202.43,
+          "medianPrefillTps": 202.43,
+          "aggregatePrefillTps": 202.43,
+          "totalPrefillTokens": 32,
+          "totalDecodeTokens": 255,
+          "totalCompletionTokens": 256,
+          "durationMs": 3960.64,
+          "error": null,
+          "model": "deepseek-v41-flash",
+          "streams": [
+            {
+              "index": 0,
+              "ttftContentMs": 158.08,
+              "reasoningChunks": 0,
+              "ttftMs": 158.08,
+              "decodeTps": 67.07,
+              "decodeTokens": 255,
+              "completionTokens": 256,
+              "prefillTps": 202.43,
+              "prefillTokens": 32,
+              "totalMs": 3959.93,
+              "error": null,
+              "usage": {
+                "promptTokens": 32,
+                "completionTokens": 256,
+                "totalTokens": 288
+              },
+              "contentPreview": {
+                "first": "# How a Hash Map Works: A Detailed Explanation\n\nA hash map (also called hash table, dictionary, or associative array) is a data structure that stores key-value ",
+                "last": "zes allow fast index computation via bit masking; primes reduce clustering with certain hash functions.\n\n### Step 2: Hash the key\n\nA hash function takes the key",
+                "chars": 1073
+              },
+              "decodeMs": 3801.72,
+              "prompt": "Write a detailed step-by-step explanation of how a hash map works, including collision handling, resizing, and time complexity. Be thorough.",
+              "finishReason": "length"
+            }
+          ]
+        },
+        {
+          "concurrency": 4,
+          "streamsOk": 4,
+          "streamsFailed": 0,
+          "meanDecodeTps": 41.45,
+          "medianDecodeTps": 41.25,
+          "minDecodeTps": 40.01,
+          "maxDecodeTps": 43.31,
+          "meanTtftMs": 167.21,
+          "medianTtftMs": 167.05,
+          "aggregateDecodeTps": 160.02,
+          "meanPrefillTps": 233.25,
+          "medianPrefillTps": 233.48,
+          "aggregatePrefillTps": 926.4,
+          "totalPrefillTokens": 156,
+          "totalDecodeTokens": 1020,
+          "totalCompletionTokens": 1024,
+          "durationMs": 6542.48,
+          "error": null,
+          "model": "deepseek-v41-flash",
+          "streams": [
+            {
+              "index": 0,
+              "ttftContentMs": 167.92,
+              "reasoningChunks": 0,
+              "ttftMs": 167.92,
+              "decodeTps": 40.01,
+              "decodeTokens": 255,
+              "completionTokens": 256,
+              "prefillTps": 232.25,
+              "prefillTokens": 39,
+              "totalMs": 6542.09,
+              "error": null,
+              "usage": {
+                "promptTokens": 39,
+                "completionTokens": 256,
+                "totalTokens": 295
+              },
+              "contentPreview": {
+                "first": "# How a Hash Map Works: A Detailed Explanation\n\n## Part 1: Core Concept and Fundamentals\n\n### What is a Hash Map?\n\nA hash map (also called hash table, dictionar",
+                "last": "* or **table**). This array has a fixed size `m` at any given moment.\n\n```\nIndex:  0    1    2    3    4    5    6    7\n      [  ] [  ] [  ] [  ] [  ] [  ] [  ]",
+                "chars": 1043
+              },
+              "decodeMs": 6373.85,
+              "prompt": "Write a detailed step-by-step explanation of how a hash map works, including collision handling, resizing, and time complexity. Be thorough. (stream 1/4)",
+              "finishReason": "length"
+            },
+            {
+              "index": 1,
+              "ttftContentMs": 166.82,
+              "reasoningChunks": 0,
+              "ttftMs": 166.82,
+              "decodeTps": 40.65,
+              "decodeTokens": 255,
+              "completionTokens": 256,
+              "prefillTps": 233.79,
+              "prefillTokens": 39,
+              "totalMs": 6440.14,
+              "error": null,
+              "usage": {
+                "promptTokens": 39,
+                "completionTokens": 256,
+                "totalTokens": 295
+              },
+              "contentPreview": {
+                "first": "# How a Hash Map Works: A Detailed Walkthrough\n\nA hash map (also called hash table, dictionary, or associative array) is a data structure that stores key-value ",
+                "last": "ed-size integer.\n\n**Properties of a good hash function:**\n- **Deterministic** \u2014 same input \u2192 same output.\n- **Uniform** \u2014 outputs spread evenly across the range",
+                "chars": 1074
+              },
+              "decodeMs": 6273.16,
+              "prompt": "Write a detailed step-by-step explanation of how a hash map works, including collision handling, resizing, and time complexity. Be thorough. (stream 2/4)",
+              "finishReason": "length"
+            },
+            {
+              "index": 2,
+              "ttftContentMs": 167.07,
+              "reasoningChunks": 0,
+              "ttftMs": 167.07,
+              "decodeTps": 43.31,
+              "decodeTokens": 255,
+              "completionTokens": 256,
+              "prefillTps": 233.44,
+              "prefillTokens": 39,
+              "totalMs": 6055.38,
+              "error": null,
+              "usage": {
+                "promptTokens": 39,
+                "completionTokens": 256,
+                "totalTokens": 295
+              },
+              "contentPreview": {
+                "first": "# How a Hash Map Works: A Detailed Walkthrough (Part 3 of 4)\n\n## Part 3: Resizing, Load Factor, and Rehashing\n\nIn Parts 1 and 2, we covered the core mechanics: ",
+                "last": " roughly `O(1 / (1 \u2212 \u03b1))` \u2014 which explodes as \u03b1 approaches 1.\n\nTo keep operations near O(1), we enforce a **maximum load factor** (typically 0.75 for chaining, ",
+                "chars": 987
+              },
+              "decodeMs": 5888.19,
+              "prompt": "Write a detailed step-by-step explanation of how a hash map works, including collision handling, resizing, and time complexity. Be thorough. (stream 3/4)",
+              "finishReason": "length"
+            },
+            {
+              "index": 3,
+              "ttftContentMs": 167.02,
+              "reasoningChunks": 0,
+              "ttftMs": 167.02,
+              "decodeTps": 41.84,
+              "decodeTokens": 255,
+              "completionTokens": 256,
+              "prefillTps": 233.51,
+              "prefillTokens": 39,
+              "totalMs": 6261.98,
+              "error": null,
+              "usage": {
+                "promptTokens": 39,
+                "completionTokens": 256,
+                "totalTokens": 295
+              },
+              "contentPreview": {
+                "first": "# How a Hash Map Works: A Detailed Walkthrough\n\nA hash map (also called hash table, dictionary, or associative array) is a data structure that stores key-value ",
+                "last": "arge integer. Good hash functions:\n\n- Are **deterministic** (same key \u2192 same hash every time).\n- Distribute keys **uniformly** across the output range.\n- Are **",
+                "chars": 1010
+              },
+              "decodeMs": 6094.83,
+              "prompt": "Write a detailed step-by-step explanation of how a hash map works, including collision handling, resizing, and time complexity. Be thorough. (stream 4/4)",
+              "finishReason": "length"
+            }
+          ]
+        },
+        {
+          "concurrency": 8,
+          "streamsOk": 8,
+          "streamsFailed": 0,
+          "meanDecodeTps": 32.16,
+          "medianDecodeTps": 31.79,
+          "minDecodeTps": 29.57,
+          "maxDecodeTps": 36.14,
+          "meanTtftMs": 195.8,
+          "medianTtftMs": 195.66,
+          "aggregateDecodeTps": 236.49,
+          "meanPrefillTps": 199.19,
+          "medianPrefillTps": 199.33,
+          "aggregatePrefillTps": 1576.47,
+          "totalPrefillTokens": 312,
+          "totalDecodeTokens": 2040,
+          "totalCompletionTokens": 2048,
+          "durationMs": 8823.28,
+          "error": null,
+          "model": "deepseek-v41-flash",
+          "streams": [
+            {
+              "index": 0,
+              "ttftContentMs": 197.63,
+              "reasoningChunks": 0,
+              "ttftMs": 197.63,
+              "decodeTps": 31.46,
+              "decodeTokens": 255,
+              "completionTokens": 256,
+              "prefillTps": 197.34,
+              "prefillTokens": 39,
+              "totalMs": 8303.78,
+              "error": null,
+              "usage": {
+                "promptTokens": 39,
+                "completionTokens": 256,
+                "totalTokens": 295
+              },
+              "contentPreview": {
+                "first": "# How a Hash Map Works: A Detailed Explanation\n\n## Introduction\n\nA hash map (also called hash table, dictionary, or associative array) is a data structure that ",
+                "last": "6, where each index `0..15` can store entries.\n\n```\nIndex:  0    1    2    3    4    5   ...  15\n      [  ] [  ] [  ] [  ] [  ] [  ] ... [  ]\n```\n\n---\n\n## Step ",
+                "chars": 999
+              },
+              "decodeMs": 8106.07,
+              "prompt": "Write a detailed step-by-step explanation of how a hash map works, including collision handling, resizing, and time complexity. Be thorough. (stream 1/8)",
+              "finishReason": "length"
+            },
+            {
+              "index": 1,
+              "ttftContentMs": 196.62,
+              "reasoningChunks": 0,
+              "ttftMs": 196.62,
+              "decodeTps": 30.58,
+              "decodeTokens": 255,
+              "completionTokens": 256,
+              "prefillTps": 198.35,
+              "prefillTokens": 39,
+              "totalMs": 8535.62,
+              "error": null,
+              "usage": {
+                "promptTokens": 39,
+                "completionTokens": 256,
+                "totalTokens": 295
+              },
+              "contentPreview": {
+                "first": "# How a Hash Map Works: A Detailed Walkthrough\n\nA hash map (also called hash table, dictionary, or associative array) is a data structure that stores key-value ",
+                "last": "a string, this might be something like:\n\n```\nhash(\"apple\") = 93029210\n```\n\nA good hash function:\n- Is **deterministic** (same key \u2192 same hash every time)\n- Dist",
+                "chars": 1032
+              },
+              "decodeMs": 8338.93,
+              "prompt": "Write a detailed step-by-step explanation of how a hash map works, including collision handling, resizing, and time complexity. Be thorough. (stream 2/8)",
+              "finishReason": "length"
+            },
+            {
+              "index": 2,
+              "ttftContentMs": 195.97,
+              "reasoningChunks": 0,
+              "ttftMs": 195.97,
+              "decodeTps": 32.13,
+              "decodeTokens": 255,
+              "completionTokens": 256,
+              "prefillTps": 199.01,
+              "prefillTokens": 39,
+              "totalMs": 8131.52,
+              "error": null,
+              "usage": {
+                "promptTokens": 39,
+                "completionTokens": 256,
+                "totalTokens": 295
+              },
+              "contentPreview": {
+                "first": "# How a Hash Map Works: A Detailed Explanation\n\nA hash map (also called hash table, dictionary, or associative array) is a data structure that stores key-value ",
+                "last": "me hash.\n- **Uniform**: Keys spread evenly across the output range.\n- **Fast**: Computing the hash should be cheap.\n\nExample (simplified) for a string:\n```\nhash",
+                "chars": 1099
+              },
+              "decodeMs": 7935.46,
+              "prompt": "Write a detailed step-by-step explanation of how a hash map works, including collision handling, resizing, and time complexity. Be thorough. (stream 3/8)",
+              "finishReason": "length"
+            },
+            {
+              "index": 3,
+              "ttftContentMs": 195.42,
+              "reasoningChunks": 0,
+              "ttftMs": 195.42,
+              "decodeTps": 36.14,
+              "decodeTokens": 255,
+              "completionTokens": 256,
+              "prefillTps": 199.57,
+              "prefillTokens": 39,
+              "totalMs": 7250.68,
+              "error": null,
+              "usage": {
+                "promptTokens": 39,
+                "completionTokens": 256,
+                "totalTokens": 295
+              },
+              "contentPreview": {
+                "first": "# How a Hash Map Works: A Detailed Walkthrough\n\nA hash map (also called hash table, dictionary, or associative array) is a data structure that stores key-value ",
+                "last": "ap to an index**: `i = h & (capacity - 1)` (if capacity is a power of two) or `h % capacity`.\n3. **Look at bucket `i`**:\n   - If empty \u2192 place a new entry `(key",
+                "chars": 914
+              },
+              "decodeMs": 7055.07,
+              "prompt": "Write a detailed step-by-step explanation of how a hash map works, including collision handling, resizing, and time complexity. Be thorough. (stream 4/8)",
+              "finishReason": "length"
+            },
+            {
+              "index": 4,
+              "ttftContentMs": 195.56,
+              "reasoningChunks": 0,
+              "ttftMs": 195.56,
+              "decodeTps": 31.79,
+              "decodeTokens": 255,
+              "completionTokens": 256,
+              "prefillTps": 199.43,
+              "prefillTokens": 39,
+              "totalMs": 8217.36,
+              "error": null,
+              "usage": {
+                "promptTokens": 39,
+                "completionTokens": 256,
+                "totalTokens": 295
+              },
+              "contentPreview": {
+                "first": "# How a Hash Map Works: A Detailed Explanation\n\nA hash map (also called hash table, dictionary, or associative array) is a data structure that stores key-value ",
+                "last": " computes `h = hash(k)`. A good hash function:\n\n- Is **deterministic** (same key \u2192 same hash).\n- Is **fast** to compute.\n- **Distributes keys uniformly** across",
+                "chars": 1059
+              },
+              "decodeMs": 8021.77,
+              "prompt": "Write a detailed step-by-step explanation of how a hash map works, including collision handling, resizing, and time complexity. Be thorough. (stream 5/8)",
+              "finishReason": "length"
+            },
+            {
+              "index": 5,
+              "ttftContentMs": 194.73,
+              "reasoningChunks": 0,
+              "ttftMs": 194.73,
+              "decodeTps": 33.8,
+              "decodeTokens": 255,
+              "completionTokens": 256,
+              "prefillTps": 200.28,
+              "prefillTokens": 39,
+              "totalMs": 7739.48,
+              "error": null,
+              "usage": {
+                "promptTokens": 39,
+                "completionTokens": 256,
+                "totalTokens": 295
+              },
+              "contentPreview": {
+                "first": "# How a Hash Map Works: A Detailed Explanation\n\n## 1. The Core Idea\n\nA hash map (also called hash table, dictionary, or associative array) stores **key-value pa",
+                "last": "ies:\n\n1. **Deterministic** \u2014 the same key always produces the same hash.\n2. **Uniform** \u2014 outputs are spread evenly across the range.\n3. **Fast** \u2014 computing it",
+                "chars": 1100
+              },
+              "decodeMs": 7544.61,
+              "prompt": "Write a detailed step-by-step explanation of how a hash map works, including collision handling, resizing, and time complexity. Be thorough. (stream 6/8)",
+              "finishReason": "length"
+            },
+            {
+              "index": 6,
+              "ttftContentMs": 195.75,
+              "reasoningChunks": 0,
+              "ttftMs": 195.75,
+              "decodeTps": 29.57,
+              "decodeTokens": 255,
+              "completionTokens": 256,
+              "prefillTps": 199.23,
+              "prefillTokens": 39,
+              "totalMs": 8820.74,
+              "error": null,
+              "usage": {
+                "promptTokens": 39,
+                "completionTokens": 256,
+                "totalTokens": 295
+              },
+              "contentPreview": {
+                "first": "# How a Hash Map Works: A Detailed Explanation (Part 7/8)\n\n## Part 7: Advanced Topics \u2014 Concurrent Hash Maps, Memory Layout, and Real-World Optimizations\n\nIn th",
+                "last": ".\n\n---\n\n### 7.2 Sharded (Striped) Locking\n\nThe simplest scalable approach: partition the table into `N` independent sub-maps, each with its own lock.\n\n```\nshard",
+                "chars": 1126
+              },
+              "decodeMs": 8624.89,
+              "prompt": "Write a detailed step-by-step explanation of how a hash map works, including collision handling, resizing, and time complexity. Be thorough. (stream 7/8)",
+              "finishReason": "length"
+            },
+            {
+              "index": 7,
+              "ttftContentMs": 194.68,
+              "reasoningChunks": 0,
+              "ttftMs": 194.68,
+              "decodeTps": 31.79,
+              "decodeTokens": 255,
+              "completionTokens": 256,
+              "prefillTps": 200.33,
+              "prefillTokens": 39,
+              "totalMs": 8216.69,
+              "error": null,
+              "usage": {
+                "promptTokens": 39,
+                "completionTokens": 256,
+                "totalTokens": 295
+              },
+              "contentPreview": {
+                "first": "# Hash Maps: A Complete Deep Dive\n\nA hash map (also called hash table, dictionary, or associative array) is one of the most important data structures in compute",
+                "last": "ey using a hash function (e.g., MurmurHash, SipHash, or Java's `hashCode()`).\n2. **Compress to an index** within the array bounds, typically `hash & (capacity -",
+                "chars": 1052
+              },
+              "decodeMs": 8021.94,
+              "prompt": "Write a detailed step-by-step explanation of how a hash map works, including collision handling, resizing, and time complexity. Be thorough. (stream 8/8)",
+              "finishReason": "length"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial": 2,
+      "status": "completed",
+      "results": [
+        {
+          "concurrency": 1,
+          "streamsOk": 1,
+          "streamsFailed": 0,
+          "meanDecodeTps": 67.08,
+          "medianDecodeTps": 67.08,
+          "minDecodeTps": 67.08,
+          "maxDecodeTps": 67.08,
+          "meanTtftMs": 142.33,
+          "medianTtftMs": 142.33,
+          "aggregateDecodeTps": 67.08,
+          "meanPrefillTps": 224.83,
+          "medianPrefillTps": 224.83,
+          "aggregatePrefillTps": 224.83,
+          "totalPrefillTokens": 32,
+          "totalDecodeTokens": 255,
+          "totalCompletionTokens": 256,
+          "durationMs": 3944.21,
+          "error": null,
+          "model": "deepseek-v41-flash",
+          "streams": [
+            {
+              "index": 0,
+              "ttftContentMs": 142.33,
+              "reasoningChunks": 0,
+              "ttftMs": 142.33,
+              "decodeTps": 67.08,
+              "decodeTokens": 255,
+              "completionTokens": 256,
+              "prefillTps": 224.83,
+              "prefillTokens": 32,
+              "totalMs": 3943.94,
+              "error": null,
+              "usage": {
+                "promptTokens": 32,
+                "completionTokens": 256,
+                "totalTokens": 288
+              },
+              "contentPreview": {
+                "first": "# How a Hash Map Works: A Detailed Explanation\n\nA hash map (also called hash table, dictionary, or associative array) is a data structure that stores key-value ",
+                "last": "zes allow fast index computation via bit masking; primes reduce clustering with certain hash functions.\n\n### Step 2: Hash the key\n\nA hash function takes the key",
+                "chars": 1073
+              },
+              "decodeMs": 3801.49,
+              "prompt": "Write a detailed step-by-step explanation of how a hash map works, including collision handling, resizing, and time complexity. Be thorough.",
+              "finishReason": "length"
+            }
+          ]
+        },
+        {
+          "concurrency": 4,
+          "streamsOk": 4,
+          "streamsFailed": 0,
+          "meanDecodeTps": 41.54,
+          "medianDecodeTps": 41.33,
+          "minDecodeTps": 40.08,
+          "maxDecodeTps": 43.42,
+          "meanTtftMs": 167.49,
+          "medianTtftMs": 167.61,
+          "aggregateDecodeTps": 160.32,
+          "meanPrefillTps": 232.86,
+          "medianPrefillTps": 232.69,
+          "aggregatePrefillTps": 927.2,
+          "totalPrefillTokens": 156,
+          "totalDecodeTokens": 1020,
+          "totalCompletionTokens": 1024,
+          "durationMs": 6530.22,
+          "error": null,
+          "model": "deepseek-v41-flash",
+          "streams": [
+            {
+              "index": 0,
+              "ttftContentMs": 167.79,
+              "reasoningChunks": 0,
+              "ttftMs": 167.79,
+              "decodeTps": 40.08,
+              "decodeTokens": 255,
+              "completionTokens": 256,
+              "prefillTps": 232.44,
+              "prefillTokens": 39,
+              "totalMs": 6529.93,
+              "error": null,
+              "usage": {
+                "promptTokens": 39,
+                "completionTokens": 256,
+                "totalTokens": 295
+              },
+              "contentPreview": {
+                "first": "# How a Hash Map Works: A Detailed Explanation\n\n## Part 1: Core Concept and Fundamentals\n\n### What is a Hash Map?\n\nA hash map (also called hash table, dictionar",
+                "last": "* or **table**). This array has a fixed size `m` at any given moment.\n\n```\nIndex:  0    1    2    3    4    5    6    7\n      [  ] [  ] [  ] [  ] [  ] [  ] [  ]",
+                "chars": 1043
+              },
+              "decodeMs": 6362.07,
+              "prompt": "Write a detailed step-by-step explanation of how a hash map works, including collision handling, resizing, and time complexity. Be thorough. (stream 1/4)",
+              "finishReason": "length"
+            },
+            {
+              "index": 1,
+              "ttftContentMs": 167.61,
+              "reasoningChunks": 0,
+              "ttftMs": 167.61,
+              "decodeTps": 40.73,
+              "decodeTokens": 255,
+              "completionTokens": 256,
+              "prefillTps": 232.68,
+              "prefillTokens": 39,
+              "totalMs": 6428.4,
+              "error": null,
+              "usage": {
+                "promptTokens": 39,
+                "completionTokens": 256,
+                "totalTokens": 295
+              },
+              "contentPreview": {
+                "first": "# How a Hash Map Works: A Detailed Walkthrough\n\nA hash map (also called hash table, dictionary, or associative array) is a data structure that stores key-value ",
+                "last": "ed-size integer.\n\n**Properties of a good hash function:**\n- **Deterministic** \u2014 same input \u2192 same output.\n- **Uniform** \u2014 outputs spread evenly across the range",
+                "chars": 1074
+              },
+              "decodeMs": 6260.68,
+              "prompt": "Write a detailed step-by-step explanation of how a hash map works, including collision handling, resizing, and time complexity. Be thorough. (stream 2/4)",
+              "finishReason": "length"
+            },
+            {
+              "index": 2,
+              "ttftContentMs": 166.94,
+              "reasoningChunks": 0,
+              "ttftMs": 166.94,
+              "decodeTps": 43.42,
+              "decodeTokens": 255,
+              "completionTokens": 256,
+              "prefillTps": 233.62,
+              "prefillTokens": 39,
+              "totalMs": 6040.56,
+              "error": null,
+              "usage": {
+                "promptTokens": 39,
+                "completionTokens": 256,
+                "totalTokens": 295
+              },
+              "contentPreview": {
+                "first": "# How a Hash Map Works: A Detailed Walkthrough (Part 3 of 4)\n\n## Part 3: Resizing, Load Factor, and Rehashing\n\nIn Parts 1 and 2, we covered the core mechanics: ",
+                "last": " roughly `O(1 / (1 \u2212 \u03b1))` \u2014 which explodes as \u03b1 approaches 1.\n\nTo keep operations near O(1), we enforce a **maximum load factor** (typically 0.75 for chaining, ",
+                "chars": 987
+              },
+              "decodeMs": 5873.5,
+              "prompt": "Write a detailed step-by-step explanation of how a hash map works, including collision handling, resizing, and time complexity. Be thorough. (stream 3/4)",
+              "finishReason": "length"
+            },
+            {
+              "index": 3,
+              "ttftContentMs": 167.6,
+              "reasoningChunks": 0,
+              "ttftMs": 167.6,
+              "decodeTps": 41.92,
+              "decodeTokens": 255,
+              "completionTokens": 256,
+              "prefillTps": 232.7,
+              "prefillTokens": 39,
+              "totalMs": 6250.14,
+              "error": null,
+              "usage": {
+                "promptTokens": 39,
+                "completionTokens": 256,
+                "totalTokens": 295
+              },
+              "contentPreview": {
+                "first": "# How a Hash Map Works: A Detailed Walkthrough\n\nA hash map (also called hash table, dictionary, or associative array) is a data structure that stores key-value ",
+                "last": "arge integer. Good hash functions:\n\n- Are **deterministic** (same key \u2192 same hash every time).\n- Distribute keys **uniformly** across the output range.\n- Are **",
+                "chars": 1010
+              },
+              "decodeMs": 6082.47,
+              "prompt": "Write a detailed step-by-step explanation of how a hash map works, including collision handling, resizing, and time complexity. Be thorough. (stream 4/4)",
+              "finishReason": "length"
+            }
+          ]
+        },
+        {
+          "concurrency": 8,
+          "streamsOk": 8,
+          "streamsFailed": 0,
+          "meanDecodeTps": 32.14,
+          "medianDecodeTps": 31.76,
+          "minDecodeTps": 29.53,
+          "maxDecodeTps": 36.16,
+          "meanTtftMs": 196.05,
+          "medianTtftMs": 195.93,
+          "aggregateDecodeTps": 236.22,
+          "meanPrefillTps": 198.93,
+          "medianPrefillTps": 199.05,
+          "aggregatePrefillTps": 1580.11,
+          "totalPrefillTokens": 312,
+          "totalDecodeTokens": 2040,
+          "totalCompletionTokens": 2048,
+          "durationMs": 8833.05,
+          "error": null,
+          "model": "deepseek-v41-flash",
+          "streams": [
+            {
+              "index": 0,
+              "ttftContentMs": 197.18,
+              "reasoningChunks": 0,
+              "ttftMs": 197.18,
+              "decodeTps": 31.43,
+              "decodeTokens": 255,
+              "completionTokens": 256,
+              "prefillTps": 197.78,
+              "prefillTokens": 39,
+              "totalMs": 8309.96,
+              "error": null,
+              "usage": {
+                "promptTokens": 39,
+                "completionTokens": 256,
+                "totalTokens": 295
+              },
+              "contentPreview": {
+                "first": "# How a Hash Map Works: A Detailed Explanation\n\n## Introduction\n\nA hash map (also called hash table, dictionary, or associative array) is a data structure that ",
+                "last": "6, where each index `0..15` can store entries.\n\n```\nIndex:  0    1    2    3    4    5   ...  15\n      [  ] [  ] [  ] [  ] [  ] [  ] ... [  ]\n```\n\n---\n\n## Step ",
+                "chars": 999
+              },
+              "decodeMs": 8112.68,
+              "prompt": "Write a detailed step-by-step explanation of how a hash map works, including collision handling, resizing, and time complexity. Be thorough. (stream 1/8)",
+              "finishReason": "length"
+            },
+            {
+              "index": 1,
+              "ttftContentMs": 196.37,
+              "reasoningChunks": 0,
+              "ttftMs": 196.37,
+              "decodeTps": 30.54,
+              "decodeTokens": 255,
+              "completionTokens": 256,
+              "prefillTps": 198.61,
+              "prefillTokens": 39,
+              "totalMs": 8547.04,
+              "error": null,
+              "usage": {
+                "promptTokens": 39,
+                "completionTokens": 256,
+                "totalTokens": 295
+              },
+              "contentPreview": {
+                "first": "# How a Hash Map Works: A Detailed Walkthrough\n\nA hash map (also called hash table, dictionary, or associative array) is a data structure that stores key-value ",
+                "last": "a string, this might be something like:\n\n```\nhash(\"apple\") = 93029210\n```\n\nA good hash function:\n- Is **deterministic** (same key \u2192 same hash every time)\n- Dist",
+                "chars": 1032
+              },
+              "decodeMs": 8350.62,
+              "prompt": "Write a detailed step-by-step explanation of how a hash map works, including collision handling, resizing, and time complexity. Be thorough. (stream 2/8)",
+              "finishReason": "length"
+            },
+            {
+              "index": 2,
+              "ttftContentMs": 195.67,
+              "reasoningChunks": 0,
+              "ttftMs": 195.67,
+              "decodeTps": 32.14,
+              "decodeTokens": 255,
+              "completionTokens": 256,
+              "prefillTps": 199.31,
+              "prefillTokens": 39,
+              "totalMs": 8129.89,
+              "error": null,
+              "usage": {
+                "promptTokens": 39,
+                "completionTokens": 256,
+                "totalTokens": 295
+              },
+              "contentPreview": {
+                "first": "# How a Hash Map Works: A Detailed Explanation\n\nA hash map (also called hash table, dictionary, or associative array) is a data structure that stores key-value ",
+                "last": "me hash.\n- **Uniform**: Keys spread evenly across the output range.\n- **Fast**: Computing the hash should be cheap.\n\nExample (simplified) for a string:\n```\nhash",
+                "chars": 1099
+              },
+              "decodeMs": 7934.09,
+              "prompt": "Write a detailed step-by-step explanation of how a hash map works, including collision handling, resizing, and time complexity. Be thorough. (stream 3/8)",
+              "finishReason": "length"
+            },
+            {
+              "index": 3,
+              "ttftContentMs": 195.71,
+              "reasoningChunks": 0,
+              "ttftMs": 195.71,
+              "decodeTps": 36.16,
+              "decodeTokens": 255,
+              "completionTokens": 256,
+              "prefillTps": 199.27,
+              "prefillTokens": 39,
+              "totalMs": 7248.08,
+              "error": null,
+              "usage": {
+                "promptTokens": 39,
+                "completionTokens": 256,
+                "totalTokens": 295
+              },
+              "contentPreview": {
+                "first": "# How a Hash Map Works: A Detailed Walkthrough\n\nA hash map (also called hash table, dictionary, or associative array) is a data structure that stores key-value ",
+                "last": "ap to an index**: `i = h & (capacity - 1)` (if capacity is a power of two) or `h % capacity`.\n3. **Look at bucket `i`**:\n   - If empty \u2192 place a new entry `(key",
+                "chars": 914
+              },
+              "decodeMs": 7052.22,
+              "prompt": "Write a detailed step-by-step explanation of how a hash map works, including collision handling, resizing, and time complexity. Be thorough. (stream 4/8)",
+              "finishReason": "length"
+            },
+            {
+              "index": 4,
+              "ttftContentMs": 196.16,
+              "reasoningChunks": 0,
+              "ttftMs": 196.16,
+              "decodeTps": 31.76,
+              "decodeTokens": 255,
+              "completionTokens": 256,
+              "prefillTps": 198.81,
+              "prefillTokens": 39,
+              "totalMs": 8224.94,
+              "error": null,
+              "usage": {
+                "promptTokens": 39,
+                "completionTokens": 256,
+                "totalTokens": 295
+              },
+              "contentPreview": {
+                "first": "# How a Hash Map Works: A Detailed Explanation\n\nA hash map (also called hash table, dictionary, or associative array) is a data structure that stores key-value ",
+                "last": " computes `h = hash(k)`. A good hash function:\n\n- Is **deterministic** (same key \u2192 same hash).\n- Is **fast** to compute.\n- **Distributes keys uniformly** across",
+                "chars": 1059
+              },
+              "decodeMs": 8028.69,
+              "prompt": "Write a detailed step-by-step explanation of how a hash map works, including collision handling, resizing, and time complexity. Be thorough. (stream 5/8)",
+              "finishReason": "length"
+            },
+            {
+              "index": 5,
+              "ttftContentMs": 195.44,
+              "reasoningChunks": 0,
+              "ttftMs": 195.44,
+              "decodeTps": 33.76,
+              "decodeTokens": 255,
+              "completionTokens": 256,
+              "prefillTps": 199.55,
+              "prefillTokens": 39,
+              "totalMs": 7749.32,
+              "error": null,
+              "usage": {
+                "promptTokens": 39,
+                "completionTokens": 256,
+                "totalTokens": 295
+              },
+              "contentPreview": {
+                "first": "# How a Hash Map Works: A Detailed Explanation\n\n## 1. The Core Idea\n\nA hash map (also called hash table, dictionary, or associative array) stores **key-value pa",
+                "last": "ies:\n\n1. **Deterministic** \u2014 the same key always produces the same hash.\n2. **Uniform** \u2014 outputs are spread evenly across the range.\n3. **Fast** \u2014 computing it",
+                "chars": 1100
+              },
+              "decodeMs": 7553.81,
+              "prompt": "Write a detailed step-by-step explanation of how a hash map works, including collision handling, resizing, and time complexity. Be thorough. (stream 6/8)",
+              "finishReason": "length"
+            },
+            {
+              "index": 6,
+              "ttftContentMs": 195.77,
+              "reasoningChunks": 0,
+              "ttftMs": 195.77,
+              "decodeTps": 29.53,
+              "decodeTokens": 255,
+              "completionTokens": 256,
+              "prefillTps": 199.21,
+              "prefillTokens": 39,
+              "totalMs": 8831.45,
+              "error": null,
+              "usage": {
+                "promptTokens": 39,
+                "completionTokens": 256,
+                "totalTokens": 295
+              },
+              "contentPreview": {
+                "first": "# How a Hash Map Works: A Detailed Explanation (Part 7/8)\n\n## Part 7: Advanced Topics \u2014 Concurrent Hash Maps, Memory Layout, and Real-World Optimizations\n\nIn th",
+                "last": ".\n\n---\n\n### 7.2 Sharded (Striped) Locking\n\nThe simplest scalable approach: partition the table into `N` independent sub-maps, each with its own lock.\n\n```\nshard",
+                "chars": 1126
+              },
+              "decodeMs": 8635.6,
+              "prompt": "Write a detailed step-by-step explanation of how a hash map works, including collision handling, resizing, and time complexity. Be thorough. (stream 7/8)",
+              "finishReason": "length"
+            },
+            {
+              "index": 7,
+              "ttftContentMs": 196.09,
+              "reasoningChunks": 0,
+              "ttftMs": 196.09,
+              "decodeTps": 31.76,
+              "decodeTokens": 255,
+              "completionTokens": 256,
+              "prefillTps": 198.89,
+              "prefillTokens": 39,
+              "totalMs": 8225.09,
+              "error": null,
+              "usage": {
+                "promptTokens": 39,
+                "completionTokens": 256,
+                "totalTokens": 295
+              },
+              "contentPreview": {
+                "first": "# Hash Maps: A Complete Deep Dive\n\nA hash map (also called hash table, dictionary, or associative array) is one of the most important data structures in compute",
+                "last": "ey using a hash function (e.g., MurmurHash, SipHash, or Java's `hashCode()`).\n2. **Compress to an index** within the array bounds, typically `hash & (capacity -",
+                "chars": 1052
+              },
+              "decodeMs": 8028.96,
+              "prompt": "Write a detailed step-by-step explanation of how a hash map works, including collision handling, resizing, and time complexity. Be thorough. (stream 8/8)",
+              "finishReason": "length"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "trial": 3,
+      "status": "completed",
+      "results": [
+        {
+          "concurrency": 1,
+          "streamsOk": 1,
+          "streamsFailed": 0,
+          "meanDecodeTps": 67.03,
+          "medianDecodeTps": 67.03,
+          "minDecodeTps": 67.03,
+          "maxDecodeTps": 67.03,
+          "meanTtftMs": 142.79,
+          "medianTtftMs": 142.79,
+          "aggregateDecodeTps": 67.03,
+          "meanPrefillTps": 224.11,
+          "medianPrefillTps": 224.11,
+          "aggregatePrefillTps": 224.11,
+          "totalPrefillTokens": 32,
+          "totalDecodeTokens": 255,
+          "totalCompletionTokens": 256,
+          "durationMs": 3947.16,
+          "error": null,
+          "model": "deepseek-v41-flash",
+          "streams": [
+            {
+              "index": 0,
+              "ttftContentMs": 142.79,
+              "reasoningChunks": 0,
+              "ttftMs": 142.79,
+              "decodeTps": 67.03,
+              "decodeTokens": 255,
+              "completionTokens": 256,
+              "prefillTps": 224.11,
+              "prefillTokens": 32,
+              "totalMs": 3946.91,
+              "error": null,
+              "usage": {
+                "promptTokens": 32,
+                "completionTokens": 256,
+                "totalTokens": 288
+              },
+              "contentPreview": {
+                "first": "# How a Hash Map Works: A Detailed Explanation\n\nA hash map (also called hash table, dictionary, or associative array) is a data structure that stores key-value ",
+                "last": "zes allow fast index computation via bit masking; primes reduce clustering with certain hash functions.\n\n### Step 2: Hash the key\n\nA hash function takes the key",
+                "chars": 1073
+              },
+              "decodeMs": 3804.03,
+              "prompt": "Write a detailed step-by-step explanation of how a hash map works, including collision handling, resizing, and time complexity. Be thorough.",
+              "finishReason": "length"
+            }
+          ]
+        },
+        {
+          "concurrency": 4,
+          "streamsOk": 4,
+          "streamsFailed": 0,
+          "meanDecodeTps": 41.53,
+          "medianDecodeTps": 41.32,
+          "minDecodeTps": 40.07,
+          "maxDecodeTps": 43.41,
+          "meanTtftMs": 177.06,
+          "medianTtftMs": 177,
+          "aggregateDecodeTps": 160.26,
+          "meanPrefillTps": 220.27,
+          "medianPrefillTps": 220.33,
+          "aggregatePrefillTps": 877.72,
+          "totalPrefillTokens": 156,
+          "totalDecodeTokens": 1020,
+          "totalCompletionTokens": 1024,
+          "durationMs": 6542.13,
+          "error": null,
+          "model": "deepseek-v41-flash",
+          "streams": [
+            {
+              "index": 0,
+              "ttftContentMs": 177.54,
+              "reasoningChunks": 0,
+              "ttftMs": 177.54,
+              "decodeTps": 40.07,
+              "decodeTokens": 255,
+              "completionTokens": 256,
+              "prefillTps": 219.67,
+              "prefillTokens": 39,
+              "totalMs": 6541.83,
+              "error": null,
+              "usage": {
+                "promptTokens": 39,
+                "completionTokens": 256,
+                "totalTokens": 295
+              },
+              "contentPreview": {
+                "first": "# How a Hash Map Works: A Detailed Explanation\n\n## Part 1: Core Concept and Fundamentals\n\n### What is a Hash Map?\n\nA hash map (also called hash table, dictionar",
+                "last": "* or **table**). This array has a fixed size `m` at any given moment.\n\n```\nIndex:  0    1    2    3    4    5    6    7\n      [  ] [  ] [  ] [  ] [  ] [  ] [  ]",
+                "chars": 1043
+              },
+              "decodeMs": 6364.17,
+              "prompt": "Write a detailed step-by-step explanation of how a hash map works, including collision handling, resizing, and time complexity. Be thorough. (stream 1/4)",
+              "finishReason": "length"
+            },
+            {
+              "index": 1,
+              "ttftContentMs": 176.7,
+              "reasoningChunks": 0,
+              "ttftMs": 176.7,
+              "decodeTps": 40.72,
+              "decodeTokens": 255,
+              "completionTokens": 256,
+              "prefillTps": 220.72,
+              "prefillTokens": 39,
+              "totalMs": 6439.27,
+              "error": null,
+              "usage": {
+                "promptTokens": 39,
+                "completionTokens": 256,
+                "totalTokens": 295
+              },
+              "contentPreview": {
+                "first": "# How a Hash Map Works: A Detailed Walkthrough\n\nA hash map (also called hash table, dictionary, or associative array) is a data structure that stores key-value ",
+                "last": "ed-size integer.\n\n**Properties of a good hash function:**\n- **Deterministic** \u2014 same input \u2192 same output.\n- **Uniform** \u2014 outputs spread evenly across the range",
+                "chars": 1074
+              },
+              "decodeMs": 6262.5,
+              "prompt": "Write a detailed step-by-step explanation of how a hash map works, including collision handling, resizing, and time complexity. Be thorough. (stream 2/4)",
+              "finishReason": "length"
+            },
+            {
+              "index": 2,
+              "ttftContentMs": 176.84,
+              "reasoningChunks": 0,
+              "ttftMs": 176.84,
+              "decodeTps": 43.41,
+              "decodeTokens": 255,
+              "completionTokens": 256,
+              "prefillTps": 220.53,
+              "prefillTokens": 39,
+              "totalMs": 6051.52,
+              "error": null,
+              "usage": {
+                "promptTokens": 39,
+                "completionTokens": 256,
+                "totalTokens": 295
+              },
+              "contentPreview": {
+                "first": "# How a Hash Map Works: A Detailed Walkthrough (Part 3 of 4)\n\n## Part 3: Resizing, Load Factor, and Rehashing\n\nIn Parts 1 and 2, we covered the core mechanics: ",
+                "last": " roughly `O(1 / (1 \u2212 \u03b1))` \u2014 which explodes as \u03b1 approaches 1.\n\nTo keep operations near O(1), we enforce a **maximum load factor** (typically 0.75 for chaining, ",
+                "chars": 987
+              },
+              "decodeMs": 5874.62,
+              "prompt": "Write a detailed step-by-step explanation of how a hash map works, including collision handling, resizing, and time complexity. Be thorough. (stream 3/4)",
+              "finishReason": "length"
+            },
+            {
+              "index": 3,
+              "ttftContentMs": 177.16,
+              "reasoningChunks": 0,
+              "ttftMs": 177.16,
+              "decodeTps": 41.92,
+              "decodeTokens": 255,
+              "completionTokens": 256,
+              "prefillTps": 220.14,
+              "prefillTokens": 39,
+              "totalMs": 6260.7,
+              "error": null,
+              "usage": {
+                "promptTokens": 39,
+                "completionTokens": 256,
+                "totalTokens": 295
+              },
+              "contentPreview": {
+                "first": "# How a Hash Map Works: A Detailed Walkthrough\n\nA hash map (also called hash table, dictionary, or associative array) is a data structure that stores key-value ",
+                "last": "arge integer. Good hash functions:\n\n- Are **deterministic** (same key \u2192 same hash every time).\n- Distribute keys **uniformly** across the output range.\n- Are **",
+                "chars": 1010
+              },
+              "decodeMs": 6083.46,
+              "prompt": "Write a detailed step-by-step explanation of how a hash map works, including collision handling, resizing, and time complexity. Be thorough. (stream 4/4)",
+              "finishReason": "length"
+            }
+          ]
+        },
+        {
+          "concurrency": 8,
+          "streamsOk": 8,
+          "streamsFailed": 0,
+          "meanDecodeTps": 32.13,
+          "medianDecodeTps": 31.74,
+          "minDecodeTps": 29.52,
+          "maxDecodeTps": 36.16,
+          "meanTtftMs": 195.94,
+          "medianTtftMs": 195.73,
+          "aggregateDecodeTps": 236.14,
+          "meanPrefillTps": 199.05,
+          "medianPrefillTps": 199.26,
+          "aggregatePrefillTps": 1581.7,
+          "totalPrefillTokens": 312,
+          "totalDecodeTokens": 2040,
+          "totalCompletionTokens": 2048,
+          "durationMs": 8835.68,
+          "error": null,
+          "model": "deepseek-v41-flash",
+          "streams": [
+            {
+              "index": 0,
+              "ttftContentMs": 197.04,
+              "reasoningChunks": 0,
+              "ttftMs": 197.04,
+              "decodeTps": 31.42,
+              "decodeTokens": 255,
+              "completionTokens": 256,
+              "prefillTps": 197.93,
+              "prefillTokens": 39,
+              "totalMs": 8314.09,
+              "error": null,
+              "usage": {
+                "promptTokens": 39,
+                "completionTokens": 256,
+                "totalTokens": 295
+              },
+              "contentPreview": {
+                "first": "# How a Hash Map Works: A Detailed Explanation\n\n## Introduction\n\nA hash map (also called hash table, dictionary, or associative array) is a data structure that ",
+                "last": "6, where each index `0..15` can store entries.\n\n```\nIndex:  0    1    2    3    4    5   ...  15\n      [  ] [  ] [  ] [  ] [  ] [  ] ... [  ]\n```\n\n---\n\n## Step ",
+                "chars": 999
+              },
+              "decodeMs": 8116.95,
+              "prompt": "Write a detailed step-by-step explanation of how a hash map works, including collision handling, resizing, and time complexity. Be thorough. (stream 1/8)",
+              "finishReason": "length"
+            },
+            {
+              "index": 1,
+              "ttftContentMs": 195.54,
+              "reasoningChunks": 0,
+              "ttftMs": 195.54,
+              "decodeTps": 30.53,
+              "decodeTokens": 255,
+              "completionTokens": 256,
+              "prefillTps": 199.45,
+              "prefillTokens": 39,
+              "totalMs": 8547.47,
+              "error": null,
+              "usage": {
+                "promptTokens": 39,
+                "completionTokens": 256,
+                "totalTokens": 295
+              },
+              "contentPreview": {
+                "first": "# How a Hash Map Works: A Detailed Walkthrough\n\nA hash map (also called hash table, dictionary, or associative array) is a data structure that stores key-value ",
+                "last": "a string, this might be something like:\n\n```\nhash(\"apple\") = 93029210\n```\n\nA good hash function:\n- Is **deterministic** (same key \u2192 same hash every time)\n- Dist",
+                "chars": 1032
+              },
+              "decodeMs": 8351.87,
+              "prompt": "Write a detailed step-by-step explanation of how a hash map works, including collision handling, resizing, and time complexity. Be thorough. (stream 2/8)",
+              "finishReason": "length"
+            },
+            {
+              "index": 2,
+              "ttftContentMs": 195.68,
+              "reasoningChunks": 0,
+              "ttftMs": 195.68,
+              "decodeTps": 32.13,
+              "decodeTokens": 255,
+              "completionTokens": 256,
+              "prefillTps": 199.3,
+              "prefillTokens": 39,
+              "totalMs": 8132.1,
+              "error": null,
+              "usage": {
+                "promptTokens": 39,
+                "completionTokens": 256,
+                "totalTokens": 295
+              },
+              "contentPreview": {
+                "first": "# How a Hash Map Works: A Detailed Explanation\n\nA hash map (also called hash table, dictionary, or associative array) is a data structure that stores key-value ",
+                "last": "me hash.\n- **Uniform**: Keys spread evenly across the output range.\n- **Fast**: Computing the hash should be cheap.\n\nExample (simplified) for a string:\n```\nhash",
+                "chars": 1099
+              },
+              "decodeMs": 7936.35,
+              "prompt": "Write a detailed step-by-step explanation of how a hash map works, including collision handling, resizing, and time complexity. Be thorough. (stream 3/8)",
+              "finishReason": "length"
+            },
+            {
+              "index": 3,
+              "ttftContentMs": 195.71,
+              "reasoningChunks": 0,
+              "ttftMs": 195.71,
+              "decodeTps": 36.16,
+              "decodeTokens": 255,
+              "completionTokens": 256,
+              "prefillTps": 199.28,
+              "prefillTokens": 39,
+              "totalMs": 7247.72,
+              "error": null,
+              "usage": {
+                "promptTokens": 39,
+                "completionTokens": 256,
+                "totalTokens": 295
+              },
+              "contentPreview": {
+                "first": "# How a Hash Map Works: A Detailed Walkthrough\n\nA hash map (also called hash table, dictionary, or associative array) is a data structure that stores key-value ",
+                "last": "ap to an index**: `i = h & (capacity - 1)` (if capacity is a power of two) or `h % capacity`.\n3. **Look at bucket `i`**:\n   - If empty \u2192 place a new entry `(key",
+                "chars": 914
+              },
+              "decodeMs": 7051.95,
+              "prompt": "Write a detailed step-by-step explanation of how a hash map works, including collision handling, resizing, and time complexity. Be thorough. (stream 4/8)",
+              "finishReason": "length"
+            },
+            {
+              "index": 4,
+              "ttftContentMs": 195.75,
+              "reasoningChunks": 0,
+              "ttftMs": 195.75,
+              "decodeTps": 31.74,
+              "decodeTokens": 255,
+              "completionTokens": 256,
+              "prefillTps": 199.23,
+              "prefillTokens": 39,
+              "totalMs": 8229.01,
+              "error": null,
+              "usage": {
+                "promptTokens": 39,
+                "completionTokens": 256,
+                "totalTokens": 295
+              },
+              "contentPreview": {
+                "first": "# How a Hash Map Works: A Detailed Explanation\n\nA hash map (also called hash table, dictionary, or associative array) is a data structure that stores key-value ",
+                "last": " computes `h = hash(k)`. A good hash function:\n\n- Is **deterministic** (same key \u2192 same hash).\n- Is **fast** to compute.\n- **Distributes keys uniformly** across",
+                "chars": 1059
+              },
+              "decodeMs": 8033.23,
+              "prompt": "Write a detailed step-by-step explanation of how a hash map works, including collision handling, resizing, and time complexity. Be thorough. (stream 5/8)",
+              "finishReason": "length"
+            },
+            {
+              "index": 5,
+              "ttftContentMs": 196.02,
+              "reasoningChunks": 0,
+              "ttftMs": 196.02,
+              "decodeTps": 33.76,
+              "decodeTokens": 255,
+              "completionTokens": 256,
+              "prefillTps": 198.96,
+              "prefillTokens": 39,
+              "totalMs": 7748.67,
+              "error": null,
+              "usage": {
+                "promptTokens": 39,
+                "completionTokens": 256,
+                "totalTokens": 295
+              },
+              "contentPreview": {
+                "first": "# How a Hash Map Works: A Detailed Explanation\n\n## 1. The Core Idea\n\nA hash map (also called hash table, dictionary, or associative array) stores **key-value pa",
+                "last": "ies:\n\n1. **Deterministic** \u2014 the same key always produces the same hash.\n2. **Uniform** \u2014 outputs are spread evenly across the range.\n3. **Fast** \u2014 computing it",
+                "chars": 1100
+              },
+              "decodeMs": 7552.6,
+              "prompt": "Write a detailed step-by-step explanation of how a hash map works, including collision handling, resizing, and time complexity. Be thorough. (stream 6/8)",
+              "finishReason": "length"
+            },
+            {
+              "index": 6,
+              "ttftContentMs": 196.06,
+              "reasoningChunks": 0,
+              "ttftMs": 196.06,
+              "decodeTps": 29.52,
+              "decodeTokens": 255,
+              "completionTokens": 256,
+              "prefillTps": 198.92,
+              "prefillTokens": 39,
+              "totalMs": 8833.98,
+              "error": null,
+              "usage": {
+                "promptTokens": 39,
+                "completionTokens": 256,
+                "totalTokens": 295
+              },
+              "contentPreview": {
+                "first": "# How a Hash Map Works: A Detailed Explanation (Part 7/8)\n\n## Part 7: Advanced Topics \u2014 Concurrent Hash Maps, Memory Layout, and Real-World Optimizations\n\nIn th",
+                "last": ".\n\n---\n\n### 7.2 Sharded (Striped) Locking\n\nThe simplest scalable approach: partition the table into `N` independent sub-maps, each with its own lock.\n\n```\nshard",
+                "chars": 1126
+              },
+              "decodeMs": 8637.8,
+              "prompt": "Write a detailed step-by-step explanation of how a hash map works, including collision handling, resizing, and time complexity. Be thorough. (stream 7/8)",
+              "finishReason": "length"
+            },
+            {
+              "index": 7,
+              "ttftContentMs": 195.68,
+              "reasoningChunks": 0,
+              "ttftMs": 195.68,
+              "decodeTps": 31.75,
+              "decodeTokens": 255,
+              "completionTokens": 256,
+              "prefillTps": 199.3,
+              "prefillTokens": 39,
+              "totalMs": 8228.56,
+              "error": null,
+              "usage": {
+                "promptTokens": 39,
+                "completionTokens": 256,
+                "totalTokens": 295
+              },
+              "contentPreview": {
+                "first": "# Hash Maps: A Complete Deep Dive\n\nA hash map (also called hash table, dictionary, or associative array) is one of the most important data structures in compute",
+                "last": "ey using a hash function (e.g., MurmurHash, SipHash, or Java's `hashCode()`).\n2. **Compress to an index** within the array bounds, typically `hash & (capacity -",
+                "chars": 1052
+              },
+              "decodeMs": 8032.71,
+              "prompt": "Write a detailed step-by-step explanation of how a hash map works, including collision handling, resizing, and time complexity. Be thorough. (stream 8/8)",
+              "finishReason": "length"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

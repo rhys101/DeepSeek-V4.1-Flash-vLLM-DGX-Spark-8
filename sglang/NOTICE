@@ -46,3 +46,13 @@ in the existing speculative backend context and records actual methods and
 shapes. Its SGLang-derived source remains Apache-2.0. The numerical
 validation/reference source files are unmodified pinned SGLang fixtures
 under Apache-2.0; they are not applied as production overlays.
+
+SG17 experimental snapshot, added 12 September 2026:
+experiments/sg17-rocenante/source contains Apache-2.0 SGLang source with
+local TP8 RoCEnante routing, graph-capture and result-health modifications.
+The B12x archive is from local-inference-lab/b12x, Apache-2.0, with its
+LICENSE retained both inside the archive and as LICENSE.b12x. It combines
+the previously qualified 85d3681 source and local clamp fixes with RoCEnante
+files from 081b235931dbbcedcf0eb5899bae990c5dec5238 and registry additions;
+the composition and every source-file hash are recorded alongside it.
+Source: https://github.com/local-inference-lab/b12x

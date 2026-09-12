@@ -1,0 +1,278 @@
+{
+  "status": "PASS",
+  "observed": "2026-09-12T13:08:52.146992+00:00",
+  "profile": "sg17-rocenante",
+  "health": 200,
+  "configuration": {
+    "tp_size": 8,
+    "ep_size": 4,
+    "context_length": 1000000,
+    "max_total_tokens": 8000000,
+    "max_running_requests": 128,
+    "speculative_dspark_block_size": 5,
+    "chunked_prefill_size": 2048
+  },
+  "loads": {
+    "timestamp": "2026-09-12T13:08:50.027863+00:00",
+    "version": "0.0.0.dev1+ge087e662b",
+    "accelerator": "NVIDIA GB10",
+    "num_accelerators": 8,
+    "loads": [
+      {
+        "timestamp": 1789218530.0266817,
+        "dp_rank": 0,
+        "num_running_reqs": 0,
+        "num_waiting_reqs": 0,
+        "num_waiting_uncached_tokens": 0,
+        "num_used_tokens": 0,
+        "num_total_tokens": 0,
+        "num_active_tokens": 0,
+        "max_total_num_tokens": 8000000,
+        "max_running_requests": 128,
+        "token_usage": 0.0,
+        "gen_throughput": 0.0,
+        "cache_hit_rate": 0.0,
+        "utilization": 0.0,
+        "total_prefill_uncached_tokens": 472523,
+        "total_prefill_busy_us": 155789784,
+        "decode_moments": [
+          2967.0,
+          11322.0,
+          172378387.0,
+          82946.0,
+          822796582.0,
+          42884.0
+        ],
+        "memory": {
+          "weight_gb": 59.677,
+          "kv_cache_gb": 0.0,
+          "graph_gb": 9.191,
+          "token_capacity": 8000000
+        },
+        "speculative": {
+          "accept_length": 3.767708064377313,
+          "accept_rate": 0.0
+        },
+        "disaggregation": {
+          "mode": "null",
+          "prefill_bootstrap_queue_reqs": 0,
+          "prefill_inflight_queue_reqs": 0,
+          "decode_prealloc_queue_reqs": 0,
+          "decode_transfer_queue_reqs": 0,
+          "decode_retracted_queue_reqs": 0,
+          "kv_transfer_speed_gb_s": 0.0,
+          "kv_transfer_latency_ms": 0.0
+        },
+        "queues": {
+          "waiting": 0,
+          "grammar": 0,
+          "paused": 0,
+          "retracted": 0,
+          "prealloc_ready": 0
+        }
+      }
+    ]
+  },
+  "ranks": [
+    {
+      "rank": 0,
+      "image": "sha256:e7681b5276525821f9be286ed3bf0f51acb5239da27f69f60fdeb57e68c05581",
+      "state": {
+        "Status": "running",
+        "Running": true,
+        "Paused": false,
+        "Restarting": false,
+        "OOMKilled": false,
+        "Dead": false,
+        "ExitCode": 0,
+        "Error": "",
+        "StartedAt": "2026-09-12T12:52:25.461919026Z",
+        "FinishedAt": "0001-01-01T00:00:00Z"
+      },
+      "restarts": 0,
+      "available_gib": 9.94113540649414,
+      "swap_used_gib": 3.7398300170898438,
+      "source_hashes_checked": 10,
+      "resident_engram_verified": true,
+      "moe_layout_verified": true,
+      "roce_markers_verified": true,
+      "b12x_files_checked": 241,
+      "sole_gpu_container_verified": true
+    },
+    {
+      "rank": 1,
+      "image": "sha256:e7681b5276525821f9be286ed3bf0f51acb5239da27f69f60fdeb57e68c05581",
+      "state": {
+        "Status": "running",
+        "Running": true,
+        "Paused": false,
+        "Restarting": false,
+        "OOMKilled": false,
+        "Dead": false,
+        "ExitCode": 0,
+        "Error": "",
+        "StartedAt": "2026-09-12T12:52:20.502471221Z",
+        "FinishedAt": "0001-01-01T00:00:00Z"
+      },
+      "restarts": 0,
+      "available_gib": 12.4390869140625,
+      "swap_used_gib": 3.3011703491210938,
+      "source_hashes_checked": 10,
+      "resident_engram_verified": true,
+      "moe_layout_verified": true,
+      "roce_markers_verified": true,
+      "b12x_files_checked": 241,
+      "sole_gpu_container_verified": true
+    },
+    {
+      "rank": 2,
+      "image": "sha256:e7681b5276525821f9be286ed3bf0f51acb5239da27f69f60fdeb57e68c05581",
+      "state": {
+        "Status": "running",
+        "Running": true,
+        "Paused": false,
+        "Restarting": false,
+        "OOMKilled": false,
+        "Dead": false,
+        "ExitCode": 0,
+        "Error": "",
+        "StartedAt": "2026-09-12T12:52:21.27553022Z",
+        "FinishedAt": "0001-01-01T00:00:00Z"
+      },
+      "restarts": 0,
+      "available_gib": 11.453685760498047,
+      "swap_used_gib": 2.6846923828125,
+      "source_hashes_checked": 10,
+      "resident_engram_verified": true,
+      "moe_layout_verified": true,
+      "roce_markers_verified": true,
+      "b12x_files_checked": 241,
+      "sole_gpu_container_verified": true
+    },
+    {
+      "rank": 3,
+      "image": "sha256:e7681b5276525821f9be286ed3bf0f51acb5239da27f69f60fdeb57e68c05581",
+      "state": {
+        "Status": "running",
+        "Running": true,
+        "Paused": false,
+        "Restarting": false,
+        "OOMKilled": false,
+        "Dead": false,
+        "ExitCode": 0,
+        "Error": "",
+        "StartedAt": "2026-09-12T12:52:22.053576476Z",
+        "FinishedAt": "0001-01-01T00:00:00Z"
+      },
+      "restarts": 0,
+      "available_gib": 11.470794677734375,
+      "swap_used_gib": 2.578754425048828,
+      "source_hashes_checked": 10,
+      "resident_engram_verified": true,
+      "moe_layout_verified": true,
+      "roce_markers_verified": true,
+      "b12x_files_checked": 241,
+      "sole_gpu_container_verified": true
+    },
+    {
+      "rank": 4,
+      "image": "sha256:e7681b5276525821f9be286ed3bf0f51acb5239da27f69f60fdeb57e68c05581",
+      "state": {
+        "Status": "running",
+        "Running": true,
+        "Paused": false,
+        "Restarting": false,
+        "OOMKilled": false,
+        "Dead": false,
+        "ExitCode": 0,
+        "Error": "",
+        "StartedAt": "2026-09-12T12:52:22.805060276Z",
+        "FinishedAt": "0001-01-01T00:00:00Z"
+      },
+      "restarts": 0,
+      "available_gib": 11.620594024658203,
+      "swap_used_gib": 2.55908203125,
+      "source_hashes_checked": 10,
+      "resident_engram_verified": true,
+      "moe_layout_verified": true,
+      "roce_markers_verified": true,
+      "b12x_files_checked": 241,
+      "sole_gpu_container_verified": true
+    },
+    {
+      "rank": 5,
+      "image": "sha256:e7681b5276525821f9be286ed3bf0f51acb5239da27f69f60fdeb57e68c05581",
+      "state": {
+        "Status": "running",
+        "Running": true,
+        "Paused": false,
+        "Restarting": false,
+        "OOMKilled": false,
+        "Dead": false,
+        "ExitCode": 0,
+        "Error": "",
+        "StartedAt": "2026-09-12T12:52:23.533882411Z",
+        "FinishedAt": "0001-01-01T00:00:00Z"
+      },
+      "restarts": 0,
+      "available_gib": 11.549888610839844,
+      "swap_used_gib": 1.8736915588378906,
+      "source_hashes_checked": 10,
+      "resident_engram_verified": true,
+      "moe_layout_verified": true,
+      "roce_markers_verified": true,
+      "b12x_files_checked": 241,
+      "sole_gpu_container_verified": true
+    },
+    {
+      "rank": 6,
+      "image": "sha256:e7681b5276525821f9be286ed3bf0f51acb5239da27f69f60fdeb57e68c05581",
+      "state": {
+        "Status": "running",
+        "Running": true,
+        "Paused": false,
+        "Restarting": false,
+        "OOMKilled": false,
+        "Dead": false,
+        "ExitCode": 0,
+        "Error": "",
+        "StartedAt": "2026-09-12T12:52:24.277174872Z",
+        "FinishedAt": "0001-01-01T00:00:00Z"
+      },
+      "restarts": 0,
+      "available_gib": 11.431690216064453,
+      "swap_used_gib": 2.7329750061035156,
+      "source_hashes_checked": 10,
+      "resident_engram_verified": true,
+      "moe_layout_verified": true,
+      "roce_markers_verified": true,
+      "b12x_files_checked": 241,
+      "sole_gpu_container_verified": true
+    },
+    {
+      "rank": 7,
+      "image": "sha256:e7681b5276525821f9be286ed3bf0f51acb5239da27f69f60fdeb57e68c05581",
+      "state": {
+        "Status": "running",
+        "Running": true,
+        "Paused": false,
+        "Restarting": false,
+        "OOMKilled": false,
+        "Dead": false,
+        "ExitCode": 0,
+        "Error": "",
+        "StartedAt": "2026-09-12T12:52:25.041185726Z",
+        "FinishedAt": "0001-01-01T00:00:00Z"
+      },
+      "restarts": 0,
+      "available_gib": 11.349567413330078,
+      "swap_used_gib": 1.9612236022949219,
+      "source_hashes_checked": 10,
+      "resident_engram_verified": true,
+      "moe_layout_verified": true,
+      "roce_markers_verified": true,
+      "b12x_files_checked": 241,
+      "sole_gpu_container_verified": true
+    }
+  ]
+}

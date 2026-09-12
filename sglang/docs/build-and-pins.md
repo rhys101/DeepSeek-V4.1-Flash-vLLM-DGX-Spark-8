@@ -1,5 +1,7 @@
 # EP4 source and build identity
 
+The later SG17 experiment adds three RoCEnante integration overlays and a frozen B12x transport bundle. Its source composition, hash manifests and experimental configuration are preserved in the [SG17 snapshot](../experiments/sg17-rocenante/); the standard Dockerfile and launcher described here still package SG5.
+
 The model-serving source is pinned to SGLang `e087e662ba1ac4ef7747537e2a9141085efd4561` in the Linux ARM64 image `lmsysorg/sglang@sha256:3475d88ec3124867d9d6f7b3bd49afdcf8ef4d6a9f8454fab331d5adb5204de7`. The observed stack declares FlashInfer 0.6.18, CUDA 13.0.3 and NCCL 2.30.7. [Version record](../versions.lock.json).
 
 The original EP4 experiment used image ID `sha256:e7681b5276525821f9be286ed3bf0f51acb5239da27f69f60fdeb57e68c05581`, containing the native-head changes, with six production files and the runtime configuration mounted read-only. All eight ranks checked the mounted file hashes. An image ID by itself therefore does not identify that deployed composition.

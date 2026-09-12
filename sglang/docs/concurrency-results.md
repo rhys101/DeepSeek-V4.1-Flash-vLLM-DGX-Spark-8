@@ -1,5 +1,7 @@
 # Short-prompt concurrency: C8 through C128 with an 8M KV pool
 
+These C8–C128 measurements belong to SG11. The later [SG17 RoCEnante result](sg17-rocenante-results.md) reached 134.91 coding decode tok/s at C1 and 474.52 coding aggregate tok/s at C8; SG17 has not had a C16–C128 throughput sweep.
+
 **C128 passed on eight DGX Sparks: 1250.30 coding tokens/s aggregate and 774.68 prose tokens/s aggregate decode.**
 
 Measured 12 September 2026 UTC. The principal table below uses one fresh 128-slot server configuration (SG11) for every concurrency level. TP8/EP4, native resident Engram, the checkpoint precision, the six production source overlays and the 8,000,000-token logical KV pool were retained. Earlier 32-slot and 64-slot runs are included separately below.

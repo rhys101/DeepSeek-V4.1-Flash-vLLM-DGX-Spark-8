@@ -1,0 +1,46 @@
+{
+  "status": "SELECTED",
+  "profile": "sg17-rocenante",
+  "observed": "2026-09-12T13:08:52.146992+00:00",
+  "reason": "Both complete five-trial C1 coding measurements exceed 130 tok/s and bounded serving validation passed; final all-rank health is good.",
+  "coding_decode_c1_initial": {
+    "mean": 134.68,
+    "median": 135.25,
+    "minimum": 132.46,
+    "maximum": 135.26,
+    "trials": [
+      135.26,
+      135.26,
+      135.17,
+      135.25,
+      132.46
+    ]
+  },
+  "coding_decode_c1_repeat": {
+    "mean": 134.906,
+    "median": 134.89,
+    "minimum": 134.87,
+    "maximum": 134.98,
+    "trials": [
+      134.87,
+      134.98,
+      134.92,
+      134.87,
+      134.89
+    ]
+  },
+  "final_health": "health.json",
+  "previous_profile": "sg11-ep4-8m-c128",
+  "preserved_configuration": {
+    "tp_size": 8,
+    "ep_size": 4,
+    "context_length": 1000000,
+    "max_total_tokens": 8000000,
+    "max_running_requests": 128,
+    "speculative_dspark_block_size": 5,
+    "chunked_prefill_size": 2048
+  },
+  "precision_changed": false,
+  "resident_engram": true,
+  "minimum_available_gib": 5.121494293212891
+}

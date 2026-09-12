@@ -1,0 +1,53 @@
+{
+  "status": "PASS",
+  "ranks": 8,
+  "rows": [
+    {
+      "tokens": 1,
+      "max_rank_median_us": {
+        "nccl": 135.01499593257904,
+        "roce": 37.95349970459938
+      },
+      "nccl_over_roce": 3.557379345341829
+    },
+    {
+      "tokens": 5,
+      "max_rank_median_us": {
+        "nccl": 179.237499833107,
+        "roce": 50.609249621629715
+      },
+      "nccl_over_roce": 3.541595680100803
+    },
+    {
+      "tokens": 6,
+      "max_rank_median_us": {
+        "nccl": 172.06499725580215,
+        "roce": 50.436750054359436
+      },
+      "nccl_over_roce": 3.4115004846734753
+    },
+    {
+      "tokens": 24,
+      "max_rank_median_us": {
+        "nccl": 292.1932488679886,
+        "roce": 122.43625149130821
+      },
+      "nccl_over_roce": 2.386492932517878
+    },
+    {
+      "tokens": 48,
+      "max_rank_median_us": {
+        "nccl": 375.04126131534576,
+        "roce": 205.10975271463394
+      },
+      "nccl_over_roce": 1.8284906317308809
+    }
+  ],
+  "method": "SGLang production PyNccl versus frozen hybrid RoCEnante. BF16 input reset plus in-place SUM, 16 operations per CUDA graph, four replays per event interval, four ABBA blocks per changing seed, three seeds. Report raw GPU microseconds per operation including identical source copies; no serving throughput claim.",
+  "qualification": "27 random shape/dtype/seed cases per rank, each in-place and out-of-place, bit-exact fixed-rank FP32 oracle; nine signed dyadic cases; 24 mixed-shape graph replays. Largest tested BF16 payload is 491,520 bytes.",
+  "limitations": [
+    "No model resident; these are component timings, not end-to-end throughput.",
+    "NCCL BF16 reduction rounds differently, about 0.004 relative L2 against the FP32 oracle; full-model output can differ.",
+    "The original benchmark attempt aliased its FP32 oracle accumulator to rank-0 input and failed before timing. V2 clones the accumulator; raw failure retained."
+  ]
+}

@@ -1,0 +1,522 @@
+[
+  {
+    "status": "PASS",
+    "rank": 0,
+    "source_overlays": {
+      "python/sglang/srt/distributed/device_communicators/pynccl.py": {
+        "before_sha256": "9e0be65f31ea0f2a2192c897b0025af10c8f0b36b018cd533ba8ccfb2c87014f",
+        "after_sha256": "0d594c3e286c34c62579bac7cb48e14a44130233e00b2aca029709c2cdffca72"
+      },
+      "python/sglang/srt/distributed/parallel_state.py": {
+        "before_sha256": "1930ee1f79d10a33c7016612aba9277561a3f8baf91fb941438fa5e39aa382dc",
+        "after_sha256": "2a2afab0f8c0f93afc104152537b69b030a0b098618fa8271167afd4bf66de4f"
+      },
+      "python/sglang/srt/managers/scheduler_components/batch_result_processor.py": {
+        "before_sha256": "734bb2f479b14d9f36f1645807b81033a2d5b74a539bac853f5e48e3f089b688",
+        "after_sha256": "220dbd3c502c82f2aa4b35b853797b8effea09cc0495477123cc7f114ab8ec03"
+      }
+    },
+    "graph_replays": 24,
+    "roce_ops_per_replay": 5,
+    "fallbacks": [
+      "eager GroupCoordinator",
+      "large BF16",
+      "FP16",
+      "MAX",
+      "all_gather",
+      "non-TP group"
+    ],
+    "scheduler_fault_methods": [
+      "process_batch_result_decode",
+      "process_batch_result_idle"
+    ],
+    "eventless_fault_check": true,
+    "stats": {
+      "world_size": 8,
+      "rank": 0,
+      "hcas": [
+        "rocep1s0f0",
+        "roceP2p1s0f0"
+      ],
+      "max_size": 524288,
+      "max_gather_bytes": 0,
+      "slot_bytes": 524288,
+      "epoch": 123,
+      "error_seq": 124,
+      "error_peer": 1,
+      "error_hca": 0,
+      "ctrl_seq": 124,
+      "spin_limit": 2000000,
+      "stripe_hcas": [
+        0,
+        1
+      ],
+      "ops_posted": 124,
+      "writes_completed": 1736,
+      "last_seq": 124,
+      "writes_completed_per_hca": [
+        868,
+        868
+      ],
+      "bytes_posted_per_hca": [
+        78417920,
+        78417920
+      ]
+    }
+  },
+  {
+    "status": "PASS",
+    "rank": 1,
+    "source_overlays": {
+      "python/sglang/srt/distributed/device_communicators/pynccl.py": {
+        "before_sha256": "9e0be65f31ea0f2a2192c897b0025af10c8f0b36b018cd533ba8ccfb2c87014f",
+        "after_sha256": "0d594c3e286c34c62579bac7cb48e14a44130233e00b2aca029709c2cdffca72"
+      },
+      "python/sglang/srt/distributed/parallel_state.py": {
+        "before_sha256": "1930ee1f79d10a33c7016612aba9277561a3f8baf91fb941438fa5e39aa382dc",
+        "after_sha256": "2a2afab0f8c0f93afc104152537b69b030a0b098618fa8271167afd4bf66de4f"
+      },
+      "python/sglang/srt/managers/scheduler_components/batch_result_processor.py": {
+        "before_sha256": "734bb2f479b14d9f36f1645807b81033a2d5b74a539bac853f5e48e3f089b688",
+        "after_sha256": "220dbd3c502c82f2aa4b35b853797b8effea09cc0495477123cc7f114ab8ec03"
+      }
+    },
+    "graph_replays": 24,
+    "roce_ops_per_replay": 5,
+    "fallbacks": [
+      "eager GroupCoordinator",
+      "large BF16",
+      "FP16",
+      "MAX",
+      "all_gather",
+      "non-TP group"
+    ],
+    "scheduler_fault_methods": [
+      "process_batch_result_decode",
+      "process_batch_result_idle"
+    ],
+    "eventless_fault_check": true,
+    "stats": {
+      "world_size": 8,
+      "rank": 1,
+      "hcas": [
+        "rocep1s0f0",
+        "roceP2p1s0f0"
+      ],
+      "max_size": 524288,
+      "max_gather_bytes": 0,
+      "slot_bytes": 524288,
+      "epoch": 124,
+      "error_seq": 125,
+      "error_peer": 0,
+      "error_hca": 0,
+      "ctrl_seq": 125,
+      "spin_limit": 2000000,
+      "stripe_hcas": [
+        0,
+        1
+      ],
+      "ops_posted": 123,
+      "writes_completed": 1722,
+      "last_seq": 123,
+      "writes_completed_per_hca": [
+        861,
+        861
+      ],
+      "bytes_posted_per_hca": [
+        78382080,
+        78382080
+      ]
+    }
+  },
+  {
+    "status": "PASS",
+    "rank": 2,
+    "source_overlays": {
+      "python/sglang/srt/distributed/device_communicators/pynccl.py": {
+        "before_sha256": "9e0be65f31ea0f2a2192c897b0025af10c8f0b36b018cd533ba8ccfb2c87014f",
+        "after_sha256": "0d594c3e286c34c62579bac7cb48e14a44130233e00b2aca029709c2cdffca72"
+      },
+      "python/sglang/srt/distributed/parallel_state.py": {
+        "before_sha256": "1930ee1f79d10a33c7016612aba9277561a3f8baf91fb941438fa5e39aa382dc",
+        "after_sha256": "2a2afab0f8c0f93afc104152537b69b030a0b098618fa8271167afd4bf66de4f"
+      },
+      "python/sglang/srt/managers/scheduler_components/batch_result_processor.py": {
+        "before_sha256": "734bb2f479b14d9f36f1645807b81033a2d5b74a539bac853f5e48e3f089b688",
+        "after_sha256": "220dbd3c502c82f2aa4b35b853797b8effea09cc0495477123cc7f114ab8ec03"
+      }
+    },
+    "graph_replays": 24,
+    "roce_ops_per_replay": 5,
+    "fallbacks": [
+      "eager GroupCoordinator",
+      "large BF16",
+      "FP16",
+      "MAX",
+      "all_gather",
+      "non-TP group"
+    ],
+    "scheduler_fault_methods": [
+      "process_batch_result_decode",
+      "process_batch_result_idle"
+    ],
+    "eventless_fault_check": true,
+    "stats": {
+      "world_size": 8,
+      "rank": 2,
+      "hcas": [
+        "rocep1s0f0",
+        "roceP2p1s0f0"
+      ],
+      "max_size": 524288,
+      "max_gather_bytes": 0,
+      "slot_bytes": 524288,
+      "epoch": 123,
+      "error_seq": 124,
+      "error_peer": 1,
+      "error_hca": 0,
+      "ctrl_seq": 124,
+      "spin_limit": 2000000,
+      "stripe_hcas": [
+        0,
+        1
+      ],
+      "ops_posted": 124,
+      "writes_completed": 1736,
+      "last_seq": 124,
+      "writes_completed_per_hca": [
+        868,
+        868
+      ],
+      "bytes_posted_per_hca": [
+        78417920,
+        78417920
+      ]
+    }
+  },
+  {
+    "status": "PASS",
+    "rank": 3,
+    "source_overlays": {
+      "python/sglang/srt/distributed/device_communicators/pynccl.py": {
+        "before_sha256": "9e0be65f31ea0f2a2192c897b0025af10c8f0b36b018cd533ba8ccfb2c87014f",
+        "after_sha256": "0d594c3e286c34c62579bac7cb48e14a44130233e00b2aca029709c2cdffca72"
+      },
+      "python/sglang/srt/distributed/parallel_state.py": {
+        "before_sha256": "1930ee1f79d10a33c7016612aba9277561a3f8baf91fb941438fa5e39aa382dc",
+        "after_sha256": "2a2afab0f8c0f93afc104152537b69b030a0b098618fa8271167afd4bf66de4f"
+      },
+      "python/sglang/srt/managers/scheduler_components/batch_result_processor.py": {
+        "before_sha256": "734bb2f479b14d9f36f1645807b81033a2d5b74a539bac853f5e48e3f089b688",
+        "after_sha256": "220dbd3c502c82f2aa4b35b853797b8effea09cc0495477123cc7f114ab8ec03"
+      }
+    },
+    "graph_replays": 24,
+    "roce_ops_per_replay": 5,
+    "fallbacks": [
+      "eager GroupCoordinator",
+      "large BF16",
+      "FP16",
+      "MAX",
+      "all_gather",
+      "non-TP group"
+    ],
+    "scheduler_fault_methods": [
+      "process_batch_result_decode",
+      "process_batch_result_idle"
+    ],
+    "eventless_fault_check": true,
+    "stats": {
+      "world_size": 8,
+      "rank": 3,
+      "hcas": [
+        "rocep1s0f0",
+        "roceP2p1s0f0"
+      ],
+      "max_size": 524288,
+      "max_gather_bytes": 0,
+      "slot_bytes": 524288,
+      "epoch": 123,
+      "error_seq": 124,
+      "error_peer": 1,
+      "error_hca": 0,
+      "ctrl_seq": 124,
+      "spin_limit": 2000000,
+      "stripe_hcas": [
+        0,
+        1
+      ],
+      "ops_posted": 124,
+      "writes_completed": 1736,
+      "last_seq": 124,
+      "writes_completed_per_hca": [
+        868,
+        868
+      ],
+      "bytes_posted_per_hca": [
+        78417920,
+        78417920
+      ]
+    }
+  },
+  {
+    "status": "PASS",
+    "rank": 4,
+    "source_overlays": {
+      "python/sglang/srt/distributed/device_communicators/pynccl.py": {
+        "before_sha256": "9e0be65f31ea0f2a2192c897b0025af10c8f0b36b018cd533ba8ccfb2c87014f",
+        "after_sha256": "0d594c3e286c34c62579bac7cb48e14a44130233e00b2aca029709c2cdffca72"
+      },
+      "python/sglang/srt/distributed/parallel_state.py": {
+        "before_sha256": "1930ee1f79d10a33c7016612aba9277561a3f8baf91fb941438fa5e39aa382dc",
+        "after_sha256": "2a2afab0f8c0f93afc104152537b69b030a0b098618fa8271167afd4bf66de4f"
+      },
+      "python/sglang/srt/managers/scheduler_components/batch_result_processor.py": {
+        "before_sha256": "734bb2f479b14d9f36f1645807b81033a2d5b74a539bac853f5e48e3f089b688",
+        "after_sha256": "220dbd3c502c82f2aa4b35b853797b8effea09cc0495477123cc7f114ab8ec03"
+      }
+    },
+    "graph_replays": 24,
+    "roce_ops_per_replay": 5,
+    "fallbacks": [
+      "eager GroupCoordinator",
+      "large BF16",
+      "FP16",
+      "MAX",
+      "all_gather",
+      "non-TP group"
+    ],
+    "scheduler_fault_methods": [
+      "process_batch_result_decode",
+      "process_batch_result_idle"
+    ],
+    "eventless_fault_check": true,
+    "stats": {
+      "world_size": 8,
+      "rank": 4,
+      "hcas": [
+        "rocep1s0f0",
+        "roceP2p1s0f0"
+      ],
+      "max_size": 524288,
+      "max_gather_bytes": 0,
+      "slot_bytes": 524288,
+      "epoch": 123,
+      "error_seq": 124,
+      "error_peer": 1,
+      "error_hca": 0,
+      "ctrl_seq": 124,
+      "spin_limit": 2000000,
+      "stripe_hcas": [
+        0,
+        1
+      ],
+      "ops_posted": 124,
+      "writes_completed": 1736,
+      "last_seq": 124,
+      "writes_completed_per_hca": [
+        868,
+        868
+      ],
+      "bytes_posted_per_hca": [
+        78417920,
+        78417920
+      ]
+    }
+  },
+  {
+    "status": "PASS",
+    "rank": 5,
+    "source_overlays": {
+      "python/sglang/srt/distributed/device_communicators/pynccl.py": {
+        "before_sha256": "9e0be65f31ea0f2a2192c897b0025af10c8f0b36b018cd533ba8ccfb2c87014f",
+        "after_sha256": "0d594c3e286c34c62579bac7cb48e14a44130233e00b2aca029709c2cdffca72"
+      },
+      "python/sglang/srt/distributed/parallel_state.py": {
+        "before_sha256": "1930ee1f79d10a33c7016612aba9277561a3f8baf91fb941438fa5e39aa382dc",
+        "after_sha256": "2a2afab0f8c0f93afc104152537b69b030a0b098618fa8271167afd4bf66de4f"
+      },
+      "python/sglang/srt/managers/scheduler_components/batch_result_processor.py": {
+        "before_sha256": "734bb2f479b14d9f36f1645807b81033a2d5b74a539bac853f5e48e3f089b688",
+        "after_sha256": "220dbd3c502c82f2aa4b35b853797b8effea09cc0495477123cc7f114ab8ec03"
+      }
+    },
+    "graph_replays": 24,
+    "roce_ops_per_replay": 5,
+    "fallbacks": [
+      "eager GroupCoordinator",
+      "large BF16",
+      "FP16",
+      "MAX",
+      "all_gather",
+      "non-TP group"
+    ],
+    "scheduler_fault_methods": [
+      "process_batch_result_decode",
+      "process_batch_result_idle"
+    ],
+    "eventless_fault_check": true,
+    "stats": {
+      "world_size": 8,
+      "rank": 5,
+      "hcas": [
+        "rocep1s0f0",
+        "roceP2p1s0f0"
+      ],
+      "max_size": 524288,
+      "max_gather_bytes": 0,
+      "slot_bytes": 524288,
+      "epoch": 123,
+      "error_seq": 124,
+      "error_peer": 1,
+      "error_hca": 0,
+      "ctrl_seq": 124,
+      "spin_limit": 2000000,
+      "stripe_hcas": [
+        0,
+        1
+      ],
+      "ops_posted": 124,
+      "writes_completed": 1736,
+      "last_seq": 124,
+      "writes_completed_per_hca": [
+        868,
+        868
+      ],
+      "bytes_posted_per_hca": [
+        78417920,
+        78417920
+      ]
+    }
+  },
+  {
+    "status": "PASS",
+    "rank": 6,
+    "source_overlays": {
+      "python/sglang/srt/distributed/device_communicators/pynccl.py": {
+        "before_sha256": "9e0be65f31ea0f2a2192c897b0025af10c8f0b36b018cd533ba8ccfb2c87014f",
+        "after_sha256": "0d594c3e286c34c62579bac7cb48e14a44130233e00b2aca029709c2cdffca72"
+      },
+      "python/sglang/srt/distributed/parallel_state.py": {
+        "before_sha256": "1930ee1f79d10a33c7016612aba9277561a3f8baf91fb941438fa5e39aa382dc",
+        "after_sha256": "2a2afab0f8c0f93afc104152537b69b030a0b098618fa8271167afd4bf66de4f"
+      },
+      "python/sglang/srt/managers/scheduler_components/batch_result_processor.py": {
+        "before_sha256": "734bb2f479b14d9f36f1645807b81033a2d5b74a539bac853f5e48e3f089b688",
+        "after_sha256": "220dbd3c502c82f2aa4b35b853797b8effea09cc0495477123cc7f114ab8ec03"
+      }
+    },
+    "graph_replays": 24,
+    "roce_ops_per_replay": 5,
+    "fallbacks": [
+      "eager GroupCoordinator",
+      "large BF16",
+      "FP16",
+      "MAX",
+      "all_gather",
+      "non-TP group"
+    ],
+    "scheduler_fault_methods": [
+      "process_batch_result_decode",
+      "process_batch_result_idle"
+    ],
+    "eventless_fault_check": true,
+    "stats": {
+      "world_size": 8,
+      "rank": 6,
+      "hcas": [
+        "rocep1s0f0",
+        "roceP2p1s0f0"
+      ],
+      "max_size": 524288,
+      "max_gather_bytes": 0,
+      "slot_bytes": 524288,
+      "epoch": 123,
+      "error_seq": 124,
+      "error_peer": 1,
+      "error_hca": 0,
+      "ctrl_seq": 124,
+      "spin_limit": 2000000,
+      "stripe_hcas": [
+        0,
+        1
+      ],
+      "ops_posted": 124,
+      "writes_completed": 1736,
+      "last_seq": 124,
+      "writes_completed_per_hca": [
+        868,
+        868
+      ],
+      "bytes_posted_per_hca": [
+        78417920,
+        78417920
+      ]
+    }
+  },
+  {
+    "status": "PASS",
+    "rank": 7,
+    "source_overlays": {
+      "python/sglang/srt/distributed/device_communicators/pynccl.py": {
+        "before_sha256": "9e0be65f31ea0f2a2192c897b0025af10c8f0b36b018cd533ba8ccfb2c87014f",
+        "after_sha256": "0d594c3e286c34c62579bac7cb48e14a44130233e00b2aca029709c2cdffca72"
+      },
+      "python/sglang/srt/distributed/parallel_state.py": {
+        "before_sha256": "1930ee1f79d10a33c7016612aba9277561a3f8baf91fb941438fa5e39aa382dc",
+        "after_sha256": "2a2afab0f8c0f93afc104152537b69b030a0b098618fa8271167afd4bf66de4f"
+      },
+      "python/sglang/srt/managers/scheduler_components/batch_result_processor.py": {
+        "before_sha256": "734bb2f479b14d9f36f1645807b81033a2d5b74a539bac853f5e48e3f089b688",
+        "after_sha256": "220dbd3c502c82f2aa4b35b853797b8effea09cc0495477123cc7f114ab8ec03"
+      }
+    },
+    "graph_replays": 24,
+    "roce_ops_per_replay": 5,
+    "fallbacks": [
+      "eager GroupCoordinator",
+      "large BF16",
+      "FP16",
+      "MAX",
+      "all_gather",
+      "non-TP group"
+    ],
+    "scheduler_fault_methods": [
+      "process_batch_result_decode",
+      "process_batch_result_idle"
+    ],
+    "eventless_fault_check": true,
+    "stats": {
+      "world_size": 8,
+      "rank": 7,
+      "hcas": [
+        "rocep1s0f0",
+        "roceP2p1s0f0"
+      ],
+      "max_size": 524288,
+      "max_gather_bytes": 0,
+      "slot_bytes": 524288,
+      "epoch": 123,
+      "error_seq": 124,
+      "error_peer": 1,
+      "error_hca": 0,
+      "ctrl_seq": 124,
+      "spin_limit": 2000000,
+      "stripe_hcas": [
+        0,
+        1
+      ],
+      "ops_posted": 124,
+      "writes_completed": 1736,
+      "last_seq": 124,
+      "writes_completed_per_hca": [
+        868,
+        868
+      ],
+      "bytes_posted_per_hca": [
+        78417920,
+        78417920
+      ]
+    }
+  }
+]

@@ -1,16 +1,30 @@
 # DeepSeek V4.1 Flash on eight DGX Sparks — SGLang EP4
 
-**C128 with an 8M KV pool · 1250.30 coding tok/s · 774.68 prose tok/s.**
+**134.91 coding tokens/s on one request · 474.52 coding tokens/s across eight concurrent requests.**
 
-Latest short-prompt concurrency results on eight DGX Sparks, using SGLang TP8/EP4 with resident Engram and unchanged model precision. Coding is aggregate throughput including prefill; prose is aggregate decode throughput averaged over two trials. [C8–C128 results and measurement details](sglang/docs/concurrency-results.md).
+Measured **12 September 2026** on eight DGX Sparks with **SGLang SG17, TP8/EP4 and RoCEnante**. Single-request coding decode averaged **134.68 tok/s initially** and **134.91 tok/s in a five-trial repeat after long-context validation**—**22.21% above the latest SG11 control**. All ten measured C1 trials exceeded 130 tok/s. The C8 headline is full-batch aggregate throughput including prefill. [Results, every trial and measurement details](sglang/docs/sg17-rocenante-results.md).
 
-The main deployment in this repository is **SGLang EP4 (SG5)**: **TP8/EP4, native RAM-resident Engram, DSpark five-token drafting, CUDA graphs, eight request slots, four images and a 300,000-token context cap**. It runs the same checkpoint as the [vLLM deployment](docs/vllm-deployment.md), whose complete build guide and earlier measurements remain available. The SGLang source, scripts and evidence are in [`sglang/`](sglang/).
+SG17 retains the checkpoint and activation precision, native resident Engram, **8M logical KV tokens, 128 request slots, a 1M-token context limit and five-token speculation**. It passed **128/128 concurrent arithmetic requests**, image/JSON/tool checks and exact retrieval through **299,098 input tokens**. [Configuration and source snapshot](sglang/experiments/sg17-rocenante/).
+
+The earlier SG11 concurrency sweep reached **1,250.30 coding tok/s** and **774.68 prose tok/s at C128**; those remain separate historical measurements. SG17 throughput has been measured at C1/C4/C8. [SG11 C8–C128 results](sglang/docs/concurrency-results.md).
+
+The standard build and launcher below package **SGLang EP4 (SG5)**: **TP8/EP4, native RAM-resident Engram, DSpark five-token drafting, CUDA graphs, eight request slots, four images and a 300,000-token context cap**. It runs the same checkpoint as the [vLLM deployment](docs/vllm-deployment.md), whose complete build guide and earlier measurements remain available. The SGLang source, scripts and evidence are in [`sglang/`](sglang/).
 
 It combines [Mia's pinned Spark adaptation](https://github.com/MiaAI-Lab/DeepSeek-v4.1-Flash-DGX-Sparks/tree/e59e6eb67479aa68f6fa700c600dc90a0729b5ec) with native-width query heads from [SGLang #36655](https://github.com/sgl-project/sglang/pull/36655), the scheduler's `--min-free-slots-delay 1` setting, and five verification/index-processing files from [#39068](https://github.com/sgl-project/sglang/pull/39068). Each of four expert groups spans two tensor ranks; model-wide TP remains eight. A local draft-context fix applies the requested backend consistently and records the actual loaded expert layout on all ranks. [SG3](sglang/docs/sg3-reference.md) is retained as the earlier reference.
 
 ## Speed
 
-### Short-prompt concurrency with the same 8M KV pool
+### SG17: faster single-request decode with RoCEnante
+
+| Concurrency | Coding decode per stream (tok/s) | Coding full-batch aggregate (tok/s) | Prose aggregate decode (tok/s) |
+|---|---|---|---|
+| C1 | 134.91 | 121.86 | 80.99 |
+| C4 | 83.67 | 305.00 | 180.46 |
+| C8 | 64.89 | 474.52 | 244.15 |
+
+These are means from the second complete SG17 benchmark on the same server process, after the long-context and capability checks: five coding trials at C1, three at C4/C8, and three prose trials per concurrency. Coding decode excludes first-token latency; coding aggregate includes the full batch; prose uses its own first-to-last-output timing. The initial C8 coding aggregate mean was **470.58 tok/s**. [Both complete runs, latency, validation and limitations](sglang/docs/sg17-rocenante-results.md).
+
+### Earlier SG11 short-prompt concurrency with an 8M KV pool
 
 Measured **12 September 2026**. All rows below were measured on the same **SG11 TP8/EP4 experimental profile: 128 request slots, a 1,000,000-token context limit and 2,048-token prefill chunks**. The configured KV pool remained **8,000,000 tokens** throughout, with a **2 GiB OS-available reserve floor on every Spark**. These settings are separate from the packaged SG5 launcher defaults below.
 
@@ -81,7 +95,7 @@ The unchanged five-file verification/index composition passed **36 tests and fou
 
 During the original EP4 validation, all eight ranks stayed above **17.57 GiB OS-available memory**, without OOMs or restarts. That memory figure belongs to the original profile; the [separate capacity experiment](sglang/docs/eight-million-token-results.md) measured eight simultaneous near-million-token contexts.
 
-## Configuration
+## Standard SG5 configuration
 
 | Setting | EP4 |
 |---|---|
@@ -102,7 +116,9 @@ During the original EP4 validation, all eight ranks stayed above **17.57 GiB OS-
 
 SGLang's pool and prefill accounting differ from vLLM's. Equal numeric flags do not prove identical memory use or scheduler behavior. Engram lookup arithmetic remains upstream; the hooks assert ownership/residency and retain the validated SM120 metadata/page-splitting and long-prefill allocation workarounds.
 
-## Reproduce
+## Reproduce the standard SG5 deployment
+
+The headline SG17 result uses the separately preserved [SG17 source and configuration snapshot](sglang/experiments/sg17-rocenante/). The commands below build and launch SG5; changing only its example JSON does not reproduce SG17.
 
 Run cluster operations on rank zero. Requirements: Linux ARM64 Sparks, Docker with NVIDIA GPU support and Buildx, Python 3.11+, SSH/rsync, a working RDMA fabric, and the pinned checkpoint already present on every node. Weights and credentials are not included. Build and kernel tests require idle GPUs; stop the active deployment with its own configuration first.
 
