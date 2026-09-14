@@ -1,0 +1,32 @@
+{
+  "inputs": {
+    "spark-kernels-iter1/readme-original-v01/readme-validation.json": "94dc497913939adf1f68bb990f51c791119b9a586d5115951b150ec89527bfa9",
+    "spark-kernels-iter1/readme-ihw-v01/readme-validation.json": "6f0f356849ee55ce74f65ba57ceca159f8ed6d373acb19eecf3e5f4bfe6607f6",
+    "spark-kernels-iter1/readme-promotion-handoff-v01.json": "85f0dd4e14b3bd91cb11ad9cb99bf08f12d5cab24af4cb2a4d2de613fba99f06",
+    "spark-kernels-iter1/startup-readmeihw01/runtime-contract.json": "9af3e801bbd9c11bb7de3a8d8d500fc00efe2968406fb0b329760bfa9c5a923b",
+    "spark-kernels-iter1/readme-profile4k-ihw-v01-dispatch-validation.json": "32f4f060827b26202fc23d18d605f9812e1dfb11156b7bbc149076f0d38c9ad4",
+    "readme-promotion-20260914/repo/sglang/results/sg17-rocenante/comparison.json": "4ec7872375d3bc8ddcfbdd932993b431435364c67f1c613176767cc72d9a434e",
+    "readme-promotion-20260914/reference-kit/reference-manifest.json": "53bf8243a570ba4a38c97fd0b7263b9353b4f409fcd3f8db55d8bd912ae8a9b9",
+    "spark-kernels-iter1/readme-original-v01/acceptance/result.json": "9d353a70927d4f5674c5c9d329668fd6ab4dcc259ea665621fc0f64b3491951d",
+    "spark-kernels-iter1/readme-original-v01/acceptance-after/result.json": "9d353a70927d4f5674c5c9d329668fd6ab4dcc259ea665621fc0f64b3491951d",
+    "spark-kernels-iter1/readme-original-v01/arithmetic-c128.json": "7d24df5797c59e1b9c42f4950df70ad30fcc977cbe8464bc67334ccd06d8656e",
+    "spark-kernels-iter1/readme-original-v01/long-context/result.json": "09ca9504b05e43a20398a8d295f92531ade5eef21a556318a0aa2d3e5e2fcc05",
+    "spark-kernels-iter1/readme-original-v01/benchmark-initial/coding.json": "5b2472783a96f783cdf65b5cf41318afd615a608f4a2c16738ad5b5807432a8f",
+    "spark-kernels-iter1/readme-original-v01/benchmark-initial/sparkdash/result.json": "d11d4afd6595fa3321c654724ab47935539e55ef139bc61f725a361b63a77fec",
+    "spark-kernels-iter1/readme-original-v01/benchmark-repeat/coding.json": "be3021590d802ee6e2233eed83e4f03c385461ccef381e81a2e245c0c0f5624b",
+    "spark-kernels-iter1/readme-original-v01/benchmark-repeat/sparkdash/result.json": "e4998d15b8873297d287b7d01ecbd51f089ee781ea66d4fe0b54371ef7d2a1a5",
+    "spark-kernels-iter1/readme-ihw-v01/acceptance/result.json": "9d353a70927d4f5674c5c9d329668fd6ab4dcc259ea665621fc0f64b3491951d",
+    "spark-kernels-iter1/readme-ihw-v01/acceptance-after/result.json": "9d353a70927d4f5674c5c9d329668fd6ab4dcc259ea665621fc0f64b3491951d",
+    "spark-kernels-iter1/readme-ihw-v01/arithmetic-c128.json": "66bad0a9b897ac1c2938e02cd746576887c754d205a030524f14b8c1569512b1",
+    "spark-kernels-iter1/readme-ihw-v01/long-context/result.json": "4a0dac24e647cf14062425977ce56fdb5e2ad6849c3970891e6f5997947307ea",
+    "spark-kernels-iter1/readme-ihw-v01/benchmark-initial/coding.json": "710e18dc80637e1e98eab5c390c34159e02aaed2eeca7d97d52ae05b10102d3e",
+    "spark-kernels-iter1/readme-ihw-v01/benchmark-initial/sparkdash/result.json": "cd39d05333d39af114c850ef1bfcc3d79474cee4f5d30312ced0cf418b552195",
+    "spark-kernels-iter1/readme-ihw-v01/benchmark-repeat/coding.json": "ed4119017af2d9ba2732e5ea3ed300429d12ba751c2f0cfa4272e5c84be3cd86",
+    "spark-kernels-iter1/readme-ihw-v01/benchmark-repeat/sparkdash/result.json": "41c6c9f876da1fba982874cfd2d6fc17b98cf69408a1e7319cab10ea9f5c0adf",
+    "spark-kernels-iter1/components-ibound01/component-results.json": "f2316414930a145807370409e388ffa96d2b98df8ce0485758f3d3c3f6bbf5ec",
+    "spark-kernels-iter1/components-v05/component-results.json": "eb0c9655bc6288457c07c8e19d3f2ea00a58728b4fffc26a70770df3c1f663e2",
+    "spark-kernels-iter1/components-qualified-readmeihw01.json": "d872c63612b3e0fe261b758513dd2eb1d4c730250d640e562aa548aadeea331b",
+    "spark-kernels-iter1/components-qualified-v05.json": "f0eb6c4de5fdba7b4df8e8468f81e593cc5aac2c586520cc6d4b663ede53a60b"
+  },
+  "note": "Hashes identify original locally retained evidence. Public extracts remove connection addresses, hardware identifiers and private filesystem locations; trial metrics and source bytes are retained."
+}

@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "repository_unittests": {
+    "command": "python3 -m unittest discover -s tests -v",
+    "tests": 11,
+    "result": "OK"
+  },
+  "public_results_verifier": {
+    "command": "python3 sglang/experiments/sg18-indexer-mhc-wo/verify-results.py",
+    "source_files": 16,
+    "unchanged_reference_files": 35,
+    "measured_coding_requests": 164,
+    "measured_prose_requests": 156,
+    "result": "PASS"
+  },
+  "source_patch_check": "source-patch-check-v01.json",
+  "configuration_parity": "configuration-public-check-v01.json"
+}

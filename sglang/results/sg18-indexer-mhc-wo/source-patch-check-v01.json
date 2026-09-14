@@ -1,0 +1,7 @@
+{
+  "status": "PASS",
+  "patch_applies_to_exact_sg17_preimages": true,
+  "after_files_identical": 8,
+  "production_files_identical": 16,
+  "patch_sha256": "731f1b2e27be69cb7bf8dd9639cc8dbfcd04698f9e5fa09fea5391ecfaae9af2"
+}

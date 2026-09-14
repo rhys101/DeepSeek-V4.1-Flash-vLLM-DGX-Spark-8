@@ -1,0 +1,61 @@
+{
+  "base_profile": "../sg17-rocenante/",
+  "base_sglang_commit": "e087e662ba1ac4ef7747537e2a9141085efd4561",
+  "observed_image_id": "sha256:e7681b5276525821f9be286ed3bf0f51acb5239da27f69f60fdeb57e68c05581",
+  "changed_from_sg17": {
+    "python/sglang/srt/layers/attention/deepseek_v4_backend.py": {
+      "before_sha256": "20a711344de7666d83b3dfa3ce7e9621729cbe40ed9a433d28e53872216e65d1",
+      "after_sha256": "a2dc0f01e78b0ad6e978308259957bd6199fc05f3fbd37cafd74d4b8d93a032b"
+    },
+    "python/sglang/srt/models/deepseek_v4.py": {
+      "before_sha256": "75003c5d644f9a0278d443481ccbf97423697165b5b8d620274b1faa38c144ac",
+      "after_sha256": "c14735f6fb00a74c6b7eadc96a821908d50a52cec602d20a6cb348e24f7ac810"
+    },
+    "python/sglang/srt/layers/quantization/fp8.py": {
+      "before_sha256": "23c22ed68ba830af4a4862c77bbdafc51781db3e3d9b7193d29422af5b23d314",
+      "after_sha256": "bfff137ee7d0e0a9c6b21b53f3db541a6283ec124619c3e947737a9fd56de262"
+    },
+    "python/sglang/kernels/ops/layernorm/mhc.py": {
+      "before_sha256": "55742148bd354be04f040a0c6a63c5e7a822609a30d392e59a80acd029674457",
+      "after_sha256": "962ec98c1f393843f210e2b94f61b6177030cdb787a483b782cda47a6254c2d5"
+    },
+    "python/sglang/kernels/ops/attention/dsv4/spark_candidate_blocks.py": {
+      "before_sha256": null,
+      "after_sha256": "e781069def6fabd43c2538a483cc26a6a5689c6bf538cd25cd79ba9a5d7faac8"
+    },
+    "python/sglang/kernels/ops/attention/dsv4/spark_wo_a.py": {
+      "before_sha256": null,
+      "after_sha256": "4cf182b8de2addd4bd2272a79b91e5e491baed5d17869a794d8a24e445fcb856"
+    },
+    "python/sglang/kernels/ops/layernorm/spark_hc_combine_norm.py": {
+      "before_sha256": null,
+      "after_sha256": "b83ed9b55d6b8b16f0b85a09ea352b975b14aa70eb4b36dd3a2d1f2194fb6e61"
+    },
+    "python/sglang/srt/layers/quantization/spark_mxfp8_input.py": {
+      "before_sha256": null,
+      "after_sha256": "c2bf29b96e2dde21d28e4a9fac560551a80b8081648e34736fca2b09d6de53f3"
+    }
+  },
+  "production_files": {
+    "python/sglang/kernels/jit/csrc/deepseek_v4/c2.cuh": "55f32ba512fca86826a27d66f36d4667848c17cbbe0d34096ffedead0ce469e4",
+    "python/sglang/kernels/ops/attention/dsv4/candidate_blocks.py": "d7fc6c5984d10331a04d3586a537def4d531a440f2db3113423785b9aa4016ea",
+    "python/sglang/kernels/ops/attention/dsv4/indexer_postprocess.py": "55a52c4e6c71568705958ed35f821260b38b1d371637712c47dc0e964f9c1f54",
+    "python/sglang/kernels/ops/attention/dsv4/c2.py": "9da953bedcebad1b6168cce61453bd487689363358a2569b8a0c366b955e5bea",
+    "python/sglang/kernels/ops/attention/dsv4/spark_candidate_blocks.py": "e781069def6fabd43c2538a483cc26a6a5689c6bf538cd25cd79ba9a5d7faac8",
+    "python/sglang/kernels/ops/attention/dsv4/spark_wo_a.py": "4cf182b8de2addd4bd2272a79b91e5e491baed5d17869a794d8a24e445fcb856",
+    "python/sglang/kernels/ops/layernorm/mhc.py": "962ec98c1f393843f210e2b94f61b6177030cdb787a483b782cda47a6254c2d5",
+    "python/sglang/kernels/ops/layernorm/spark_hc_combine_norm.py": "b83ed9b55d6b8b16f0b85a09ea352b975b14aa70eb4b36dd3a2d1f2194fb6e61",
+    "python/sglang/srt/layers/attention/deepseek_v4_backend.py": "a2dc0f01e78b0ad6e978308259957bd6199fc05f3fbd37cafd74d4b8d93a032b",
+    "python/sglang/srt/layers/quantization/fp8.py": "bfff137ee7d0e0a9c6b21b53f3db541a6283ec124619c3e947737a9fd56de262",
+    "python/sglang/srt/layers/quantization/spark_mxfp8_input.py": "c2bf29b96e2dde21d28e4a9fac560551a80b8081648e34736fca2b09d6de53f3",
+    "python/sglang/srt/distributed/parallel_state.py": "2a2afab0f8c0f93afc104152537b69b030a0b098618fa8271167afd4bf66de4f",
+    "python/sglang/srt/distributed/device_communicators/pynccl.py": "0d594c3e286c34c62579bac7cb48e14a44130233e00b2aca029709c2cdffca72",
+    "python/sglang/srt/managers/scheduler_components/batch_result_processor.py": "220dbd3c502c82f2aa4b35b853797b8effea09cc0495477123cc7f114ab8ec03",
+    "python/sglang/srt/models/deepseek_v4.py": "c14735f6fb00a74c6b7eadc96a821908d50a52cec602d20a6cb348e24f7ac810",
+    "python/sglang/srt/speculative/dspark_components/dspark_worker_v2.py": "8387704e671b1a67d116ccca9523092083eb0d299e654a5d6c7949f7245bf6df"
+  },
+  "configuration_sha256": "cea985c5e1c184e2a045fadef5d259aa9ff08d2623377df7fc426953dbaa596c",
+  "patch_sha256": "731f1b2e27be69cb7bf8dd9639cc8dbfcd04698f9e5fa09fea5391ecfaae9af2",
+  "candidate_source_version": "v06; all three factors enabled",
+  "b12x": "All 241 source bytes are identical to ../sg17-rocenante/b12x-source-manifest.json."
+}

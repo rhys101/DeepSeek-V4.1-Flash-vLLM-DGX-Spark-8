@@ -1,0 +1,72 @@
+{
+  "status": "PASS",
+  "v06": {
+    "sglang/srt/layers/attention/deepseek_v4_backend.py": {
+      "before_sha256": "20a711344de7666d83b3dfa3ce7e9621729cbe40ed9a433d28e53872216e65d1",
+      "after_sha256": "a2dc0f01e78b0ad6e978308259957bd6199fc05f3fbd37cafd74d4b8d93a032b"
+    },
+    "sglang/srt/models/deepseek_v4.py": {
+      "before_sha256": "75003c5d644f9a0278d443481ccbf97423697165b5b8d620274b1faa38c144ac",
+      "after_sha256": "c14735f6fb00a74c6b7eadc96a821908d50a52cec602d20a6cb348e24f7ac810"
+    },
+    "sglang/srt/layers/quantization/fp8.py": {
+      "before_sha256": "23c22ed68ba830af4a4862c77bbdafc51781db3e3d9b7193d29422af5b23d314",
+      "after_sha256": "bfff137ee7d0e0a9c6b21b53f3db541a6283ec124619c3e947737a9fd56de262"
+    },
+    "sglang/kernels/ops/layernorm/mhc.py": {
+      "before_sha256": "55742148bd354be04f040a0c6a63c5e7a822609a30d392e59a80acd029674457",
+      "after_sha256": "962ec98c1f393843f210e2b94f61b6177030cdb787a483b782cda47a6254c2d5"
+    },
+    "sglang/kernels/ops/attention/dsv4/spark_candidate_blocks.py": {
+      "before_sha256": null,
+      "after_sha256": "e781069def6fabd43c2538a483cc26a6a5689c6bf538cd25cd79ba9a5d7faac8"
+    },
+    "sglang/kernels/ops/attention/dsv4/spark_wo_a.py": {
+      "before_sha256": null,
+      "after_sha256": "4cf182b8de2addd4bd2272a79b91e5e491baed5d17869a794d8a24e445fcb856"
+    },
+    "sglang/kernels/ops/layernorm/spark_hc_combine_norm.py": {
+      "before_sha256": null,
+      "after_sha256": "b83ed9b55d6b8b16f0b85a09ea352b975b14aa70eb4b36dd3a2d1f2194fb6e61"
+    },
+    "sglang/srt/layers/quantization/spark_mxfp8_input.py": {
+      "before_sha256": null,
+      "after_sha256": "c2bf29b96e2dde21d28e4a9fac560551a80b8081648e34736fca2b09d6de53f3"
+    }
+  },
+  "v05": {
+    "sglang/srt/layers/attention/deepseek_v4_backend.py": {
+      "before_sha256": "20a711344de7666d83b3dfa3ce7e9621729cbe40ed9a433d28e53872216e65d1",
+      "after_sha256": "a2dc0f01e78b0ad6e978308259957bd6199fc05f3fbd37cafd74d4b8d93a032b"
+    },
+    "sglang/srt/models/deepseek_v4.py": {
+      "before_sha256": "75003c5d644f9a0278d443481ccbf97423697165b5b8d620274b1faa38c144ac",
+      "after_sha256": "c14735f6fb00a74c6b7eadc96a821908d50a52cec602d20a6cb348e24f7ac810"
+    },
+    "sglang/srt/layers/quantization/fp8.py": {
+      "before_sha256": "23c22ed68ba830af4a4862c77bbdafc51781db3e3d9b7193d29422af5b23d314",
+      "after_sha256": "bfff137ee7d0e0a9c6b21b53f3db541a6283ec124619c3e947737a9fd56de262"
+    },
+    "sglang/kernels/ops/layernorm/mhc.py": {
+      "before_sha256": "55742148bd354be04f040a0c6a63c5e7a822609a30d392e59a80acd029674457",
+      "after_sha256": "962ec98c1f393843f210e2b94f61b6177030cdb787a483b782cda47a6254c2d5"
+    },
+    "sglang/kernels/ops/attention/dsv4/spark_candidate_blocks.py": {
+      "before_sha256": null,
+      "after_sha256": "7b6f5a01be23a9d2bf2ec3905b8a140baec46408bc32fd044ac0daedd8a04981"
+    },
+    "sglang/kernels/ops/attention/dsv4/spark_wo_a.py": {
+      "before_sha256": null,
+      "after_sha256": "4cf182b8de2addd4bd2272a79b91e5e491baed5d17869a794d8a24e445fcb856"
+    },
+    "sglang/kernels/ops/layernorm/spark_hc_combine_norm.py": {
+      "before_sha256": null,
+      "after_sha256": "b83ed9b55d6b8b16f0b85a09ea352b975b14aa70eb4b36dd3a2d1f2194fb6e61"
+    },
+    "sglang/srt/layers/quantization/spark_mxfp8_input.py": {
+      "before_sha256": null,
+      "after_sha256": "c2bf29b96e2dde21d28e4a9fac560551a80b8081648e34736fca2b09d6de53f3"
+    }
+  },
+  "note": "Only the indexer logical-bound correction differs between v05 and v06. All mHC and WO source hashes remain identical; all enabled factors match the tested v06 IHW build."
+}

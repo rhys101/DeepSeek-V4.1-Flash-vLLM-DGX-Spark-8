@@ -1,0 +1,92 @@
+{
+  "status": "PASS",
+  "device": "NVIDIA GB10",
+  "torch": "2.13.0+cu130",
+  "triton": "3.7.1",
+  "indexer_correctness": [
+    {
+      "rows": 6,
+      "width": 1009,
+      "group": 8,
+      "topk": 2,
+      "dtype": "torch.int32",
+      "transitions": 17,
+      "status": "PASS"
+    },
+    {
+      "rows": 48,
+      "width": 32769,
+      "group": 8,
+      "topk": 2048,
+      "dtype": "torch.int32",
+      "transitions": 17,
+      "status": "PASS"
+    },
+    {
+      "rows": 6,
+      "width": 1000000,
+      "group": 8,
+      "topk": 2048,
+      "dtype": "torch.int32",
+      "transitions": 17,
+      "status": "PASS"
+    },
+    {
+      "rows": 48,
+      "width": 1000000,
+      "group": 8,
+      "topk": 2048,
+      "dtype": "torch.int32",
+      "transitions": 17,
+      "status": "PASS"
+    },
+    {
+      "rows": 6,
+      "width": 1009,
+      "group": 8,
+      "topk": 2,
+      "dtype": "torch.int64",
+      "transitions": 18,
+      "status": "PASS"
+    },
+    {
+      "rows": 48,
+      "width": 32769,
+      "group": 8,
+      "topk": 2048,
+      "dtype": "torch.int64",
+      "transitions": 18,
+      "status": "PASS"
+    },
+    {
+      "rows": 6,
+      "width": 1000000,
+      "group": 8,
+      "topk": 2048,
+      "dtype": "torch.int64",
+      "transitions": 18,
+      "status": "PASS"
+    },
+    {
+      "rows": 48,
+      "width": 1000000,
+      "group": 8,
+      "topk": 2048,
+      "dtype": "torch.int64",
+      "transitions": 18,
+      "status": "PASS"
+    }
+  ],
+  "indexer_timing": [],
+  "mhc": [],
+  "wo": [],
+  "prior_v05_overflow_counterexample": {
+    "reproduced": true,
+    "width": 1009,
+    "logical_length": 1025,
+    "group": 8,
+    "topk": 2,
+    "note": "Outside actual qualified serving lengths; fixed to preserve the full reference contract."
+  },
+  "scope": "Focused indexer guard correction; H/WO files remain identical to qualified v05."
+}

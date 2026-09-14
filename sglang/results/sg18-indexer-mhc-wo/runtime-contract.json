@@ -1,0 +1,66 @@
+{
+  "status": "PASS",
+  "attempt": "readmeihw01",
+  "baseline": "baseline-evaluation-v01",
+  "identical_top_level_settings": 500,
+  "explicitly_separate_observations": [
+    "internal_states",
+    "startup_time"
+  ],
+  "internal_state_separate_observations": [
+    "avg_spec_accept_length",
+    "last_gen_throughput",
+    "memory_usage",
+    "startup_time"
+  ],
+  "actual_memory_usage": [
+    {
+      "internal_state": 0,
+      "baseline": {
+        "weight": 59.321,
+        "kvcache": 0,
+        "startup_available": 12.834,
+        "token_capacity": 8000000,
+        "token_capacity_swa": 349952,
+        "graph": {
+          "prefill": 0.0,
+          "decode": 0.0,
+          "target_verify": 8.896,
+          "draft_prefill": 0.0,
+          "draft_decode": 0.245,
+          "draft_extend": 0.0
+        }
+      },
+      "candidate": {
+        "weight": 59.766,
+        "kvcache": 0,
+        "startup_available": 9.545,
+        "token_capacity": 8000000,
+        "token_capacity_swa": 349952,
+        "graph": {
+          "prefill": 0.0,
+          "decode": 0.0,
+          "target_verify": 11.689,
+          "draft_prefill": 0.0,
+          "draft_decode": 0.63,
+          "draft_extend": 0.0
+        }
+      }
+    }
+  ],
+  "minimum_startup_available_gib": 6.723445892333984,
+  "checked_source_ranks": 8,
+  "factor_environment": {
+    "SPARK_KERNEL_INDEXER": "1",
+    "SPARK_KERNEL_MHC": "1",
+    "SPARK_KERNEL_WO": "1",
+    "SPARK_INDEXER_WORKERS": "",
+    "SPARK_MHC_PARTS": "",
+    "SPARK_MHC_WARPS": "8",
+    "SPARK_WO_SPLITS": "2",
+    "SPARK_WO_QUANT": "1"
+  },
+  "baseline_sha256": "a74869b2bdf0ac1c411868012315f35405951741de9f6213595adfa8bb5c6309",
+  "candidate_sha256": "f4b2fef7e844463f4c6184ae716e0f3ec76f6edbc502de2177a047cafc924c9f",
+  "scope": "Every serialized server setting matches the original. Measured startup duration, memory use and generation statistics remain explicit observations. Token capacities match; source and environment-factor staging have separate receipts."
+}

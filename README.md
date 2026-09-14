@@ -1,12 +1,12 @@
 # DeepSeek V4.1 Flash on eight DGX Sparks — SGLang EP4
 
-**134.91 coding tokens/s on one request · 474.52 coding tokens/s across eight concurrent requests.**
+**495.32 coding tokens/s across eight concurrent requests · 131.05 coding decode tokens/s on one request.**
 
-Measured **12 September 2026** on eight DGX Sparks with **SGLang SG17, TP8/EP4 and RoCEnante**. Single-request coding decode averaged **134.68 tok/s initially** and **134.91 tok/s in a five-trial repeat after long-context validation**—**22.21% above the latest SG11 control**. All ten measured C1 trials exceeded 130 tok/s. The C8 headline is full-batch aggregate throughput including prefill. [Results, every trial and measurement details](sglang/docs/sg17-rocenante-results.md).
+Measured **14 September 2026** on eight DGX Sparks with **SGLang SG18, TP8/EP4 and RoCEnante**, adding bounded indexer, mHC and WO kernels. The repeated README suite is **4.38% above the published SG17 C8 throughput**. Both C8 runs exceed the fresh SG17 controls and published C8 result. **C1 decode is 2.86% lower than SG17’s 134.91 tok/s record**; SG17 remains the faster single-request reference. C1 is per-stream decode; C8 is full-batch aggregate including prefill. [All four runs, every trial and method](sglang/docs/sg18-indexer-mhc-wo-results.md).
 
-SG17 retains the checkpoint and activation precision, native resident Engram, **8M logical KV tokens, 128 request slots, a 1M-token context limit and five-token speculation**. It passed **128/128 concurrent arithmetic requests**, image/JSON/tool checks and exact retrieval through **299,098 input tokens**. [Configuration and source snapshot](sglang/experiments/sg17-rocenante/).
+SG18 retains native resident Engram, **8M logical KV tokens, 128 request slots, a 1M-token context limit and five-token speculation**. It passed **128/128 concurrent arithmetic requests**, image/JSON/tool checks and exact retrieval through **299,098 input tokens**. Earlier bounded long-context quality scores remain lower on some tasks; broad quality parity is not established. [Source and integration settings](sglang/experiments/sg18-indexer-mhc-wo/) · [Quality results and limits](sglang/docs/sg18-prior-study.md).
 
-The earlier SG11 concurrency sweep reached **1,250.30 coding tok/s** and **774.68 prose tok/s at C128**; those remain separate historical measurements. SG17 throughput has been measured at C1/C4/C8. [SG11 C8–C128 results](sglang/docs/concurrency-results.md).
+The earlier SG11 concurrency sweep reached **1,250.30 coding tok/s** and **774.68 prose tok/s at C128**; those remain separate historical measurements. SG18 throughput has been measured at C1/C4/C8. [SG11 C8–C128 results](sglang/docs/concurrency-results.md).
 
 The standard build and launcher below package **SGLang EP4 (SG5)**: **TP8/EP4, native RAM-resident Engram, DSpark five-token drafting, CUDA graphs, eight request slots, four images and a 300,000-token context cap**. It runs the same checkpoint as the [vLLM deployment](docs/vllm-deployment.md), whose complete build guide and earlier measurements remain available. The SGLang source, scripts and evidence are in [`sglang/`](sglang/).
 
@@ -14,7 +14,19 @@ It combines [Mia's pinned Spark adaptation](https://github.com/MiaAI-Lab/DeepSee
 
 ## Speed
 
-### SG17: faster single-request decode with RoCEnante
+### SG18: indexer, mHC and WO kernels
+
+| Concurrency | Coding decode per stream (tok/s) | Coding full-batch aggregate (tok/s) | Prose aggregate decode (tok/s) |
+|---|---|---|---|
+| C1 | 131.05 | 117.49 | 86.89 |
+| C4 | 83.22 | 299.71 | 166.76 |
+| C8 | 68.33 | 495.32 | 253.84 |
+
+These are means from the repeat suite after long-context and capability checks: five C1 coding trials, three C4/C8 coding trials, and three prose trials per concurrency. Initial SG18 coding means were **131.28 tok/s at C1** and **505.25 tok/s at C8**. All initial/repeat SG17 and SG18 results, including prose and slower trials, are retained. [Complete comparison](sglang/docs/sg18-indexer-mhc-wo-results.md).
+
+The gains depend on the workload: C1/C8 prose improved, while C4 prose fell from **180.46** to **166.76 tok/s**. C1 coding and C4 coding aggregate were also lower than the published SG17 repeat.
+
+### Earlier SG17: single-request decode with RoCEnante
 
 | Concurrency | Coding decode per stream (tok/s) | Coding full-batch aggregate (tok/s) | Prose aggregate decode (tok/s) |
 |---|---|---|---|
@@ -118,7 +130,7 @@ SGLang's pool and prefill accounting differ from vLLM's. Equal numeric flags do 
 
 ## Reproduce the standard SG5 deployment
 
-The headline SG17 result uses the separately preserved [SG17 source and configuration snapshot](sglang/experiments/sg17-rocenante/). The commands below build and launch SG5; changing only its example JSON does not reproduce SG17.
+The headline SG18 result uses the separately preserved [SG18 source and integration settings](sglang/experiments/sg18-indexer-mhc-wo/). The commands below build and launch SG5; changing only its example JSON does not reproduce SG18.
 
 Run cluster operations on rank zero. Requirements: Linux ARM64 Sparks, Docker with NVIDIA GPU support and Buildx, Python 3.11+, SSH/rsync, a working RDMA fabric, and the pinned checkpoint already present on every node. Weights and credentials are not included. Build and kernel tests require idle GPUs; stop the active deployment with its own configuration first.
 

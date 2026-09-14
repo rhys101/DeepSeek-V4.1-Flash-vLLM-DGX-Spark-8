@@ -1,0 +1,150 @@
+{
+  "status": "PASS",
+  "ranks": [
+    {
+      "rank": 0,
+      "engine_arguments_equal_except_documentation_address": true,
+      "environment_identical": true,
+      "factor_environment_identical": true,
+      "documentation_substitutions": [
+        {
+          "setting": "--dist-init-addr",
+          "public": "192.0.2.11:29601",
+          "observed_value_omitted": true
+        },
+        {
+          "setting": "--host",
+          "public": "127.0.0.1",
+          "observed_value_omitted": true
+        }
+      ]
+    },
+    {
+      "rank": 1,
+      "engine_arguments_equal_except_documentation_address": true,
+      "environment_identical": true,
+      "factor_environment_identical": true,
+      "documentation_substitutions": [
+        {
+          "setting": "--dist-init-addr",
+          "public": "192.0.2.11:29601",
+          "observed_value_omitted": true
+        },
+        {
+          "setting": "--host",
+          "public": "127.0.0.1",
+          "observed_value_omitted": true
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "engine_arguments_equal_except_documentation_address": true,
+      "environment_identical": true,
+      "factor_environment_identical": true,
+      "documentation_substitutions": [
+        {
+          "setting": "--dist-init-addr",
+          "public": "192.0.2.11:29601",
+          "observed_value_omitted": true
+        },
+        {
+          "setting": "--host",
+          "public": "127.0.0.1",
+          "observed_value_omitted": true
+        }
+      ]
+    },
+    {
+      "rank": 3,
+      "engine_arguments_equal_except_documentation_address": true,
+      "environment_identical": true,
+      "factor_environment_identical": true,
+      "documentation_substitutions": [
+        {
+          "setting": "--dist-init-addr",
+          "public": "192.0.2.11:29601",
+          "observed_value_omitted": true
+        },
+        {
+          "setting": "--host",
+          "public": "127.0.0.1",
+          "observed_value_omitted": true
+        }
+      ]
+    },
+    {
+      "rank": 4,
+      "engine_arguments_equal_except_documentation_address": true,
+      "environment_identical": true,
+      "factor_environment_identical": true,
+      "documentation_substitutions": [
+        {
+          "setting": "--dist-init-addr",
+          "public": "192.0.2.11:29601",
+          "observed_value_omitted": true
+        },
+        {
+          "setting": "--host",
+          "public": "127.0.0.1",
+          "observed_value_omitted": true
+        }
+      ]
+    },
+    {
+      "rank": 5,
+      "engine_arguments_equal_except_documentation_address": true,
+      "environment_identical": true,
+      "factor_environment_identical": true,
+      "documentation_substitutions": [
+        {
+          "setting": "--dist-init-addr",
+          "public": "192.0.2.11:29601",
+          "observed_value_omitted": true
+        },
+        {
+          "setting": "--host",
+          "public": "127.0.0.1",
+          "observed_value_omitted": true
+        }
+      ]
+    },
+    {
+      "rank": 6,
+      "engine_arguments_equal_except_documentation_address": true,
+      "environment_identical": true,
+      "factor_environment_identical": true,
+      "documentation_substitutions": [
+        {
+          "setting": "--dist-init-addr",
+          "public": "192.0.2.11:29601",
+          "observed_value_omitted": true
+        },
+        {
+          "setting": "--host",
+          "public": "127.0.0.1",
+          "observed_value_omitted": true
+        }
+      ]
+    },
+    {
+      "rank": 7,
+      "engine_arguments_equal_except_documentation_address": true,
+      "environment_identical": true,
+      "factor_environment_identical": true,
+      "documentation_substitutions": [
+        {
+          "setting": "--dist-init-addr",
+          "public": "192.0.2.11:29601",
+          "observed_value_omitted": true
+        },
+        {
+          "setting": "--host",
+          "public": "127.0.0.1",
+          "observed_value_omitted": true
+        }
+      ]
+    }
+  ],
+  "renderer_sha256": "cea985c5e1c184e2a045fadef5d259aa9ff08d2623377df7fc426953dbaa596c"
+}

@@ -56,3 +56,12 @@ the previously qualified 85d3681 source and local clamp fixes with RoCEnante
 files from 081b235931dbbcedcf0eb5899bae990c5dec5238 and registry additions;
 the composition and every source-file hash are recorded alongside it.
 Source: https://github.com/local-inference-lab/b12x
+
+SG18 source snapshot, added 14 September 2026:
+experiments/sg18-indexer-mhc-wo/source preserves sixteen Apache-2.0 SGLang
+production overlays, including eight new or changed files relative to SG17.
+Local changes cover bounded candidate filtering, mHC combine/norm and its
+coefficient schedule, and BF16 WO-A / packed WO-B input. Original file notices
+are retained. See LICENSE.sglang and the before/after source manifest.
+The unchanged B12x composition remains in experiments/sg17-rocenante/.
+Benchmark attribution and licenses above continue to apply unchanged.

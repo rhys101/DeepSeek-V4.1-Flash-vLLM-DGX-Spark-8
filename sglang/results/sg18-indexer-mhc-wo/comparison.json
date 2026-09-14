@@ -1,0 +1,1187 @@
+{
+  "status": "PASS",
+  "observed_date": "2026-09-14",
+  "headline_improvement_gate_passed": false,
+  "headline_checks": {
+    "initial_C1": {
+      "candidate": 131.28,
+      "references": [
+        134.906,
+        132.43800000000002,
+        133.484
+      ],
+      "higher_than_all": false
+    },
+    "initial_C8": {
+      "candidate": 505.25333333333333,
+      "references": [
+        474.51666666666665,
+        462.24,
+        465.76
+      ],
+      "higher_than_all": true
+    },
+    "repeat_C1": {
+      "candidate": 131.05,
+      "references": [
+        134.906,
+        132.43800000000002,
+        133.484
+      ],
+      "higher_than_all": false
+    },
+    "repeat_C8": {
+      "candidate": 495.31666666666666,
+      "references": [
+        474.51666666666665,
+        462.24,
+        465.76
+      ],
+      "higher_than_all": true
+    }
+  },
+  "published_sg17": {
+    "coding_c1_decode": 134.906,
+    "coding_c8_aggregate": 474.51666666666665
+  },
+  "published_sg17_rows": [
+    {
+      "concurrency": 1,
+      "coding_decode_per_stream": {
+        "mean": 134.906,
+        "median": 134.89,
+        "minimum": 134.87,
+        "maximum": 134.98,
+        "trials": [
+          134.87,
+          134.98,
+          134.92,
+          134.87,
+          134.89
+        ]
+      },
+      "coding_full_batch_aggregate": {
+        "mean": 121.86,
+        "median": 122.26,
+        "minimum": 119.39,
+        "maximum": 123.17,
+        "trials": [
+          119.39,
+          122.27,
+          123.17,
+          122.21,
+          122.26
+        ]
+      },
+      "coding_ttft_s": {
+        "mean": 0.1656,
+        "median": 0.16,
+        "minimum": 0.148,
+        "maximum": 0.199,
+        "trials": [
+          0.199,
+          0.161,
+          0.148,
+          0.16,
+          0.16
+        ]
+      },
+      "prose_decode_aggregate": {
+        "mean": 80.99333333333334,
+        "median": 81.01,
+        "minimum": 80.9,
+        "maximum": 81.07,
+        "trials": [
+          81.01,
+          81.07,
+          80.9
+        ]
+      },
+      "prose_ttft_s": {
+        "mean": 0.14636000000000002,
+        "median": 0.14736000000000002,
+        "minimum": 0.14126,
+        "maximum": 0.15046,
+        "trials": [
+          0.15046,
+          0.14736000000000002,
+          0.14126
+        ]
+      },
+      "prose_preview_sha256": [
+        [
+          "ff08a0ed33f2f47fdcfa316061496fd81a161328a3ea33bf3c7fd1f8d2f81b3d"
+        ],
+        [
+          "ff08a0ed33f2f47fdcfa316061496fd81a161328a3ea33bf3c7fd1f8d2f81b3d"
+        ],
+        [
+          "ff08a0ed33f2f47fdcfa316061496fd81a161328a3ea33bf3c7fd1f8d2f81b3d"
+        ]
+      ]
+    },
+    {
+      "concurrency": 4,
+      "coding_decode_per_stream": {
+        "mean": 83.67,
+        "median": 84.28,
+        "minimum": 81.37,
+        "maximum": 85.36,
+        "trials": [
+          85.36,
+          84.28,
+          81.37
+        ]
+      },
+      "coding_full_batch_aggregate": {
+        "mean": 304.99666666666667,
+        "median": 306.58,
+        "minimum": 297.42,
+        "maximum": 310.99,
+        "trials": [
+          310.99,
+          306.58,
+          297.42
+        ]
+      },
+      "coding_ttft_s": {
+        "mean": 0.18633333333333332,
+        "median": 0.182,
+        "minimum": 0.18,
+        "maximum": 0.197,
+        "trials": [
+          0.182,
+          0.197,
+          0.18
+        ]
+      },
+      "prose_decode_aggregate": {
+        "mean": 180.46333333333334,
+        "median": 180.49,
+        "minimum": 180.38,
+        "maximum": 180.52,
+        "trials": [
+          180.52,
+          180.49,
+          180.38
+        ]
+      },
+      "prose_ttft_s": {
+        "mean": 0.16994,
+        "median": 0.17075,
+        "minimum": 0.16357,
+        "maximum": 0.1755,
+        "trials": [
+          0.1755,
+          0.17075,
+          0.16357
+        ]
+      },
+      "prose_preview_sha256": [
+        [
+          "cacdf9b7f97e8b195b63fda8c6695c06964871ccfb9356efce748928422f7d8d",
+          "de741376ad16de4ec6c19bf0b72af6b72687bc79c8c914454656635684f00b73",
+          "e678b6ec5651a871efee33ee940863ae22168a87378079cbf3e0a45209ba5650",
+          "4bc6866119b5d676299701f3712155bc5ce80e77f1de9c3f2201be07ccb54d6b"
+        ],
+        [
+          "cacdf9b7f97e8b195b63fda8c6695c06964871ccfb9356efce748928422f7d8d",
+          "de741376ad16de4ec6c19bf0b72af6b72687bc79c8c914454656635684f00b73",
+          "e678b6ec5651a871efee33ee940863ae22168a87378079cbf3e0a45209ba5650",
+          "4bc6866119b5d676299701f3712155bc5ce80e77f1de9c3f2201be07ccb54d6b"
+        ],
+        [
+          "cacdf9b7f97e8b195b63fda8c6695c06964871ccfb9356efce748928422f7d8d",
+          "de741376ad16de4ec6c19bf0b72af6b72687bc79c8c914454656635684f00b73",
+          "e678b6ec5651a871efee33ee940863ae22168a87378079cbf3e0a45209ba5650",
+          "4bc6866119b5d676299701f3712155bc5ce80e77f1de9c3f2201be07ccb54d6b"
+        ]
+      ]
+    },
+    {
+      "concurrency": 8,
+      "coding_decode_per_stream": {
+        "mean": 64.88666666666667,
+        "median": 64.47,
+        "minimum": 62.89,
+        "maximum": 67.3,
+        "trials": [
+          64.47,
+          67.3,
+          62.89
+        ]
+      },
+      "coding_full_batch_aggregate": {
+        "mean": 474.51666666666665,
+        "median": 469.28,
+        "minimum": 458.4,
+        "maximum": 495.87,
+        "trials": [
+          469.28,
+          495.87,
+          458.4
+        ]
+      },
+      "coding_ttft_s": {
+        "mean": 0.22233333333333333,
+        "median": 0.222,
+        "minimum": 0.217,
+        "maximum": 0.228,
+        "trials": [
+          0.217,
+          0.222,
+          0.228
+        ]
+      },
+      "prose_decode_aggregate": {
+        "mean": 244.15,
+        "median": 244.25,
+        "minimum": 243.92,
+        "maximum": 244.28,
+        "trials": [
+          243.92,
+          244.28,
+          244.25
+        ]
+      },
+      "prose_ttft_s": {
+        "mean": 0.20683333333333334,
+        "median": 0.20416,
+        "minimum": 0.20318,
+        "maximum": 0.21316,
+        "trials": [
+          0.20318,
+          0.20416,
+          0.21316
+        ]
+      },
+      "prose_preview_sha256": [
+        [
+          "16d961542eaf27e14da46a1c19029ccf4ed93973caa917ff5c6255a6725ba801",
+          "e8ffde1c61cd8e3f45638a9c69ab5de8b503e3287bb05bb6f51829f85985a21e",
+          "7edc1f11141d5d1bed1f8cbec8f7501baf329ca6f9c4225b309f1262c79d1569",
+          "da3af8b3c15c9a1cb2bec2b8d35d4b04922b2aa84658a679b3d6679f2bb755f9",
+          "fe0851b923084c4e1796e32ec3b381bf8d22164ec17e66133628946fd03622de",
+          "90a2bfdb14c14534064882e231f789e5f825db10249d34b42e015e7ea0bb0ff9",
+          "7daa865969281edb4dce046edb0a6653a99c85a0b4b04ecc0ba65e22362c3f16",
+          "e66a0325f1a9b2c8a6eef2c680187fb184dc84a5660f5e79891b9c6f22b3c19a"
+        ],
+        [
+          "16d961542eaf27e14da46a1c19029ccf4ed93973caa917ff5c6255a6725ba801",
+          "e8ffde1c61cd8e3f45638a9c69ab5de8b503e3287bb05bb6f51829f85985a21e",
+          "7edc1f11141d5d1bed1f8cbec8f7501baf329ca6f9c4225b309f1262c79d1569",
+          "da3af8b3c15c9a1cb2bec2b8d35d4b04922b2aa84658a679b3d6679f2bb755f9",
+          "fe0851b923084c4e1796e32ec3b381bf8d22164ec17e66133628946fd03622de",
+          "90a2bfdb14c14534064882e231f789e5f825db10249d34b42e015e7ea0bb0ff9",
+          "7daa865969281edb4dce046edb0a6653a99c85a0b4b04ecc0ba65e22362c3f16",
+          "e66a0325f1a9b2c8a6eef2c680187fb184dc84a5660f5e79891b9c6f22b3c19a"
+        ],
+        [
+          "16d961542eaf27e14da46a1c19029ccf4ed93973caa917ff5c6255a6725ba801",
+          "e8ffde1c61cd8e3f45638a9c69ab5de8b503e3287bb05bb6f51829f85985a21e",
+          "7edc1f11141d5d1bed1f8cbec8f7501baf329ca6f9c4225b309f1262c79d1569",
+          "da3af8b3c15c9a1cb2bec2b8d35d4b04922b2aa84658a679b3d6679f2bb755f9",
+          "fe0851b923084c4e1796e32ec3b381bf8d22164ec17e66133628946fd03622de",
+          "90a2bfdb14c14534064882e231f789e5f825db10249d34b42e015e7ea0bb0ff9",
+          "7daa865969281edb4dce046edb0a6653a99c85a0b4b04ecc0ba65e22362c3f16",
+          "e66a0325f1a9b2c8a6eef2c680187fb184dc84a5660f5e79891b9c6f22b3c19a"
+        ]
+      ]
+    }
+  ],
+  "runs": {
+    "sg17_initial": {
+      "rows": [
+        {
+          "concurrency": 1,
+          "coding_decode_per_stream": {
+            "values": [
+              134.84,
+              130.11,
+              128.12,
+              134.46,
+              134.66
+            ],
+            "mean": 132.43800000000002,
+            "minimum": 128.12,
+            "maximum": 134.84,
+            "sample_stdev": 3.1168926834268746
+          },
+          "coding_full_batch_aggregate": {
+            "values": [
+              122.68,
+              118.67,
+              117.24,
+              120.85,
+              122.59
+            ],
+            "mean": 120.406,
+            "minimum": 117.24,
+            "maximum": 122.68,
+            "sample_stdev": 2.4070375983768963
+          },
+          "coding_ttft_seconds": {
+            "values": [
+              0.154,
+              0.155,
+              0.152,
+              0.174,
+              0.153
+            ],
+            "mean": 0.1576,
+            "minimum": 0.152,
+            "maximum": 0.174,
+            "sample_stdev": 0.00923579991121505
+          },
+          "prose_decode_aggregate": {
+            "values": [
+              80.85,
+              78.88,
+              80.15
+            ],
+            "mean": 79.96,
+            "minimum": 78.88,
+            "maximum": 80.85,
+            "sample_stdev": 0.9986490875177331
+          },
+          "prose_decode_per_stream": {
+            "values": [
+              80.85,
+              78.88,
+              80.15
+            ],
+            "mean": 79.96,
+            "minimum": 78.88,
+            "maximum": 80.85,
+            "sample_stdev": 0.9986490875177331
+          },
+          "prose_ttft_ms": {
+            "values": [
+              163.42,
+              137.89,
+              140.68
+            ],
+            "mean": 147.32999999999998,
+            "minimum": 137.89,
+            "maximum": 163.42,
+            "sample_stdev": 14.004002999142777
+          }
+        },
+        {
+          "concurrency": 4,
+          "coding_decode_per_stream": {
+            "values": [
+              82.19,
+              80.66,
+              84.2
+            ],
+            "mean": 82.35,
+            "minimum": 80.66,
+            "maximum": 84.2,
+            "sample_stdev": 1.7754154443397216
+          },
+          "coding_full_batch_aggregate": {
+            "values": [
+              301.79,
+              295.0,
+              310.73
+            ],
+            "mean": 302.50666666666666,
+            "minimum": 295.0,
+            "maximum": 310.73,
+            "sample_stdev": 7.889450762463346
+          },
+          "coding_ttft_seconds": {
+            "values": [
+              0.181,
+              0.182,
+              0.178
+            ],
+            "mean": 0.18033333333333332,
+            "minimum": 0.178,
+            "maximum": 0.182,
+            "sample_stdev": 0.0020816659994661343
+          },
+          "prose_decode_aggregate": {
+            "values": [
+              180.27,
+              176.13,
+              176.84
+            ],
+            "mean": 177.74666666666667,
+            "minimum": 176.13,
+            "maximum": 180.27,
+            "sample_stdev": 2.2139180954437685
+          },
+          "prose_decode_per_stream": {
+            "values": [
+              46.18,
+              45.1,
+              45.36
+            ],
+            "mean": 45.54666666666667,
+            "minimum": 45.1,
+            "maximum": 46.18,
+            "sample_stdev": 0.5636783953047453
+          },
+          "prose_ttft_ms": {
+            "values": [
+              173.51,
+              164.51,
+              165.56
+            ],
+            "mean": 167.85999999999999,
+            "minimum": 164.51,
+            "maximum": 173.51,
+            "sample_stdev": 4.921127919491625
+          }
+        },
+        {
+          "concurrency": 8,
+          "coding_decode_per_stream": {
+            "values": [
+              65.33,
+              64.51,
+              61.15
+            ],
+            "mean": 63.663333333333334,
+            "minimum": 61.15,
+            "maximum": 65.33,
+            "sample_stdev": 2.2148890115157776
+          },
+          "coding_full_batch_aggregate": {
+            "values": [
+              472.36,
+              469.36,
+              445.0
+            ],
+            "mean": 462.24,
+            "minimum": 445.0,
+            "maximum": 472.36,
+            "sample_stdev": 15.005439013904265
+          },
+          "coding_ttft_seconds": {
+            "values": [
+              0.229,
+              0.219,
+              0.236
+            ],
+            "mean": 0.228,
+            "minimum": 0.219,
+            "maximum": 0.236,
+            "sample_stdev": 0.008544003745317526
+          },
+          "prose_decode_aggregate": {
+            "values": [
+              240.01,
+              242.89,
+              240.14
+            ],
+            "mean": 241.01333333333332,
+            "minimum": 240.01,
+            "maximum": 242.89,
+            "sample_stdev": 1.6265402956377468
+          },
+          "prose_decode_per_stream": {
+            "values": [
+              31.7,
+              32.1,
+              31.73
+            ],
+            "mean": 31.843333333333334,
+            "minimum": 31.7,
+            "maximum": 32.1,
+            "sample_stdev": 0.22278539748676024
+          },
+          "prose_ttft_ms": {
+            "values": [
+              221.91,
+              204.75,
+              205.45
+            ],
+            "mean": 210.70333333333332,
+            "minimum": 204.75,
+            "maximum": 221.91,
+            "sample_stdev": 9.711566986502918
+          }
+        }
+      ],
+      "measured_coding_requests": 41,
+      "measured_prose_requests": 39,
+      "completed": "2026-09-14T11:01:40.803568+00:00"
+    },
+    "sg17_repeat": {
+      "rows": [
+        {
+          "concurrency": 1,
+          "coding_decode_per_stream": {
+            "values": [
+              134.95,
+              134.88,
+              130.47,
+              133.24,
+              133.88
+            ],
+            "mean": 133.484,
+            "minimum": 130.47,
+            "maximum": 134.95,
+            "sample_stdev": 1.8301994426837715
+          },
+          "coding_full_batch_aggregate": {
+            "values": [
+              120.11,
+              120.14,
+              117.14,
+              119.51,
+              110.07
+            ],
+            "mean": 117.394,
+            "minimum": 110.07,
+            "maximum": 120.14,
+            "sample_stdev": 4.274930408790303
+          },
+          "coding_ttft_seconds": {
+            "values": [
+              0.19,
+              0.189,
+              0.181,
+              0.179,
+              0.33
+            ],
+            "mean": 0.2138,
+            "minimum": 0.179,
+            "maximum": 0.33,
+            "sample_stdev": 0.06513601154507391
+          },
+          "prose_decode_aggregate": {
+            "values": [
+              80.75,
+              68.27,
+              80.74
+            ],
+            "mean": 76.58666666666666,
+            "minimum": 68.27,
+            "maximum": 80.75,
+            "sample_stdev": 7.202446343662225
+          },
+          "prose_decode_per_stream": {
+            "values": [
+              80.75,
+              68.27,
+              80.74
+            ],
+            "mean": 76.58666666666666,
+            "minimum": 68.27,
+            "maximum": 80.75,
+            "sample_stdev": 7.202446343662225
+          },
+          "prose_ttft_ms": {
+            "values": [
+              176.25,
+              189.51,
+              162.75
+            ],
+            "mean": 176.17,
+            "minimum": 162.75,
+            "maximum": 189.51,
+            "sample_stdev": 13.38017937099499
+          }
+        },
+        {
+          "concurrency": 4,
+          "coding_decode_per_stream": {
+            "values": [
+              86.79,
+              85.33,
+              73.17
+            ],
+            "mean": 81.76333333333334,
+            "minimum": 73.17,
+            "maximum": 86.79,
+            "sample_stdev": 7.477762588724875
+          },
+          "coding_full_batch_aggregate": {
+            "values": [
+              307.26,
+              304.89,
+              264.45
+            ],
+            "mean": 292.2,
+            "minimum": 264.45,
+            "maximum": 307.26,
+            "sample_stdev": 24.06140270225325
+          },
+          "coding_ttft_seconds": {
+            "values": [
+              0.215,
+              0.203,
+              0.253
+            ],
+            "mean": 0.22366666666666668,
+            "minimum": 0.203,
+            "maximum": 0.253,
+            "sample_stdev": 0.02610236260060252
+          },
+          "prose_decode_aggregate": {
+            "values": [
+              180.12,
+              176.04,
+              180.26
+            ],
+            "mean": 178.80666666666667,
+            "minimum": 176.04,
+            "maximum": 180.26,
+            "sample_stdev": 2.3970259350564707
+          },
+          "prose_decode_per_stream": {
+            "values": [
+              46.15,
+              45.07,
+              46.19
+            ],
+            "mean": 45.803333333333335,
+            "minimum": 45.07,
+            "maximum": 46.19,
+            "sample_stdev": 0.6354001363970043
+          },
+          "prose_ttft_ms": {
+            "values": [
+              191.32,
+              212.89,
+              186.25
+            ],
+            "mean": 196.82,
+            "minimum": 186.25,
+            "maximum": 212.89,
+            "sample_stdev": 14.146020641862496
+          }
+        },
+        {
+          "concurrency": 8,
+          "coding_decode_per_stream": {
+            "values": [
+              64.72,
+              64.01,
+              65.13
+            ],
+            "mean": 64.62,
+            "minimum": 64.01,
+            "maximum": 65.13,
+            "sample_stdev": 0.5666568626602827
+          },
+          "coding_full_batch_aggregate": {
+            "values": [
+              460.73,
+              460.67,
+              475.88
+            ],
+            "mean": 465.76,
+            "minimum": 460.67,
+            "maximum": 475.88,
+            "sample_stdev": 8.764228431527773
+          },
+          "coding_ttft_seconds": {
+            "values": [
+              0.251,
+              0.25,
+              0.233
+            ],
+            "mean": 0.24466666666666667,
+            "minimum": 0.233,
+            "maximum": 0.251,
+            "sample_stdev": 0.01011599393699567
+          },
+          "prose_decode_aggregate": {
+            "values": [
+              243.12,
+              242.93,
+              227.62
+            ],
+            "mean": 237.89000000000001,
+            "minimum": 227.62,
+            "maximum": 243.12,
+            "sample_stdev": 8.894588242296548
+          },
+          "prose_decode_per_stream": {
+            "values": [
+              32.13,
+              32.11,
+              30.04
+            ],
+            "mean": 31.426666666666666,
+            "minimum": 30.04,
+            "maximum": 32.13,
+            "sample_stdev": 1.200930195029393
+          },
+          "prose_ttft_ms": {
+            "values": [
+              232.17,
+              224.75,
+              219.43
+            ],
+            "mean": 225.45,
+            "minimum": 219.43,
+            "maximum": 232.17,
+            "sample_stdev": 6.398781133934796
+          }
+        }
+      ],
+      "measured_coding_requests": 41,
+      "measured_prose_requests": 39,
+      "completed": "2026-09-14T11:06:16.046658+00:00"
+    },
+    "sg18_initial": {
+      "rows": [
+        {
+          "concurrency": 1,
+          "coding_decode_per_stream": {
+            "values": [
+              128.43,
+              131.71,
+              132.41,
+              132.06,
+              131.79
+            ],
+            "mean": 131.28,
+            "minimum": 128.43,
+            "maximum": 132.41,
+            "sample_stdev": 1.6165395138999816
+          },
+          "coding_full_batch_aggregate": {
+            "values": [
+              117.04,
+              120.3,
+              120.46,
+              118.89,
+              120.2
+            ],
+            "mean": 119.378,
+            "minimum": 117.04,
+            "maximum": 120.46,
+            "sample_stdev": 1.4492135798425259
+          },
+          "coding_ttft_seconds": {
+            "values": [
+              0.159,
+              0.151,
+              0.157,
+              0.175,
+              0.153
+            ],
+            "mean": 0.159,
+            "minimum": 0.151,
+            "maximum": 0.175,
+            "sample_stdev": 0.009486832980505134
+          },
+          "prose_decode_aggregate": {
+            "values": [
+              87.49,
+              87.26,
+              87.39
+            ],
+            "mean": 87.38,
+            "minimum": 87.26,
+            "maximum": 87.49,
+            "sample_stdev": 0.11532562594670288
+          },
+          "prose_decode_per_stream": {
+            "values": [
+              87.49,
+              87.26,
+              87.39
+            ],
+            "mean": 87.38,
+            "minimum": 87.26,
+            "maximum": 87.49,
+            "sample_stdev": 0.11532562594670288
+          },
+          "prose_ttft_ms": {
+            "values": [
+              159.49,
+              136.34,
+              137.27
+            ],
+            "mean": 144.36666666666667,
+            "minimum": 136.34,
+            "maximum": 159.49,
+            "sample_stdev": 13.10544288962923
+          }
+        },
+        {
+          "concurrency": 4,
+          "coding_decode_per_stream": {
+            "values": [
+              81.09,
+              86.9,
+              85.37
+            ],
+            "mean": 84.45333333333333,
+            "minimum": 81.09,
+            "maximum": 86.9,
+            "sample_stdev": 3.0115167828410554
+          },
+          "coding_full_batch_aggregate": {
+            "values": [
+              291.19,
+              311.33,
+              305.82
+            ],
+            "mean": 302.78,
+            "minimum": 291.19,
+            "maximum": 311.33,
+            "sample_stdev": 10.40846290284977
+          },
+          "coding_ttft_seconds": {
+            "values": [
+              0.185,
+              0.189,
+              0.194
+            ],
+            "mean": 0.18933333333333333,
+            "minimum": 0.185,
+            "maximum": 0.194,
+            "sample_stdev": 0.0045092497528228985
+          },
+          "prose_decode_aggregate": {
+            "values": [
+              168.8,
+              169.5,
+              169.4
+            ],
+            "mean": 169.23333333333335,
+            "minimum": 168.8,
+            "maximum": 169.5,
+            "sample_stdev": 0.37859388972001295
+          },
+          "prose_decode_per_stream": {
+            "values": [
+              44.63,
+              44.84,
+              44.81
+            ],
+            "mean": 44.760000000000005,
+            "minimum": 44.63,
+            "maximum": 44.84,
+            "sample_stdev": 0.11357816691600571
+          },
+          "prose_ttft_ms": {
+            "values": [
+              164.27,
+              166.4,
+              165.96
+            ],
+            "mean": 165.54333333333335,
+            "minimum": 164.27,
+            "maximum": 166.4,
+            "sample_stdev": 1.1244702456416213
+          }
+        },
+        {
+          "concurrency": 8,
+          "coding_decode_per_stream": {
+            "values": [
+              70.13,
+              69.56,
+              71.68
+            ],
+            "mean": 70.45666666666666,
+            "minimum": 69.56,
+            "maximum": 71.68,
+            "sample_stdev": 1.0971022437919544
+          },
+          "coding_full_batch_aggregate": {
+            "values": [
+              495.34,
+              500.01,
+              520.41
+            ],
+            "mean": 505.25333333333333,
+            "minimum": 495.34,
+            "maximum": 520.41,
+            "sample_stdev": 13.332127862173133
+          },
+          "coding_ttft_seconds": {
+            "values": [
+              0.269,
+              0.241,
+              0.227
+            ],
+            "mean": 0.24566666666666667,
+            "minimum": 0.227,
+            "maximum": 0.269,
+            "sample_stdev": 0.02138535324312726
+          },
+          "prose_decode_aggregate": {
+            "values": [
+              256.27,
+              255.86,
+              255.81
+            ],
+            "mean": 255.98,
+            "minimum": 255.81,
+            "maximum": 256.27,
+            "sample_stdev": 0.2523885892824648
+          },
+          "prose_decode_per_stream": {
+            "values": [
+              33.4,
+              33.34,
+              33.34
+            ],
+            "mean": 33.36,
+            "minimum": 33.34,
+            "maximum": 33.4,
+            "sample_stdev": 0.03464101615137476
+          },
+          "prose_ttft_ms": {
+            "values": [
+              200.5,
+              206.26,
+              194.32
+            ],
+            "mean": 200.35999999999999,
+            "minimum": 194.32,
+            "maximum": 206.26,
+            "sample_stdev": 5.971231028858286
+          }
+        }
+      ],
+      "measured_coding_requests": 41,
+      "measured_prose_requests": 39,
+      "completed": "2026-09-14T11:22:22.480530+00:00"
+    },
+    "sg18_repeat": {
+      "rows": [
+        {
+          "concurrency": 1,
+          "coding_decode_per_stream": {
+            "values": [
+              131.19,
+              131.19,
+              130.03,
+              131.27,
+              131.57
+            ],
+            "mean": 131.05,
+            "minimum": 130.03,
+            "maximum": 131.57,
+            "sample_stdev": 0.591269819963778
+          },
+          "coding_full_batch_aggregate": {
+            "values": [
+              117.89,
+              118.51,
+              116.47,
+              115.43,
+              119.17
+            ],
+            "mean": 117.494,
+            "minimum": 115.43,
+            "maximum": 119.17,
+            "sample_stdev": 1.5253458624194047
+          },
+          "coding_ttft_seconds": {
+            "values": [
+              0.179,
+              0.17,
+              0.186,
+              0.216,
+              0.165
+            ],
+            "mean": 0.1832,
+            "minimum": 0.165,
+            "maximum": 0.216,
+            "sample_stdev": 0.0200424549394529
+          },
+          "prose_decode_aggregate": {
+            "values": [
+              87.16,
+              86.37,
+              87.13
+            ],
+            "mean": 86.88666666666667,
+            "minimum": 86.37,
+            "maximum": 87.16,
+            "sample_stdev": 0.4476978147515676
+          },
+          "prose_decode_per_stream": {
+            "values": [
+              87.16,
+              86.37,
+              87.13
+            ],
+            "mean": 86.88666666666667,
+            "minimum": 86.37,
+            "maximum": 87.16,
+            "sample_stdev": 0.4476978147515676
+          },
+          "prose_ttft_ms": {
+            "values": [
+              170.15,
+              150.45,
+              142.52
+            ],
+            "mean": 154.37333333333333,
+            "minimum": 142.52,
+            "maximum": 170.15,
+            "sample_stdev": 14.226687363308907
+          }
+        },
+        {
+          "concurrency": 4,
+          "coding_decode_per_stream": {
+            "values": [
+              85.3,
+              83.94,
+              80.42
+            ],
+            "mean": 83.22,
+            "minimum": 80.42,
+            "maximum": 85.3,
+            "sample_stdev": 2.5184121981915486
+          },
+          "coding_full_batch_aggregate": {
+            "values": [
+              305.51,
+              303.9,
+              289.71
+            ],
+            "mean": 299.70666666666665,
+            "minimum": 289.71,
+            "maximum": 305.51,
+            "sample_stdev": 8.694712952900366
+          },
+          "coding_ttft_seconds": {
+            "values": [
+              0.236,
+              0.194,
+              0.212
+            ],
+            "mean": 0.214,
+            "minimum": 0.194,
+            "maximum": 0.236,
+            "sample_stdev": 0.021071307505705468
+          },
+          "prose_decode_aggregate": {
+            "values": [
+              169.47,
+              161.61,
+              169.21
+            ],
+            "mean": 166.76333333333335,
+            "minimum": 161.61,
+            "maximum": 169.47,
+            "sample_stdev": 4.46481055962437
+          },
+          "prose_decode_per_stream": {
+            "values": [
+              44.83,
+              42.64,
+              44.79
+            ],
+            "mean": 44.086666666666666,
+            "minimum": 42.64,
+            "maximum": 44.83,
+            "sample_stdev": 1.2530097099916386
+          },
+          "prose_ttft_ms": {
+            "values": [
+              174.91,
+              203.69,
+              181.18
+            ],
+            "mean": 186.59333333333333,
+            "minimum": 174.91,
+            "maximum": 203.69,
+            "sample_stdev": 15.134405615462184
+          }
+        },
+        {
+          "concurrency": 8,
+          "coding_decode_per_stream": {
+            "values": [
+              69.29,
+              68.28,
+              67.42
+            ],
+            "mean": 68.33,
+            "minimum": 67.42,
+            "maximum": 69.29,
+            "sample_stdev": 0.9360021367497002
+          },
+          "coding_full_batch_aggregate": {
+            "values": [
+              508.36,
+              485.71,
+              491.88
+            ],
+            "mean": 495.31666666666666,
+            "minimum": 485.71,
+            "maximum": 508.36,
+            "sample_stdev": 11.70955307999984
+          },
+          "coding_ttft_seconds": {
+            "values": [
+              0.255,
+              0.263,
+              0.287
+            ],
+            "mean": 0.2683333333333333,
+            "minimum": 0.255,
+            "maximum": 0.287,
+            "sample_stdev": 0.016653327995729043
+          },
+          "prose_decode_aggregate": {
+            "values": [
+              255.64,
+              255.74,
+              250.14
+            ],
+            "mean": 253.84,
+            "minimum": 250.14,
+            "maximum": 255.74,
+            "sample_stdev": 3.2046840717924194
+          },
+          "prose_decode_per_stream": {
+            "values": [
+              33.31,
+              33.33,
+              32.81
+            ],
+            "mean": 33.15,
+            "minimum": 32.81,
+            "maximum": 33.33,
+            "sample_stdev": 0.2946183972531235
+          },
+          "prose_ttft_ms": {
+            "values": [
+              211.29,
+              207.96,
+              212.05
+            ],
+            "mean": 210.43333333333334,
+            "minimum": 207.96,
+            "maximum": 212.05,
+            "sample_stdev": 2.1754156690925357
+          }
+        }
+      ],
+      "measured_coding_requests": 41,
+      "measured_prose_requests": 39,
+      "completed": "2026-09-14T11:26:42.072748+00:00"
+    }
+  },
+  "original_guard": {
+    "status": "PASS",
+    "samples": 112,
+    "minimum_available_gib": 5.989582061767578
+  },
+  "candidate_guard": {
+    "status": "PASS",
+    "samples": 106,
+    "minimum_available_gib": 5.3150634765625
+  },
+  "source_commit": "66aa6bd5085e63bbb011557075765e3191e807b2",
+  "accounting_limitation": "Collection, source identity, contracts and recorded token/rate accounting passed. Prose aggregate follows the verified pinned runner; absolute first/last endpoints are not retained, so its exact aggregate cannot be independently reconstructed. This is not a broad quality or promotion decision.",
+  "presentation": "C8 throughput lead with explicit C1 tradeoff"
+}
