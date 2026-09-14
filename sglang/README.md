@@ -6,8 +6,8 @@ evidence for the SGLang deployment of DeepSeek V4.1 Flash.
 - [Current performance and hardware setup](../README.md)
 - [Deployment guide: build, validate, serve and operate](../docs/getting-started.md)
 - [Progress and historical benchmarks](../docs/progress.md)
-- [SG18 source and integration settings](experiments/sg18-indexer-mhc-wo/)
-- [SG18 measurements and quality limits](docs/sg18-indexer-mhc-wo-results.md)
+- [SG18 native-prefill source and integration settings](experiments/sg18-prefill-tp-split/)
+- [SG18 measurements and quality limits](docs/sg18-prefill-results.md)
 - [Pinned source and build identity](docs/build-and-pins.md)
 
 The standard Dockerfile and `scripts/cluster.py` package **SG5**. The measured

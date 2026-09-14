@@ -1,0 +1,27 @@
+{
+  "source": {
+    "status": "PASS_SOURCE_ONLY",
+    "production_files": 18,
+    "inherited_b12x_files": 241,
+    "changed_files": 3,
+    "patches": 2,
+    "partition_cases": 16404,
+    "unchanged_fallback_ast": true
+  },
+  "recorded_evidence": {
+    "status": "PASS_RECORDED_EVIDENCE",
+    "archived_files": 1275,
+    "cold_blocks": 6,
+    "readme_blocks": 6,
+    "completed_cold_batches": 144,
+    "interrupted_batches": 13,
+    "validations_replayed": 36,
+    "unchanged_reference_files": 35,
+    "capacity_validation_included": false,
+    "capacity_failure_verified": true,
+    "initial_timing_status": "REVIEW_REQUIRED",
+    "confirmation_timing_status": "PASS_TIMING_BRACKET",
+    "limitation": "Recomputes archived records. Does not repeat GPU execution or establish broad model-quality parity."
+  },
+  "repository_configuration_tests": "11 tests passed; unchanged configuration renderer. Original test log is included."
+}

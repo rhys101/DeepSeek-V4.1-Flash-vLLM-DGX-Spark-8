@@ -1,0 +1,16 @@
+test_300k_allocator_environment_is_preserved (test_config.ConfigurationTests) ... ok
+test_300k_vision_flag_reaches_node_environment (test_config.ConfigurationTests) ... ok
+test_api_probe_follows_binding (test_config.ConfigurationTests) ... ok
+test_bad_image_id_rejected (test_config.ConfigurationTests) ... ok
+test_duplicate_address_rejected (test_config.ConfigurationTests) ... ok
+test_duplicate_rank_rejected (test_config.ConfigurationTests) ... ok
+test_env_values_are_literal (test_config.ConfigurationTests) ... ok
+test_model_traversal_rejected (test_config.ConfigurationTests) ... ok
+test_serving_profile_loads (test_config.ConfigurationTests) ... ok
+test_shell_injection_in_login_rejected (test_config.ConfigurationTests) ... ok
+test_worker_ssh_is_source_bound (test_config.ConfigurationTests) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 0.014s
+
+OK

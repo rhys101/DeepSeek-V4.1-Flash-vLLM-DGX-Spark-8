@@ -1,0 +1,856 @@
+{
+  "status": "PASS_REBOOT_CAPACITY_RETEST",
+  "decision": {
+    "status": "PASS_REBOOT_CAPACITY_RETEST",
+    "recorded": "2026-09-14T22:58:26.919008+00:00",
+    "label": "prefill-capacity-native-reboot-1g-v01",
+    "candidate": "prefillnative01",
+    "active_service": "prefillnative01",
+    "active_ranks": 8,
+    "tested_minimum_os_available_gib": 1,
+    "observed_minimum_available_gib": 3.5548934936523438,
+    "spark1_minimum_available_gib": 4.446197509765625,
+    "cold_retrievals": 8,
+    "cached_retrievals": 8,
+    "cached_output_tokens": 8192,
+    "simultaneous_residency_samples": 30,
+    "maximum_simultaneous_used_tokens": 7983872,
+    "final_audit_status": "PASS",
+    "final_audit_observed": "2026-09-14T22:54:37.533316+00:00",
+    "final_audit_minimum_available_gib": 10.517440795898438,
+    "active_experiment_jobs": {
+      "wavebox@spark1": [],
+      "agenthost": [],
+      "local": []
+    },
+    "baseline_preserved_stopped": true,
+    "publication": "No repository publication performed for this retest.",
+    "prior_capacity_failure_preserved": true,
+    "evidence_sha256": {
+      "work/spark-kernels-iter1/prefill-capacity-native-reboot-1g-v01/capacity-validation.json": "04ec472d1f8d2f51c0c5fcd5f01322d578e5ec06b501d1dbe375d8eb95f61d7d",
+      "work/spark-prefill-tp-split-20260914/prefill-capacity-native-reboot-1g-v01-raw-guard-validation-v01.json": "fd82777f3b71fd1ac399d007033b813a3509b7a64db58e43376a383df77f98ac",
+      "work/spark-kernels-iter1/prefill-reboot-final-candidate-audit-v01.json": "58a95e0afbff0a481f04ef86bbbab27f543e6dbedb757ab7e6575d34a898308a",
+      "work/spark-kernels-iter1/prefill-capacity-native-reboot-1g-v01-durable-status.json": "d06795a2cb774f762718e17d2809f53239b8d3e06f6172a87d2f5e0fe0b7a0f7",
+      "work/spark-prefill-tp-split-20260914/prefill-capacity-native-reboot-1g-v01-reboot-preflight-v01.json": "fefba6bc0ae948dc1dcbf2811ba6b2f1e097450f931dd6959090b760e5c080cb",
+      "work/spark-prefill-tp-split-20260914/spark1-reboot-observed-v01.json": "3574919fdcc4d59db0f42f4eb96ebf424e36c646043bcdbd4aacf262ae89e564",
+      "work/spark-prefill-tp-split-20260914/prefill-capacity-failure-audit-v01.json": "6248f79b9f4f7f6208fdc2158acd0647e9c1499c9592aef9fdc80b8e21f9b9b2",
+      "work/spark-prefill-tp-split-20260914/prefill-final-decision-v01.json": "bc09fdea3d700a8543471ee0dbf4faea910f6a1db8a5a9937efc6d98eec4e6e1"
+    }
+  },
+  "capacity_validation": {
+    "status": "PASS",
+    "label": "prefill-capacity-native-reboot-1g-v01",
+    "cold_retrievals": 8,
+    "cached_retrievals": 8,
+    "prompt_tokens": [
+      997100,
+      997100,
+      997100,
+      997100,
+      997100,
+      997100,
+      997100,
+      997100
+    ],
+    "cold_input_tokens": 7976800,
+    "cold_batch_seconds": 4500.869650591048,
+    "cold_input_tokens_per_second": 1772.2797190877316,
+    "cached_output_tokens": 8192,
+    "load_samples": 4508,
+    "simultaneous_residency_samples": 30,
+    "first_residency_proof": {
+      "observed": "2026-09-14T22:52:02.609108+00:00",
+      "phase": "cold",
+      "snapshot_age_s": 0.9639742374420166,
+      "load": {
+        "timestamp": 1789426321.6451337,
+        "dp_rank": 0,
+        "num_running_reqs": 8,
+        "num_waiting_reqs": 0,
+        "num_waiting_uncached_tokens": 0,
+        "num_used_tokens": 7976960,
+        "num_total_tokens": 7976960,
+        "num_active_tokens": 7976960,
+        "max_total_num_tokens": 8000000,
+        "max_running_requests": 128,
+        "token_usage": 0.9971,
+        "gen_throughput": 0.0,
+        "cache_hit_rate": 0.0,
+        "utilization": 0.0,
+        "total_prefill_uncached_tokens": 6977516,
+        "total_prefill_busy_us": 3416742215,
+        "decode_moments": [
+          3.0,
+          3.0,
+          88555.0,
+          3.0,
+          88555.0,
+          11.0
+        ],
+        "memory": {
+          "weight_gb": 59.846,
+          "kv_cache_gb": 0.0,
+          "graph_gb": 9.723,
+          "token_capacity": 8000000
+        },
+        "disaggregation": {
+          "mode": "null",
+          "prefill_bootstrap_queue_reqs": 0,
+          "prefill_inflight_queue_reqs": 0,
+          "decode_prealloc_queue_reqs": 0,
+          "decode_transfer_queue_reqs": 0,
+          "decode_retracted_queue_reqs": 0,
+          "kv_transfer_speed_gb_s": 0.0,
+          "kv_transfer_latency_ms": 0.0
+        },
+        "queues": {
+          "waiting": 0,
+          "grammar": 0,
+          "paused": 0,
+          "retracted": 0,
+          "prealloc_ready": 0
+        }
+      }
+    },
+    "maximum_used_tokens": 7983872,
+    "maximum_active_tokens": 7983872,
+    "minimum_available_gib": 3.5548934936523438,
+    "minimum_required_available_gib": 1,
+    "scope": "Eight distinct synthetic near-1M documents, exact retrieval and simultaneous residency; no broad million-token reasoning claim."
+  },
+  "raw_guard_validation": {
+    "status": "PASS_RAW_GUARD_SAMPLES",
+    "label": "prefill-capacity-native-reboot-1g-v01",
+    "samples": 1299,
+    "rank_observations": 10392,
+    "minimum_available_gib": 3.5548934936523438,
+    "minimum_by_rank_gib": [
+      4.446197509765625,
+      5.5313568115234375,
+      3.824413299560547,
+      4.938518524169922,
+      7.02288818359375,
+      5.0146484375,
+      3.5548934936523438,
+      4.918819427490234
+    ],
+    "minimum_required_available_gib": 1,
+    "first_observation": "2026-09-14T21:36:48.245402+00:00",
+    "last_observation": "2026-09-14T22:53:09.113005+00:00",
+    "maximum_sample_interval_seconds": 4.066159009933472,
+    "mean_sample_interval_seconds": 3.529173808031714,
+    "process_identity_unchanged": true,
+    "samples_sha256": "c54f4d4d7eb71009dc5bee9fbf73bac7b636e16df53df82bd197e7bd56c560af",
+    "scope": "Every recorded sample has all eight ranks, the expected image, the same running processes, no recorded OOM/restarts, and at least one GiB OS-available under the user-authorized repeat threshold. Sampling does not observe every instant."
+  },
+  "phases": {
+    "cold": {
+      "status": "PASS",
+      "started": "2026-09-14T21:37:08.457029+00:00",
+      "finished": "2026-09-14T22:52:09.405112+00:00",
+      "batch_seconds": 4500.869650591048,
+      "submission_spread_s": 0.0005718229804188013,
+      "sum_prompt_tokens": 7976800,
+      "sum_completion_tokens": 160,
+      "input_tokens_per_second": 1772.2797190877316
+    },
+    "cached-1024": {
+      "status": "PASS",
+      "started": "2026-09-14T22:52:09.406979+00:00",
+      "finished": "2026-09-14T22:53:09.775774+00:00",
+      "batch_seconds": 60.32093212706968,
+      "submission_spread_s": 0.0006766890874132514,
+      "sum_prompt_tokens": 7976800,
+      "sum_completion_tokens": 8192,
+      "input_tokens_per_second": 132239.33581126347
+    }
+  },
+  "requests": {
+    "cold": [
+      {
+        "index": 0,
+        "status": "PASS",
+        "prompt_sha256": "2eeffff02208c5efd07a11af2be506bc6ebfbf317884399fcb355279bce9d3f6",
+        "ttft_s": 1769.9941814849153,
+        "total_s": 4495.846485099988,
+        "usage": {
+          "prompt_tokens": 997100,
+          "total_tokens": 997120,
+          "completion_tokens": 20,
+          "prompt_tokens_details": null,
+          "reasoning_tokens": 0
+        },
+        "actual": {
+          "alpha": "32551055",
+          "beta": "90308983",
+          "gamma": "91878145"
+        },
+        "expected": {
+          "alpha": "32551055",
+          "beta": "90308983",
+          "gamma": "91878145"
+        },
+        "finish_reason": "stop"
+      },
+      {
+        "index": 1,
+        "status": "PASS",
+        "prompt_sha256": "8f68904c3ccd731d639f39b44e7386331fb7327a4d8522d24459614eaafaab74",
+        "ttft_s": 1212.018813517061,
+        "total_s": 4495.8535563190235,
+        "usage": {
+          "prompt_tokens": 997100,
+          "total_tokens": 997120,
+          "completion_tokens": 20,
+          "prompt_tokens_details": null,
+          "reasoning_tokens": 0
+        },
+        "actual": {
+          "alpha": "67056197",
+          "beta": "80729749",
+          "gamma": "85385903"
+        },
+        "expected": {
+          "alpha": "67056197",
+          "beta": "80729749",
+          "gamma": "85385903"
+        },
+        "finish_reason": "stop"
+      },
+      {
+        "index": 2,
+        "status": "PASS",
+        "prompt_sha256": "99cee0e7961e83b21d7a866d4ec0909f8a10fa3e1ccbad9b0a7a2c6d32f8bb14",
+        "ttft_s": 4493.369430491002,
+        "total_s": 4495.847441740101,
+        "usage": {
+          "prompt_tokens": 997100,
+          "total_tokens": 997120,
+          "completion_tokens": 20,
+          "prompt_tokens_details": null,
+          "reasoning_tokens": 0
+        },
+        "actual": {
+          "alpha": "48218440",
+          "beta": "48795515",
+          "gamma": "73226840"
+        },
+        "expected": {
+          "alpha": "48218440",
+          "beta": "48795515",
+          "gamma": "73226840"
+        },
+        "finish_reason": "stop"
+      },
+      {
+        "index": 3,
+        "status": "PASS",
+        "prompt_sha256": "e3564c6bd739b87c569aec1175c2fb88f99e05a686db05d45856dc24e633e956",
+        "ttft_s": 3389.9022849180037,
+        "total_s": 4495.842234832002,
+        "usage": {
+          "prompt_tokens": 997100,
+          "total_tokens": 997120,
+          "completion_tokens": 20,
+          "prompt_tokens_details": null,
+          "reasoning_tokens": 0
+        },
+        "actual": {
+          "alpha": "91963877",
+          "beta": "71462767",
+          "gamma": "59432646"
+        },
+        "expected": {
+          "alpha": "91963877",
+          "beta": "71462767",
+          "gamma": "59432646"
+        },
+        "finish_reason": "stop"
+      },
+      {
+        "index": 4,
+        "status": "PASS",
+        "prompt_sha256": "316647227a046595ce3c29c5464cc0ab449817e584b088bbbf47df3a2ceb4c76",
+        "ttft_s": 3946.208753274055,
+        "total_s": 4495.845436419011,
+        "usage": {
+          "prompt_tokens": 997100,
+          "total_tokens": 997120,
+          "completion_tokens": 20,
+          "prompt_tokens_details": null,
+          "reasoning_tokens": 0
+        },
+        "actual": {
+          "alpha": "65641894",
+          "beta": "95685442",
+          "gamma": "64566474"
+        },
+        "expected": {
+          "alpha": "65641894",
+          "beta": "95685442",
+          "gamma": "64566474"
+        },
+        "finish_reason": "stop"
+      },
+      {
+        "index": 5,
+        "status": "PASS",
+        "prompt_sha256": "405344ea9b41c3eae2f60278eaeb2b9898b6056ead6d28df15ea33b8315f13b5",
+        "ttft_s": 2308.805941516999,
+        "total_s": 4495.840210404014,
+        "usage": {
+          "prompt_tokens": 997100,
+          "total_tokens": 997120,
+          "completion_tokens": 20,
+          "prompt_tokens_details": null,
+          "reasoning_tokens": 0
+        },
+        "actual": {
+          "alpha": "58481724",
+          "beta": "76120153",
+          "gamma": "31931889"
+        },
+        "expected": {
+          "alpha": "58481724",
+          "beta": "76120153",
+          "gamma": "31931889"
+        },
+        "finish_reason": "stop"
+      },
+      {
+        "index": 6,
+        "status": "PASS",
+        "prompt_sha256": "b145cc777e5f93a1778eb415efebc6ddb902faa6efa6ef5529da1e8b99a55a7b",
+        "ttft_s": 2849.4145453519886,
+        "total_s": 4495.849674175028,
+        "usage": {
+          "prompt_tokens": 997100,
+          "total_tokens": 997120,
+          "completion_tokens": 20,
+          "prompt_tokens_details": null,
+          "reasoning_tokens": 0
+        },
+        "actual": {
+          "alpha": "68593847",
+          "beta": "81530634",
+          "gamma": "35462717"
+        },
+        "expected": {
+          "alpha": "68593847",
+          "beta": "81530634",
+          "gamma": "35462717"
+        },
+        "finish_reason": "stop"
+      },
+      {
+        "index": 7,
+        "status": "PASS",
+        "prompt_sha256": "23ca9a26fbd3d51e851450a9a28c8d74c4ecd7d956e39fd46effa01803f45404",
+        "ttft_s": 646.6613578030374,
+        "total_s": 4500.869650591048,
+        "usage": {
+          "prompt_tokens": 997100,
+          "total_tokens": 997120,
+          "completion_tokens": 20,
+          "prompt_tokens_details": null,
+          "reasoning_tokens": 0
+        },
+        "actual": {
+          "alpha": "45233565",
+          "beta": "70095230",
+          "gamma": "42232068"
+        },
+        "expected": {
+          "alpha": "45233565",
+          "beta": "70095230",
+          "gamma": "42232068"
+        },
+        "finish_reason": "stop"
+      }
+    ],
+    "cached-1024": [
+      {
+        "index": 0,
+        "status": "PASS",
+        "prompt_sha256": "2eeffff02208c5efd07a11af2be506bc6ebfbf317884399fcb355279bce9d3f6",
+        "ttft_s": 20.390584448934533,
+        "total_s": 56.33973425498698,
+        "usage": {
+          "prompt_tokens": 997100,
+          "total_tokens": 998124,
+          "completion_tokens": 1024,
+          "prompt_tokens_details": {
+            "cached_tokens": 996864
+          },
+          "reasoning_tokens": 0
+        },
+        "actual": {
+          "alpha": "32551055",
+          "beta": "90308983",
+          "gamma": "91878145"
+        },
+        "expected": {
+          "alpha": "32551055",
+          "beta": "90308983",
+          "gamma": "91878145"
+        },
+        "finish_reason": "length"
+      },
+      {
+        "index": 1,
+        "status": "PASS",
+        "prompt_sha256": "8f68904c3ccd731d639f39b44e7386331fb7327a4d8522d24459614eaafaab74",
+        "ttft_s": 13.239281586953439,
+        "total_s": 49.952748636947945,
+        "usage": {
+          "prompt_tokens": 997100,
+          "total_tokens": 998124,
+          "completion_tokens": 1024,
+          "prompt_tokens_details": {
+            "cached_tokens": 996864
+          },
+          "reasoning_tokens": 0
+        },
+        "actual": {
+          "alpha": "67056197",
+          "beta": "80729749",
+          "gamma": "85385903"
+        },
+        "expected": {
+          "alpha": "67056197",
+          "beta": "80729749",
+          "gamma": "85385903"
+        },
+        "finish_reason": "length"
+      },
+      {
+        "index": 2,
+        "status": "PASS",
+        "prompt_sha256": "99cee0e7961e83b21d7a866d4ec0909f8a10fa3e1ccbad9b0a7a2c6d32f8bb14",
+        "ttft_s": 22.33963451697491,
+        "total_s": 54.63902095996309,
+        "usage": {
+          "prompt_tokens": 997100,
+          "total_tokens": 998124,
+          "completion_tokens": 1024,
+          "prompt_tokens_details": {
+            "cached_tokens": 996864
+          },
+          "reasoning_tokens": 0
+        },
+        "actual": {
+          "alpha": "48218440",
+          "beta": "48795515",
+          "gamma": "73226840"
+        },
+        "expected": {
+          "alpha": "48218440",
+          "beta": "48795515",
+          "gamma": "73226840"
+        },
+        "finish_reason": "length"
+      },
+      {
+        "index": 3,
+        "status": "PASS",
+        "prompt_sha256": "e3564c6bd739b87c569aec1175c2fb88f99e05a686db05d45856dc24e633e956",
+        "ttft_s": 13.231253116973676,
+        "total_s": 49.40831007400993,
+        "usage": {
+          "prompt_tokens": 997100,
+          "total_tokens": 998124,
+          "completion_tokens": 1024,
+          "prompt_tokens_details": {
+            "cached_tokens": 996864
+          },
+          "reasoning_tokens": 0
+        },
+        "actual": {
+          "alpha": "91963877",
+          "beta": "71462767",
+          "gamma": "59432646"
+        },
+        "expected": {
+          "alpha": "91963877",
+          "beta": "71462767",
+          "gamma": "59432646"
+        },
+        "finish_reason": "length"
+      },
+      {
+        "index": 4,
+        "status": "PASS",
+        "prompt_sha256": "316647227a046595ce3c29c5464cc0ab449817e584b088bbbf47df3a2ceb4c76",
+        "ttft_s": 18.72040415601805,
+        "total_s": 51.53208331705537,
+        "usage": {
+          "prompt_tokens": 997100,
+          "total_tokens": 998124,
+          "completion_tokens": 1024,
+          "prompt_tokens_details": {
+            "cached_tokens": 996864
+          },
+          "reasoning_tokens": 0
+        },
+        "actual": {
+          "alpha": "65641894",
+          "beta": "95685442",
+          "gamma": "64566474"
+        },
+        "expected": {
+          "alpha": "65641894",
+          "beta": "95685442",
+          "gamma": "64566474"
+        },
+        "finish_reason": "length"
+      },
+      {
+        "index": 5,
+        "status": "PASS",
+        "prompt_sha256": "405344ea9b41c3eae2f60278eaeb2b9898b6056ead6d28df15ea33b8315f13b5",
+        "ttft_s": 23.870582409901544,
+        "total_s": 58.239941795007326,
+        "usage": {
+          "prompt_tokens": 997100,
+          "total_tokens": 998124,
+          "completion_tokens": 1024,
+          "prompt_tokens_details": {
+            "cached_tokens": 996864
+          },
+          "reasoning_tokens": 0
+        },
+        "actual": {
+          "alpha": "58481724",
+          "beta": "76120153",
+          "gamma": "31931889"
+        },
+        "expected": {
+          "alpha": "58481724",
+          "beta": "76120153",
+          "gamma": "31931889"
+        },
+        "finish_reason": "length"
+      },
+      {
+        "index": 6,
+        "status": "PASS",
+        "prompt_sha256": "b145cc777e5f93a1778eb415efebc6ddb902faa6efa6ef5529da1e8b99a55a7b",
+        "ttft_s": 20.389330194913782,
+        "total_s": 51.535555738955736,
+        "usage": {
+          "prompt_tokens": 997100,
+          "total_tokens": 998124,
+          "completion_tokens": 1024,
+          "prompt_tokens_details": {
+            "cached_tokens": 996864
+          },
+          "reasoning_tokens": 0
+        },
+        "actual": {
+          "alpha": "68593847",
+          "beta": "81530634",
+          "gamma": "35462717"
+        },
+        "expected": {
+          "alpha": "68593847",
+          "beta": "81530634",
+          "gamma": "35462717"
+        },
+        "finish_reason": "length"
+      },
+      {
+        "index": 7,
+        "status": "PASS",
+        "prompt_sha256": "23ca9a26fbd3d51e851450a9a28c8d74c4ecd7d956e39fd46effa01803f45404",
+        "ttft_s": 18.718950350070372,
+        "total_s": 60.32093212706968,
+        "usage": {
+          "prompt_tokens": 997100,
+          "total_tokens": 998124,
+          "completion_tokens": 1024,
+          "prompt_tokens_details": {
+            "cached_tokens": 996864
+          },
+          "reasoning_tokens": 0
+        },
+        "actual": {
+          "alpha": "45233565",
+          "beta": "70095230",
+          "gamma": "42232068"
+        },
+        "expected": {
+          "alpha": "45233565",
+          "beta": "70095230",
+          "gamma": "42232068"
+        },
+        "finish_reason": "length"
+      }
+    ]
+  },
+  "prompt_receipts": [
+    {
+      "index": 0,
+      "seed": 8161900,
+      "expected": {
+        "alpha": "32551055",
+        "beta": "90308983",
+        "gamma": "91878145"
+      },
+      "prompt_tokens": 997100,
+      "prompt_sha256": "2eeffff02208c5efd07a11af2be506bc6ebfbf317884399fcb355279bce9d3f6",
+      "token_sha256": "78bc8a55de26d804f95a2cafee7a35aa154c2f9e97d70f2c77efa5d8cdf1561a",
+      "bytes": 3988374
+    },
+    {
+      "index": 1,
+      "seed": 8161901,
+      "expected": {
+        "alpha": "67056197",
+        "beta": "80729749",
+        "gamma": "85385903"
+      },
+      "prompt_tokens": 997100,
+      "prompt_sha256": "8f68904c3ccd731d639f39b44e7386331fb7327a4d8522d24459614eaafaab74",
+      "token_sha256": "7a07ce3cbae2ae37b2b1220ce1b10f5304059fa2ca383be03f108ceb29c0a8ce",
+      "bytes": 3988374
+    },
+    {
+      "index": 2,
+      "seed": 8161902,
+      "expected": {
+        "alpha": "48218440",
+        "beta": "48795515",
+        "gamma": "73226840"
+      },
+      "prompt_tokens": 997100,
+      "prompt_sha256": "99cee0e7961e83b21d7a866d4ec0909f8a10fa3e1ccbad9b0a7a2c6d32f8bb14",
+      "token_sha256": "fcf97dcb8484834256734c19729177871e788f8062dd0a0e3cf2c001a1c3f244",
+      "bytes": 3988374
+    },
+    {
+      "index": 3,
+      "seed": 8161903,
+      "expected": {
+        "alpha": "91963877",
+        "beta": "71462767",
+        "gamma": "59432646"
+      },
+      "prompt_tokens": 997100,
+      "prompt_sha256": "e3564c6bd739b87c569aec1175c2fb88f99e05a686db05d45856dc24e633e956",
+      "token_sha256": "4c82dcc207e13b0e653fed99a860b58a93ab2c0b0e8de7f87c6df3363c9d48b5",
+      "bytes": 3988374
+    },
+    {
+      "index": 4,
+      "seed": 8161904,
+      "expected": {
+        "alpha": "65641894",
+        "beta": "95685442",
+        "gamma": "64566474"
+      },
+      "prompt_tokens": 997100,
+      "prompt_sha256": "316647227a046595ce3c29c5464cc0ab449817e584b088bbbf47df3a2ceb4c76",
+      "token_sha256": "c0ece4aa3824e49f198f0db6516455be8db2060e4e38a5eb8cbf0bde598a43b7",
+      "bytes": 3988374
+    },
+    {
+      "index": 5,
+      "seed": 8161905,
+      "expected": {
+        "alpha": "58481724",
+        "beta": "76120153",
+        "gamma": "31931889"
+      },
+      "prompt_tokens": 997100,
+      "prompt_sha256": "405344ea9b41c3eae2f60278eaeb2b9898b6056ead6d28df15ea33b8315f13b5",
+      "token_sha256": "2aee3752a5d757022ed564dbfebd47301667bd3da2cc70cecf599231c0766607",
+      "bytes": 3988374
+    },
+    {
+      "index": 6,
+      "seed": 8161906,
+      "expected": {
+        "alpha": "68593847",
+        "beta": "81530634",
+        "gamma": "35462717"
+      },
+      "prompt_tokens": 997100,
+      "prompt_sha256": "b145cc777e5f93a1778eb415efebc6ddb902faa6efa6ef5529da1e8b99a55a7b",
+      "token_sha256": "773240a24a3ba45e01b488cce4fda61e3a209e50a397e6e9d4c19662b5e480c9",
+      "bytes": 3988374
+    },
+    {
+      "index": 7,
+      "seed": 8161907,
+      "expected": {
+        "alpha": "45233565",
+        "beta": "70095230",
+        "gamma": "42232068"
+      },
+      "prompt_tokens": 997100,
+      "prompt_sha256": "23ca9a26fbd3d51e851450a9a28c8d74c4ecd7d956e39fd46effa01803f45404",
+      "token_sha256": "b424049b31ac819f163324442951c704272d6f4c2bf249b890f39daa35b7c620",
+      "bytes": 3988374
+    }
+  ],
+  "prior_capacity_failure": {
+    "status": "FAIL_CAPACITY_MEMORY_GATE",
+    "label": "prefill-capacity-native-v01",
+    "evidence_audit_status": "PASS_FAILURE_RECONSTRUCTION",
+    "prompt_tokens": [
+      997100,
+      997100,
+      997100,
+      997100,
+      997100,
+      997100,
+      997100,
+      997100
+    ],
+    "submitted_prompt_tokens": 7976800,
+    "completed_cold_retrievals": 0,
+    "cached_phase_started": false,
+    "simultaneous_residency_samples": 0,
+    "guard_samples": 142,
+    "guard_rank_observations": 1136,
+    "guard_first_observation": "2026-09-14T20:31:52.825906+00:00",
+    "memory_threshold_crossed_at": "2026-09-14T20:40:05.858872+00:00",
+    "minimum_available_gib": 1.9525642395019531,
+    "below_threshold_ranks": [
+      0
+    ],
+    "final_available_by_rank_gib": [
+      1.9525642395019531,
+      9.39052963256836,
+      9.856365203857422,
+      9.907691955566406,
+      12.150596618652344,
+      10.088321685791016,
+      9.81875228881836,
+      11.477603912353516
+    ],
+    "worker_processes_unchanged_and_running_until_guard_stop": true,
+    "recorded_oom_kills": 0,
+    "post_stop_exit_codes": [
+      137,
+      137,
+      137,
+      137,
+      137,
+      137,
+      137,
+      137
+    ],
+    "load_samples": 472,
+    "last_successful_load": {
+      "observed": "2026-09-14T20:40:20.179120+00:00",
+      "monotonic_s": 651507.302708357,
+      "phase": "cold",
+      "response": {
+        "timestamp": "2026-09-14T20:40:20.179439+00:00",
+        "version": "0.0.0.dev1+ge087e662b",
+        "accelerator": "NVIDIA GB10",
+        "num_accelerators": 8,
+        "loads": [
+          {
+            "timestamp": 1789418419.7643564,
+            "dp_rank": 0,
+            "num_running_reqs": 0,
+            "num_waiting_reqs": 7,
+            "num_waiting_uncached_tokens": 6995808,
+            "num_used_tokens": 983040,
+            "num_total_tokens": 7962740,
+            "num_active_tokens": 7962740,
+            "max_total_num_tokens": 8000000,
+            "max_running_requests": 128,
+            "token_usage": 0.1229,
+            "gen_throughput": 0.0,
+            "cache_hit_rate": 0.0,
+            "utilization": 0.0,
+            "total_prefill_uncached_tokens": 976896,
+            "total_prefill_busy_us": 480088288,
+            "decode_moments": [
+              3.0,
+              3.0,
+              100029.0,
+              3.0,
+              100029.0,
+              11.0
+            ],
+            "memory": {
+              "weight_gb": 60.04,
+              "kv_cache_gb": 0.0,
+              "graph_gb": 8.75,
+              "token_capacity": 8000000
+            },
+            "disaggregation": {
+              "mode": "null",
+              "prefill_bootstrap_queue_reqs": 0,
+              "prefill_inflight_queue_reqs": 0,
+              "decode_prealloc_queue_reqs": 0,
+              "decode_transfer_queue_reqs": 0,
+              "decode_retracted_queue_reqs": 0,
+              "kv_transfer_speed_gb_s": 0.0,
+              "kv_transfer_latency_ms": 0.0
+            },
+            "queues": {
+              "waiting": 7,
+              "grammar": 0,
+              "paused": 0,
+              "retracted": 0,
+              "prealloc_ready": 0
+            }
+          }
+        ]
+      }
+    },
+    "worker_cuda_or_scheduler_error_markers": {
+      "0": [],
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": [],
+      "6": [],
+      "7": []
+    },
+    "controller_cleanup": "Sequential eight-rank stop exceeded the 90-second finalizer wait; all raw guard files were recovered directly from the head.",
+    "evidence_sha256": {
+      "spark-kernels-iter1/prefill-capacity-native-v01/result.json": "e55a6a445eaa9f66c0806cdf55c8e1f67ae0ec8359f2031c6d1164c3e2952059",
+      "spark-kernels-iter1/prefill-capacity-native-v01/config.json": "dffb3ab392465ccf23639d5a256f517a4bec8c8758df6c251076a7585d3fea29",
+      "spark-kernels-iter1/prefill-capacity-native-v01-durable-launch.json": "2bc12314afa75355a7e5cda7e7989c1d7760673eabbd41e5d51d9a789007ccc0",
+      "spark-kernels-iter1/prefill-capacity-native-v01-durable-status.json": "505b185f4eb914dfd6cdfd71742b74f85babfbcf59585c0c758b2c7fabed9a94",
+      "spark-kernels-iter1/prefill-capacity-native-v01/executed-client.py": "2c0d99812ea8ccf0904b22abdf532f265f1dc8eb68f484e6d7d942fc9c893298",
+      "spark-kernels-iter1/prefill-capacity-native-v01/executed-controller.py": "b9c7dd30800d70df40e89d1290b1ae6518c9f5cb2058100ca2fa783125b3f153",
+      "spark-kernels-iter1/prefill-capacity-native-v01-guard/executed-guard.py": "6c52e92e6e2e065872664a010a7b637b98e261cd5c971c96cca9820f3db55bb1",
+      "spark-kernels-iter1/prefill-capacity-native-v01/freeze.json": "cda19f8bc9f062cc9b343afa5b5c5722c24e490b9b687c98069eb97c4824b377",
+      "spark-kernels-iter1/prefill-capacity-native-v01/prompt-0.txt": "2eeffff02208c5efd07a11af2be506bc6ebfbf317884399fcb355279bce9d3f6",
+      "spark-kernels-iter1/prefill-capacity-native-v01/prompt-1.txt": "8f68904c3ccd731d639f39b44e7386331fb7327a4d8522d24459614eaafaab74",
+      "spark-kernels-iter1/prefill-capacity-native-v01/prompt-2.txt": "99cee0e7961e83b21d7a866d4ec0909f8a10fa3e1ccbad9b0a7a2c6d32f8bb14",
+      "spark-kernels-iter1/prefill-capacity-native-v01/prompt-3.txt": "e3564c6bd739b87c569aec1175c2fb88f99e05a686db05d45856dc24e633e956",
+      "spark-kernels-iter1/prefill-capacity-native-v01/prompt-4.txt": "316647227a046595ce3c29c5464cc0ab449817e584b088bbbf47df3a2ceb4c76",
+      "spark-kernels-iter1/prefill-capacity-native-v01/prompt-5.txt": "405344ea9b41c3eae2f60278eaeb2b9898b6056ead6d28df15ea33b8315f13b5",
+      "spark-kernels-iter1/prefill-capacity-native-v01/prompt-6.txt": "b145cc777e5f93a1778eb415efebc6ddb902faa6efa6ef5529da1e8b99a55a7b",
+      "spark-kernels-iter1/prefill-capacity-native-v01/prompt-7.txt": "23ca9a26fbd3d51e851450a9a28c8d74c4ecd7d956e39fd46effa01803f45404",
+      "spark-kernels-iter1/prefill-capacity-native-v01-guard/samples.jsonl": "1d2eba2d201ff110f95b12ec094001a6e45718baaa98871eede8fd0d26e0d49f",
+      "spark-kernels-iter1/prefill-capacity-native-v01-guard/failure.json": "982715e4b28835e318fb9019eec9e95c26572bfb85a186033d013ce9a9301ed2",
+      "spark-kernels-iter1/prefill-capacity-native-v01/loads.jsonl": "5220fd98cce67dc2c0c29796461fa764bcd347ef358fd8b7102ea7df56e4f48c",
+      "spark-prefill-tp-split-20260914/capacity-failure-live-v01/states.json": "3f308e80f9c560b3ebd0df46885b65f487139a06005cd2f90add84c1ebc1d898",
+      "spark-prefill-tp-split-20260914/capacity-failure-live-v01/r0.log": "ff6179515387e12512f3b2ddcb59a1cd7374af0451ad4d3dd37feb24af19a710",
+      "spark-prefill-tp-split-20260914/capacity-failure-live-v01/r1.log": "3c4fba8d80d5c4038bef3c5469a1a23dd3b63573ed8879c40ce8bb97047452de",
+      "spark-prefill-tp-split-20260914/capacity-failure-live-v01/r2.log": "102afd3df554435d168deb9e8ae6ad55260fcad1e4f406c446f9597290aaedec",
+      "spark-prefill-tp-split-20260914/capacity-failure-live-v01/r3.log": "3631b40d149d08afe8eed79a5e0216ff6f147a9354cef6c3f78a2e47816c92b0",
+      "spark-prefill-tp-split-20260914/capacity-failure-live-v01/r4.log": "f7979757c9b52986e8e5d93f351f2a4eb94288c27d0f4994ca833abae7650946",
+      "spark-prefill-tp-split-20260914/capacity-failure-live-v01/r5.log": "b0862b63cc8b24ab5bc94220ea6538c6efd86abc3b3d0caa2d04efcd8c76aac2",
+      "spark-prefill-tp-split-20260914/capacity-failure-live-v01/r6.log": "0950bb88ea60dd5737a5c220e5ef062c38d4d1cc2c19e8d475ec705e557ab010",
+      "spark-prefill-tp-split-20260914/capacity-failure-live-v01/r7.log": "55708a3cd21a3fab8890aac836bbc57cf56a30ae9d623ddd78a0200a317669c4",
+      "spark-kernels-iter1/prefill-capacity-native-v01-durable-controller.log": "de007b4c083942b5cfe7ec8922cc7628124c21c68de2a787545c180358757df9"
+    },
+    "interpretation": "The fixed two-GiB OS-memory gate stopped the candidate before any near-1M retrieval completed. The head node was below the threshold; the other seven were above it. This is neither an answer mismatch nor an observed OOM kill. The saved OS-only samples do not identify which allocation caused the pressure, and no matched near-1M fixed-baseline run was performed in this experiment. Do not attribute the pressure specifically to the split from these records alone."
+  },
+  "earlier_confirmation_time_reductions_percent": [
+    28.0482112245253,
+    21.395509546792013
+  ],
+  "scope": "Same eight distinct synthetic 997,100-token prompts after the user rebooted Spark1. Exact retrieval and simultaneous residency are established for this run; this is not a broad million-token reasoning evaluation or proof of the earlier memory failure cause."
+}

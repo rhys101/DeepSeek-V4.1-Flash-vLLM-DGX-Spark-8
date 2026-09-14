@@ -5,16 +5,40 @@ resident Engram and an OpenAI-compatible API.
 
 ## Performance
 
-Measured **14 September 2026** on **SG18 · TP8/EP4 · RoCEnante**:
+Measured **14 September 2026** on the promoted **SG18 native prefill · TP8/EP4 · RoCEnante** build:
 
 | Workload | 1 request | 8 concurrent requests |
 |---|---:|---:|
-| Coding | **131.05 tok/s** decode | **495.32 tok/s** total |
-| Prose | **86.89 tok/s** decode | **253.84 tok/s** total decode |
+| Coding | **131.72 tok/s** decode | **508.79 tok/s** total |
+| Prose | **87.30 tok/s** decode | **254.65 tok/s** total decode |
 
 Coding uses 200 output tokens; prose uses 256. Single-request decode excludes
 first-token time. Coding aggregate includes prefill and batch time; prose uses
-the output window. These are repeat-run means. [Method, quality limits and all results](sglang/docs/sg18-indexer-mhc-wo-results.md)
+the output window. These are repeat-run means from the promoted build.
+
+**Cold prefill** — input tokens per second:
+
+| Input tokens per request | 1 request | 8 concurrent requests, aggregate |
+|---|---:|---:|
+| 4,096 | 4,428 tok/s | — |
+| 32,768 | 4,196 tok/s | 4,236 tok/s |
+| 131,072 | 3,907 tok/s | 3,944 tok/s |
+| 299,008 | 3,458 tok/s | — |
+
+Each rate divides input tokens by the mean of three cold trials, timed through
+the last request's first token, after one excluded warmup. Reported cache hits
+were zero. **64K has not been measured.** The three primary long-prompt cells
+took **21.40–28.05% less time** in geometric mean against the controls before
+and after the candidate.
+
+The capacity repeat passed **eight distinct 997,100-token prompts active
+together**: 8/8 exact cold retrievals, followed by 8/8 cached responses of 1,024
+tokens each. The cold batch averaged **1,772 input tok/s** over 75.01 minutes;
+the cached batch took 60.32 seconds. Minimum sampled OS-available memory was
+**3.55 GiB** under the requested 1 GiB guard, after a Spark1 reboot.
+
+[Method, all trials, earlier failed attempt and quality limits](sglang/docs/sg18-prefill-results.md)
+· [Exact source and integration](sglang/experiments/sg18-prefill-tp-split/)
 · [Development history](docs/progress.md).
 
 ## Eight Sparks and a switch
@@ -32,7 +56,7 @@ the output window. These are repeat-run means. [Method, quality limits and all r
 ## Quick start
 
 The commands below use the **packaged SG5 launcher**. To reproduce the headline
-SG18 build, follow the [SG18 source and integration instructions](sglang/experiments/sg18-indexer-mhc-wo/);
+SG18 native-prefill build, follow the [source and integration instructions](sglang/experiments/sg18-prefill-tp-split/);
 its public installer is not yet automated.
 
 Run on Spark 1 with Linux ARM64, Docker/NVIDIA GPU support, Buildx, Python 3.11+,
@@ -73,7 +97,7 @@ python3 scripts/cluster.py stop --config configs/cluster.local.json
 python3 scripts/cluster.py start --config configs/cluster.local.json
 ```
 
-[Full deployment guide](docs/getting-started.md) · [SG18 integration](sglang/experiments/sg18-indexer-mhc-wo/)
+[Full deployment guide](docs/getting-started.md) · [SG18 native-prefill integration](sglang/experiments/sg18-prefill-tp-split/)
 · [Earlier vLLM deployment](docs/vllm-deployment.md).
 
 ## Credits and licenses

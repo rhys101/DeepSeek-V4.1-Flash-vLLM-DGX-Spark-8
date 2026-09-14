@@ -1,11 +1,31 @@
 # Development progress and benchmark history
 
-Recorded through **14 September 2026**. This page preserves the measurements,
+Recorded through **15 September 2026**. This page preserves the measurements,
 comparisons, validation results and limitations previously collected in the README.
 Each result belongs to its named deployment profile.
 
 See the [main README](../README.md) for the current headlines and hardware setup,
 or the [deployment guide](getting-started.md) for installation and operation.
+
+## Current: SG18 native prefill
+
+Promoted on **15 September** using measurements from **14 September 2026**.
+The repeated README suite measured **131.72 coding decode tok/s at C1** and
+**508.79 coding full-batch tok/s at C8**. Cold prefill measured **4,196 input
+tok/s at 32K**, **3,907 at 128K**, and **3,458 at 299K** for one request.
+Long-prompt geometric-mean time fell **21.40–28.05%** against the scratch-fixed
+controls before and after the candidate. The source and thresholds were
+unchanged between the initial comparison and accepted confirmation.
+
+The eight near-1M capacity repeat passed after Spark1 rebooted: all 16 cold
+and cached retrievals, exactly 1,024 tokens per cached response, and thirty
+fresh observations of all eight contexts active together. Minimum sampled
+OS-available memory was **3.555 GiB** under the requested 1 GiB guard. The
+first attempt's 2 GiB guard failure, the initial timing regression and all
+slower trials remain recorded. [Complete current results and limits](../sglang/docs/sg18-prefill-results.md)
+· [Promoted source](../sglang/experiments/sg18-prefill-tp-split/).
+
+## Previous SG18: indexer, mHC and WO
 
 **495.32 coding tokens/s across eight concurrent requests · 131.05 coding decode tokens/s on one request.**
 

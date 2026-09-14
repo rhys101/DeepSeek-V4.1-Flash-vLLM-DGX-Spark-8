@@ -1,0 +1,27 @@
+--- a/sglang/kernels/ops/attention/flash_mla_sm120.py
++++ b/sglang/kernels/ops/attention/flash_mla_sm120.py
+@@ -494,8 +494,9 @@
+     SWA pool, -1 = invalid) is provided, only the source pages that actually
+     contain a referenced token are copied. This avoids rewriting the entire KV
+     pool on every decode step (only ~2*batch pages are touched vs the full
+-    pool). The output buffer is persistent and reused across steps; untouched
+-    dst pages simply retain their (unreferenced) stale data.
++    pool). The output buffer is persistent and reused across steps. Untouched
++    dst pages remain zero-initialized because FlashInfer may gather slot 0 for
++    masked candidates.
+     """
+     assert src_pbs % _PBS_DST == 0 and src_pbs >= _PBS_DST
+     if src_pbs == _PBS_DST:
+@@ -516,8 +517,11 @@
+         # The first allocation can happen under inference mode (autotune), but
+         # the buffer is written again during CUDA graph capture outside
+         # inference mode, where an inference tensor cannot be mutated.
++        # FlashInfer 0.6.18 gathers slot 0 for masked (-1) candidates.
++        # Keep untouched scratch finite so zero probability cannot multiply NaN.
++        # One initialization per allocation/grow; touched-page copying is unchanged.
+         with torch.inference_mode(False):
+-            buf = torch.empty(
++            buf = torch.zeros(
+                 num_dst_pages,
+                 _BYTES_PER_DST_PAGE_PADDED,
+                 dtype=torch.uint8,

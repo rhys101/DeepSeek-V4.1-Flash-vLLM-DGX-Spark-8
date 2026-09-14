@@ -4,7 +4,7 @@ Run the cluster from Spark 1 (rank zero). The [main README](../README.md) provid
 the short version; this page records the packaged configuration, validation and
 operation commands.
 
-The **SG18** headline deployment has its own [source and integration instructions](../sglang/experiments/sg18-indexer-mhc-wo/).
+The **SG18 native-prefill** headline deployment has its own [source and integration instructions](../sglang/experiments/sg18-prefill-tp-split/).
 The standard Dockerfile and launcher below package **SG5**. A generalized public
 SG18 installer has not been tested; editing the SG5 configuration alone does not
 install SG18. [Benchmark and development history](progress.md).
@@ -32,7 +32,7 @@ SGLang's pool and prefill accounting differ from vLLM's. Equal numeric flags do 
 
 ## Build, validate and launch
 
-The headline SG18 result uses the separately preserved [SG18 source and integration settings](../sglang/experiments/sg18-indexer-mhc-wo/). The commands below build and launch SG5; changing only its example JSON does not reproduce SG18.
+The headline SG18 native-prefill result uses the separately preserved [SG18 native-prefill source and integration settings](../sglang/experiments/sg18-prefill-tp-split/). The commands below build and launch SG5; changing only its example JSON does not reproduce SG18.
 
 Run cluster operations on rank zero. Requirements: Linux ARM64 Sparks, Docker with NVIDIA GPU support and Buildx, Python 3.11+, SSH/rsync, a working RDMA fabric, and the pinned checkpoint already present on every node. Weights and credentials are not included. Build and kernel tests require idle GPUs; stop the active deployment with its own configuration first.
 

@@ -1,0 +1,10 @@
+{
+  "status": "PASS_OFFLINE_RETEST_VERIFICATION",
+  "packaged_files": 124,
+  "independent_validators_replayed": 2,
+  "cold_retrievals": 8,
+  "cached_retrievals": 8,
+  "cached_output_tokens": 8192,
+  "simultaneous_residency_samples": 30,
+  "minimum_available_gib": 3.5548934936523438
+}

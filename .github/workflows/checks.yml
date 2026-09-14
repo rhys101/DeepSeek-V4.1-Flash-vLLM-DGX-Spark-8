@@ -12,6 +12,9 @@ jobs:
           python-version: '3.12'
       - run: python -m unittest discover -s tests -v
       - run: python -m unittest discover -s sglang/tests -v
+      - run: python sglang/experiments/sg18-prefill-tp-split/verify-source.py
+      - run: python sglang/experiments/sg18-prefill-tp-split/verify-results.py
+      - run: python sglang/experiments/sg18-prefill-tp-split/verify-promotion.py
       - run: python -m compileall -q scripts runtime bench
       - run: python -m compileall -q sglang/scripts sglang/runtime sglang/validation
       - run: bash -n scripts/build.sh runtime/run-node.sh bench/run-community.sh
