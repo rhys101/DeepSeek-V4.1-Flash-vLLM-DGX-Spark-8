@@ -1,6 +1,6 @@
 # vLLM: DeepSeek V4.1 Flash on eight DGX Sparks
 
-The vLLM deployment guide and measured results are preserved here. See the [main README](../README.md) for the SGLang EP4 deployment and matched engine comparison. Run this guide’s commands from the repository root.
+The vLLM deployment guide and measured results are preserved here. See the [main README](../README.md) for the current SGLang deployment and [progress history](progress.md#standard-profile-engine-comparison) for the matched engine comparison. Run this guide’s commands from the repository root.
 
 Serve `deepseek-ai/DeepSeek-V4.1-Flash` across **eight NVIDIA DGX Sparks** with **TP8, RAM-resident Engram, DSpark k=5, CUDA graphs and vision**.
 
