@@ -5,9 +5,12 @@ client is invoked. Historical validator paths are recreated in a temporary
 directory; the checkout and archives are never modified.
 """
 import hashlib
+from fractions import Fraction
 import json
+import math
 from pathlib import Path, PurePosixPath
 import shutil
+import statistics
 import subprocess
 import sys
 import tarfile
@@ -27,6 +30,40 @@ def read(path):
 
 def digest(path):
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def reproduce_recorded_stdev(recorded, replayed):
+    """Reproduce Python 3.9's two-pass float variance and final square root.
+
+    Newer statistics.stdev computes the square root of an exact fraction,
+    changing some last bits. Verify both calculations from identical trial
+    values, then use the recorded calculation for exact receipt comparison.
+    No measurement or comparison tolerance is changed.
+    """
+    differences = 0
+    assert recorded['runs'].keys() == replayed['runs'].keys()
+    for phase, run in recorded['runs'].items():
+        fresh = replayed['runs'][phase]
+        assert len(run['rows']) == len(fresh['rows'])
+        for original_row, fresh_row in zip(run['rows'], fresh['rows']):
+            assert original_row.keys() == fresh_row.keys()
+            for name, original in original_row.items():
+                if not isinstance(original, dict) or 'sample_stdev' not in original:
+                    continue
+                current = fresh_row[name]
+                values = original['values']
+                assert values == current['values'] and len(values) > 1
+                assert all(type(value) in (int, float) and math.isfinite(value) for value in values)
+                center = statistics.mean(values)
+                squares = sum((Fraction((value - center) ** 2) for value in values), Fraction())
+                residual = sum((Fraction(value - center) for value in values), Fraction())
+                variance = (squares - residual ** 2 / len(values)) / (len(values) - 1)
+                legacy = math.sqrt(float(variance))
+                assert original['sample_stdev'] == legacy, (phase, name, 'recorded stdev')
+                assert current['sample_stdev'] == statistics.stdev(values), (phase, name, 'replayed stdev')
+                differences += current['sample_stdev'] != legacy
+                current['sample_stdev'] = legacy
+    return differences
 
 
 with tempfile.TemporaryDirectory(prefix='sg18-prefill-verify-') as folder:
@@ -73,6 +110,7 @@ with tempfile.TemporaryDirectory(prefix='sg18-prefill-verify-') as folder:
         shutil.copyfile(REPO / relative, destination)
 
     replayed = []
+    stdev_last_bit_differences = []
 
     def replay(script, args, destination, ignore=()):
         original_bytes = destination.read_bytes()
@@ -86,6 +124,8 @@ with tempfile.TemporaryDirectory(prefix='sg18-prefill-verify-') as folder:
         for key in ignore:
             original.pop(key, None)
             recomputed.pop(key, None)
+        if script.name == 'validate-readme-suite.py':
+            stdev_last_bit_differences.append(reproduce_recorded_stdev(original, recomputed))
         assert original == recomputed, (script.name, args)
         # Restore the recorded bytes, so downstream timestamp/hash checks use
         # the original receipts, after comparing every portable result above.
@@ -184,6 +224,8 @@ with tempfile.TemporaryDirectory(prefix='sg18-prefill-verify-') as folder:
                           interrupted_batches=13, validations_replayed=len(replayed),
                           unchanged_reference_files=35, capacity_validation_included=bool(capacity),
                           capacity_failure_verified=bool(capacity_failure),
+                          recorded_stdev_method='Python 3.9 two-pass float variance, then sqrt',
+                          replay_stdev_last_bit_differences=sum(stdev_last_bit_differences),
                           initial_timing_status=read(pf / 'prefill-native-v02-timing-bracket.json')['status'],
                           confirmation_timing_status=read(pf / 'prefill-native-confirmation-v01-timing-bracket.json')['status'],
                           limitation='Recomputes archived records. Does not repeat GPU execution or establish broad model-quality parity.'), indent=2))

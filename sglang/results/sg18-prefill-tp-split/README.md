@@ -39,6 +39,13 @@ layout and replays the original offline validators. It uses the 35 pinned
 reference files already in this repository. It runs no benchmark client,
 network request, model or GPU program, and it leaves the checkout unchanged.
 
+The README receipts were recorded with Python 3.9. Newer Python versions can
+round `statistics.stdev` differently in the last binary digit. The replay
+verifies the current calculation and independently reproduces the original
+two-pass variance and square root from the identical trial values before
+comparing receipts exactly. Raw values, means, thresholds and stored evidence
+remain unchanged; no comparison tolerance is widened.
+
 - [recorded-evidence.tar.gz](recorded-evidence.tar.gz) contains complete cold
   and README blocks, the interrupted attempt, frozen prompts, SSE records,
   original clients, raw memory/health samples, comparisons and failure records.
